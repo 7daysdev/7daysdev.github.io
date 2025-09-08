@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Collection - Refactor 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+    
+    <div class="container">
+        <h1>Card Collection Manager</h1>
+        
+        <div class="header-actions">
+            <a href="form.html" class="btn">Add New Card</a>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-label">Total Cards:</span>
+                    <span class="stat-value" id="totalCards">0</span>
+                </div>
+            </div>
+            <div class="filter-container" id="rarityFilters">
+                <button class="filter-btn active" data-rarity="all">All</button>
+                <button class="filter-btn" data-rarity="Common">Common</button>
+                <button class="filter-btn" data-rarity="Uncommon">Uncommon</button>
+                <button class="filter-btn" data-rarity="Rare">Rare</button>
+                <button class="filter-btn" data-rarity="Epic">Epic</button>
+                <button class="filter-btn" data-rarity="Ultimate">Ultimate</button>
+            </div>
+        </div>
+
+        <h2 style="text-align: center;">Your Trading Cards</h2>
+        <div id="cards-container" class="card-grid">
+            <p class="loading">Loading cards...</p>
+        </div>
+    </div>
+
+    <script>
+
+        // Filter functionality
+        let currentRarityFilter = 'all';
+        let allCardsData = [];
+
+        async function loadCards(rarityFilter = 'all') {
+            try {
+                const response = await fetch('./card.json');
+                const data = await response.json();
+                const cardsContainer = document.getElementById('cards-container');
+                
+                // Store all cards data for filtering
+                allCardsData = data.cards || [];
+                
+                // Filter cards based on rarity
+                let filteredCards = allCardsData;
+                if (rarityFilter !== 'all') {
+                    filteredCards = allCardsData.filter(card => card.rarity === rarityFilter);
+                }
+                
+                if (filteredCards.length > 0) {
+                    cardsContainer.innerHTML = '';
+                    
+                    filteredCards.forEach(card => {
+                        const flipCard = document.createElement('div');
+                        flipCard.className = 'flip-card';
+                        
+                        const imageFilename = card.image_filename || '';
+                        const imagePath = `Cards/${imageFilename}`;
+                        const backImagePath = 'Cards/Back.png';
+                        
+                        // Check if image exists, otherwise use back image
+                        const frontImage = imageFilename ? 
+                            `<img src="${imagePath}" alt="${card.card_name}" class="card-image" onerror="this.src='${backImagePath}'">` :
+                            `<img src="${backImagePath}" alt="Card Back" class="card-image">`;
+                        
+                        const rarityClass = card.rarity ? card.rarity.toLowerCase() : 'common';
+                        
+                        flipCard.innerHTML = `
+                            <div class="flip-card-inner">
+                                <!-- Front of the card (Trading Card Image) -->
+                                <div class="flip-card-front">
+                                    ${frontImage}
+                                    <div class="card-info">
+                                        <h3>${card.card_name}</h3>
+                                        <p><strong>ID:</strong> ${card.card_id}</p>
+                                        <p><strong>Rarity:</strong> <span class="${rarityClass}">${card.rarity}</span></p>
+                                        <p><strong>Type:</strong> ${card.type}</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Back of the card (Always shows card back) -->
+                                <div class="flip-card-back">
+                                    <img src="${backImagePath}" alt="Card Back" class="card-image">
+                                </div>
+                            </div>
+                        `;
+                        
+                        // Add click event to navigate to card detail page
+                        flipCard.addEventListener('click', function() {
+                            window.location.href = `card-detail.html?cardId=${card.card_id}`;
+                        });
+                        
+                        cardsContainer.appendChild(flipCard);
+                    });
+                }
+                
+                // Update total cards count and create tooltip
+                const totalCardsElement = document.getElementById('totalCards');
+                totalCardsElement.textContent = filteredCards.length;
+                
+                // Calculate rarity counts from all cards
+                const rarityCounts = {
+                    'Common': 0,
+                    'Uncommon': 0,
+                    'Rare': 0,
+                    'Epic': 0,
+                    'Ultimate': 0
+                };
+                
+                allCardsData.forEach(card => {
+                    const rarity = card.rarity || 'Common';
+                    if (rarityCounts.hasOwnProperty(rarity)) {
+                        rarityCounts[rarity]++;
+                    } else {
+                        rarityCounts['Common']++; // Default to Common if unknown
+                    }
+                });
+                
+                // Create tooltip HTML
+                const tooltipHTML = `
+                    <div class="rarity-tooltip">
+                        <div class="rarity-item">
+                            <span class="rarity-name">
+                                <span class="rarity-dot" style="background-color: #ffffff"></span>
+                                Common
+                            </span>
+                            <span class="rarity-count">${rarityCounts.Common}</span>
+                        </div>
+                        <div class="rarity-item">
+                            <span class="rarity-name">
+                                <span class="rarity-dot" style="background-color: #1eff00"></span>
+                                Uncommon
+                            </span>
+                            <span class="rarity-count">${rarityCounts.Uncommon}</span>
+                        </div>
+                        <div class="rarity-item">
+                            <span class="rarity-name">
+                                <span class="rarity-dot" style="background-color: #0070ff"></span>
+                                Rare
+                            </span>
+                            <span class="rarity-count">${rarityCounts.Rare}</span>
+                        </div>
+                        <div class="rarity-item">
+                            <span class="rarity-name">
+                                <span class="rarity-dot" style="background-color: #a335ee"></span>
+                                Epic
+                            </span>
+                            <span class="rarity-count">${rarityCounts.Epic}</span>
+                        </div>
+                        <div class="rarity-item">
+                            <span class="rarity-name">
+                                <span class="rarity-dot" style="background-color: #ff8000"></span>
+                                Ultimate
+                            </span>
+                            <span class="rarity-count">${rarityCounts.Ultimate}</span>
+                        </div>
+                    </div>
+                `;
+                
+                // Update tooltip
+                totalCardsElement.innerHTML = `${filteredCards.length}${tooltipHTML}`;
+                
+                if (filteredCards.length === 0) {
+                    cardsContainer.innerHTML = '<p class="error">No cards found. Add your first card!</p>';
+                }
+            } catch (error) {
+                console.error('Failed to load cards:', error);
+                document.getElementById('cards-container').innerHTML = '<p class="error">Error loading cards. Make sure card.json exists.</p>';
+            }
+        }
+
+        // Add filter button event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const rarity = this.getAttribute('data-rarity');
+                    
+                    // Update active state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Apply filter
+                    currentRarityFilter = rarity;
+                    loadCards(rarity);
+                });
+            });
+        });
+
+        // Load cards when page loads
+        loadCards();
+    </script>
+</body>
+</html>

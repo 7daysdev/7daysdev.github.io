@@ -1,0 +1,1164 @@
+{
+	"cards": [
+		{
+			"card_id": "STF-001",
+			"card_name": "Sustained Effort",
+			"rarity": "Common",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP01",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "sustained_effort.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-001-C-L1",
+					"ability_text": "Light attacks consume 10% less stamina.",
+					"effect": {
+						"buff": "attack_modifier",
+						"amount": 0.1,
+						"visual_feedback": "basic_cardUI_effect"
+					}
+				},
+				"level_2": {
+					"serial_number": "BP1-001-C-L2",
+					"ability_text": "Light attacks consume 11% less stamina.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 3
+					},
+					"effect": {
+						"buff": "attack_modifier",
+						"amount": 0.11,
+						"visual_feedback": "basic_cardUI_effect"
+					}
+				},
+				"level_3": {
+					"serial_number": "BP1-001-C-L3",
+					"ability_text": "Light attacks consume 12% less stamina.",
+					"upgrade_cost": {
+						"required_level": 2,
+						"required_count": 4
+					},
+					"effect": {
+						"buff": "attack_modifier",
+						"amount": 0.12,
+						"visual_feedback": "basic_cardUI_effect"
+					}
+				},
+				"level_4": {
+					"serial_number": "BP1-001-C-L4",
+					"ability_text": "Light attacks consume 13% less stamina.",
+					"upgrade_cost": {
+						"required_level": 3,
+						"required_count": 5
+					},
+					"effect": {
+						"buff": "attack_modifier",
+						"amount": 0.13,
+						"visual_feedback": "basic_cardUI_effect"
+					}
+				},
+				"level_5": {
+					"serial_number": "BP1-001-C-L5",
+					"ability_text": "Light attacks consume 14% less stamina.",
+					"upgrade_cost": {
+						"required_level": 4,
+						"required_count": 6
+					},
+					"effect": {
+						"buff": "attack_modifier",
+						"amount": 0.14,
+						"visual_feedback": "basic_cardUI_effect"
+					}
+				}
+			}
+		},
+		{
+			"card_id": "PLT-002",
+			"card_name": "Paladin's Lament",
+			"rarity": "Common",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP02",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "paladins_lament.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-002-C-L1",
+					"ability_text": "Attacks deal 5% more posture damage against blocking enemies.",
+					"effect": {
+						"buff": "attack_damage",
+						"amount": 0.05,
+						"visual_feedback": "basic_cardUI_effect"
+					}
+				},
+				"level_2": {
+					"serial_number": "BP1-002-C-L2",
+					"ability_text": "Attacks deal 6% more posture damage against blocking enemies.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 6
+					},
+					"effect": {
+						"buff": "attack_damage",
+						"amount": 0.06,
+						"visual_feedback": "basic_cardUI_effect"
+					}
+				},
+				"level_3": {
+					"serial_number": "BP1-002-C-L3",
+					"ability_text": "Attacks deal 6% more posture damage against blocking enemies.",
+					"upgrade_cost": {
+						"required_level": 2,
+						"required_count": 8
+					},
+					"effect": {
+						"buff": "attack_damage",
+						"amount": 0.07,
+						"visual_feedback": "basic_cardUI_effect"
+					}
+				}
+			}
+		},
+		{
+			"card_id": "BNC-003",
+			"card_name": "Bantouth Claw",
+			"rarity": "Common",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP03",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "bantouth_claw.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-003-C-L1",
+					"ability_text": "Backstabs deal 15% more damage."
+				}
+			}
+		},
+		{
+			"card_id": "PUP-004",
+			"card_name": "Puppet's Last Dance",
+			"rarity": "Common",
+			"type": "Active Mobility",
+			"anime_id": "S01-EP04",
+			"cooldown_s": 40,
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "puppets_last_dance.png",
+			"abilities": {
+				"level_1": {
+					"tap": "single",
+					"serial_number": "BP1-004-C-L1",
+					"ability_text": "Temporarily increases movement speed by 10% for 5 seconds."
+				}
+			}
+		},
+		{
+			"card_id": "TRX-005",
+			"card_name": "T-Rex Stomper",
+			"rarity": "Common",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP05",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "t-rex_stomper.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-005-C-L1",
+					"ability_text": "Air attacks and blunt force attacks deal more damage."
+				}
+			}
+		},
+		{
+			"card_id": "OGR-006",
+			"card_name": "Ogre's Ache",
+			"rarity": "Common",
+			"type": "Active Summon",
+			"anime_id": "S01-EP06",
+			"image_filename": "ogres_ache.png",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "manual"
+			},
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-006-C-L1",
+					"ability_text": "Tap to summon a ghost that hovers near you. Tap again to send it at a target. On hit, it restores a portion of health. Max 3 active.",
+					"props": {
+						"cooldown": 25,
+						"max_summons": 3
+					},
+					"effect": {
+						"summon": "ghost",
+						"behavior": "homing",
+						"on_hit": {
+							"lifesteal": 0.15
+						}
+					}
+				},
+				"level_2": {
+					"serial_number": "BP1-006-C-L2",
+					"ability_text": "Cooldown reduced. Lifesteal slightly increased.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 3
+					},
+					"props": {
+						"cooldown": 23,
+						"max_summons": 3
+					},
+					"effect": {
+						"on_hit": {
+							"lifesteal": 0.17
+						}
+					}
+				}
+			}
+		},
+		{
+			"card_id": "AMF-007",
+			"card_name": "Armored Fortress",
+			"rarity": "Common",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP07",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "armored_fortress.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-007-C-L1",
+					"ability_text": "Increases base armor/defense by +5% (physical only). Reduces stagger impact by 10%."
+				}
+			}
+		},
+		{
+			"card_id": "PDR-008",
+			"card_name": "Paladin's Resolve",
+			"rarity": "Common",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP08",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "paladins_resolve.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-008-C-L1",
+					"ability_text": "+10% blocking stability (less stamina lost when blocking)."
+				}
+			}
+		},
+		{
+			"card_id": "QKE-009",
+			"card_name": "Quake",
+			"rarity": "Common",
+			"type": "Active Utility",
+			"anime_id": "S01-EP09",
+			"activation": {
+				"method": "trigger",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "quake.png",
+			"abilities": {
+				"level_1": {
+					"activation": "sprint_input",
+					"serial_number": "BP1-009-C-L1",
+					"ability_text": "When player initiates a sprint, causes a shockwave knocking back low level enemies to escape."
+				}
+			}
+		},
+		{
+			"card_id": "ARL-010",
+			"card_name": "Armadilie",
+			"rarity": "Common",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP10",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "armadilie.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-010-C-L1",
+					"ability_text": "Increases physical defense and blunt attack damage."
+				}
+			}
+		},
+		{
+			"card_id": "GLR-011",
+			"card_name": "Glass Rose",
+			"rarity": "Common",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP11",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "glass_rose.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-011-C-L1",
+					"ability_text": "Projectiles deal +5% damage."
+				}
+			}
+		},
+		{
+			"card_id": "HGV-012",
+			"card_name": "Hegreef the Valiant",
+			"rarity": "Common",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP12",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "hegreef_the_valiant.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-012-C-L1",
+					"ability_text": "+10% damage vs armored enemies."
+				}
+			}
+		},
+		{
+			"card_id": "IRM-013",
+			"card_name": "Iron Might",
+			"rarity": "Common",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP13",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "iron_might.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-013-C-L1",
+					"ability_text": "Reduces stagger duration slightly."
+				}
+			}
+		},
+		{
+			"card_id": "POR-014",
+			"card_name": "Pondering Orb",
+			"rarity": "Common",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP14",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "pondering_orb.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-014-C-L1",
+					"ability_text": "Slightly reduces FP cost of spells."
+				}
+			}
+		},
+		{
+			"card_id": "RKN-015",
+			"card_name": "Rookie Knight",
+			"rarity": "Common",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP15",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "rookie_knight.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-015-C-L1",
+					"ability_text": "Light attacks deal +2% damage."
+				}
+			}
+		},
+		{
+			"card_id": "EMB-016",
+			"card_name": "Ember Might",
+			"rarity": "Common",
+			"type": "Active Summon",
+			"anime_id": "S01-EP16",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "ember_might.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-016-C-L1",
+					"activation": {
+						"method": "tap",
+						"cooldown": 8
+					},
+					"effect": {
+						"type": "aoe_damage",
+						"amount": 30,
+						"radius": 5
+					},
+					"ability_text": "Summons a tiny wisp companion for 12s that follows the player and fires weak projectiles. (scales slightly with Mana).",
+					"mana_cost": 2,
+					"charge_type": "auto-charge",
+					"charge": 3
+				}
+			}
+		},
+		{
+			"card_id": "THG-017",
+			"card_name": "Two-Hand Grip",
+			"rarity": "Common",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP17",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "two-hand_grip.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-017-C-L1",
+					"ability_text": "While two-handing a weapon, poise damage is increased slightly."
+				}
+			}
+		},
+		{
+			"card_id": "SPB-018",
+			"card_name": "Sunpetal Bloom",
+			"rarity": "Common",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP17",
+			"activation": {
+				"method": "tap",
+				"charge": "true",
+				"release": "auto"
+			},
+			"descriptsion": "A gentle flower that bathes its surroundings in life-giving light, mending wounds and rejuvenating spirits.",
+			"image_filename": "sunpetal_bloom.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-018-C-L1",
+					"ability_text": "Summons a small sprite flower that heals 3% HP every 5s."
+				},
+				"level_5": {
+					"serial_number": "BP1-018-C-L1",
+					"ability_text": "Summons a small sprite flower that heals 3% HP every 5s.",
+					"description": "The once gentle Sunpetal Bloom now crackles with latent energy, its petals hardened into voltaic thorns that shock any who dare to approach."
+				}
+			}
+		},
+		{
+			"card_id": "SPB-019",
+			"card_name": "Voltaic Vespoid",
+			"rarity": "Common",
+			"type": "Active Summon",
+			"anime_id": "S01-EP17",
+			"activation": {
+				"method": "tap",
+				"charge": "true",
+				"release": "auto"
+			},
+			"descriptsion": "A gentle flower that bathes its surroundings in life-giving light, mending wounds and rejuvenating spirits.",
+			"image_filename": "voltaic_vespoid.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-018-C-L1",
+					"ability_text": "Summons a small sprite flower that heals 3% HP every 5s."
+				},
+				"level_5": {
+					"serial_number": "BP1-018-C-L1",
+					"ability_text": "Summons a small sprite flower that heals 3% HP every 5s.",
+					"description": "The once gentle Sunpetal Bloom now crackles with latent energy, its petals hardened into voltaic thorns that shock any who dare to approach."
+				}
+			}
+		},
+		{
+			"card_id": "VNO-022",
+			"card_name": "Venom Orchid",
+			"rarity": "Common",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP16",
+			"activation": {
+				"method": "trigger",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "venom_orchid.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-022-C-L1",
+					"ability_text": "Weapon attacks inflict minor poison buildup.",
+					"effect": {}
+				},
+				"level_2": {
+					"ability_text": null,
+					"effect": {}
+				}
+			}
+		},
+		{
+			"card_id": "STM-024",
+			"card_name": "Struggle no more",
+			"rarity": "Common",
+			"type": "Passive Trigger",
+			"anime_id": "S04-EP24",
+			"activation": {
+				"method": "trigger",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "struggle_no_more.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-024-C-L1",
+					"ability_text": "Successful parries restore 5 stamina.",
+					"effect": {}
+				}
+			}
+		},
+		{
+			"card_id": "HLI-027",
+			"card_name": "Healing Lily",
+			"rarity": "Common",
+			"type": "Active Combat",
+			"anime_id": "S01-EP16",
+			"image_filename": "healing_lily.png",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "instant"
+			},
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-027-C-L1",
+					"ability_text": "Restores 8% HP over 5s. (Cooldown: 90s).",
+					"props": {
+						"cooldown": 90,
+						"duration": 5
+					},
+					"effect": {
+						"heal": 0.08,
+						"heal_type": "percent_hp"
+					}
+				},
+				"level_2": {
+					"serial_number": "BP1-027-C-L2",
+					"ability_text": "Restores 10% HP over 5s. (Cooldown: 85s).",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 2
+					},
+					"props": {
+						"cooldown": 85,
+						"duration": 5
+					},
+					"effect": {
+						"heal": 0.10,
+						"heal_type": "percent_hp"
+					}
+				}
+			}
+		},
+		{
+			"card_id": "BRK-039",
+			"card_name": "Blood Red Knight",
+			"rarity": "Common",
+			"type": "Passive Trigger",
+			"anime_id": "S01-EP23",
+			"activation_method": "on_hp_threshold",
+			"activation": {
+				"method": "trigger",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "blood_red_knight.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-029-C-L1",
+					"ability_text": "At <30% HP, gain +5% attack power.",
+					"effect": {}
+				}
+			}
+		},
+		{
+			"card_id": "RVI-021",
+			"card_name": "Revigor",
+			"rarity": "Uncommon",
+			"type": "Active Restoration",
+			"anime_id": "S01-EP21",
+			"cooldown_s": 0,
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "revigor.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-021-UC-L1",
+					"ability_text": "Restore 15 stamina instantly.",
+					"cooldown_s": 35
+				}
+			}
+		},
+		{
+			"card_id": "CCR-022",
+			"card_name": "Card Collector – Rookie Edition",
+			"rarity": "Uncommon",
+			"type": "Trait Buff",
+			"anime_id": "S01-EP22",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "card_collector–rookie_edition.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-022-UC-L1",
+					"ability_text": "Gain +10% card shard drops from enemies."
+				}
+			}
+		},
+		{
+			"card_id": "BRG-023",
+			"card_name": "Brawler’s Grip",
+			"rarity": "Uncommon",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP23",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "brawlers_grip.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-023-UC-L1",
+					"ability_text": "+8% damage with fist weapons and daggers, +10% bonus damage on counter hits."
+				}
+			}
+		},
+		{
+			"card_id": "ARH-024",
+			"card_name": "Archer's Hand",
+			"rarity": "Uncommon",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP24",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "archers_hand.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-024-UC-L1",
+					"ability_text": "Increases range weapon damage and piercing damage and accuracy."
+				}
+			}
+		},
+		{
+			"card_id": "HPS-025",
+			"card_name": "Hipposurus",
+			"rarity": "Uncommon",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP25",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "hipposurus.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-025-UC-L1",
+					"ability_text": "Increases damage of charged attacks."
+				}
+			}
+		},
+		{
+			"card_id": "BGV-026",
+			"card_name": "Beggar’s Vigor",
+			"rarity": "Uncommon",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP26",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "beggars_vigor.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-026-UC-L1",
+					"ability_text": "Slightly increases fire attack and frost resistance."
+				}
+			}
+		},
+		{
+			"card_id": "JGA-027",
+			"card_name": "Joh-gaur",
+			"rarity": "Uncommon",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP27",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "joh-gaur.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-027-UC-L1",
+					"ability_text": "Increase to ice magic damage."
+				}
+			}
+		},
+		{
+			"card_id": "GRD-028",
+			"card_name": "Great Devourer",
+			"rarity": "Uncommon",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP28",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "great_devourer.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-028-UC-L1",
+					"ability_text": "Deals +20% damage vs. Food-type enemies."
+				}
+			}
+		},
+		{
+			"card_id": "LOH-051",
+			"card_name": "The Lips of Hypocrisy",
+			"rarity": "Rare",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP51",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "the_lips_of_hypocrisy.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-051-R-L1",
+					"ability_text": "when health is below 30 pering dmage inscreases."
+				}
+			}
+		},
+		{
+			"card_id": "OGR-052",
+			"card_name": "Ogre's Grumble",
+			"rarity": "Rare",
+			"type": "Active Buff",
+			"anime_id": "S01-EP52",
+			"activation": {
+				"method": "tap",
+				"charge": "auto",
+				"release": "instant"
+			},
+			"image_filename": "ogres_grumble.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-052-R-L1",
+					"ability_text": "Releases an aura that damages nearby enemies.",
+					"charge_type": "auto-charge",
+					"charge_time": 7,
+					"cooldown_s": 40
+				}
+			}
+		},
+		{
+			"card_id": "RVL-053",
+			"card_name": "Re Volte",
+			"rarity": "Rare",
+			"type": "Hybrid Active",
+			"anime_id": "S01-EP53",
+			"image_filename": "re_volte.png",
+			"activation": {
+				"method": "tap",
+				"charge": "true",
+				"release": "tap"
+			},
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-053-R-L1",
+					"ability_text": "Charge your rapier with pure will. Release a piercing aura that flies straight and true.",
+					"props": {
+						"cooldown": 35,
+						"charge_time": 7,
+						"max_charge": 0,
+						"duration": 0
+					},
+					"effect": {
+						"buff": "attack_damage",
+						"amount": 30,
+						"visual_feedback": "glow_effect"
+					}
+				},
+				"level_2": {
+					"serial_number": "BP1-053-R-L2",
+					"ability_text": "Charge your rapier with pure will. Release a piercing aura that flies straight and true.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 3
+					},
+					"props": {
+						"cooldown": 32,
+						"charge_time": 6,
+						"max_charge": 0,
+						"duration": 0
+					},
+					"effect": {
+						"buff": "attack_damage",
+						"amount": 32,
+						"visual_feedback": "glow_effect"
+					}
+				},
+				"level_3": {
+					"serial_number": "BP1-053-R-L3",
+					"ability_text": "Charge your rapier with pure will. Release a piercing aura that flies straight and true.",
+					"upgrade_cost": {
+						"required_level": 2,
+						"required_count": 3
+					},
+					"props": {
+						"cooldown": 30,
+						"charge_time": 5,
+						"max_charge": 0,
+						"duration": 0
+					},
+					"effect": {
+						"buff": "attack_damage",
+						"amount": 34,
+						"visual_feedback": "glow_effect"
+					}
+				}
+			}
+		},
+		{
+			"card_id": "TRW-054",
+			"card_name": "T-rex's Wraith",
+			"rarity": "Rare",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP54",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "t-rexs_wraith.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-054-R-L1",
+					"ability_text": "Significantly increases damage of air attacks and blunt force attacks."
+				}
+			}
+		},
+		{
+			"card_id": "LSE-055",
+			"card_name": "Lantern Saint of the Endless Steps",
+			"rarity": "Rare",
+			"type": "Active Summon",
+			"anime_id": "S02-EP03",
+			"activation": {
+				"method": "tap",
+				"charge": "true",
+				"release": "tap"
+			},
+			"image_filename": "lantern_saint_of_the_endless_steps.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-055-R-L1",
+					"ability_text": "Summons the Lantern Saint for 8 seconds, dealing continuous fire AoE damage in a small radius around him",
+					"charge_type": "charge-tap",
+					"charge_time": 45,
+					"effect": {}
+				}
+			}
+		},
+		{
+			"card_id": "TKC-056",
+			"card_name": "The kings chalice ",
+			"rarity": "Rare",
+			"type": "Passive",
+			"anime_id": "S02-EP03",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "the_kings_chalice.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-056-R-L1",
+					"ability_text": "Restore 10% of your max mana (or FP equivalent) upon defeating an enemy.",
+					"charge_type": "charge-tap",
+					"charge_time": 45,
+					"effect": {}
+				}
+			}
+		},
+		{
+			"card_id": "RST-057",
+			"card_name": "Rogue step",
+			"rarity": "Rare",
+			"type": "Mobility ",
+			"anime_id": "S01-EP52",
+			"activation": {
+				"method": "tap",
+				"charge": "true",
+				"release": "instant"
+			},
+			"image_filename": "rogue_step.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-057-R-L1",
+					"ability_text": "upon a tap player dissappears and reapers in a role direction .",
+					"charge_type": "auto-charge",
+					"limit ": 3,
+					"cooldown_s": 40
+				}
+			}
+		},
+		{
+			"card_id": "RST-058",
+			"card_name": "El Lucha",
+			"rarity": "Rare",
+			"type": "Active Transformative",
+			"anime_id": "S01-EP52",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "el_lucha.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-057-R-L1",
+					"ability_text": "Instantly transforms the player into a luchador stance. Weapons/wands are disabled. Light/heavy attacks become wrestling moves for 10s.",
+					"charge_type": "none",
+					"limit": 3,
+					"cooldown_s": 40,
+					"duration_s": 10,
+					"scaling": {
+						"strength": 1.0,
+						"dexterity": 0.8
+					}
+				},
+				"level_2": {
+					"serial_number": "BP1-057-R-L2",
+					"ability_text": "El Lucha form extended. Unlocks running tackle as a light attack finisher.",
+					"charge_type": "none",
+					"limit": 3,
+					"cooldown_s": 38,
+					"duration_s": 12,
+					"scaling": {
+						"strength": 1.1,
+						"dexterity": 0.9
+					}
+				},
+				"level_3": {
+					"serial_number": "BP1-057-R-L3",
+					"ability_text": "El Lucha form grows stronger. Unlocks German suplex as a heavy attack finisher.",
+					"charge_type": "none",
+					"limit": 3,
+					"cooldown_s": 36,
+					"duration_s": 13,
+					"scaling": {
+						"strength": 1.2,
+						"dexterity": 1.0
+					}
+				},
+				"level_4": {
+					"serial_number": "BP1-057-R-L4",
+					"ability_text": "El Lucha form empowers further. Adds flying elbow drop as an aerial heavy attack.",
+					"charge_type": "none",
+					"limit": 3,
+					"cooldown_s": 34,
+					"duration_s": 14,
+					"scaling": {
+						"strength": 1.3,
+						"dexterity": 1.1
+					}
+				},
+				"level_5": {
+					"serial_number": "BP1-057-R-L5",
+					"ability_text": "El Lucha becomes unstoppable. Duration increased and poise resistance is boosted while active.",
+					"charge_type": "none",
+					"limit": 3,
+					"cooldown_s": 30,
+					"duration_s": 15,
+					"bonus_effects": {
+						"poise_resistance": "+20%"
+					},
+					"scaling": {
+						"strength": 1.5,
+						"dexterity": 1.2
+					}
+				}
+			}
+		},
+		{
+			"card_id": "MES-059",
+			"card_name": "Moon Edge Slice",
+			"rarity": "Rare",
+			"type": "Active Combat",
+			"anime_id": "S02-EP03",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "moon_edge_slice.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-056-R-L1",
+					"ability_text": "Fires 2 quick projectiles in an arc, hitting multiple enemies",
+					"charge_type": "charge-tap",
+					"charge_time": 20,
+					"effect": {}
+				}
+			}
+		},
+		{
+			"card_id": "OGR-076",
+			"card_name": "Ogre's Greed",
+			"rarity": "Epic",
+			"type": "Active Summon",
+			"anime_id": "S01-EP76",
+			"activation": {
+				"method": "tap",
+				"charge": "true",
+				"release": "tap"
+			},
+			"image_filename": "ogres_greed.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-076-E-L1",
+					"ability_text": "Gains a powerful buff by consuming a resource or taking a penalty.",
+					"charge_type": "charge-tap"
+				}
+			}
+		},
+		{
+			"card_id": "DMW-077",
+			"card_name": "Dead Man’s Water",
+			"rarity": "Epic",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP77",
+			"activation_method": "on_kill",
+			"activation": {
+				"method": "trigger",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "dead_mans_water.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-077-E-L1",
+					"ability_text": "After killing an enemy, gain +15% Attack and Defense for 30s. Stacks up to 3 times."
+				}
+			}
+		},
+		{
+			"card_id": "PPT-078",
+			"card_name": "Puppeteers Threads",
+			"rarity": "Epic",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP78",
+			"activation_method": "on_cast",
+			"activation": {
+				"method": "trigger",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "puppeteers_threads.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-078-E-L1",
+					"ability_text": "Casting spells briefly reduces poise damage taken."
+				}
+			}
+		},
+		{
+			"card_id": "RKR-091",
+			"card_name": "The Ruin Kings last ring",
+			"rarity": "Ultimate",
+			"type": "Passive Trigger",
+			"anime_id": "S01-EP91",
+			"activation_method": "on_hp_threshold",
+			"activation": {
+				"method": "trigger",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "the_ruin_kings_last_ring.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-091-ULT-L1",
+					"ability_text": "When HP drops below 20%, gain +50% Attack Power. Take +15% more damage while active."
+				}
+			}
+		},
+		{
+			"card_id": "MDT-092",
+			"card_name": "Midas Touch",
+			"rarity": "Ultimate",
+			"type": "Passive",
+			"anime_id": "S01-EP92",
+			"activation_method": "passive",
+			"activation": {
+				"method": "tap",
+				"charge": "true",
+				"release": "tap"
+			},
+			"image_filename": "midas_touch.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-092-ULT-L1",
+					"ability_text": "A powerful, game-changing ability related to transforming enemies or objects."
+				}
+			}
+		}
+	]
+}

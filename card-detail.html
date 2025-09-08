@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Details</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            background-color: #1a1a1a; 
+            color: #fff; 
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container { 
+            max-width: 1000px; 
+            margin: auto; 
+        }
+        
+        .back-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+        
+        .card-detail {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .card-image-container {
+            text-align: center;
+        }
+        
+        .card-image-large {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .card-info {
+            background-color: #2a2a2a;
+            padding: 25px;
+            border-radius: 12px;
+        }
+        
+        .card-header {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .card-name {
+            font-size: 28px;
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+        
+        .card-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .meta-item {
+            background-color: #3a3a3a;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .meta-label {
+            font-size: 12px;
+            color: #ccc;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .meta-value {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        /* Rarity Colors */
+        .common { color: #ffffff; }
+        .uncommon { color: #1eff00; }
+        .rare { color: #0070ff; }
+        .epic { color: #a335ee; }
+        .ultimate { color: #ff8000; }
+        
+        .abilities-section {
+            margin-top: 30px;
+        }
+        
+        .abilities-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        
+        .ability-level {
+            background-color: #3a3a3a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .level-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .level-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .serial-number {
+            font-size: 12px;
+            color: #ccc;
+            background-color: #4a4a4a;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .ability-text {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+        }
+        
+        .upgrade-cost {
+            background-color: #4a4a4a;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .effect-details {
+            background-color: #4a4a4a;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        
+        .effect-item {
+            margin-bottom: 8px;
+        }
+        
+        .effect-label {
+            font-weight: bold;
+            color: #ccc;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px;
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 60px;
+            font-size: 18px;
+            color: #ff6b6b;
+        }
+        
+        @media (max-width: 768px) {
+            .card-detail {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .card-image-large {
+                max-width: 250px;
+            }
+            
+            .card-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card-image-large {
+                max-width: 200px;
+            }
+            
+            .card-name {
+                font-size: 24px;
+            }
+            
+            .ability-level {
+                padding: 15px;
+            }
+            
+            .level-title {
+                font-size: 16px;
+            }
+            
+            .ability-text {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Collection</a>
+        
+        <div id="card-detail-container">
+            <p class="loading">Loading card details...</p>
+        </div>
+    </div>
+
+    <script>
+        async function loadCardDetail() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const cardId = urlParams.get('cardId');
+                
+                if (!cardId) {
+                    document.getElementById('card-detail-container').innerHTML = `
+                        <p class="error">No card ID specified. Please go back and select a card.</p>
+                    `;
+                    return;
+                }
+
+                const response = await fetch('./card.json');
+                const data = await response.json();
+                
+                const card = data.cards.find(c => c.card_id === cardId);
+                
+                if (!card) {
+                    document.getElementById('card-detail-container').innerHTML = `
+                        <p class="error">Card not found: ${cardId}</p>
+                    `;
+                    return;
+                }
+
+                displayCardDetail(card);
+            } catch (error) {
+                console.error('Failed to load card details:', error);
+                document.getElementById('card-detail-container').innerHTML = `
+                    <p class="error">Error loading card details. Please try again.</p>
+                `;
+            }
+        }
+
+        function displayCardDetail(card) {
+            const imageFilename = card.image_filename || '';
+            const imagePath = imageFilename ? `Cards/${imageFilename}` : 'Cards/Back.png';
+            const rarityClass = card.rarity ? card.rarity.toLowerCase() : 'common';
+            
+            const abilitiesHtml = renderAbilities(card.abilities || {});
+            
+            const html = `
+                <div class="card-detail">
+                    <div class="card-image-container">
+                        <img src="${imagePath}" alt="${card.card_name}" class="card-image-large" onerror="this.src='Cards/Back.png'">
+                    </div>
+                    
+                    <div class="card-info">
+                        <div class="card-header">
+                            <h1 class="card-name">${card.card_name}</h1>
+                        </div>
+                        
+                        <div class="card-meta">
+                            <div class="meta-item">
+                                <div class="meta-label">Card ID</div>
+                                <div class="meta-value">${card.card_id}</div>
+                            </div>
+                            
+                            <div class="meta-item">
+                                <div class="meta-label">Rarity</div>
+                                <div class="meta-value ${rarityClass}">${card.rarity}</div>
+                            </div>
+                            
+                            <div class="meta-item">
+                                <div class="meta-label">Type</div>
+                                <div class="meta-value">${card.type}</div>
+                            </div>
+                            
+                            ${card.anime_id ? `
+                            <div class="meta-item">
+                                <div class="meta-label">Anime ID</div>
+                                <div class="meta-value">${card.anime_id}</div>
+                            </div>
+                            ` : ''}
+                            
+                            ${card.activation ? `
+                            <div class="meta-item">
+                                <div class="meta-label">Activation</div>
+                                <div class="meta-value">
+                                    ${card.activation.method}${card.activation.charge !== 'none' ? ` (${card.activation.charge})` : ''}
+                                </div>
+                            </div>
+                            ` : ''}
+                            
+                            ${card.cooldown_s ? `
+                            <div class="meta-item">
+                                <div class="meta-label">Cooldown</div>
+                                <div class="meta-value">${card.cooldown_s}s</div>
+                            </div>
+                            ` : ''}
+                        </div>
+                        
+                        ${abilitiesHtml}
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('card-detail-container').innerHTML = html;
+        }
+
+        function renderAbilities(abilities) {
+            const levels = Object.keys(abilities).sort();
+            
+            if (levels.length === 0) {
+                return '';
+            }
+
+            let abilitiesHtml = `
+                <div class="abilities-section">
+                    <h2 class="abilities-title">Ability Levels</h2>
+            `;
+
+            levels.forEach(level => {
+                const ability = abilities[level];
+                abilitiesHtml += `
+                    <div class="ability-level">
+                        <div class="level-header">
+                            <h3 class="level-title">${level.replace('_', ' ').toUpperCase()}</h3>
+                            ${ability.serial_number ? `<span class="serial-number">${ability.serial_number}</span>` : ''}
+                        </div>
+                        
+                        ${ability.ability_text ? `
+                            <p class="ability-text">${ability.ability_text}</p>
+                        ` : ''}
+                        
+                        ${ability.upgrade_cost ? `
+                            <div class="upgrade-cost">
+                                <strong>Upgrade Cost:</strong> Level ${ability.upgrade_cost.required_level} + ${ability.upgrade_cost.required_count} copies
+                            </div>
+                        ` : ''}
+                        
+                        ${ability.effect && Object.keys(ability.effect).length > 0 ? `
+                            <div class="effect-details">
+                                <strong>Effect Details:</strong>
+                                ${Object.entries(ability.effect).map(([key, value]) => `
+                                    <div class="effect-item">
+                                        <span class="effect-label">${key.replace('_', ' ').toUpperCase()}:</span> ${value}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+
+            abilitiesHtml += `</div>`;
+            return abilitiesHtml;
+        }
+
+        // Load card details when page loads
+        loadCardDetail();
+    </script>
+</body>
+</html>
