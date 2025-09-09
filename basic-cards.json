@@ -1,0 +1,589 @@
+{
+  "cards": [
+    {
+      "card_id": "STF-001",
+      "card_name": "Sustained Effort",
+      "rarity": "Common",
+      "type": "Passive Buff",
+      "activation_method": "passive",
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Light attacks consume 10% less stamina."
+    },
+    {
+      "card_id": "PLT-002",
+      "card_name": "Paladin's Lament",
+      "rarity": "Common",
+      "type": "Passive Combat",
+      "activation_method": "passive",
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Attacks deal 5% more posture damage against blocking enemies."
+    },
+    {
+      "card_id": "BNC-003",
+      "card_name": "Bantouth Claw",
+      "rarity": "Common",
+      "type": "Passive Combat",
+      "activation_method": "passive",
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Backstabs deal 15% more damage."
+    },
+    {
+      "card_id": "PUP-004",
+      "card_name": "Puppet's Last Dance",
+      "rarity": "Common",
+      "type": "Active Mobility",
+      "activation_method": "active_tap",
+      "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Temporarily increases movement speed by 10% for 5 seconds."
+    },
+    {
+      "card_id": "TRX-005",
+      "card_name": "T-Rex Stomper",
+      "rarity": "Common",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Air attacks and blunt force attacks deal more damage."
+    },
+    {
+      "card_id": "OGR-006",
+      "card_name": "Ogre's Ache",
+      "rarity": "Common",
+      "type": "Active Summon",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "manual"
+      },
+      "ability_text": "Tap to summon a ghost that hovers near you. Tap again to send it at a target. On hit, it restores a portion of health. Max 3 active."
+    },
+    {
+      "card_id": "AMF-007",
+      "card_name": "Armored Fortress",
+      "rarity": "Common",
+      "type": "Passive Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Increases base armor/defense by +5% (physical only). Reduces stagger impact by 10%."
+    },
+    {
+      "card_id": "PDR-008",
+      "card_name": "Paladin's Resolve",
+      "rarity": "Common",
+      "type": "Passive Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "+10% blocking stability (less stamina lost when blocking)."
+    },
+    {
+      "card_id": "QKE-009",
+      "card_name": "Quake",
+      "rarity": "Common",
+      "type": "Active Utility",
+      "activation_method": null,
+      "activation": {
+        "method": "trigger",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "When player initiates a sprint, causes a shockwave knocking back low level enemies to escape."
+    },
+    {
+      "card_id": "ARL-010",
+      "card_name": "Armadilie",
+      "rarity": "Common",
+      "type": "Passive Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Increases physical defense and blunt attack damage."
+    },
+    {
+      "card_id": "GLR-011",
+      "card_name": "Glass Rose",
+      "rarity": "Common",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Projectiles deal +5% damage."
+    },
+    {
+      "card_id": "HGV-012",
+      "card_name": "Hegreef the Valiant",
+      "rarity": "Common",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "+10% damage vs armored enemies."
+    },
+    {
+      "card_id": "IRM-013",
+      "card_name": "Iron Might",
+      "rarity": "Common",
+      "type": "Passive Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Reduces stagger duration slightly."
+    },
+    {
+      "card_id": "POR-014",
+      "card_name": "Pondering Orb",
+      "rarity": "Common",
+      "type": "Passive Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Slightly reduces FP cost of spells."
+    },
+    {
+      "card_id": "RKN-015",
+      "card_name": "Rookie Knight",
+      "rarity": "Common",
+      "type": "Passive Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Light attacks deal +2% damage."
+    },
+    {
+      "card_id": "EMB-016",
+      "card_name": "Ember Might",
+      "rarity": "Common",
+      "type": "Active Summon",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Summons a tiny wisp companion for 12s that follows the player and fires weak projectiles. (scales slightly with Mana)."
+    },
+    {
+      "card_id": "THG-017",
+      "card_name": "Two-Hand Grip",
+      "rarity": "Common",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "While two-handing a weapon, poise damage is increased slightly."
+    },
+    {
+      "card_id": "SPB-018",
+      "card_name": "Sunpetal Bloom",
+      "rarity": "Common",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "true",
+        "release": "auto"
+      },
+      "ability_text": "Summons a small sprite flower that heals 3% HP every 5s."
+    },
+    {
+      "card_id": "VOV-019",
+      "card_name": "Voltaic Vespoid",
+      "rarity": "Common",
+      "type": "Active Summon",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "true",
+        "release": "auto"
+      },
+      "ability_text": "Summons a small sprite flower that heals 3% HP every 5s."
+    },
+    {
+      "card_id": "VNO-022",
+      "card_name": "Venom Orchid",
+      "rarity": "Common",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "trigger",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Weapon attacks inflict minor poison buildup."
+    },
+    {
+      "card_id": "STM-024",
+      "card_name": "Struggle no more",
+      "rarity": "Common",
+      "type": "Passive Trigger",
+      "activation_method": null,
+      "activation": {
+        "method": "trigger",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Successful parries restore 5 stamina."
+    },
+    {
+      "card_id": "HLI-027",
+      "card_name": "Healing Lily",
+      "rarity": "Common",
+      "type": "Active Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Restores 8% HP over 5s. (Cooldown: 90s)."
+    },
+    {
+      "card_id": "BRK-039",
+      "card_name": "Blood Red Knight",
+      "rarity": "Common",
+      "type": "Passive Trigger",
+      "activation_method": "on_hp_threshold",
+      "activation": {
+        "method": "trigger",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "At <30% HP, gain +5% attack power."
+    },
+    {
+      "card_id": "RVI-021",
+      "card_name": "Revigor",
+      "rarity": "Uncommon",
+      "type": "Active Restoration",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Restore 15 stamina instantly."
+    },
+    {
+      "card_id": "CCR-022",
+      "card_name": "Card Collector – Rookie Edition",
+      "rarity": "Uncommon",
+      "type": "Trait Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Gain +10% card shard drops from enemies."
+    },
+    {
+      "card_id": "BRG-023",
+      "card_name": "Brawler’s Grip",
+      "rarity": "Uncommon",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "+8% damage with fist weapons and daggers, +10% bonus damage on counter hits."
+    },
+    {
+      "card_id": "ARH-024",
+      "card_name": "Archer's Hand",
+      "rarity": "Uncommon",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Increases range weapon damage and piercing damage and accuracy."
+    },
+    {
+      "card_id": "HPS-025",
+      "card_name": "Hipposurus",
+      "rarity": "Uncommon",
+      "type": "Passive Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Increases damage of charged attacks."
+    },
+    {
+      "card_id": "BGV-026",
+      "card_name": "Beggar’s Vigor",
+      "rarity": "Uncommon",
+      "type": "Passive Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Slightly increases fire attack and frost resistance."
+    },
+    {
+      "card_id": "JGA-027",
+      "card_name": "Joh-gaur",
+      "rarity": "Uncommon",
+      "type": "Passive Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Increase to ice magic damage."
+    },
+    {
+      "card_id": "GRD-028",
+      "card_name": "Great Devourer",
+      "rarity": "Uncommon",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Deals +20% damage vs. Food-type enemies."
+    },
+    {
+      "card_id": "LOH-051",
+      "card_name": "The Lips of Hypocrisy",
+      "rarity": "Rare",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "When health is below 30%, piercing damage increases."
+    },
+    {
+      "card_id": "OGR-052",
+      "card_name": "Ogre's Grumble",
+      "rarity": "Rare",
+      "type": "Active Buff",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "auto",
+        "release": "instant"
+      },
+      "ability_text": "Releases an aura that damages nearby enemies."
+    },
+    {
+      "card_id": "RVL-053",
+      "card_name": "Re Volte",
+      "rarity": "Rare",
+      "type": "Hybrid Active",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "true",
+        "release": "tap"
+      },
+      "ability_text": "Charge your rapier with pure will. Release a piercing aura that flies straight and true."
+    },
+    {
+      "card_id": "TRW-054",
+      "card_name": "T-rex's Wraith",
+      "rarity": "Rare",
+      "type": "Passive Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Significantly increases damage of air attacks and blunt force attacks."
+    },
+    {
+      "card_id": "LSE-055",
+      "card_name": "Lantern Saint of the Endless Steps",
+      "rarity": "Rare",
+      "type": "Active Summon",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "true",
+        "release": "tap"
+      },
+      "ability_text": "Summons the Lantern Saint for 8 seconds, dealing continuous fire AoE damage in a small radius around him"
+    },
+    {
+      "card_id": "TKC-056",
+      "card_name": "The King's Chalice",
+      "rarity": "Rare",
+      "type": "Passive",
+      "activation_method": null,
+      "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Restore 10% of your max mana (or FP equivalent) upon defeating an enemy."
+    },
+    {
+      "card_id": "RST-057",
+      "card_name": "Rogue Step",
+      "rarity": "Rare",
+      "type": "Mobility ",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "true",
+        "release": "instant"
+      },
+      "ability_text": "Upon tap, player disappears and reappears in a roll direction."
+    },
+    {
+      "card_id": "RST-058",
+      "card_name": "El Lucha",
+      "rarity": "Rare",
+      "type": "Active Transformative",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Instantly transforms the player into a luchador stance. Weapons/wands are disabled. Light/heavy attacks become wrestling moves for 10s."
+    },
+    {
+      "card_id": "MES-059",
+      "card_name": "Moon Edge Slice",
+      "rarity": "Rare",
+      "type": "Active Combat",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Fires 2 quick projectiles in an arc, hitting multiple enemies"
+    },
+    {
+      "card_id": "OGR-076",
+      "card_name": "Ogre's Greed",
+      "rarity": "Epic",
+      "type": "Active Summon",
+      "activation_method": null,
+      "activation": {
+        "method": "tap",
+        "charge": "true",
+        "release": "tap"
+      },
+      "ability_text": "Gains a powerful buff by consuming a resource or taking a penalty."
+    },
+    {
+      "card_id": "DMW-077",
+      "card_name": "Dead Man's Water",
+      "rarity": "Epic",
+      "type": "Passive Buff",
+      "activation_method": "on_kill",
+      "activation": {
+        "method": "trigger",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "After killing an enemy, gain +15% Attack and Defense for 30s. Stacks up to 3 times."
+    },
+    {
+      "card_id": "PPT-078",
+      "card_name": "Puppeteers Threads",
+      "rarity": "Epic",
+      "type": "Passive Buff",
+      "activation_method": "on_cast",
+      "activation": {
+        "method": "trigger",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "Casting spells briefly reduces poise damage taken."
+    },
+    {
+      "card_id": "RKR-091",
+      "card_name": "The Ruin Kings last ring",
+      "rarity": "Ultimate",
+      "type": "Passive Trigger",
+      "activation_method": "on_hp_threshold",
+      "activation": {
+        "method": "trigger",
+        "charge": "none",
+        "release": "instant"
+      },
+      "ability_text": "When HP drops below 20%, gain +50% Attack Power. Take +15% more damage while active."
+    },
+    {
+      "card_id": "MDT-092",
+      "card_name": "Midas Touch",
+      "rarity": "Ultimate",
+      "type": "Passive",
+      "activation_method": "passive",
+      "activation": {
+        "method": "tap",
+        "charge": "true",
+        "release": "tap"
+      },
+      "ability_text": "A powerful, game-changing ability related to transforming enemies or objects."
+    }
+  ]
+}
