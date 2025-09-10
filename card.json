@@ -887,6 +887,28 @@
 			}
 		},
 		{
+	"card_id": "WLF-053",
+	"card_name": "Wolf Fang",
+	"rarity": "Rare",
+	"type": "Active Attack Modifier",
+	"anime_id": "S01-EP53",
+	"activation": {
+		"method": "tap",
+		"charge": "false",
+		"release": "tap"
+	},
+	"image_filename": "wolf_fang.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-053-R-L1",
+			"ability_text": "Arms your next heavy attack with the Wolf Fang. If performed within 5 seconds, the heavy attack becomes a powerful slash, adding damage and a unique particle effect.",
+			"charge_type": "instant",
+			"buff_duration": "5 seconds",
+			"cooldown": "15 seconds"
+		}
+	}
+}, 
+		{
 			"card_id": "TRW-054",
 			"card_name": "T-rex's Wraith",
 			"rarity": "Rare",
@@ -1185,3 +1207,4 @@
 		}
 	]
 }
+
