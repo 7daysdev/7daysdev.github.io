@@ -1149,6 +1149,29 @@
 			}
 		},
 		{
+	"card_id": "DRF-094",
+	"card_name": "Dragon's Fang",
+	"rarity": "Rare",
+	"type": "Active Attack Modifier",
+	"anime_id": "S01-EP94",
+	"activation": {
+		"method": "tap",
+		"charge": "true",
+		"release": "auto"
+	},
+	"image_filename": "dragons_fang.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-094-R-L1",
+			"ability_text": "Tap to charge your spear with dragon energy. Your next heavy attack unleashes a spectral dragon thrust that pierces through all enemies in a line. If not used within 6 seconds, the charge fades.",
+			"charge_type": "charge-hold-auto",
+			"buff_duration": "6 seconds",
+			"cooldown": "20 seconds"
+		}
+	}
+}
+,
+		{
 			"card_id": "DMW-077",
 			"card_name": "Dead Man’s Water",
 			"rarity": "Epic",
@@ -1230,5 +1253,6 @@
 		}
 	]
 }
+
 
 
