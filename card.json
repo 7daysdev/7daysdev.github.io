@@ -776,6 +776,29 @@
 			}
 		},
 		{
+	"card_id": "CRF-028",
+	"card_name": "Crimson Fist",
+	"rarity": "Uncommon",
+	"type": "Active Aura Buff",
+	"anime_id": "S01-EP28",
+	"activation": {
+		"method": "tap",
+		"charge": "false",
+		"release": "tap"
+	},
+	"image_filename": "crimson_fist.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-028-U-L1",
+			"ability_text": "For 5 seconds, your fists are wreathed in crimson energy. Light attacks deal slightly more damage and inflict minor burn damage.",
+			"charge_type": "instant",
+			"buff_duration": "5 seconds",
+			"cooldown": "15 seconds"
+		}
+	}
+}, 
+
+		{
 			"card_id": "LOH-051",
 			"card_name": "The Lips of Hypocrisy",
 			"rarity": "Rare",
@@ -1207,4 +1230,5 @@
 		}
 	]
 }
+
 
