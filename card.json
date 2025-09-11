@@ -1149,6 +1149,28 @@
 			}
 		},
 		{
+	"card_id": "AXE-089",
+	"card_name": "Executioner's Oath",
+	"rarity": "Epic",
+	"type": "Active Buff",
+	"anime_id": "S01-EP89",
+	"activation": {
+		"method": "charge",
+		"charge": "true",
+		"release": "tap"
+	},
+	"image_filename": "executioners_oath.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-089-E-L1",
+			"ability_text": "Sacrifice a portion of HP. For the next 10 seconds, axe attacks deal massive bonus damage to enemies below 25% health.",
+			"effect": "execute_bonus",
+			"hp_cost": "10%"
+		}
+	}
+}
+,
+		{
 	"card_id": "DRF-094",
 	"card_name": "Dragon's Fang",
 	"rarity": "Rare",
@@ -1253,6 +1275,7 @@
 		}
 	]
 }
+
 
 
 
