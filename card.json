@@ -1168,8 +1168,7 @@
 			"hp_cost": "10%"
 		}
 	}
-}
-,
+},
 		{
 	"card_id": "DRF-094",
 	"card_name": "Dragon's Fang",
@@ -1191,8 +1190,7 @@
 			"cooldown": "20 seconds"
 		}
 	}
-}
-,
+},
 		{
 			"card_id": "DMW-077",
 			"card_name": "Dead Man’s Water",
@@ -1275,6 +1273,7 @@
 		}
 	]
 }
+
 
 
 
