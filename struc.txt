@@ -1,0 +1,142 @@
+Perfect — let’s build a **new clean version** of your system with **Joy** included as a 4th core stat. I’ll keep it structured like your original doc, but simplified and updated so it’s easier to work with.
+
+---
+
+# **Soulslike Game Design: Core Stats & Scaling (v2 with Joy)**
+
+---
+
+## **Core Stats**
+
+### **1. Strength**
+
+* Governs physical power and defense.
+* **Derivatives**:
+
+  * **Attack Strength** → melee weapon damage
+
+    * `Base Weapon Damage + (Attack Strength × Weapon Modifier)`
+  * **Defense Strength** → reduces physical damage
+
+    * `Base Armor Value + (Defense Strength × 0.5)`
+
+---
+
+### **2. Stamina**
+
+* Governs endurance, energy, and recovery.
+* **Derivatives**:
+
+  * **Endurance** → max stamina + status resistance
+
+    * `Base Stamina + (Endurance × 10)`
+    * `Resistance = Endurance × 2`
+  * **Energy** → stamina cost reduction & mobility
+
+    * `Stamina Cost Reduction = Energy × 0.1`
+  * **Recovery** → stamina regen
+
+    * `Base Regen + (Recovery × 0.5 per sec)`
+
+---
+
+### **3. Mana**
+
+* Governs arcane/ice magic and spell precision.
+* **Derivatives**:
+
+  * **Power** → spell damage/healing
+
+    * `Base Spell Damage + (Power × Spell Modifier)`
+  * **Control** → spell accuracy, AoE size, crit effects
+
+    * `Base Accuracy/Crit + (Control × 2%)`
+  * **Mana Recovery** → regen speed
+
+    * `Base Mana Regen + (Recovery × 0.5 per sec)`
+
+---
+
+### **4. Joy**
+
+* Governs festive/fire/holy magic, buffs, and healing.
+* **Derivatives**:
+
+  * **Radiance** → healing/light magic power
+
+    * `Base Heal/Damage + (Radiance × Modifier)`
+  * **Burn Potency** → fire & burn effect buildup
+
+    * `Burn Strength = Burn Potency × 0.5`
+  * **Inspiration** → buff strength and morale effects
+
+    * `Buff Power = Base + (Inspiration × 0.3)`
+
+---
+
+## **Weapons and Scaling**
+
+| Weapon Type           | Primary Scaling                 | Secondary Scaling   |
+| --------------------- | ------------------------------- | ------------------- |
+| Straight Sword        | Strength                        | Stamina (Energy)    |
+| Rapier                | Stamina (Energy)                | Strength            |
+| Polearm / Spear       | Strength                        | Stamina (Endurance) |
+| Great Hammer          | Strength (Attack)               | Stamina (Endurance) |
+| Axe                   | Strength                        | Stamina (Recovery)  |
+| Greatsword            | Strength                        | Stamina (Endurance) |
+| Dagger                | Stamina (Energy)                | Strength            |
+| Fist Weapons          | Stamina (Energy)                | Strength            |
+| Wand                  | Mana (Power, Control)           | Joy (Radiance)      |
+| Staff / Festive Spear | Joy (Radiance/Burn)             | Mana (Control)      |
+| Pistol                | Stamina (Energy)                | Strength (Attack)   |
+| Shotgun               | Strength (Attack)               | Stamina (Endurance) |
+| Sniper                | Mana (Control)                  | Stamina (Energy)    |
+| Rifle / Auto          | Stamina (Energy)                | Mana (Control)      |
+| Shield                | Strength (Defense)              | Stamina (Endurance) |
+| Armor / Clothing      | Strength (Defense)              | Stamina (Endurance) |
+| Cards (Special)       | Joy or Mana depending on effect | Stamina (Recovery)  |
+
+---
+
+## **Spells and Abilities**
+
+* **Mana-based spells**: Ice, control, precision. Scale with **Power** & **Control**.
+* **Joy-based spells**: Fire, healing, buffs. Scale with **Radiance** & **Inspiration**.
+* Hybrid spells (rare): Use both Joy + Mana for unique effects (e.g., radiant frost explosions).
+
+---
+
+## **Classes & Titles (examples)**
+
+1. **Guardian** (Strength + Stamina)
+
+   * Heavy melee & shields.
+   * Perks: Block cost reduction, armor bonus.
+
+2. **Messenger** (Stamina + Strength)
+
+   * Fast mobility & crit builds.
+   * Perks: Dodge → crit buffs.
+
+3. **Joymage** (Joy + Stamina)
+
+   * Fire/healing magic hybrid.
+   * Perks: Reduced healing/fire cost, stronger regen.
+
+4. **Radiant Herald** (Joy + Mana)
+
+   * Light/fire AoE caster.
+   * Perks: Radiance boosts crits, wider AoE.
+
+5. **Icebreaker** (Strength + Mana)
+
+   * Frost melee hybrid.
+   * Perks: Frost resist + bonus to frozen enemies.
+
+---
+
+👉 This way, **Joy** sits naturally next to Strength, Stamina, and Mana — giving you **4 equal paths** (Physical, Endurance, Arcane, Faith-like).
+
+---
+
+Do you want me to **refine this further into the full "level-up / title unlock progression" system**, or keep it at this high-level version for now?

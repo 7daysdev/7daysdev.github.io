@@ -776,28 +776,27 @@
 			}
 		},
 		{
-	"card_id": "CRF-028",
-	"card_name": "Crimson Fist",
-	"rarity": "Uncommon",
-	"type": "Active Aura Buff",
-	"anime_id": "S01-EP28",
-	"activation": {
-		"method": "tap",
-		"charge": "false",
-		"release": "tap"
-	},
-	"image_filename": "crimson_fist.png",
-	"abilities": {
-		"level_1": {
-			"serial_number": "BP1-028-U-L1",
-			"ability_text": "For 5 seconds, your fists are wreathed in crimson energy. Light attacks deal slightly more damage and inflict minor burn damage.",
-			"charge_type": "instant",
-			"buff_duration": "5 seconds",
-			"cooldown": "15 seconds"
-		}
-	}
-}, 
-
+			"card_id": "CRF-028",
+			"card_name": "Crimson Fist",
+			"rarity": "Uncommon",
+			"type": "Active Aura Buff",
+			"anime_id": "S01-EP28",
+			"activation": {
+				"method": "tap",
+				"charge": "false",
+				"release": "tap"
+			},
+			"image_filename": "crimson_fist.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-028-U-L1",
+					"ability_text": "For 5 seconds, your fists are wreathed in crimson energy. Light attacks deal slightly more damage and inflict minor burn damage.",
+					"charge_type": "instant",
+					"buff_duration": "5 seconds",
+					"cooldown": "15 seconds"
+				}
+			}
+		},
 		{
 			"card_id": "LOH-051",
 			"card_name": "The Lips of Hypocrisy",
@@ -910,27 +909,27 @@
 			}
 		},
 		{
-	"card_id": "WLF-053",
-	"card_name": "Wolf Fang",
-	"rarity": "Rare",
-	"type": "Active Attack Modifier",
-	"anime_id": "S01-EP53",
-	"activation": {
-		"method": "tap",
-		"charge": "false",
-		"release": "tap"
-	},
-	"image_filename": "wolf_fang.png",
-	"abilities": {
-		"level_1": {
-			"serial_number": "BP1-053-R-L1",
-			"ability_text": "Arms your next heavy attack with the Wolf Fang. If performed within 5 seconds, the heavy attack becomes a powerful slash, adding damage and a unique particle effect.",
-			"charge_type": "instant",
-			"buff_duration": "5 seconds",
-			"cooldown": "15 seconds"
-		}
-	}
-}, 
+			"card_id": "WLF-053",
+			"card_name": "Wolf Fang",
+			"rarity": "Rare",
+			"type": "Active Attack Modifier",
+			"anime_id": "S01-EP53",
+			"activation": {
+				"method": "tap",
+				"charge": "false",
+				"release": "tap"
+			},
+			"image_filename": "wolf_fang.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-053-R-L1",
+					"ability_text": "Arms your next heavy attack with the Wolf Fang. If performed within 5 seconds, the heavy attack becomes a powerful slash, adding damage and a unique particle effect.",
+					"charge_type": "instant",
+					"buff_duration": "5 seconds",
+					"cooldown": "15 seconds"
+				}
+			}
+		},
 		{
 			"card_id": "TRW-054",
 			"card_name": "T-rex's Wraith",
@@ -1149,48 +1148,48 @@
 			}
 		},
 		{
-	"card_id": "AXE-089",
-	"card_name": "Executioner's Oath",
-	"rarity": "Epic",
-	"type": "Active Buff",
-	"anime_id": "S01-EP89",
-	"activation": {
-		"method": "charge",
-		"charge": "true",
-		"release": "tap"
-	},
-	"image_filename": "executioners_oath.png",
-	"abilities": {
-		"level_1": {
-			"serial_number": "BP1-089-E-L1",
-			"ability_text": "Sacrifice a portion of HP. For the next 10 seconds, axe attacks deal massive bonus damage to enemies below 25% health.",
-			"effect": "execute_bonus",
-			"hp_cost": "10%"
-		}
-	}
-},
+			"card_id": "AXE-089",
+			"card_name": "Executioner's Oath",
+			"rarity": "Epic",
+			"type": "Active Buff",
+			"anime_id": "S01-EP89",
+			"activation": {
+				"method": "charge",
+				"charge": "true",
+				"release": "tap"
+			},
+			"image_filename": "executioners_oath.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-089-E-L1",
+					"ability_text": "Sacrifice a portion of HP. For the next 10 seconds, axe attacks deal massive bonus damage to enemies below 25% health.",
+					"effect": "execute_bonus",
+					"hp_cost": "10%"
+				}
+			}
+		},
 		{
-	"card_id": "DRF-094",
-	"card_name": "Dragon's Fang",
-	"rarity": "Rare",
-	"type": "Active Attack Modifier",
-	"anime_id": "S01-EP94",
-	"activation": {
-		"method": "tap",
-		"charge": "true",
-		"release": "auto"
-	},
-	"image_filename": "dragons_fang.png",
-	"abilities": {
-		"level_1": {
-			"serial_number": "BP1-094-R-L1",
-			"ability_text": "Tap to charge your spear with dragon energy. Your next heavy attack unleashes a spectral dragon thrust that pierces through all enemies in a line. If not used within 6 seconds, the charge fades.",
-			"charge_type": "charge-hold-auto",
-			"buff_duration": "6 seconds",
-			"cooldown": "20 seconds"
-		}
-	}
-},
+			"card_id": "DRF-094",
+			"card_name": "Dragon's Fang",
+			"rarity": "Rare",
+			"type": "Active Attack Modifier",
+			"anime_id": "S01-EP94",
+			"activation": {
+				"method": "tap",
+				"charge": "true",
+				"release": "auto"
+			},
+			"image_filename": "dragons_fang.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-094-R-L1",
+					"ability_text": "Tap to charge your spear with dragon energy. Your next heavy attack unleashes a spectral dragon thrust that pierces through all enemies in a line. If not used within 6 seconds, the charge fades.",
+					"charge_type": "charge-hold-auto",
+					"buff_duration": "6 seconds",
+					"cooldown": "20 seconds"
+				}
+			}
+		},
 		{
 			"card_id": "DMW-077",
 			"card_name": "Dead Man’s Water",
@@ -1273,8 +1272,3 @@
 		}
 	]
 }
-
-
-
-
-
