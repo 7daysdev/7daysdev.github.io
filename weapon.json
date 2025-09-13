@@ -1,0 +1,57 @@
+{
+  "weapons": [
+    {
+      "id": "sword_001",
+      "name": "Envoys Edge",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "wand_001",
+      "name": "Frost Wand",
+      "type": "magic_wand",
+      "lore": "Carved from ancient Ice Elf roots, it hums with frost.",
+      "upgrade_tree": "basic_wand"
+    },
+    {
+      "id": "greatsword_unique_001",
+      "name": "Frostfang",
+      "type": "greatsword",
+      "lore": "Forged by Ice Elf chiefs, its chill never fades.",
+      "upgrades": [
+        {
+          "level": 1,
+          "attack": 200,
+          "frost_damage": 50,
+          "materials": ["frost_core"],
+          "souls": 1000,
+          "coins": 1
+        },
+        {
+          "level": 2,
+          "attack": 240,
+          "frost_damage": 80,
+          "materials": ["frost_core", "ancient_steel"],
+          "souls": 2000,
+          "coins": 2
+        },
+        {
+          "level": 3,
+          "attack": 280,
+          "frost_damage": 120,
+          "materials": ["frost_core", "eternal_ember"],
+          "souls": 4000,
+          "coins": 3
+        }
+      ]
+    },
+    {
+      "id": "rapier_001",
+      "name": "Swift Needle",
+      "type": "rapier",
+      "lore": "A lightning-fast thrusting sword favored by duelists.",
+      "upgrade_tree": "rapier_basic"
+    }
+  ]
+}

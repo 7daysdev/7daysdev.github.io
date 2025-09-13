@@ -1,0 +1,51 @@
+{
+  "straight_sword_basic": [
+    {
+      "level": 1,
+      "attack": 120,
+      "materials": ["iron_shard"],
+      "souls": 300,
+      "coins": 1
+    },
+    {
+      "level": 2,
+      "attack": 140,
+      "materials": ["iron_chunk"],
+      "souls": 600,
+      "coins": 2
+    },
+    {
+      "level": 3,
+      "attack": 160,
+      "materials": ["steel_ingot"],
+      "souls": 1200,
+      "coins": 3
+    }
+  ],
+  "basic_wand": [
+    {
+      "level": 1,
+      "attack": 80,
+      "magic_power": 30,
+      "materials": ["frost_crystal"],
+      "souls": 500,
+      "coins": 1
+    },
+    {
+      "level": 2,
+      "attack": 90,
+      "magic_power": 50,
+      "materials": ["frost_crystal", "silver_dust"],
+      "souls": 1000,
+      "coins": 2
+    },
+    {
+      "level": 3,
+      "attack": 100,
+      "magic_power": 70,
+      "materials": ["frost_crystal", "enchanted_thread"],
+      "souls": 2000,
+      "coins": 3
+    }
+  ]
+}
