@@ -17,11 +17,16 @@
 				"level_1": {
 					"serial_number": "BP1-001-C-L1",
 					"ability_text": "Light attacks consume 10% less stamina.",
-					"effect": {
-						"buff": "attack_modifier",
-						"amount": 0.1,
-						"visual_feedback": "basic_cardUI_effect"
-					}
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "stamina_cost_light_attack",
+								"modifier": -0.10
+							},
+							"visual_feedback": "basic_cardUI_effect"
+						}
+					]
 				},
 				"level_2": {
 					"serial_number": "BP1-001-C-L2",
@@ -30,11 +35,16 @@
 						"required_level": 1,
 						"required_count": 3
 					},
-					"effect": {
-						"buff": "attack_modifier",
-						"amount": 0.11,
-						"visual_feedback": "basic_cardUI_effect"
-					}
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "stamina_cost_light_attack",
+								"modifier": -0.11
+							},
+							"visual_feedback": "basic_cardUI_effect"
+						}
+					]
 				},
 				"level_3": {
 					"serial_number": "BP1-001-C-L3",
@@ -43,11 +53,16 @@
 						"required_level": 2,
 						"required_count": 4
 					},
-					"effect": {
-						"buff": "attack_modifier",
-						"amount": 0.12,
-						"visual_feedback": "basic_cardUI_effect"
-					}
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "stamina_cost_light_attack",
+								"modifier": -0.12
+							},
+							"visual_feedback": "basic_cardUI_effect"
+						}
+					]
 				},
 				"level_4": {
 					"serial_number": "BP1-001-C-L4",
@@ -56,11 +71,16 @@
 						"required_level": 3,
 						"required_count": 5
 					},
-					"effect": {
-						"buff": "attack_modifier",
-						"amount": 0.13,
-						"visual_feedback": "basic_cardUI_effect"
-					}
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "stamina_cost_light_attack",
+								"modifier": -0.13
+							},
+							"visual_feedback": "basic_cardUI_effect"
+						}
+					]
 				},
 				"level_5": {
 					"serial_number": "BP1-001-C-L5",
@@ -69,11 +89,16 @@
 						"required_level": 4,
 						"required_count": 6
 					},
-					"effect": {
-						"buff": "attack_modifier",
-						"amount": 0.14,
-						"visual_feedback": "basic_cardUI_effect"
-					}
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "stamina_cost_light_attack",
+								"modifier": -0.14
+							},
+							"visual_feedback": "basic_cardUI_effect"
+						}
+					]
 				}
 			}
 		},
@@ -94,11 +119,16 @@
 				"level_1": {
 					"serial_number": "BP1-002-C-L1",
 					"ability_text": "Attacks deal 5% more posture damage against blocking enemies.",
-					"effect": {
-						"buff": "attack_damage",
-						"amount": 0.05,
-						"visual_feedback": "basic_cardUI_effect"
-					}
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "posture_damage_vs_block",
+								"modifier": 0.05
+							},
+							"visual_feedback": "basic_cardUI_effect"
+						}
+					]
 				},
 				"level_2": {
 					"serial_number": "BP1-002-C-L2",
@@ -107,24 +137,34 @@
 						"required_level": 1,
 						"required_count": 6
 					},
-					"effect": {
-						"buff": "attack_damage",
-						"amount": 0.06,
-						"visual_feedback": "basic_cardUI_effect"
-					}
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "posture_damage_vs_block",
+								"modifier": 0.06
+							},
+							"visual_feedback": "basic_cardUI_effect"
+						}
+					]
 				},
 				"level_3": {
 					"serial_number": "BP1-002-C-L3",
-					"ability_text": "Attacks deal 6% more posture damage against blocking enemies.",
+					"ability_text": "Attacks deal 7% more posture damage against blocking enemies.",
 					"upgrade_cost": {
 						"required_level": 2,
 						"required_count": 8
 					},
-					"effect": {
-						"buff": "attack_damage",
-						"amount": 0.07,
-						"visual_feedback": "basic_cardUI_effect"
-					}
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "posture_damage_vs_block",
+								"modifier": 0.07
+							},
+							"visual_feedback": "basic_cardUI_effect"
+						}
+					]
 				}
 			}
 		},
@@ -144,158 +184,260 @@
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-003-C-L1",
-					"ability_text": "Backstabs deal 15% more damage."
-				}
-			}
-		},
-		{
-			"card_id": "PUP-004",
-			"card_name": "Puppet's Last Dance",
-			"rarity": "Common",
-			"type": "Active Mobility",
-			"anime_id": "S01-EP04",
-			"activation_method": "active_tap",
-			"activation": {
-				"method": "tap",
-				"charge": "none",
-				"release": "instant"
-			},
-			"image_filename": "puppets_last_dance.png",
-			"abilities": {
-				"level_1": {
-					"tap": "single",
-					"serial_number": "BP1-004-C-L1",
-					"ability_text": "Temporarily increases movement speed by 10% for 5 seconds.",
-					"props": {
-						"cooldown": 40
-					}
-				}
-			}
-		},
-		{
-			"card_id": "TRX-005",
-			"card_name": "T-Rex Stomper",
-			"rarity": "Common",
-			"type": "Passive Combat",
-			"anime_id": "S01-EP05",
-			"activation": {
-				"method": "passive",
-				"charge": "none",
-				"release": "instant"
-			},
-			"image_filename": "t-rex_stomper.png",
-			"abilities": {
-				"level_1": {
-					"serial_number": "BP1-005-C-L1",
-					"ability_text": "Air attacks and blunt force attacks deal more damage."
-				}
-			}
-		},
-		{
-			"card_id": "OGR-006",
-			"card_name": "Ogre's Ache",
-			"rarity": "Common",
-			"type": "Active Summon",
-			"anime_id": "S01-EP06",
-			"image_filename": "ogres_ache.png",
-			"activation": {
-				"method": "tap",
-				"charge": "none",
-				"release": "manual"
-			},
-			"abilities": {
-				"level_1": {
-					"serial_number": "BP1-006-C-L1",
-					"ability_text": "Tap to summon a ghost that hovers near you. Tap again to send it at a target. On hit, it restores a portion of health. Max 3 active.",
-					"props": {
-						"cooldown": 25,
-						"max_summons": 3
-					},
-					"effect": {
-						"summon": "ghost",
-						"behavior": "homing",
-						"on_hit": {
-							"lifesteal": 0.15
+					"ability_text": "Backstabs deal 15% more damage.",
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "backstab_damage",
+								"modifier": 0.15
+							},
+							"visual_feedback": "basic_cardUI_effect"
 						}
-					}
-				},
-				"level_2": {
-					"serial_number": "BP1-006-C-L2",
-					"ability_text": "Cooldown reduced. Lifesteal slightly increased.",
-					"upgrade_cost": {
-						"required_level": 1,
-						"required_count": 3
-					},
-					"props": {
-						"cooldown": 23,
-						"max_summons": 3
-					},
-					"effect": {
-						"on_hit": {
-							"lifesteal": 0.17
-						}
-					}
+					]
 				}
 			}
 		},
 		{
-			"card_id": "AMF-007",
-			"card_name": "Armored Fortress",
-			"rarity": "Common",
-			"type": "Passive Buff",
-			"anime_id": "S01-EP07",
-			"activation": {
-				"method": "passive",
-				"charge": "none",
-				"release": "instant"
-			},
-			"image_filename": "armored_fortress.png",
-			"abilities": {
-				"level_1": {
-					"serial_number": "BP1-007-C-L1",
-					"ability_text": "Increases base armor/defense by +5% (physical only). Reduces stagger impact by 10%."
-				}
-			}
-		},
+  "card_id": "PUP-004",
+  "card_name": "Puppet's Last Dance",
+  "rarity": "Common",
+  "type": "Active Mobility",
+  "anime_id": "S01-EP04",
+  "activation_method": "active_tap",
+  "activation": {
+    "method": "tap",
+    "charge": "none",
+    "release": "instant"
+  },
+  "image_filename": "puppets_last_dance.png",
+  "abilities": {
+    "level_1": {
+      "tap": "single",
+      "serial_number": "BP1-004-C-L1",
+      "ability_text": "Temporarily increases movement speed by 10% for 5 seconds.",
+      "props": {
+        "cooldown": 40,
+        "duration": 5
+      },
+      "effects": [
+        {
+          "type": "state_toggle",
+          "parameters": {
+            "state": "movement_speed_boost",
+            "modifier": 0.10,
+            "duration": 5
+          },
+          "visual_feedback": "speed_lines_effect"
+        }
+      ]
+    }
+  }
+}
+,
 		{
-			"card_id": "PDR-008",
-			"card_name": "Paladin's Resolve",
-			"rarity": "Common",
-			"type": "Passive Buff",
-			"anime_id": "S01-EP08",
-			"activation": {
-				"method": "passive",
-				"charge": "none",
-				"release": "instant"
-			},
-			"image_filename": "paladins_resolve.png",
-			"abilities": {
-				"level_1": {
-					"serial_number": "BP1-008-C-L1",
-					"ability_text": "+10% blocking stability (less stamina lost when blocking)."
-				}
-			}
-		},
+  "card_id": "TRX-005",
+  "card_name": "T-Rex Stomper",
+  "rarity": "Common",
+  "type": "Passive Combat",
+  "anime_id": "S01-EP05",
+  "activation": {
+    "method": "passive",
+    "charge": "none",
+    "release": "instant"
+  },
+  "image_filename": "t-rex_stomper.png",
+  "abilities": {
+    "level_1": {
+      "serial_number": "BP1-005-C-L1",
+      "ability_text": "Air attacks and blunt force attacks deal more damage.",
+      "effects": [
+        {
+          "type": "stat_modifier",
+          "parameters": {
+            "target": "air_attack_damage",
+            "modifier": 0.10
+          },
+          "visual_feedback": "basic_cardUI_effect"
+        },
+        {
+          "type": "stat_modifier",
+          "parameters": {
+            "target": "blunt_attack_damage",
+            "modifier": 0.10
+          },
+          "visual_feedback": "basic_cardUI_effect"
+        }
+      ]
+    }
+  }
+}
+,
 		{
-			"card_id": "QKE-009",
-			"card_name": "Quake",
-			"rarity": "Common",
-			"type": "Active Utility",
-			"anime_id": "S01-EP09",
-			"activation": {
-				"method": "trigger",
-				"charge": "none",
-				"release": "instant"
-			},
-			"image_filename": "quake.png",
-			"abilities": {
-				"level_1": {
-					"activation": "sprint_input",
-					"serial_number": "BP1-009-C-L1",
-					"ability_text": "When player initiates a sprint, causes a shockwave knocking back low level enemies to escape."
-				}
-			}
-		},
+  "card_id": "OGR-006",
+  "card_name": "Ogre's Ache",
+  "rarity": "Common",
+  "type": "Active Summon",
+  "anime_id": "S01-EP06",
+  "image_filename": "ogres_ache.png",
+  "activation": {
+    "method": "tap",
+    "charge": "none",
+    "release": "manual"
+  },
+  "abilities": {
+    "level_1": {
+      "serial_number": "BP1-006-C-L1",
+      "ability_text": "Tap to summon a ghost that hovers near you. Tap again to send it at a target. On hit, it restores a portion of health. Max 3 active.",
+      "props": {
+        "cooldown": 25,
+        "max_summons": 3
+      },
+      "effects": [
+        {
+          "type": "summon",
+          "parameters": {
+            "entity": "ghost",
+            "behavior": "hover_and_homing",
+            "max_summons": 3,
+            "on_hit": {
+              "lifesteal": 0.15
+            }
+          },
+          "visual_feedback": "summon_effect"
+        }
+      ]
+    },
+    "level_2": {
+      "serial_number": "BP1-006-C-L2",
+      "ability_text": "Cooldown reduced. Lifesteal slightly increased.",
+      "upgrade_cost": {
+        "required_level": 1,
+        "required_count": 3
+      },
+      "props": {
+        "cooldown": 23,
+        "max_summons": 3
+      },
+      "effects": [
+        {
+          "type": "summon",
+          "parameters": {
+            "entity": "ghost",
+            "behavior": "hover_and_homing",
+            "max_summons": 3,
+            "on_hit": {
+              "lifesteal": 0.17
+            }
+          },
+          "visual_feedback": "summon_effect"
+        }
+      ]
+    }
+  }
+}
+,
+		{
+  "card_id": "AMF-007",
+  "card_name": "Armored Fortress",
+  "rarity": "Common",
+  "type": "Passive Buff",
+  "anime_id": "S01-EP07",
+  "activation": {
+    "method": "passive",
+    "charge": "none",
+    "release": "instant"
+  },
+  "image_filename": "armored_fortress.png",
+  "abilities": {
+    "level_1": {
+      "serial_number": "BP1-007-C-L1",
+      "ability_text": "Increases base armor/defense by +5% (physical only). Reduces stagger impact by 10%.",
+      "effects": [
+        {
+          "type": "stat_modifier",
+          "parameters": {
+            "target": "physical_defense",
+            "modifier": 0.05
+          },
+          "visual_feedback": "defense_boost_effect"
+        },
+        {
+          "type": "stat_modifier",
+          "parameters": {
+            "target": "stagger_impact_taken",
+            "modifier": -0.10
+          },
+          "visual_feedback": "stagger_reduction_effect"
+        }
+      ]
+    }
+  }
+}
+,
+		{
+  "card_id": "PDR-008",
+  "card_name": "Paladin's Resolve",
+  "rarity": "Common",
+  "type": "Passive Buff",
+  "anime_id": "S01-EP08",
+  "activation": {
+    "method": "passive",
+    "charge": "none",
+    "release": "instant"
+  },
+  "image_filename": "paladins_resolve.png",
+  "abilities": {
+    "level_1": {
+      "serial_number": "BP1-008-C-L1",
+      "ability_text": "+10% blocking stability (less stamina lost when blocking).",
+      "effects": [
+        {
+          "type": "stat_modifier",
+          "parameters": {
+            "target": "block_stability",
+            "modifier": 0.10
+          },
+          "visual_feedback": "shield_stability_effect"
+        }
+      ]
+    }
+  }
+}
+,
+		{
+  "card_id": "QKE-009",
+  "card_name": "Quake",
+  "rarity": "Common",
+  "type": "Active Utility",
+  "anime_id": "S01-EP09",
+  "activation": {
+    "method": "trigger",
+    "charge": "none",
+    "release": "instant"
+  },
+  "image_filename": "quake.png",
+  "abilities": {
+    "level_1": {
+      "activation": "sprint_input",
+      "serial_number": "BP1-009-C-L1",
+      "ability_text": "When player initiates a sprint, causes a shockwave knocking back low level enemies to escape.",
+      "effects": [
+        {
+          "type": "aoe_knockback",
+          "parameters": {
+            "trigger": "on_sprint_start",
+            "radius": 4.0,
+            "force": "medium",
+            "target_filter": "low_level_enemies"
+          },
+          "visual_feedback": "quake_shockwave_effect"
+        }
+      ]
+    }
+  }
+}
+,
 		{
 			"card_id": "ARL-010",
 			"card_name": "Armadilie",
@@ -600,83 +742,101 @@
 			}
 		},
 		{
-			"card_id": "BRK-039",
-			"card_name": "Blood Red Knight",
-			"rarity": "Common",
-			"type": "Passive Trigger",
-			"anime_id": "S01-EP23",
-			"activation_method": "on_hp_threshold",
-			"activation": {
-				"method": "trigger",
-				"charge": "none",
-				"release": "instant"
-			},
-			"image_filename": "blood_red_knight.png",
-			"abilities": {
-				"level_1": {
-					"serial_number": "BP1-029-C-L1",
-					"ability_text": "At <30% HP, gain +5% attack power.",
-					"effect": {}
-				}
-			}
-		},
-		{
-			"card_id": "RVI-021",
-			"card_name": "Revigor",
+			"card_id": "ESH-061",
+			"card_name": "Earthshaker",
 			"rarity": "Uncommon",
-			"type": "Active Restoration",
-			"anime_id": "S01-EP21",
+			"type": "Passive Combat",
+			"anime_id": "S02-EP05",
+			"activation_method": "passive",
 			"activation": {
-				"method": "tap",
+				"method": "passive",
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "revigor.png",
+			"image_filename": "earthshaker.png",
 			"abilities": {
 				"level_1": {
-					"serial_number": "BP1-021-UC-L1",
-					"ability_text": "Restore 15 stamina instantly.",
-					"props": {
-						"cooldown": 35
+					"serial_number": "BP1-061-UC-L1",
+					"ability_text": "Heavy attacks create a small shockwave that staggers nearby enemies within 2m radius.",
+					"effect": {
+						"shockwave_radius": 2,
+						"stagger_duration": 0.5
+					}
+				},
+				"level_2": {
+					"serial_number": "BP1-061-UC-L2",
+					"ability_text": "Heavy attacks create a shockwave that staggers nearby enemies within 2.2m radius.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 3
+					},
+					"effect": {
+						"shockwave_radius": 2.2,
+						"stagger_duration": 0.6
+					}
+				},
+				"level_3": {
+					"serial_number": "BP1-061-UC-L3",
+					"ability_text": "Heavy attacks create a shockwave that staggers nearby enemies within 2.4m radius.",
+					"upgrade_cost": {
+						"required_level": 2,
+						"required_count": 4
+					},
+					"effect": {
+						"shockwave_radius": 2.4,
+						"stagger_duration": 0.7
 					}
 				}
 			}
 		},
 		{
-			"card_id": "CCR-022",
-			"card_name": "Card Collector – Rookie Edition",
-			"rarity": "Uncommon",
-			"type": "Trait Buff",
-			"anime_id": "S01-EP22",
-			"activation": {
-				"method": "passive",
-				"charge": "none",
-				"release": "instant"
-			},
-			"image_filename": "card_collector–rookie_edition.png",
-			"abilities": {
-				"level_1": {
-					"serial_number": "BP1-022-UC-L1",
-					"ability_text": "Gain +10% card shard drops from enemies."
-				}
-			}
-		},
-		{
-			"card_id": "BRG-023",
-			"card_name": "Brawler’s Grip",
+			"card_id": "VPK-062",
+			"card_name": "Viper's Venom",
 			"rarity": "Uncommon",
 			"type": "Passive Combat",
-			"anime_id": "S01-EP23",
+			"anime_id": "S02-EP06",
+			"activation_method": "passive",
 			"activation": {
 				"method": "passive",
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "brawlers_grip.png",
+			"image_filename": "vipers_venom.png",
 			"abilities": {
 				"level_1": {
-					"serial_number": "BP1-023-UC-L1",
-					"ability_text": "+8% damage with fist weapons and daggers, +10% bonus damage on counter hits."
+					"serial_number": "BP1-062-UC-L1",
+					"ability_text": "Critical hits have a 25% chance to poison enemies, dealing damage over time.",
+					"effect": {
+						"poison_chance": 0.25,
+						"poison_duration": 5,
+						"poison_damage": 3
+					}
+				},
+				"level_2": {
+					"serial_number": "BP1-062-UC-L2",
+					"ability_text": "Critical hits have a 30% chance to poison enemies, dealing increased damage over time.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 3
+					},
+					"effect": {
+						"poison_chance": 0.3,
+						"poison_duration": 5,
+						"poison_damage": 4
+					}
+				},
+				"level_3": {
+					"serial_number": "BP1-062-UC-L3",
+					"ability_text": "Critical hits have a 35% chance to poison enemies, dealing significant damage over time.",
+					"upgrade_cost": {
+						"required_level": 2,
+						"required_count": 4
+					},
+					"effect": {
+						"poison_chance": 0.35,
+						"poison_duration": 6,
+						"poison_damage": 5
+					}
 				}
 			}
 		},
@@ -1128,6 +1288,119 @@
 			}
 		},
 		{
+			"card_id": "ASV-060",
+			"card_name": "Assassin's Veil",
+			"rarity": "Rare",
+			"type": "Passive Stealth",
+			"anime_id": "S02-EP04",
+			"activation_method": "passive",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "assassins_veil.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-060-R-L1",
+					"ability_text": "Reduces enemy detection range by 30% and increases backstab damage by 20%. Movement is completely silent.",
+					"effect": {
+						"stealth": 0.3,
+						"backstab_bonus": 0.2,
+						"silent_movement": true
+					}
+				},
+				"level_2": {
+					"serial_number": "BP1-060-R-L2",
+					"ability_text": "Reduces enemy detection range by 35% and increases backstab damage by 25%. Movement is completely silent.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 3
+					},
+					"effect": {
+						"stealth": 0.35,
+						"backstab_bonus": 0.25,
+						"silent_movement": true
+					}
+				},
+				"level_3": {
+					"serial_number": "BP1-060-R-L3",
+					"ability_text": "Reduces enemy detection range by 40% and increases backstab damage by 30%. Movement is completely silent.",
+					"upgrade_cost": {
+						"required_level": 2,
+						"required_count": 4
+					},
+					"effect": {
+						"stealth": 0.4,
+						"backstab_bonus": 0.3,
+						"silent_movement": true
+					}
+				},
+				"level_4": {
+					"serial_number": "BP1-060-R-L4",
+					"ability_text": "Reduces enemy detection range by 45% and increases backstab damage by 35%. Movement is completely silent.",
+					"upgrade_cost": {
+						"required_level": 3,
+						"required_count": 5
+					},
+					"effect": {
+						"stealth": 0.45,
+						"backstab_bonus": 0.35,
+						"silent_movement": true
+					}
+				},
+				"level_5": {
+					"serial_number": "BP1-060-R-L5",
+					"ability_text": "Reduces enemy detection range by 50% and increases backstab damage by 40%. Movement is completely silent. Critical hits have a chance to temporarily stun enemies.",
+					"upgrade_cost": {
+						"required_level": 4,
+						"required_count": 6
+					},
+					"effect": {
+						"stealth": 0.5,
+						"backstab_bonus": 0.4,
+						"silent_movement": true,
+						"critical_stun_chance": 0.15
+					}
+				}
+			}
+		},
+		{
+			"card_id": "WYR-061",
+			"card_name": "Wyvern Surge",
+			"rarity": "Rare",
+			"type": "Active Combat",
+			"anime_id": "S02-EP11",
+			"activation_method": "active_tap",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "wyvern_surge.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-061-R-L1",
+					"ability_text": "Releases a fast lightning breath that chains between enemies. More DPS but lower per-hit damage. Quick activation and stamina-friendly.",
+					"mana_cost": 15,
+					"props": {
+						"cooldown": 20
+					},
+					"effects": [
+						{
+							"type": "chain_lightning",
+							"parameters": {
+								"damage": 25,
+								"chain_count": 3,
+								"chain_range": 5.0
+							},
+							"visual_feedback": "lightning_chain_effect"
+						}
+					]
+				}
+			}
+		},
+		{
 			"card_id": "OGR-076",
 			"card_name": "Ogre's Greed",
 			"rarity": "Epic",
@@ -1144,6 +1417,43 @@
 					"serial_number": "BP1-076-E-L1",
 					"ability_text": "Gains a powerful buff by consuming a resource or taking a penalty.",
 					"charge_type": "charge-tap"
+				}
+			}
+		},
+		{
+			"card_id": "DRG-079",
+			"card_name": "Dragon Assault",
+			"rarity": "Epic",
+			"type": "Active Combat",
+			"anime_id": "S02-EP10",
+			"activation_method": "active_charge",
+			"activation": {
+				"method": "charge",
+				"charge": "true",
+				"release": "manual"
+			},
+			"image_filename": "dragon_assault.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-079-E-L1",
+					"ability_text": "Charges a massive fire AOE cone attack with high raw damage. Slower charge but overwhelming power.",
+					"mana_cost": 25,
+					"props": {
+						"cooldown": 45,
+						"charge_time": 3.0
+					},
+					"effects": [
+						{
+							"type": "aoe_cone",
+							"parameters": {
+								"damage": 75,
+								"range": 8.0,
+								"angle": 60.0,
+								"element": "fire"
+							},
+							"visual_feedback": "fire_cone_effect"
+						}
+					]
 				}
 			}
 		},
@@ -1270,5 +1580,6 @@
 				}
 			}
 		}
+		
 	]
 }

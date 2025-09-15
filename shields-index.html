@@ -131,7 +131,7 @@
                 if (filteredWeapons.length > 0) {
                     weaponsContainer.innerHTML = '';
                     
-                    filteredWeapons.forEach(weapon => {
+                        filteredWeapons.forEach(weapon => {
                         const weaponCard = document.createElement('div');
                         weaponCard.className = 'weapon-card';
                         
@@ -162,6 +162,11 @@
                                 ` : ''}
                             </div>
                         `;
+                        
+                        // Add click event to navigate to shield details
+                        weaponCard.addEventListener('click', function() {
+                            window.location.href = `shield-detail.html?id=${weapon.id}`;
+                        });
                         
                         weaponsContainer.appendChild(weaponCard);
                     });

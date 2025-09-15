@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shield Details - Refactor 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .shield-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .shield-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .shield-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin: 0;
+        }
+        
+        .shield-faction {
+            font-size: 1.1rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .faction-christmas_elf {
+            background-color: #2b8a3e;
+            color: white;
+        }
+        
+        .faction-ice_elf {
+            background-color: #4dabf7;
+            color: white;
+        }
+        
+        .faction-foodkin {
+            background-color: #fcc419;
+            color: #333;
+        }
+        
+        .faction-toykin {
+            background-color: #e64980;
+            color: white;
+        }
+        
+        .faction-christmas_elf_toykin {
+            background: linear-gradient(135deg, #2b8a3e 0%, #e64980 100%);
+            color: white;
+        }
+        
+        .shield-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .shield-image {
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #444;
+        }
+        
+        .shield-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+        
+        .shield-type {
+            font-size: 1.2rem;
+            color: #ccc;
+            text-transform: capitalize;
+        }
+        
+        .shield-stats {
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+            border-radius: 12px;
+            padding: 30px;
+            border: 2px solid #444;
+        }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #444;
+        }
+        
+        .stat-label {
+            color: #ccc;
+            font-weight: bold;
+        }
+        
+        .stat-value {
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .shield-lore {
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+            border-radius: 12px;
+            padding: 30px;
+            border: 2px solid #444;
+            margin-bottom: 30px;
+        }
+        
+        .lore-text {
+            color: #999;
+            font-style: italic;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .special-effects {
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+            border-radius: 12px;
+            padding: 30px;
+            border: 2px solid #007bff;
+            margin-bottom: 30px;
+        }
+        
+        .effect-title {
+            color: #007bff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .effect-description {
+            color: #ccc;
+            line-height: 1.5;
+        }
+        
+        .upgrade-info {
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+            border-radius: 12px;
+            padding: 30px;
+            border: 2px solid #444;
+        }
+        
+        .upgrade-title {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .upgrade-tree {
+            color: #ccc;
+            font-style: italic;
+        }
+        
+        .error-message {
+            text-align: center;
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #ccc;
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .shield-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .shield-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+    
+    <div class="shield-container">
+        <div class="shield-header">
+            <a href="shields-index.html" class="btn">← Back to Shields</a>
+            <h1 class="shield-title" id="shieldName">Loading Shield...</h1>
+            <div class="shield-faction" id="shieldFaction">Loading...</div>
+        </div>
+
+        <div id="shield-content">
+            <p class="loading">Loading shield details...</p>
+        </div>
+    </div>
+
+    <script>
+        async function loadShieldDetails() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const shieldId = urlParams.get('id');
+                
+                if (!shieldId) {
+                    document.getElementById('shield-content').innerHTML = '<p class="error-message">No shield ID provided in URL.</p>';
+                    return;
+                }
+
+                const response = await fetch('./weapon.json');
+                const data = await response.json();
+                const shield = data.weapons.find(w => w.id === shieldId);
+                
+                if (!shield) {
+                    document.getElementById('shield-content').innerHTML = '<p class="error-message">Shield not found.</p>';
+                    return;
+                }
+
+                // Update header
+                document.getElementById('shieldName').textContent = shield.name;
+                document.getElementById('shieldFaction').textContent = shield.faction.replace('_', ' ').toUpperCase();
+                document.getElementById('shieldFaction').className = `shield-faction faction-${shield.faction}`;
+
+                // Create shield content
+                const shieldContent = document.getElementById('shield-content');
+                shieldContent.innerHTML = `
+                    <div class="shield-content">
+                        <div class="shield-image">
+                            <div class="shield-icon">🛡️</div>
+                            <p class="shield-type">${shield.type.replace('_', ' ')}</p>
+                            <p><strong>ID:</strong> ${shield.id}</p>
+                        </div>
+                        
+                        <div class="shield-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">Defense:</span>
+                                <span class="stat-value">${shield.defense}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Stability:</span>
+                                <span class="stat-value">${shield.stability}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Weight:</span>
+                                <span class="stat-value">${shield.weight}</span>
+                            </div>
+                            ${shield.frost_resistance ? `
+                            <div class="stat-row">
+                                <span class="stat-label">Frost Resistance:</span>
+                                <span class="stat-value">${shield.frost_resistance}</span>
+                            </div>
+                            ` : ''}
+                            ${shield.fire_resistance ? `
+                            <div class="stat-row">
+                                <span class="stat-label">Fire Resistance:</span>
+                                <span class="stat-value">${shield.fire_resistance}</span>
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                    
+                    <div class="shield-lore">
+                        <p class="lore-text">"${shield.lore}"</p>
+                    </div>
+                    
+                    ${shield.special_effect ? `
+                    <div class="special-effects">
+                        <h3 class="effect-title">Special Effect</h3>
+                        <p class="effect-description">${shield.special_effect}</p>
+                    </div>
+                    ` : ''}
+                    
+                    ${shield.upgrade_tree ? `
+                    <div class="upgrade-info">
+                        <h3 class="upgrade-title">Upgrade Information</h3>
+                        <p class="upgrade-tree">Upgrade Tree: ${shield.upgrade_tree.replace('_', ' ')}</p>
+                    </div>
+                    ` : ''}
+                `;
+                
+            } catch (error) {
+                console.error('Failed to load shield details:', error);
+                document.getElementById('shield-content').innerHTML = '<p class="error-message">Error loading shield details. Make sure weapon.json exists.</p>';
+            }
+        }
+
+        // Load shield details when page loads
+        loadShieldDetails();
+    </script>
+</body>
+</html>
