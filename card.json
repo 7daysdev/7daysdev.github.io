@@ -1241,7 +1241,7 @@
 		},
 		{
 	"card_id": "IRH-098",
-	"card_name": "Ironhide",
+	"card_name": "Henge Stone",
 	"rarity": "Uncommon",
 	"type": "Passive Combat",
 	"anime_id": "S02-EP09",
@@ -1250,7 +1250,7 @@
 		"charge": "none",
 		"release": "instant"
 	},
-	"image_filename": "ironhide.png",
+	"image_filename": "henge_stone.png",
 	"abilities": {
 		"level_1": {
 			"serial_number": "BP1-098-UC-L1",
@@ -2250,5 +2250,6 @@
 		}
 	]
 }
+
 
 
