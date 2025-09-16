@@ -1240,6 +1240,286 @@
 			}
 		},
 		{
+	"card_id": "IRH-098",
+	"card_name": "Ironhide",
+	"rarity": "Uncommon",
+	"type": "Passive Combat",
+	"anime_id": "S02-EP09",
+	"activation": {
+		"method": "passive",
+		"charge": "none",
+		"release": "instant"
+	},
+	"image_filename": "ironhide.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-098-UC-L1",
+			"ability_text": "Reduces physical damage taken by 8%.",
+			"effect": {
+				"damage_reduction": 0.08
+			}
+		},
+		"level_2": {
+			"serial_number": "BP1-098-UC-L2",
+			"ability_text": "Reduces physical damage taken by 10%.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 3
+			},
+			"effect": {
+				"damage_reduction": 0.10
+			}
+		},
+		"level_3": {
+			"serial_number": "BP1-098-UC-L3",
+			"ability_text": "Reduces physical damage taken by 12%.",
+			"upgrade_cost": {
+				"required_level": 2,
+				"required_count": 4
+			},
+			"effect": {
+				"damage_reduction": 0.12
+			}
+		}
+	}
+},
+		{
+	"card_id": "QKF-099",
+	"card_name": "Quickfang",
+	"rarity": "Uncommon",
+	"type": "Passive Combat",
+	"anime_id": "S02-EP10",
+	"activation": {
+		"method": "passive",
+		"charge": "none",
+		"release": "instant"
+	},
+	"image_filename": "quickfang.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-099-UC-L1",
+			"ability_text": "Consecutive light attacks deal +4% more damage (stacks up to 3x).",
+			"effect": {
+				"bonus_per_stack": 0.04,
+				"max_stacks": 3
+			}
+		},
+		"level_2": {
+			"serial_number": "BP1-099-UC-L2",
+			"ability_text": "Consecutive light attacks deal +5% more damage (stacks up to 3x).",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 3
+			},
+			"effect": {
+				"bonus_per_stack": 0.05,
+				"max_stacks": 3
+			}
+		},
+		"level_3": {
+			"serial_number": "BP1-099-UC-L3",
+			"ability_text": "Consecutive light attacks deal +6% more damage (stacks up to 3x).",
+			"upgrade_cost": {
+				"required_level": 2,
+				"required_count": 4
+			},
+			"effect": {
+				"bonus_per_stack": 0.06,
+				"max_stacks": 3
+			}
+		}
+	}
+},
+		{
+	"card_id": "GRP-100",
+	"card_name": "Grave Pact",
+	"rarity": "Uncommon",
+	"type": "Passive Buff",
+	"anime_id": "S02-EP11",
+	"activation": {
+		"method": "passive",
+		"charge": "none",
+		"release": "instant"
+	},
+	"image_filename": "grave_pact.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-100-UC-L1",
+			"ability_text": "Killing an enemy restores 3% of max mana.",
+			"effect": {
+				"mana_restore_percent": 0.03
+			}
+		},
+		"level_2": {
+			"serial_number": "BP1-100-UC-L2",
+			"ability_text": "Killing an enemy restores 4% of max mana.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 3
+			},
+			"effect": {
+				"mana_restore_percent": 0.04
+			}
+		},
+		"level_3": {
+			"serial_number": "BP1-100-UC-L3",
+			"ability_text": "Killing an enemy restores 5% of max mana.",
+			"upgrade_cost": {
+				"required_level": 2,
+				"required_count": 4
+			},
+			"effect": {
+				"mana_restore_percent": 0.05
+			}
+		}
+	}
+},
+		{
+	"card_id": "WND-101",
+	"card_name": "Windcarver",
+	"rarity": "Uncommon",
+	"type": "Active Utility",
+	"anime_id": "S02-EP12",
+	"activation": {
+		"method": "tap",
+		"charge": "none",
+		"release": "trigger"
+	},
+	"image_filename": "windcarver.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-101-UC-L1",
+			"ability_text": "Dash forward 4m, dealing 20 slashing damage in a line.",
+			"mana_cost": 12,
+			"props": {
+				"cooldown": 15,
+				"range": 4,
+				"damage": 20
+			},
+			"effects": [
+				{
+					"type": "dash_attack",
+					"parameters": {
+						"distance": 4,
+						"damage": 20,
+						"damage_type": "slashing"
+					},
+					"visual_feedback": "wind_slash_effect"
+				}
+			]
+		},
+		"level_2": {
+			"serial_number": "BP1-101-UC-L2",
+			"ability_text": "Dash forward 5m, dealing 25 slashing damage in a line.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 3
+			},
+			"mana_cost": 12,
+			"props": {
+				"cooldown": 14,
+				"range": 5,
+				"damage": 25
+			},
+			"effects": [
+				{
+					"type": "dash_attack",
+					"parameters": {
+						"distance": 5,
+						"damage": 25,
+						"damage_type": "slashing"
+					},
+					"visual_feedback": "wind_slash_effect"
+				}
+			]
+		},
+		"level_3": {
+			"serial_number": "BP1-101-UC-L3",
+			"ability_text": "Dash forward 6m, dealing 30 slashing damage in a line.",
+			"upgrade_cost": {
+				"required_level": 2,
+				"required_count": 4
+			},
+			"mana_cost": 12,
+			"props": {
+				"cooldown": 12,
+				"range": 6,
+				"damage": 30
+			},
+			"effects": [
+				{
+					"type": "dash_attack",
+					"parameters": {
+						"distance": 6,
+						"damage": 30,
+						"damage_type": "slashing"
+					},
+					"visual_feedback": "wind_slash_effect"
+				}
+			]
+		}
+	}
+},
+{
+	"card_id": "RNE-102",
+	"card_name": "Runic Echo",
+	"rarity": "Uncommon",
+	"type": "Active Aura Buff",
+	"anime_id": "S02-EP13",
+	"activation": {
+		"method": "tap",
+		"charge": "false",
+		"release": "tap"
+	},
+	"image_filename": "runic_echo.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-102-UC-L1",
+			"ability_text": "For 8 seconds, spell casts cost 15% less mana.",
+			"mana_cost": 15,
+			"charge_type": "instant",
+			"buff_duration": 8,
+			"cooldown": 25,
+			"effect": {
+				"mana_cost_reduction": 0.15
+			}
+		},
+		"level_2": {
+			"serial_number": "BP1-102-UC-L2",
+			"ability_text": "For 12 seconds, spell casts cost 15% less mana.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 3
+			},
+			"mana_cost": 15,
+			"charge_type": "instant",
+			"buff_duration": 12,
+			"cooldown": 25,
+			"effect": {
+				"mana_cost_reduction": 0.15
+			}
+		},
+		"level_3": {
+			"serial_number": "BP1-102-UC-L3",
+			"ability_text": "For 15 seconds, spell casts cost 15% less mana.",
+			"upgrade_cost": {
+				"required_level": 2,
+				"required_count": 4
+			},
+			"mana_cost": 15,
+			"charge_type": "instant",
+			"buff_duration": 15,
+			"cooldown": 25,
+			"effect": {
+				"mana_cost_reduction": 0.15
+			}
+		}
+	}
+},
+
+
+
+		{
 			"card_id": "LOH-051",
 			"card_name": "The Lips of Hypocrisy",
 			"rarity": "Rare",
@@ -1914,3 +2194,4 @@
 		}
 	]
 }
+
