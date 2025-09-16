@@ -1516,7 +1516,63 @@
 		}
 	}
 },
-
+{
+  "card_id": "BRH-067",
+  "card_name": "Briarheart",
+  "rarity": "Uncommon",
+  "type": "Passive Combat",
+  "anime_id": "S02-EP11",
+  "activation": {
+    "method": "passive",
+    "charge": "none",
+    "release": "instant"
+  },
+  "ability_text": "Attacks have a 15% chance to inflict Bleed, dealing 5 damage per second for 5s.",
+  "image_filename": "briarheart.png"
+},
+{
+  "card_id": "VNL-068",
+  "card_name": "Venomlash",
+  "rarity": "Uncommon",
+  "type": "Passive Buff",
+  "anime_id": "S02-EP12",
+  "activation": {
+    "method": "passive",
+    "charge": "none",
+    "release": "instant"
+  },
+  "ability_text": "Dodging through an enemy leaves behind a venom cloud, dealing 10 poison damage over 3s.",
+  "image_filename": "venomlash.png"
+},
+{
+  "card_id": "BLO-069",
+  "card_name": "Blood Oath",
+  "rarity": "Uncommon",
+  "type": "Passive Buff",
+  "anime_id": "S02-EP13",
+  "activation": {
+    "method": "passive",
+    "charge": "none",
+    "release": "instant"
+  },
+  "ability_text": "Sacrifice 5% of max HP to gain +10% attack power until next rest.",
+  "image_filename": "blood_oath.png"
+},
+{
+  "card_id": "SFS-070",
+  "card_name": "Splitfang Strike",
+  "rarity": "Uncommon",
+  "type": "Active Combat",
+  "anime_id": "S02-EP14",
+  "activation": {
+    "method": "active",
+    "charge": "instant",
+    "release": "manual"
+  },
+  "ability_text": "Perform a leaping overhead slash that deals 40 damage and staggers. Cooldown 15s.",
+  "image_filename": "splitfang_strike.png"
+}
+,
 
 
 		{
@@ -2194,4 +2250,5 @@
 		}
 	]
 }
+
 
