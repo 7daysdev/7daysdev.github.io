@@ -842,6 +842,246 @@
                             }
                     }
             },
+		{
+	"card_id": "CSH-042",
+	"card_name": "Cinder Shard",
+	"rarity": "Common",
+	"type": "Active Combat",
+	"anime_id": "S01-EP42",
+	"activation_method": "active_tap",
+	"activation": {
+		"method": "tap",
+		"charge": "none",
+		"release": "instant"
+	},
+	"image_filename": "cinder_shard.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-042-C-L1",
+			"ability_text": "Throws a small shard of ash, dealing minor fire damage. (Mana Cost: 5)",
+			"mana_cost": 5,
+			"props": {
+				"cooldown": 5
+			},
+			"effects": [
+				{
+					"type": "projectile_damage",
+					"parameters": {
+						"base_damage": 10,
+						"damage_type": "fire"
+					},
+					"visual_feedback": "fire_projectile_effect"
+				}
+			]
+		}
+	}
+},
+		{
+	"card_id": "MRA-043",
+	"card_name": "Mire-Cursed Aegis",
+	"rarity": "Common",
+	"type": "Passive Buff",
+	"anime_id": "S01-EP43",
+	"activation_method": "passive",
+	"activation": {
+		"method": "passive",
+		"charge": "none",
+		"release": "instant"
+	},
+	"image_filename": "mire_cursed_aegis.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-043-C-L1",
+			"ability_text": "Increases poison resistance by 10.",
+			"effects": [
+				{
+					"type": "stat_modifier",
+					"parameters": {
+						"target": "poison_resistance",
+						"modifier": 10
+					},
+					"visual_feedback": "basic_cardUI_effect"
+				}
+			]
+		},
+		"level_2": {
+			"serial_number": "BP1-043-C-L2",
+			"ability_text": "Increases poison resistance by 15.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 3
+			},
+			"effects": [
+				{
+					"type": "stat_modifier",
+					"parameters": {
+						"target": "poison_resistance",
+						"modifier": 15
+					},
+					"visual_feedback": "basic_cardUI_effect"
+				}
+			]
+		}
+	}
+},
+		{
+	"card_id": "EXI-044",
+	"card_name": "Executioner's Insight",
+	"rarity": "Common",
+	"type": "Passive Combat",
+	"anime_id": "S01-EP44",
+	"activation_method": "on_heavy_attack",
+	"activation": {
+		"method": "passive",
+		"charge": "none",
+		"release": "instant"
+	},
+	"image_filename": "executioners_insight.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-044-C-L1",
+			"ability_text": "Heavy attacks deal 10% more posture damage.",
+			"effects": [
+				{
+					"type": "stat_modifier",
+					"parameters": {
+						"target": "heavy_attack_posture_damage",
+						"modifier": 0.10
+					},
+					"visual_feedback": "basic_cardUI_effect"
+				}
+			]
+		},
+		"level_2": {
+			"serial_number": "BP1-044-C-L2",
+			"ability_text": "Heavy attacks deal 12% more posture damage.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 4
+			},
+			"effects": [
+				{
+					"type": "stat_modifier",
+					"parameters": {
+						"target": "heavy_attack_posture_damage",
+						"modifier": 0.12
+					},
+					"visual_feedback": "basic_cardUI_effect"
+				}
+			]
+		}
+	}
+},
+		{
+	"card_id": "WNL-048",
+	"card_name": "Wanderer's Luck",
+	"rarity": "Common",
+	"type": "Passive Utility",
+	"anime_id": "S01-EP48",
+	"activation_method": "passive",
+	"activation": {
+		"method": "passive",
+		"charge": "none",
+		"release": "instant"
+	},
+	"image_filename": "wanderers_luck.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-048-C-L1",
+			"ability_text": "Increases item discovery by 5%.",
+			"effects": [
+				{
+					"type": "stat_modifier",
+					"parameters": {
+						"target": "item_discovery",
+						"modifier": 0.05
+					},
+					"visual_feedback": "basic_cardUI_effect"
+				}
+			]
+		},
+		"level_2": {
+			"serial_number": "BP1-048-C-L2",
+			"ability_text": "Increases item discovery by 7%.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 5
+			},
+			"effects": [
+				{
+					"type": "stat_modifier",
+					"parameters": {
+						"target": "item_discovery",
+						"modifier": 0.07
+					},
+					"visual_feedback": "basic_cardUI_effect"
+				}
+			]
+		}
+	}
+},
+		{
+	"card_id": "EMB-049",
+	"card_name": "Ember Charge",
+	"rarity": "Common",
+	"type": "Active Combat",
+	"anime_id": "S01-EP49",
+	"activation_method": "active_hold",
+	"activation": {
+		"method": "hold",
+		"charge": "linear_increase",
+		"release": "manual"
+	},
+	"image_filename": "ember_charge.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-049-C-L1",
+			"ability_text": "Hold to charge a heavy attack, imbuing the weapon with fire. A fully charged hit deals bonus fire damage.",
+			"props": {
+				"mana_cost": 8,
+				"cooldown": 15
+			},
+			"effects": [
+				{
+					"type": "charged_attack_modifier",
+					"parameters": {
+						"charge_time": 2,
+						"modifier_type": "bonus_damage",
+						"damage_type": "fire",
+						"amount": 25,
+						"physical_damage_scaling": 0.15
+					},
+					"visual_feedback": "flaming_weapon_effect"
+				}
+			]
+		},
+		"level_2": {
+			"serial_number": "BP1-049-C-L2",
+			"ability_text": "Bonus fire damage and physical scaling are slightly increased.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 3
+			},
+			"props": {
+				"mana_cost": 8,
+				"cooldown": 15
+			},
+			"effects": [
+				{
+					"type": "charged_attack_modifier",
+					"parameters": {
+						"charge_time": 2,
+						"modifier_type": "bonus_damage",
+						"damage_type": "fire",
+						"amount": 30,
+						"physical_damage_scaling": 0.17
+					},
+					"visual_feedback": "flaming_weapon_effect"
+				}
+			]
+		}
+	}
+},
             {
                     "card_id": "ESH-061",
 			"card_name": "Tremorsaur",
@@ -2307,6 +2547,7 @@
 		}
 	]
 }
+
 
 
 
