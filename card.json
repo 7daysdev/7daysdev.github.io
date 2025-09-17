@@ -1461,8 +1461,8 @@
 	}
 },
 {
-	"card_id": "RNE-102",
-	"card_name": "Runic Echo",
+	"card_id": "ECT-102",
+	"card_name": "Echo Stone",
 	"rarity": "Uncommon",
 	"type": "Active Aura Buff",
 	"anime_id": "S02-EP13",
@@ -1471,7 +1471,7 @@
 		"charge": "false",
 		"release": "tap"
 	},
-	"image_filename": "runic_echo.png",
+	"image_filename": "echo_stone.png",
 	"abilities": {
 		"level_1": {
 			"serial_number": "BP1-102-UC-L1",
@@ -1573,6 +1573,63 @@
   "image_filename": "splitfang_strike.png"
 }
 ,
+{
+	"card_id": "BLD-105",
+	"card_name": "Bloodletting",
+	"rarity": "Uncommon",
+	"type": "Passive Combat",
+	"anime_id": "S02-EP16",
+	"activation": {
+		"method": "passive",
+		"charge": "none",
+		"release": "instant"
+	},
+	"image_filename": "bloodletting.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-105-UC-L1",
+			"ability_text": "Heavy attacks cause minor bleed buildup on enemies."
+		}
+	}
+},
+{
+	"card_id": "SKY-106",
+	"card_name": "Sky Step",
+	"rarity": "Uncommon",
+	"type": "Active Utility",
+	"anime_id": "S02-EP17",
+	"activation": {
+		"method": "tap",
+		"charge": "none",
+		"release": "trigger"
+	},
+	"image_filename": "sky_step.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-106-UC-L1",
+			"ability_text": "Perform a quick double-jump dash mid-air. Cooldown: 18s."
+		}
+	}
+},
+{
+	"card_id": "BRN-107",
+	"card_name": "Brand of Ash",
+	"rarity": "Uncommon",
+	"type": "Active Aura Buff",
+	"anime_id": "S02-EP18",
+	"activation": {
+		"method": "tap",
+		"charge": "false",
+		"release": "tap"
+	},
+	"image_filename": "brand_of_ash.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP1-107-UC-L1",
+			"ability_text": "For 6 seconds, weapon attacks deal minor fire damage. Cooldown: 20s."
+		}
+	}
+},
 
 
 		{
@@ -2250,6 +2307,7 @@
 		}
 	]
 }
+
 
 
 
