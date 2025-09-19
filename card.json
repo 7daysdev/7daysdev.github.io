@@ -1712,11 +1712,11 @@
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "the_ruin_kings_last_ring.png",
+			"image_filename": "coronation_ring.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-091-ULT-L1",
-					"ability_text": "When HP drops below 20%, card cool down reduce by 20%."
+					"ability_text": "When HP drops below 20%, active cards cool down reduce by 20%."
 				}
 			}
 		},
@@ -2564,4 +2564,5 @@
 		}
 	]
 }
+
 
