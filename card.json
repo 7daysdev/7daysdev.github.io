@@ -1700,6 +1700,26 @@
 				}
 			}
 		},
+				{
+			"card_id": "RKR-091",
+			"card_name": "Corination Ring",
+			"rarity": "Uncommon",
+			"type": "Passive Trigger",
+			"anime_id": "S01-EP91",
+			"activation_method": "on_hp_threshold",
+			"activation": {
+				"method": "trigger",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "the_ruin_kings_last_ring.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-091-ULT-L1",
+					"ability_text": "When HP drops below 20%, card cool down reduce by 20%."
+				}
+			}
+		},
 		{
 			"card_id": "ECT-102",
 			"card_name": "Echo Stone",
@@ -2544,3 +2564,4 @@
 		}
 	]
 }
+
