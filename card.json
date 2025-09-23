@@ -705,21 +705,57 @@
 			}
 		},
 		{
-			"card_id": "XXX-021",
-			"card_name": "???",
+			"card_id": "NUA-021",
+			"card_name": "Blazing Slide",
 			"rarity": "Common",
-			"type": "???",
-			"anime_id": "S??-EP??",
+			"type": "Active Mobility",
+			"anime_id": "S01-EP02",
+			"activation_method": "active_tap",
 			"activation": {
-				"method": "passive",
+				"method": "tap",
 				"charge": "none",
-				"release": "instant"
+				"release": "manual"
 			},
-			"image_filename": "???.png",
+			"image_filename": "blazing_slide.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-021-C-L1",
-					"ability_text": "???"
+					"ability_text": "Slide forward in a chosen direction with a burst of flames, dealing moderate fire damage to enemies in the path.",
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "shield",
+								"count": 2,
+								"duration": 10,
+								"damage_type": "fire",
+								"block_melee": true
+							},
+							"visual_feedback": "shield_spin_effect"
+						}
+					]
+				},
+				"level_2": {
+					"serial_number": "BP1-021-C-L2",
+					"ability_text": "Spawns 2 spinning shields with 70 HP that last 12s. Shields block ranged attacks and can absorb melee hits.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 5
+					},
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "shield",
+								"count": 2,
+								"health": 70,
+								"duration": 12,
+								"block_ranged": true,
+								"block_melee": true
+							},
+							"visual_feedback": "shield_spin_effect"
+						}
+					]
 				}
 			}
 		},
