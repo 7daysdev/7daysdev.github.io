@@ -2852,6 +2852,48 @@
 					"ability_text": "A powerful, game-changing ability related to transforming enemies or objects."
 				}
 			}
+		},
+		{
+			"card_id": "ULT-007",
+			"card_name": "Orbital Choir",
+			"rarity": "Ultimate",
+			"type": "Active Abiltity",
+			"anime_id": "S01-EP12",
+			"activation_method": "active_charge",
+			"activation": {
+				"method": "charge",
+				"charge_time": 5.0,
+				"cancelable": true
+			},
+			"image_filename": "orbital_choir.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-077-E-L1",
+					"ability_text": "Massive laser beam descends from orbital ring, Obliterates most standard enemies instantly, Heavy stagger effect on bosses"
+				}
+			},
+			"effect": {
+				"area": "targeted_zone",
+				"damage_type": "pure_energy",
+				"damage_multiplier": 10.0,
+				"radius": 12.0,
+				"special": [
+					"Massive laser beam descends from orbital ring",
+					"Obliterates most standard enemies instantly",
+					"Heavy stagger effect on bosses"
+				]
+			},
+			"cost": {
+				"mana": 150,
+				"stamina": 50,
+				"cooldown": 180.0
+			},
+			"restrictions": {
+				"slots_required": 2,
+				"use_limit": 1,
+				"lock_on": true
+			},
+			"flavor_text": "From the heavens descends the circle of judgment, its light burning away all resistance. Few have seen it fire twice."
 		}
 	]
 }
