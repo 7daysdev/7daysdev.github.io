@@ -2722,51 +2722,7 @@
         }
     }
 },
-{
-    "card_id": "CRV-102",
-    "card_name": "Crush Card Virus",
-    "rarity": "Ultimate",
-    "type": "Active Debuff",
-    "anime_id": "S01-EP102",
-    "activation_method": "active_proximity",
-    "activation": {
-        "method": "tap",
-        "charge": "none",
-        "release": "manual"
-    },
-    "image_filename": "crush_card_virus.png",
-    "abilities": {
-        "level_1": {
-            "serial_number": "BP1-102-ULT-L1",
-            "ability_text": "Requires a melee hit. Upon striking a boss, you sacrifice 10% of your maximum health. The boss cannot use its two most powerful abilities for 20 seconds. This effect can only be triggered once per boss fight.",
-            "cost": {
-                "health_cost": 0.10,
-                "mana_cost": 50,
-                "cooldown": 120
-            },
-            "props": {
-                "duration": 20,
-                "trigger_limit": "boss_fight_once"
-            },
-            "effects": [
-                {
-                    "type": "ability_negation",
-                    "parameters": {
-                        "target": "boss",
-                        "effect_count": 2,
-                        "duration": 20,
-                        "ability_priority": "highest"
-                    },
-                    "visual_feedback": "purple_virus_debuff"
-                }
-            ]
-        }
-    },
-    "restrictions": {
-        "slots_required": 1
-    },
-    "flavor_text": "A dark power that feeds on life to dismantle the will of even the mightiest foes."
-},
+
 		{
 			"card_id": "OGR-076",
 			"card_name": "Ogre's Greed",
@@ -3032,7 +2988,53 @@
 				"lock_on": true
 			},
 			"flavor_text": "From the heavens descends the circle of judgment, its light burning away all resistance. Few have seen it fire twice."
-		}
+		},
+		{
+    "card_id": "CRV-102",
+    "card_name": "Crush Card Virus",
+    "rarity": "Ultimate",
+    "type": "Active Debuff",
+    "anime_id": "S01-EP102",
+    "activation_method": "active_proximity",
+    "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "manual"
+    },
+    "image_filename": "crush_card_virus.png",
+    "abilities": {
+        "level_1": {
+            "serial_number": "BP1-102-ULT-L1",
+            "ability_text": "Requires a melee hit. Upon striking a boss, you sacrifice 10% of your maximum health. The boss cannot use its two most powerful abilities for 20 seconds. This effect can only be triggered once per boss fight.",
+            "cost": {
+                "health_cost": 0.10,
+                "mana_cost": 50,
+                "cooldown": 120
+            },
+            "props": {
+                "duration": 20,
+                "trigger_limit": "boss_fight_once"
+            },
+            "effects": [
+                {
+                    "type": "ability_negation",
+                    "parameters": {
+                        "target": "boss",
+                        "effect_count": 2,
+                        "duration": 20,
+                        "ability_priority": "highest"
+                    },
+                    "visual_feedback": "purple_virus_debuff"
+                }
+            ]
+        }
+    },
+    "restrictions": {
+        "slots_required": 1
+    },
+    "flavor_text": "A dark power that feeds on life to dismantle the will of even the mightiest foes."
+}
 	]
 }
+
 
