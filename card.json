@@ -2115,6 +2115,64 @@
 			}
 		},
 		{
+    "card_id": "RRT-105",
+    "card_name": "Ring of Retribution",
+    "rarity": "Uncommon",
+    "type": "Passive Combat",
+    "anime_id": "S01-EP105",
+    "activation_method": "on_enemy_kill",
+    "activation": {
+        "method": "passive",
+        "charge": "none",
+        "release": "instant"
+    },
+    "image_filename": "ring_of_retribution.png",
+    "abilities": {
+        "level_1": {
+            "serial_number": "BP1-105-UC-L1",
+            "ability_text": "When you kill an enemy, you lose 1% of your total HP. In return, all other enemies within a 3-meter radius take minor damage.",
+            "effects": [
+                {
+                    "type": "aoe_damage_on_kill",
+                    "parameters": {
+                        "damage_type": "physical",
+                        "radius": 3.0,
+                        "damage_amount": 10,
+                        "self_damage": {
+                            "type": "percent_of_total_hp",
+                            "amount": 0.01
+                        }
+                    },
+                    "visual_feedback": "red_ring_burst"
+                }
+            ]
+        },
+        "level_2": {
+            "serial_number": "BP1-105-UC-L2",
+            "ability_text": "Damage radius and aoe damage increased. Self-damage remains the same.",
+            "upgrade_cost": {
+                "required_level": 1,
+                "required_count": 3
+            },
+            "effects": [
+                {
+                    "type": "aoe_damage_on_kill",
+                    "parameters": {
+                        "damage_type": "physical",
+                        "radius": 3.5,
+                        "damage_amount": 12,
+                        "self_damage": {
+                            "type": "percent_of_total_hp",
+                            "amount": 0.01
+                        }
+                    },
+                    "visual_feedback": "red_ring_burst"
+                }
+            ]
+        }
+    }
+},
+		{
 			"card_id": "LOH-051",
 			"card_name": "The Lips of Hypocrisy",
 			"rarity": "Rare",
@@ -3036,5 +3094,6 @@
 }
 	]
 }
+
 
 
