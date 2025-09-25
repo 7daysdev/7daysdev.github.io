@@ -823,21 +823,50 @@
 			}
 		},
 		{
-			"card_id": "XXX-025",
-			"card_name": "???",
+			"card_id": "AVW-025",
+			"card_name": "Avowed Warrior",
 			"rarity": "Common",
-			"type": "???",
-			"anime_id": "S??-EP??",
+			"type": "Passive Buff",
+			"anime_id": "S01-EP106",
+			"activation_method": "passive",
 			"activation": {
 				"method": "passive",
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "???.png",
+			"image_filename": "avowed_warrior.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-025-C-L1",
-					"ability_text": "???"
+					"ability_text": "Increases your physical attack damage by 2%.",
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "physical_damage",
+								"modifier": 0.02
+							},
+							"visual_feedback": "basic_cardUI_effect"
+						}
+					]
+				},
+				"level_2": {
+					"serial_number": "BP1-025-C-L2",
+					"ability_text": "Increases your physical attack damage by 3%.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 3
+					},
+					"effects": [
+						{
+							"type": "stat_modifier",
+							"parameters": {
+								"target": "physical_damage",
+								"modifier": 0.03
+							},
+							"visual_feedback": "basic_cardUI_effect"
+						}
+					]
 				}
 			}
 		},
@@ -1352,6 +1381,53 @@
 						"shockwave_radius": 2.4,
 						"stagger_duration": 0.7
 					}
+				}
+			}
+		},
+		{
+			"card_id": "RVI-021",
+			"card_name": "Revigor",
+			"rarity": "Uncommon",
+			"type": "Active Restoration",
+			"anime_id": "S01-EP21",
+			"cooldown_s": 0,
+			"activation_method": "active_tap",
+			"image_filename": "Revigor.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-021-UC-L1",
+					"ability_text": "Restore 15 stamina instantly.",
+					"cooldown_s": 35
+				}
+			}
+		},
+		{
+			"card_id": "CCR-022",
+			"card_name": "Card Collector – Rookie Edition",
+			"rarity": "Uncommon",
+			"type": "Trait Buff",
+			"anime_id": "S01-EP22",
+			"activation_method": "passive",
+			"image_filename": "card_collector–rookie_edition.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-022-UC-L1",
+					"ability_text": "Gain +10% card shard drops from enemies."
+				}
+			}
+		},
+		{
+			"card_id": "BRG-023",
+			"card_name": "Brawler’s Grip",
+			"rarity": "Uncommon",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP23",
+			"activation_method": "passive",
+			"image_filename": "brawlers_grip.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-023-UC-L1",
+					"ability_text": "+8% damage with fist weapons and daggers, +10% bonus damage on counter hits."
 				}
 			}
 		},
@@ -2115,63 +2191,63 @@
 			}
 		},
 		{
-    "card_id": "RRT-105",
-    "card_name": "Ring of Retribution",
-    "rarity": "Uncommon",
-    "type": "Passive Combat",
-    "anime_id": "S01-EP105",
-    "activation_method": "on_enemy_kill",
-    "activation": {
-        "method": "passive",
-        "charge": "none",
-        "release": "instant"
-    },
-    "image_filename": "ring_of_retribution.png",
-    "abilities": {
-        "level_1": {
-            "serial_number": "BP1-105-UC-L1",
-            "ability_text": "When you kill an enemy, you lose 1% of your total HP. In return, all other enemies within a 3-meter radius take minor damage.",
-            "effects": [
-                {
-                    "type": "aoe_damage_on_kill",
-                    "parameters": {
-                        "damage_type": "physical",
-                        "radius": 3.0,
-                        "damage_amount": 10,
-                        "self_damage": {
-                            "type": "percent_of_total_hp",
-                            "amount": 0.01
-                        }
-                    },
-                    "visual_feedback": "red_ring_burst"
-                }
-            ]
-        },
-        "level_2": {
-            "serial_number": "BP1-105-UC-L2",
-            "ability_text": "Damage radius and aoe damage increased. Self-damage remains the same.",
-            "upgrade_cost": {
-                "required_level": 1,
-                "required_count": 3
-            },
-            "effects": [
-                {
-                    "type": "aoe_damage_on_kill",
-                    "parameters": {
-                        "damage_type": "physical",
-                        "radius": 3.5,
-                        "damage_amount": 12,
-                        "self_damage": {
-                            "type": "percent_of_total_hp",
-                            "amount": 0.01
-                        }
-                    },
-                    "visual_feedback": "red_ring_burst"
-                }
-            ]
-        }
-    }
-},
+			"card_id": "RRT-105",
+			"card_name": "Ring of Retribution",
+			"rarity": "Uncommon",
+			"type": "Passive Combat",
+			"anime_id": "S01-EP105",
+			"activation_method": "on_enemy_kill",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "ring_of_retribution.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-105-UC-L1",
+					"ability_text": "When you kill an enemy, you lose 1% of your total HP. In return, all other enemies within a 3-meter radius take minor damage.",
+					"effects": [
+						{
+							"type": "aoe_damage_on_kill",
+							"parameters": {
+								"damage_type": "physical",
+								"radius": 3.0,
+								"damage_amount": 10,
+								"self_damage": {
+									"type": "percent_of_total_hp",
+									"amount": 0.01
+								}
+							},
+							"visual_feedback": "red_ring_burst"
+						}
+					]
+				},
+				"level_2": {
+					"serial_number": "BP1-105-UC-L2",
+					"ability_text": "Damage radius and aoe damage increased. Self-damage remains the same.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 3
+					},
+					"effects": [
+						{
+							"type": "aoe_damage_on_kill",
+							"parameters": {
+								"damage_type": "physical",
+								"radius": 3.5,
+								"damage_amount": 12,
+								"self_damage": {
+									"type": "percent_of_total_hp",
+									"amount": 0.01
+								}
+							},
+							"visual_feedback": "red_ring_burst"
+						}
+					]
+				}
+			}
+		},
 		{
 			"card_id": "LOH-051",
 			"card_name": "The Lips of Hypocrisy",
@@ -2688,99 +2764,98 @@
 			}
 		},
 		{
-    "card_id": "GOS-101",
-    "card_name": "Phantom Remeberance",
-    "rarity": "Rare",
-    "type": "Active Ability",
-    "anime_id": "S01-EP101",
-    "activation_method": "active_instant",
-    "activation": {
-        "method": "tap",
-        "charge": "none",
-        "release": "instant"
-    },
-    "image_filename": "phantom_remeberance.png",
-    "abilities": {
-        "level_1": {
-            "serial_number": "BP1-101-R-L1",
-            "ability_text": "Summon 4 phantom copies of yourself. These phantoms will automatically absorb the next 4 projectiles or melee attacks aimed at you. Phantoms last for 20 seconds.",
-            "props": {
-                "cooldown": 45,
-                "mana_cost": 20
-            },
-            "effects": [
-                {
-                    "type": "summon_decoy",
-                    "parameters": {
-                        "entity": "phantom_copy",
-                        "count": 4,
-                        "duration": 20,
-                        "absorb_attacks": {
-                            "type": "projectile, melee",
-                            "count": 1
-                        }
-                    },
-                    "visual_feedback": "phantom_summon_effect"
-                }
-            ]
-        },
-        "level_2": {
-            "serial_number": "BP1-101-R-L2",
-            "ability_text": "Summon 4 phantom copies of yourself. These phantoms will absorb the next 4 projectiles or melee attacks. Duration increased.",
-            "upgrade_cost": {
-                "required_level": 1,
-                "required_count": 3
-            },
-            "props": {
-                "cooldown": 40,
-                "mana_cost": 20
-            },
-            "effects": [
-                {
-                    "type": "summon_decoy",
-                    "parameters": {
-                        "entity": "phantom_copy",
-                        "count": 4,
-                        "duration": 25,
-                        "absorb_attacks": {
-                            "type": "projectile, melee",
-                            "count": 1
-                        }
-                    },
-                    "visual_feedback": "phantom_summon_effect"
-                }
-            ]
-        },
-        "level_3": {
-            "serial_number": "BP1-101-R-L3",
-            "ability_text": "Summon 5 phantom copies of yourself. These phantoms will absorb the next 5 projectiles or melee attacks. Duration increased and cooldown reduced.",
-            "upgrade_cost": {
-                "required_level": 2,
-                "required_count": 4
-            },
-            "props": {
-                "cooldown": 35,
-                "mana_cost": 25
-            },
-            "effects": [
-                {
-                    "type": "summon_decoy",
-                    "parameters": {
-                        "entity": "phantom_copy",
-                        "count": 5,
-                        "duration": 30,
-                        "absorb_attacks": {
-                            "type": "projectile, melee",
-                            "count": 1
-                        }
-                    },
-                    "visual_feedback": "phantom_summon_effect"
-                }
-            ]
-        }
-    }
-},
-
+			"card_id": "GOS-101",
+			"card_name": "Phantom Remembrance",
+			"rarity": "Rare",
+			"type": "Active Ability",
+			"anime_id": "S01-EP101",
+			"activation_method": "active_instant",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "phantom_remembrance.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-101-R-L1",
+					"ability_text": "Summon 4 phantom copies of yourself. These phantoms will automatically absorb the next 4 projectiles or melee attacks aimed at you. Phantoms last for 20 seconds.",
+					"props": {
+						"cooldown": 45,
+						"mana_cost": 20
+					},
+					"effects": [
+						{
+							"type": "summon_decoy",
+							"parameters": {
+								"entity": "phantom_copy",
+								"count": 4,
+								"duration": 20,
+								"absorb_attacks": {
+									"type": "projectile, melee",
+									"count": 1
+								}
+							},
+							"visual_feedback": "phantom_summon_effect"
+						}
+					]
+				},
+				"level_2": {
+					"serial_number": "BP1-101-R-L2",
+					"ability_text": "Summon 4 phantom copies of yourself. These phantoms will absorb the next 4 projectiles or melee attacks. Duration increased.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 3
+					},
+					"props": {
+						"cooldown": 40,
+						"mana_cost": 20
+					},
+					"effects": [
+						{
+							"type": "summon_decoy",
+							"parameters": {
+								"entity": "phantom_copy",
+								"count": 4,
+								"duration": 25,
+								"absorb_attacks": {
+									"type": "projectile, melee",
+									"count": 1
+								}
+							},
+							"visual_feedback": "phantom_summon_effect"
+						}
+					]
+				},
+				"level_3": {
+					"serial_number": "BP1-101-R-L3",
+					"ability_text": "Summon 5 phantom copies of yourself. These phantoms will absorb the next 5 projectiles or melee attacks. Duration increased and cooldown reduced.",
+					"upgrade_cost": {
+						"required_level": 2,
+						"required_count": 4
+					},
+					"props": {
+						"cooldown": 35,
+						"mana_cost": 25
+					},
+					"effects": [
+						{
+							"type": "summon_decoy",
+							"parameters": {
+								"entity": "phantom_copy",
+								"count": 5,
+								"duration": 30,
+								"absorb_attacks": {
+									"type": "projectile, melee",
+									"count": 1
+								}
+							},
+							"visual_feedback": "phantom_summon_effect"
+						}
+					]
+				}
+			}
+		},
 		{
 			"card_id": "OGR-076",
 			"card_name": "Ogre's Greed",
@@ -3048,52 +3123,49 @@
 			"flavor_text": "From the heavens descends the circle of judgment, its light burning away all resistance. Few have seen it fire twice."
 		},
 		{
-    "card_id": "CRV-102",
-    "card_name": "Crush Card Virus",
-    "rarity": "Ultimate",
-    "type": "Active Debuff",
-    "anime_id": "S01-EP102",
-    "activation_method": "active_proximity",
-    "activation": {
-        "method": "tap",
-        "charge": "none",
-        "release": "manual"
-    },
-    "image_filename": "crush_card_virus.png",
-    "abilities": {
-        "level_1": {
-            "serial_number": "BP1-102-ULT-L1",
-            "ability_text": "Requires a melee hit. Upon striking a boss, you sacrifice 10% of your maximum health. The boss cannot use its two most powerful abilities for 20 seconds. This effect can only be triggered once per boss fight.",
-            "cost": {
-                "health_cost": 0.10,
-                "mana_cost": 50,
-                "cooldown": 120
-            },
-            "props": {
-                "duration": 20,
-                "trigger_limit": "boss_fight_once"
-            },
-            "effects": [
-                {
-                    "type": "ability_negation",
-                    "parameters": {
-                        "target": "boss",
-                        "effect_count": 2,
-                        "duration": 20,
-                        "ability_priority": "highest"
-                    },
-                    "visual_feedback": "purple_virus_debuff"
-                }
-            ]
-        }
-    },
-    "restrictions": {
-        "slots_required": 1
-    },
-    "flavor_text": "A dark power that feeds on life to dismantle the will of even the mightiest foes."
-}
+			"card_id": "CRV-102",
+			"card_name": "Crush Card Virus",
+			"rarity": "Ultimate",
+			"type": "Active Debuff",
+			"anime_id": "S01-EP102",
+			"activation_method": "active_proximity",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "manual"
+			},
+			"image_filename": "crush_card_virus.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-102-ULT-L1",
+					"ability_text": "Requires a melee hit. Upon striking a boss, you sacrifice 10% of your maximum health. The boss cannot use its two most powerful abilities for 20 seconds. This effect can only be triggered once per boss fight.",
+					"cost": {
+						"health_cost": 0.10,
+						"mana_cost": 50,
+						"cooldown": 120
+					},
+					"props": {
+						"duration": 20,
+						"trigger_limit": "boss_fight_once"
+					},
+					"effects": [
+						{
+							"type": "ability_negation",
+							"parameters": {
+								"target": "boss",
+								"effect_count": 2,
+								"duration": 20,
+								"ability_priority": "highest"
+							},
+							"visual_feedback": "purple_virus_debuff"
+						}
+					]
+				}
+			},
+			"restrictions": {
+				"slots_required": 1
+			},
+			"flavor_text": "A dark power that feeds on life to dismantle the will of even the mightiest foes."
+		}
 	]
 }
-
-
-
