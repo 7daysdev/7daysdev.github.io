@@ -1984,10 +1984,10 @@
 						"cooldown": 15,
 						"range": 4,
 						"damage": 20,
-						"weapon":{
+						"weapon":[
 							"straightsword",
-							"axe",
-						}
+							"axe"
+						]
 					},
 					"effects": [
 						{
@@ -3221,6 +3221,7 @@
 		}
 	]
 }
+
 
 
 
