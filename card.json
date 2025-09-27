@@ -112,7 +112,7 @@
 			"type": [
 				"Passive",
 				"Combat"
-			]
+			],
 			"anime_id": "S01-EP02",
 			"activation_method": "passive",
 			"activation": {
@@ -181,7 +181,7 @@
 			"type": [
 				"Passive",
 				"Combat"
-			]
+			],
 			"anime_id": "S01-EP03",
 			"activation_method": "passive",
 			"activation": {
@@ -214,7 +214,7 @@
 			"type": [
 				"Active",
 				"Mobility"
-			]
+			],
 			"anime_id": "S01-EP04",
 			"activation_method": "active_tap",
 			"activation": {
@@ -253,7 +253,7 @@
 			"type": [
 				"Passive",
 				"Combat"
-			]
+			],
 			"anime_id": "S01-EP05",
 			"activation": {
 				"method": "passive",
@@ -293,7 +293,7 @@
 			"type": [
 				"Active",
 				"Projectile"
-			]
+			],
 			"anime_id": "S01-EP06",
 			"image_filename": "ogres_ache.png",
 			"activation": {
@@ -3221,6 +3221,7 @@
 		}
 	]
 }
+
 
 
 
