@@ -16,6 +16,7 @@
         "release": "instant"
       },
       "image_filename": "sustained_effort.png",
+    
       "abilities": {
         "level_1": {
           "serial_number": "BP1-001-C-L1",
@@ -3187,6 +3188,7 @@
         "release": "manual"
       },
       "image_filename": "crush_card_virus.png",
+      "flavor_text": "A dark power that feeds on life to dismantle the will of even the mightiest foes.",
       "abilities": {
         "level_1": {
           "serial_number": "BP1-102-ULT-L1",
@@ -3216,8 +3218,8 @@
       },
       "restrictions": {
         "slots_required": 1
-      },
-      "flavor_text": "A dark power that feeds on life to dismantle the will of even the mightiest foes."
+      }
     }
   ]
 }
+
