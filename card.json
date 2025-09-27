@@ -4,7 +4,10 @@
 			"card_id": "STF-001",
 			"card_name": "Sustained Effort",
 			"rarity": "Common",
-			"type": "Passive Buff",
+			"type": [
+				"Passive",
+				"Buff"
+			]
 			"anime_id": "S01-EP01",
 			"activation_method": "passive",
 			"activation": {
@@ -106,7 +109,10 @@
 			"card_id": "PLT-002",
 			"card_name": "Paladin's Lament",
 			"rarity": "Common",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			]
 			"anime_id": "S01-EP02",
 			"activation_method": "passive",
 			"activation": {
@@ -172,7 +178,10 @@
 			"card_id": "BNC-003",
 			"card_name": "Bantouth Claw",
 			"rarity": "Common",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			]
 			"anime_id": "S01-EP03",
 			"activation_method": "passive",
 			"activation": {
@@ -202,7 +211,10 @@
 			"card_id": "PUP-004",
 			"card_name": "Puppet's Last Dance",
 			"rarity": "Common",
-			"type": "Active Mobility",
+			"type": [
+				"Active",
+				"Mobility"
+			]
 			"anime_id": "S01-EP04",
 			"activation_method": "active_tap",
 			"activation": {
@@ -238,7 +250,10 @@
 			"card_id": "TRX-005",
 			"card_name": "T-Rex Stomper",
 			"rarity": "Common",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			]
 			"anime_id": "S01-EP05",
 			"activation": {
 				"method": "passive",
@@ -275,7 +290,10 @@
 			"card_id": "OGR-006",
 			"card_name": "Ogre's Ache",
 			"rarity": "Common",
-			"type": "Active Ability",
+			"type": [
+				"Active",
+				"Projectile"
+			]
 			"anime_id": "S01-EP06",
 			"image_filename": "ogres_ache.png",
 			"activation": {
@@ -436,7 +454,10 @@
 			"card_id": "ARL-010",
 			"card_name": "Armadilie",
 			"rarity": "Common",
-			"type": "Passive Buff",
+			"type": [
+				"Passive",
+				"Buff"
+			],
 			"anime_id": "S01-EP10",
 			"activation": {
 				"method": "passive",
@@ -455,7 +476,10 @@
 			"card_id": "GLR-011",
 			"card_name": "Glass Rose",
 			"rarity": "Common",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S01-EP11",
 			"activation": {
 				"method": "passive",
@@ -474,7 +498,10 @@
 			"card_id": "HGV-012",
 			"card_name": "Hegreef the Valiant",
 			"rarity": "Common",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S01-EP12",
 			"activation": {
 				"method": "passive",
@@ -493,7 +520,10 @@
 			"card_id": "IRM-013",
 			"card_name": "Iron Might",
 			"rarity": "Common",
-			"type": "Passive Buff",
+			"type": [
+				"Passive",
+				"Buff"
+			],
 			"anime_id": "S01-EP13",
 			"activation": {
 				"method": "passive",
@@ -512,7 +542,10 @@
 			"card_id": "POR-014",
 			"card_name": "Pondering Orb",
 			"rarity": "Common",
-			"type": "Passive Buff",
+			"type": [
+				"Passive",
+				"Buff"
+			],
 			"anime_id": "S01-EP14",
 			"activation": {
 				"method": "passive",
@@ -531,7 +564,10 @@
 			"card_id": "RKN-015",
 			"card_name": "Rookie Knight",
 			"rarity": "Common",
-			"type": "Passive Buff",
+			"type": [
+				"Passive",
+				"Buff"
+			],
 			"anime_id": "S01-EP15",
 			"activation": {
 				"method": "passive",
@@ -550,7 +586,10 @@
 			"card_id": "EMB-016",
 			"card_name": "Ember Might",
 			"rarity": "Common",
-			"type": "Active Summon",
+				"type": [
+				"Active",
+				"Summon"
+			],
 			"anime_id": "S01-EP16",
 			"activation": {
 				"method": "tap",
@@ -583,7 +622,10 @@
 			"card_id": "THG-017",
 			"card_name": "Two-Hand Grip",
 			"rarity": "Common",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S01-EP17",
 			"activation": {
 				"method": "passive",
@@ -602,7 +644,10 @@
 			"card_id": "SPB-018",
 			"card_name": "Sunpetal Bloom",
 			"rarity": "Common",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S01-EP17",
 			"activation": {
 				"method": "tap",
@@ -627,7 +672,10 @@
 			"card_id": "VOV-019",
 			"card_name": "Voltaic Vespoid",
 			"rarity": "Common",
-			"type": "Active Summon",
+			"type": [
+				"Active",
+				"Summon"
+			],
 			"anime_id": "S01-EP17",
 			"activation": {
 				"method": "tap",
@@ -3173,4 +3221,5 @@
 		}
 	]
 }
+
 
