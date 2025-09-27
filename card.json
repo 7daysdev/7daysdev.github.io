@@ -1872,8 +1872,8 @@
 			}
 		},
 		{
-			"card_id": "GRP-100",
-			"card_name": "Grave Pact",
+			"card_id": "MGW-100",
+			"card_name": "Mana Gravewell",
 			"rarity": "Uncommon",
 			"type": "Passive Buff",
 			"anime_id": "S02-EP11",
@@ -1882,7 +1882,7 @@
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "grave_pact.png",
+			"image_filename": "mana_gravewell.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-100-UC-L1",
@@ -1916,8 +1916,8 @@
 			}
 		},
 		{
-			"card_id": "WND-101",
-			"card_name": "Windcarver",
+			"card_id": "WS3-101",
+			"card_name": "Warrior Skill no.3",
 			"rarity": "Uncommon",
 			"type": "Active Utility",
 			"anime_id": "S02-EP12",
@@ -1926,7 +1926,7 @@
 				"charge": "none",
 				"release": "trigger"
 			},
-			"image_filename": "windcarver.png",
+			"image_filename": "warrior_skill-no3.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-101-UC-L1",
@@ -1935,7 +1935,11 @@
 					"props": {
 						"cooldown": 15,
 						"range": 4,
-						"damage": 20
+						"damage": 20,
+						"weapon":{
+							"straightsword",
+							"axe",
+						}
 					},
 					"effects": [
 						{
@@ -2107,7 +2111,7 @@
 		},
 		{
 			"card_id": "BLO-069",
-			"card_name": "Blood Oath",
+			"card_name": "Blood Rush",
 			"rarity": "Uncommon",
 			"type": "Passive Buff",
 			"anime_id": "S02-EP13",
@@ -2117,7 +2121,7 @@
 				"release": "instant"
 			},
 			"ability_text": "Sacrifice 5% of max HP to gain +10% attack power until next rest.",
-			"image_filename": "blood_oath.png"
+			"image_filename": "blood_rush.png"
 		},
 		{
 			"card_id": "SFS-070",
@@ -2173,7 +2177,7 @@
 		},
 		{
 			"card_id": "BRN-107",
-			"card_name": "Brand of Ash",
+			"card_name": "Ash Covering",
 			"rarity": "Uncommon",
 			"type": "Active Aura Buff",
 			"anime_id": "S02-EP18",
@@ -2182,7 +2186,7 @@
 				"charge": "false",
 				"release": "tap"
 			},
-			"image_filename": "brand_of_ash.png",
+			"image_filename": "ash_covering.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-107-UC-L1",
@@ -2871,7 +2875,7 @@
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-076-E-L1",
-					"ability_text": "Gains a powerful buff by consuming a resource or taking a penalty.",
+					"ability_text": "Release auro status effect and fire off devouring greeds phantoms.",
 					"charge_type": "charge-tap"
 				}
 			}
@@ -3169,3 +3173,4 @@
 		}
 	]
 }
+
