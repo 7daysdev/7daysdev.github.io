@@ -57,52 +57,67 @@
                     filteredCards = allCardsData.filter(card => card.rarity === rarityFilter);
                 }
                 
-                if (filteredCards.length > 0) {
-                    cardsContainer.innerHTML = '';
-                    
-                    filteredCards.forEach(card => {
-                        const flipCard = document.createElement('div');
-                        flipCard.className = 'flip-card';
-                        
-                        const imageFilename = card.image_filename || '';
-                        const imagePath = `Cards/${imageFilename}`;
-                        const backImagePath = 'Cards/Back.png';
-                        
-                        // Check if image exists, otherwise use back image
-                        const frontImage = imageFilename ? 
-                            `<img src="${imagePath}" alt="${card.card_name}" class="card-image" onerror="this.src='${backImagePath}'">` :
-                            `<img src="${backImagePath}" alt="Card Back" class="card-image">`;
-                        
-                        const rarityClass = card.rarity ? card.rarity.toLowerCase() : 'common';
-                        
-                        flipCard.innerHTML = `
-                            <div class="flip-card-inner">
-                                <!-- Front of the card (Trading Card Image) -->
-                                <div class="flip-card-front">
-                                    ${frontImage}
-                                    <div class="card-info">
-                                        <h3>${card.card_name}</h3>
-                                        <p><strong>ID:</strong> ${card.card_id}</p>
-                                        <p><strong>Rarity:</strong> <span class="${rarityClass}">${card.rarity}</span></p>
-                                        <p><strong>Type:</strong> ${card.type}</p>
-                                    </div>
-                                </div>
-                                
-                                <!-- Back of the card (Always shows card back) -->
-                                <div class="flip-card-back">
-                                    <img src="${backImagePath}" alt="Card Back" class="card-image">
-                                </div>
-                            </div>
-                        `;
-                        
-                        // Add click event to navigate to card detail page
-                        flipCard.addEventListener('click', function() {
-                            window.location.href = `card-detail.html?cardId=${card.card_id}`;
-                        });
-                        
-                        cardsContainer.appendChild(flipCard);
-                    });
-                }
+               if (filteredCards.length > 0) {
+    cardsContainer.innerHTML = '';
+    
+    filteredCards.forEach(card => {
+        // --- START OF FIX/FALLBACK LOGIC ---
+        let typeDisplay = '';
+        
+        if (Array.isArray(card.type)) {
+            // New structure: array (e.g., ["Active", "Projectile"])
+            // Joins array elements with a separator (e.g., " | ") for a clean display
+            typeDisplay = card.type.join(' | ');
+        } else if (typeof card.type === 'string') {
+            // Old structure: single string (e.g., "Active Combat")
+            // Replaces space with a separator for consistent look with the new array format
+            typeDisplay = card.type.replace(/ /g, ' | '); 
+        } else {
+            // Fallback for missing or unrecognised type
+            typeDisplay = 'N/A';
+        }
+        // --- END OF FIX/FALLBACK LOGIC ---
+
+        const flipCard = document.createElement('div');
+        flipCard.className = 'flip-card';
+        
+        const imageFilename = card.image_filename || '';
+        const imagePath = `Cards/${imageFilename}`;
+        const backImagePath = 'Cards/Back.png';
+        
+        // Check if image exists, otherwise use back image
+        const frontImage = imageFilename ? 
+            `<img src="${imagePath}" alt="${card.card_name}" class="card-image" onerror="this.src='${backImagePath}'">` :
+            `<img src="${backImagePath}" alt="Card Back" class="card-image">`;
+        
+        const rarityClass = card.rarity ? card.rarity.toLowerCase() : 'common';
+        
+        flipCard.innerHTML = `
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    ${frontImage}
+                    <div class="card-info">
+                        <h3>${card.card_name}</h3>
+                        <p><strong>ID:</strong> ${card.card_id}</p>
+                        <p><strong>Rarity:</strong> <span class="${rarityClass}">${card.rarity}</span></p>
+                        <p><strong>Type:</strong> ${typeDisplay}</p> <--- *UPDATED HERE*
+                    </div>
+                </div>
+                
+                <div class="flip-card-back">
+                    <img src="${backImagePath}" alt="Card Back" class="card-image">
+                </div>
+            </div>
+        `;
+        
+        // Add click event to navigate to card detail page
+        flipCard.addEventListener('click', function() {
+            window.location.href = `card-detail.html?cardId=${card.card_id}`;
+        });
+        
+        cardsContainer.appendChild(flipCard);
+    });
+}
                 
                 // Update total cards count and create tooltip
                 const totalCardsElement = document.getElementById('totalCards');
@@ -203,3 +218,4 @@
     </script>
 </body>
 </html>
+
