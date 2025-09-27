@@ -7,7 +7,7 @@
 			"type": [
 				"Passive",
 				"Buff"
-			]
+			],
 			"anime_id": "S01-EP01",
 			"activation_method": "passive",
 			"activation": {
@@ -3221,5 +3221,6 @@
 		}
 	]
 }
+
 
 
