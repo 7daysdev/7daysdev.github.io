@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <div id="card-combiner-container">
+        <link rel="stylesheet" href="styles.css">
+
+        <h1>Card Combiner</h1>
+        <a href="cards-index.html" class="btn">← Back to Cards</a>
+        <label>Card Name:
+            <input type="text" id="cc-cardName" placeholder="e.g. chicken_soup">
+        </label>
+        <br><br>
+
+        <input type="file" id="cc-aiArt" accept="image/*"><br><br>
+
+        <select id="cc-templateSelect">
+            <option value="Cardtemp/comTemp.png">Common</option>
+            <option value="Cardtemp/ucomTemp.png">Uncommon</option>
+            <option value="Cardtemp/rareTemp.png">Rare</option>
+            <option value="Cardtemp/epicTemp.png">Epic</option>
+            <option value="Cardtemp/ultTemp.png">Ultimate</option>
+        </select>
+        <br><br>
+
+        <button id="cc-downloadBtn">Download PNG</button>
+        <br>
+
+        <canvas id="cc-canvas" width="411" height="617"></canvas>
+
+        <style>
+            #card-combiner-container {
+                font-family: sans-serif;
+                text-align: center;
+                padding: 20px;
+            }
+
+            #card-combiner-container canvas {
+                border: 1px solid #aaa;
+                margin-top: 20px;
+                cursor: grab;
+            }
+
+            #card-combiner-container input,
+            #card-combiner-container button,
+            #card-combiner-container select {
+                margin: 5px;
+            }
+
+            #card-combiner-container button {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            #card-combiner-container button:hover {
+                background-color: #0056b3;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+            }
+        </style>
+
+        <script>
+            (function () {
+                const canvas = document.getElementById("cc-canvas");
+                const ctx = canvas.getContext("2d");
+
+                let template = new Image();
+                let aiImage = null;
+                let scale = 1, offsetX = 0, offsetY = 0;
+                let dragging = false, lastX, lastY;
+
+                const templateSelect = document.getElementById("cc-templateSelect");
+                templateSelect.onchange = loadTemplate;
+
+                function loadTemplate() {
+                    template = new Image();
+                    template.onload = () => {
+                        redraw();
+                    };
+                    template.src = templateSelect.value;
+                }
+                loadTemplate();
+
+                document.getElementById("cc-aiArt").onchange = e => {
+                    const reader = new FileReader();
+                    reader.onload = ev => {
+                        aiImage = new Image();
+                        aiImage.onload = () => {
+                            scale = 1;
+                            offsetX = offsetY = 0;
+                            redraw();
+                        };
+                        aiImage.src = ev.target.result;
+                    };
+                    reader.readAsDataURL(e.target.files[0]);
+                };
+
+                function redraw() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    if (aiImage) {
+                        const scaleX = canvas.width / 262;
+                        const scaleY = canvas.height / 394;
+
+                        const holeX = 86 * scaleX;
+                        const holeY = 42 * scaleY;
+                        const holeSize = 237 * scaleX;
+
+                        const imgSize = Math.min(aiImage.width, aiImage.height);
+
+                        ctx.drawImage(
+                            aiImage,
+                            (aiImage.width - imgSize) / 2,
+                            (aiImage.height - imgSize) / 2,
+                            imgSize, imgSize,
+                            holeX + offsetX,
+                            holeY + offsetY,
+                            holeSize * scale,
+                            holeSize * scale
+                        );
+                    }
+
+                    if (template) {
+                        ctx.drawImage(template, 0, 0, canvas.width, canvas.height);
+                    }
+                }
+
+                // Dragging
+                canvas.addEventListener("mousedown", e => {
+                    dragging = true;
+                    lastX = e.offsetX;
+                    lastY = e.offsetY;
+                });
+                canvas.addEventListener("mousemove", e => {
+                    if (dragging && aiImage) {
+                        offsetX += e.offsetX - lastX;
+                        offsetY += e.offsetY - lastY;
+                        lastX = e.offsetX;
+                        lastY = e.offsetY;
+                        redraw();
+                    }
+                });
+                canvas.addEventListener("mouseup", () => dragging = false);
+                canvas.addEventListener("mouseleave", () => dragging = false);
+
+                // Zoom
+                canvas.addEventListener("wheel", e => {
+                    if (aiImage) {
+                        e.preventDefault();
+                        scale *= e.deltaY < 0 ? 1.05 : 0.95;
+                        redraw();
+                    }
+                });
+
+                // Download
+                document.getElementById("cc-downloadBtn").addEventListener("click", () => {
+                    const name = document.getElementById("cc-cardName").value || "card";
+                    const link = document.createElement("a");
+                    link.download = name + ".png";
+                    link.href = canvas.toDataURL("image/png");
+                    link.click();
+                });
+
+            })();
+        </script>
+    </div>
+
+    </body>
+
+</html>
