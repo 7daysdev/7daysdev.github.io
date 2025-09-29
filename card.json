@@ -832,21 +832,24 @@
 			}
 		},
 		{
-			"card_id": "XXX-023",
-			"card_name": "???",
+			"card_id": "GRM-023",
+			"card_name": "Gremish",
 			"rarity": "Common",
-			"type": "???",
-			"anime_id": "S??-EP??",
+			"type": [
+				"Passive",
+				"Buff"
+			],
+			"anime_id": "S02-EP04",
 			"activation": {
 				"method": "passive",
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "???.png",
+			"image_filename": "gremish.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-023-C-L1",
-					"ability_text": "???"
+					"ability_text": "Deal slightly more damage while under 50% health. Effect scales with missing health."
 				}
 			}
 		},
@@ -1033,6 +1036,120 @@
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-030-C-L1",
+					"ability_text": "???"
+				}
+			}
+		},
+		{
+			"card_id": "XXX-031",
+			"card_name": "???",
+			"rarity": "Common",
+			"type": "???",
+			"anime_id": "S??-EP??",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "???.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-031-C-L1",
+					"ability_text": "???"
+				}
+			}
+		},
+		{
+			"card_id": "XXX-032",
+			"card_name": "???",
+			"rarity": "Common",
+			"type": "???",
+			"anime_id": "S??-EP??",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "???.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-032-C-L1",
+					"ability_text": "???"
+				}
+			}
+		},
+		{
+			"card_id": "XXX-033",
+			"card_name": "???",
+			"rarity": "Common",
+			"type": "???",
+			"anime_id": "S??-EP??",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "???.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-033-C-L1",
+					"ability_text": "???"
+				}
+			}
+		},
+		{
+			"card_id": "XXX-034",
+			"card_name": "???",
+			"rarity": "Common",
+			"type": "???",
+			"anime_id": "S??-EP??",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "???.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-034-C-L1",
+					"ability_text": "???"
+				}
+			}
+		},
+		{
+			"card_id": "RBW-035",
+			"card_name": "Rebellious Whistle",
+			"rarity": "Common",
+			"type": "Active Ability",
+			"anime_id": "S01-EP01",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "rebellious_whistle.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-035-C-L1",
+					"ability_text": "Root yourself and blow a plasma whistle. Chips away at enemies in a narrow beam. Hold for stagger at higher levels."
+				}
+			}
+		},
+		{
+			"card_id": "XXX-038",
+			"card_name": "???",
+			"rarity": "Common",
+			"type": "???",
+			"anime_id": "S??-EP??",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "???.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-038-C-L1",
 					"ability_text": "???"
 				}
 			}
@@ -2054,7 +2171,7 @@
 			}
 		},
 		{
-			"card_id": "RKR-091",
+			"card_id": "CNR-091",
 			"card_name": "Corination Ring",
 			"rarity": "Uncommon",
 			"type": "Passive Trigger",
@@ -2524,7 +2641,10 @@
 			"card_id": "RST-058",
 			"card_name": "El Lucha",
 			"rarity": "Rare",
-			"type": "Active Transformative",
+			"type": [
+				"Active",
+				"Transformative"
+			],
 			"anime_id": "S01-EP52",
 			"activation": {
 				"method": "tap",
@@ -2634,7 +2754,10 @@
 			"card_id": "ASV-060",
 			"card_name": "Assassin's Veil",
 			"rarity": "Rare",
-			"type": "Passive Stealth",
+			"type": [
+				"Passive",
+				"Utility"
+			],
 			"anime_id": "S02-EP04",
 			"activation_method": "passive",
 			"activation": {
@@ -2712,7 +2835,10 @@
 			"card_id": "WYR-061",
 			"card_name": "Wyvern Surge",
 			"rarity": "Rare",
-			"type": "Active Combat",
+			"type": [
+				"Active",
+				"Projectile"
+			],
 			"anime_id": "S02-EP11",
 			"activation_method": "active_tap",
 			"activation": {
@@ -2747,7 +2873,10 @@
 			"card_id": "DRF-094",
 			"card_name": "Dragon's Fang",
 			"rarity": "Rare",
-			"type": "Active Attack Modifier",
+			"type": [
+				"Combat",
+				"Ability"
+			],
 			"anime_id": "S01-EP94",
 			"activation": {
 				"method": "tap",
@@ -2772,8 +2901,8 @@
 			"type": "Defensive / Area Control",
 			"anime_id": "S01-EP01",
 			"activation": {
-				"method": "active",
-				"charge": "instant",
+				"method": "tap",
+				"charge": "true",
 				"release": "instant"
 			},
 			"image_filename": "graveyard.png",
@@ -2819,7 +2948,11 @@
 			"card_id": "GOS-101",
 			"card_name": "Phantom Remembrance",
 			"rarity": "Rare",
-			"type": "Active Ability",
+			"type": [
+				"Active",
+				"Ability",
+				"Summon"
+			],
 			"anime_id": "S01-EP101",
 			"activation_method": "active_instant",
 			"activation": {
@@ -2912,7 +3045,10 @@
 			"card_id": "OGR-076",
 			"card_name": "Ogre's Greed",
 			"rarity": "Epic",
-			"type": "Active Summon",
+			"type": [
+				"Active",
+				"Ability"
+			],
 			"anime_id": "S01-EP76",
 			"activation": {
 				"method": "tap",
@@ -3202,8 +3338,8 @@
 			}
 		},
 		{
-			"card_id": "ULT-007",
-			"card_name": "Orbital Choir",
+			"card_id": "ULT-006",
+			"card_name": "Final Strike",
 			"rarity": "Ultimate",
 			"type": "Active Abiltity",
 			"anime_id": "S01-EP12",
@@ -3213,7 +3349,7 @@
 				"charge_time": 5,
 				"cancelable": true
 			},
-			"image_filename": "orbital_choir.png",
+			"image_filename": "final_strike.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-077-E-L1",
@@ -3244,8 +3380,8 @@
 			"flavor_text": "From the heavens descends the circle of judgment, its light burning away all resistance. Few have seen it fire twice."
 		},
 		{
-			"card_id": "ULT-006",
-			"card_name": "Final Strike",
+			"card_id": "ULT-007",
+			"card_name": "Orbital Choir",
 			"rarity": "Ultimate",
 			"type": "Active Abiltity",
 			"anime_id": "S01-EP12",
@@ -3255,7 +3391,7 @@
 				"charge_time": 5,
 				"cancelable": true
 			},
-			"image_filename": "final_strike.png",
+			"image_filename": "orbital_choir.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-077-E-L1",
@@ -3331,5 +3467,4 @@
 			}
 		}
 	]
-
 }
