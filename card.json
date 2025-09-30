@@ -1079,21 +1079,34 @@
 			}
 		},
 		{
-			"card_id": "XXX-033",
-			"card_name": "???",
+			"card_id": "DGR-033",
+			"card_name": "Twin Slice",
 			"rarity": "Common",
-			"type": "???",
-			"anime_id": "S??-EP??",
+			"type": [
+				"Active",
+				"Weapon Ability"
+			],
+			"anime_id": "S01-EP27",
 			"activation": {
-				"method": "passive",
+				"method": "tap",
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "???.png",
+			"image_filename": "twin_slice.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-033-C-L1",
-					"ability_text": "???"
+					"ability_text": "Perform two rapid dagger slashes in quick succession. High bleed buildup, low poise damage.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 10,
+						"stamina_cost": 10
+					},
+					"scaling": {
+						"dexterity": 1,
+						"strength": 0.5
+					}
 				}
 			}
 		},
@@ -1262,6 +1275,102 @@
 			}
 		},
 		{
+			"card_id": "FST-040",
+			"card_name": "Pierce Beyond Steel",
+			"rarity": "Common",
+			"type": [
+				"Active",
+				"Weapon Ability"
+			],
+			"anime_id": "S01-EP18",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "pierce_beyond_steel.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-040-C-L1",
+					"ability_text": "Deliver a drilling fist strike that pierces enemy defenses and deals minor burn damage from friction.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 18,
+						"stamina_cost": 12,
+						"mana_cost": 6
+					},
+					"scaling": {
+						"strength": 1,
+						"dexterity": 0.7
+					}
+				},
+				"level_2": {
+					"serial_number": "BP1-040-C-L2",
+					"ability_text": "Increases piercing effectiveness. Slightly raises stagger potential against armored foes.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 17,
+						"stamina_cost": 13,
+						"mana_cost": 7
+					},
+					"scaling": {
+						"strength": 1.1,
+						"dexterity": 0.8
+					}
+				},
+				"level_3": {
+					"serial_number": "BP1-040-C-L3",
+					"ability_text": "Strike drills deeper. Burn damage is slightly increased.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 16,
+						"stamina_cost": 14,
+						"mana_cost": 7
+					},
+					"scaling": {
+						"strength": 1.2,
+						"dexterity": 0.9
+					}
+				},
+				"level_4": {
+					"serial_number": "BP1-040-C-L4",
+					"ability_text": "Pierce Beyond Steel now briefly increases the player’s poise during the strike.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 15,
+						"stamina_cost": 14,
+						"mana_cost": 8
+					},
+					"bonus_effects": {
+						"poise_resistance": "+10%"
+					},
+					"scaling": {
+						"strength": 1.3,
+						"dexterity": 1
+					}
+				},
+				"level_5": {
+					"serial_number": "BP1-040-C-L5",
+					"ability_text": "Drill strike perfected. Slightly larger hitbox and burn applies more consistently.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 14,
+						"stamina_cost": 15,
+						"mana_cost": 8
+					},
+					"scaling": {
+						"strength": 1.4,
+						"dexterity": 1.1
+					}
+				}
+			}
+		},
+		{
 			"card_id": "CSH-042",
 			"card_name": "Widow's Blessing",
 			"rarity": "Common",
@@ -1296,7 +1405,39 @@
 			}
 		},
 		{
-			"card_id": "MRA-043",
+			"card_id": "FST-043",
+			"card_name": "Goblin sandwich",
+			"rarity": "Common",
+			"type": [
+				"Active",
+				"Weapon Ability"
+			],
+			"anime_id": "S01-EP19",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "instant"
+			},
+			"image_filename": "goblin_sandwich.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP1-043-C-L1",
+					"ability_text": "Deliver a strong uppercut that launches light enemies slightly into the air. Moderate stamina cost.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 14,
+						"stamina_cost": 14
+					},
+					"scaling": {
+						"strength": 1.1,
+						"dexterity": 0.7
+					}
+				}
+			}
+		},
+		{
+			"card_id": "MRA-044",
 			"card_name": "Mire-Cursed Aegis",
 			"rarity": "Common",
 			"type": "Passive Buff",
@@ -1310,7 +1451,7 @@
 			"image_filename": "mire_cursed_aegis.png",
 			"abilities": {
 				"level_1": {
-					"serial_number": "BP1-043-C-L1",
+					"serial_number": "BP1-044-C-L1",
 					"ability_text": "Increases poison resistance by 10.",
 					"effects": [
 						{
@@ -1324,7 +1465,7 @@
 					]
 				},
 				"level_2": {
-					"serial_number": "BP1-043-C-L2",
+					"serial_number": "BP1-044-C-L2",
 					"ability_text": "Increases poison resistance by 15.",
 					"upgrade_cost": {
 						"required_level": 1,
@@ -1344,7 +1485,7 @@
 			}
 		},
 		{
-			"card_id": "EXI-044",
+			"card_id": "EXI-045",
 			"card_name": "Executioner's Insight",
 			"rarity": "Common",
 			"type": "Passive Combat",
@@ -1358,7 +1499,7 @@
 			"image_filename": "executioners_insight.png",
 			"abilities": {
 				"level_1": {
-					"serial_number": "BP1-044-C-L1",
+					"serial_number": "BP1-045-C-L1",
 					"ability_text": "Heavy attacks deal 10% more posture damage.",
 					"effects": [
 						{
@@ -1372,7 +1513,7 @@
 					]
 				},
 				"level_2": {
-					"serial_number": "BP1-044-C-L2",
+					"serial_number": "BP1-045-C-L2",
 					"ability_text": "Heavy attacks deal 12% more posture damage.",
 					"upgrade_cost": {
 						"required_level": 1,
@@ -2322,25 +2463,6 @@
 			}
 		},
 		{
-			"card_id": "SKY-106",
-			"card_name": "Sky Step",
-			"rarity": "Uncommon",
-			"type": "Active Utility",
-			"anime_id": "S02-EP17",
-			"activation": {
-				"method": "tap",
-				"charge": "none",
-				"release": "trigger"
-			},
-			"image_filename": "sky_step.png",
-			"abilities": {
-				"level_1": {
-					"serial_number": "BP1-106-UC-L1",
-					"ability_text": "Perform a quick double-jump dash mid-air. Cooldown: 18s."
-				}
-			}
-		},
-		{
 			"card_id": "BRN-107",
 			"card_name": "Ash Covering",
 			"rarity": "Uncommon",
@@ -3119,6 +3241,105 @@
 					"ability_text": "Sacrifice a portion of HP. For the next 10 seconds, axe attacks deal massive bonus damage to enemies below 25% health.",
 					"effect": "execute_bonus",
 					"hp_cost": "10%"
+				}
+			}
+		},
+		{
+			"card_id": "DST-091",
+			"card_name": "Dregthorn Malachiah Specialist",
+			"rarity": "Epic",
+			"type": [
+				"Active",
+				"Weapon Ability"
+			],
+			"anime_id": "S02-EP14",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "sequenced"
+			},
+			"image_filename": "dregthorn_malachiah_specialist.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP2-091-E-L1",
+					"ability_text": "Perform the Dregthorn shotgun sequence: First blast fires downward, propelling the player upward while dealing close-range damage.",
+					"charge_type": "none",
+					"limit": 2,
+					"props": {
+						"cooldown": 32,
+						"ammo_cost": 3,
+						"stamina_cost": 20
+					},
+					"scaling": {
+						"strength": 1,
+						"dexterity": 0.8
+					}
+				},
+				"level_2": {
+					"serial_number": "BP2-091-E-L2",
+					"ability_text": "Adds the second shot to the sequence: While airborne, fire directly at the target below for additional damage.",
+					"charge_type": "none",
+					"limit": 2,
+					"props": {
+						"cooldown": 30,
+						"ammo_cost": 3,
+						"stamina_cost": 22
+					},
+					"scaling": {
+						"strength": 1.1,
+						"dexterity": 0.9
+					}
+				},
+				"level_3": {
+					"serial_number": "BP2-091-E-L3",
+					"ability_text": "Completes the sequence: A third shotgun blast pushes the player backward on landing, dealing damage and creating space.",
+					"charge_type": "none",
+					"limit": 2,
+					"props": {
+						"cooldown": 28,
+						"ammo_cost": 3,
+						"stamina_cost": 24
+					},
+					"scaling": {
+						"strength": 1.2,
+						"dexterity": 1
+					}
+				},
+				"level_4": {
+					"serial_number": "BP2-091-E-L4",
+					"ability_text": "Dregthorn mastery: Slightly reduces stamina cost per blast and increases aerial control during the sequence.",
+					"charge_type": "none",
+					"limit": 2,
+					"props": {
+						"cooldown": 26,
+						"ammo_cost": 3,
+						"stamina_cost": 22
+					},
+					"bonus_effects": {
+						"aerial_control": "+15%"
+					},
+					"scaling": {
+						"strength": 1.3,
+						"dexterity": 1.1
+					}
+				},
+				"level_5": {
+					"serial_number": "BP2-091-E-L5",
+					"ability_text": "Specialist perfected: Sequence damage increased and final blast creates a small stagger shockwave on impact.",
+					"charge_type": "none",
+					"limit": 2,
+					"props": {
+						"cooldown": 24,
+						"ammo_cost": 3,
+						"stamina_cost": 22
+					},
+					"bonus_effects": {
+						"stagger_chance": "+20%"
+					},
+					"scaling": {
+						"strength": 1.5,
+						"dexterity": 1.2
+					}
 				}
 			}
 		},
