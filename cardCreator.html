@@ -3,6 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Card Combiner</title>
+    
     <div id="card-combiner-container">
         <link rel="stylesheet" href="styles.css">
 
@@ -34,12 +38,22 @@
                 font-family: sans-serif;
                 text-align: center;
                 padding: 20px;
+                /* Added for better mobile layout */
+                width: 100%; 
+                box-sizing: border-box; 
             }
 
             #card-combiner-container canvas {
                 border: 1px solid #aaa;
                 margin-top: 20px;
                 cursor: grab;
+                /* Added for responsiveness */
+                max-width: 100%; 
+                height: auto;
+                /* Prevent text selection on mobile when dragging */
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: none; /* Prevents default mobile scroll/zoom action on canvas */
             }
 
             #card-combiner-container input,
@@ -63,6 +77,16 @@
                 transform: translateY(-2px);
                 box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
             }
+            
+            /* NEW: Simple Mobile Media Query to adjust for very small screens */
+            @media (max-width: 450px) {
+                /* If 411px canvas is too wide, we can scale it down */
+                #cc-canvas {
+                    transform: scale(0.9); 
+                    transform-origin: top center;
+                    margin-bottom: 50px; 
+                }
+            }
         </style>
 
         <script>
@@ -74,6 +98,7 @@
                 let aiImage = null;
                 let scale = 1, offsetX = 0, offsetY = 0;
                 let dragging = false, lastX, lastY;
+                let initialDistance = null; // For pinch-to-zoom
 
                 const templateSelect = document.getElementById("cc-templateSelect");
                 templateSelect.onchange = loadTemplate;
@@ -105,12 +130,16 @@
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                     if (aiImage) {
-                        const scaleX = canvas.width / 262;
-                        const scaleY = canvas.height / 394;
+                        // Original calculations based on 411x617 canvas
+                        const scaleX = canvas.width / 411; 
+                        const scaleY = canvas.height / 617; 
 
+                        // Coordinates for the art hole (approx 86, 42) and size (approx 237) 
+                        // based on your original hole size calculation divided by 1.575 
+                        // to get coordinates relative to the full canvas size.
                         const holeX = 86 * scaleX;
                         const holeY = 42 * scaleY;
-                        const holeSize = 237 * scaleX;
+                        const holeSize = 237 * scaleX; 
 
                         const imgSize = Math.min(aiImage.width, aiImage.height);
 
@@ -131,28 +160,115 @@
                     }
                 }
 
-                // Dragging
-                canvas.addEventListener("mousedown", e => {
-                    dragging = true;
-                    lastX = e.offsetX;
-                    lastY = e.offsetY;
-                });
-                canvas.addEventListener("mousemove", e => {
+                // --- UNIFIED DRAGGING LOGIC (Mouse & Touch) ---
+
+                // Helper to get coordinates from both mouse and touch events
+                function getCoords(e) {
+                    // Touch event handling
+                    if (e.touches && e.touches.length) {
+                        // Use clientX/Y and adjust by canvas offset for touch
+                        return { 
+                            x: e.touches[0].clientX - canvas.getBoundingClientRect().left, 
+                            y: e.touches[0].clientY - canvas.getBoundingClientRect().top
+                        };
+                    }
+                    // Mouse event handling
+                    return { x: e.offsetX, y: e.offsetY };
+                }
+                
+                // Start Drag
+                const startDrag = (e) => {
+                    // Only allow drag if it's a single finger or mouse button
+                    if ((e.touches && e.touches.length === 1) || (!e.touches && e.button === 0)) {
+                        e.preventDefault(); // Prevent mobile scrolling/default touch action
+                        dragging = true;
+                        const coords = getCoords(e);
+                        lastX = coords.x;
+                        lastY = coords.y;
+                        canvas.style.cursor = 'grabbing';
+                    }
+                };
+                
+                // Move Drag
+                const moveDrag = (e) => {
                     if (dragging && aiImage) {
-                        offsetX += e.offsetX - lastX;
-                        offsetY += e.offsetY - lastY;
-                        lastX = e.offsetX;
-                        lastY = e.offsetY;
+                        e.preventDefault();
+                        const coords = getCoords(e);
+                        
+                        const deltaX = coords.x - lastX;
+                        const deltaY = coords.y - lastY;
+
+                        offsetX += deltaX;
+                        offsetY += deltaY;
+                        
+                        lastX = coords.x;
+                        lastY = coords.y;
+
                         redraw();
                     }
-                });
-                canvas.addEventListener("mouseup", () => dragging = false);
-                canvas.addEventListener("mouseleave", () => dragging = false);
+                };
+                
+                // Stop Drag
+                const stopDrag = () => {
+                    dragging = false;
+                    canvas.style.cursor = 'grab';
+                };
 
-                // Zoom
+                // Event Listeners for Dragging
+                canvas.addEventListener("mousedown", startDrag);
+                canvas.addEventListener("mousemove", moveDrag);
+                document.addEventListener("mouseup", stopDrag); 
+                canvas.addEventListener("mouseleave", stopDrag);
+
+                // Touch Events (passive: false is crucial for preventDefault)
+                canvas.addEventListener("touchstart", startDrag, { passive: false });
+                canvas.addEventListener("touchmove", moveDrag, { passive: false });
+                document.addEventListener("touchend", stopDrag);
+                document.addEventListener("touchcancel", stopDrag); 
+
+                // --- ZOOM / PINCH LOGIC ---
+                
+                // Helper function for distance
+                function getDistance(touch1, touch2) {
+                    const dx = touch1.clientX - touch2.clientX;
+                    const dy = touch1.clientY - touch2.clientY;
+                    return Math.sqrt(dx * dx + dy * dy);
+                }
+
+                // Touch Start for Pinch
+                canvas.addEventListener('touchstart', (e) => {
+                    if (e.touches.length === 2) {
+                        e.preventDefault();
+                        initialDistance = getDistance(e.touches[0], e.touches[1]);
+                        dragging = false; // Disable dragging when two fingers are down
+                    }
+                }, { passive: false });
+
+                // Touch Move for Pinch
+                canvas.addEventListener('touchmove', (e) => {
+                    if (e.touches.length === 2 && initialDistance !== null && aiImage) {
+                        e.preventDefault();
+                        const currentDistance = getDistance(e.touches[0], e.touches[1]);
+                        
+                        if (currentDistance > 10) { 
+                            const scaleFactor = currentDistance / initialDistance;
+                            scale *= scaleFactor;
+                            initialDistance = currentDistance; 
+                            redraw();
+                        }
+                    }
+                }, { passive: false });
+
+                // Touch End for Pinch
+                canvas.addEventListener('touchend', (e) => {
+                    initialDistance = null;
+                });
+
+                // Desktop Wheel Zoom
                 canvas.addEventListener("wheel", e => {
                     if (aiImage) {
                         e.preventDefault();
+                        // Scale adjustment logic
                         scale *= e.deltaY < 0 ? 1.05 : 0.95;
                         redraw();
                     }
