@@ -1,0 +1,347 @@
+/* ==============================================
+   KEYFRAMES FOR STAGGERED REVEAL
+   ============================================== */
+@keyframes staggeredFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================================
+   CARD GRID LAYOUT
+   ============================================== */
+.card-grid {
+    display: grid;
+    /* Responsive grid: min 200px (desktop), adjusted in media queries */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 20px 0;
+}
+
+/* ==============================================
+   FLIP CARD BASE (WITH STAGGERED ANIMATION)
+   ============================================== */
+/* ... in the FLIP CARD BASE section ... */
+.flip-card {
+    perspective: 1000px;
+    height: 320px;
+    
+    /* Apply staggered animation */
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: staggeredFadeIn 0.5s ease forwards;
+    
+    /* 🌟 NEW DELAY CALCULATION for the DIAGONAL/DOMINO EFFECT 
+       We now use the column index, which is set via JS/HTML. */
+   animation-delay: calc(0.08s * var(--card-delay-offset, 0)); 
+
+    transition: transform 0.3s ease; 
+}
+
+/* Note: You must add an inline style `--card-index: N;` to each flip-card 
+   element in your HTML/JavaScript for this to work, where N is its index 
+   (0, 1, 2, 3, etc.). */
+
+/* Card lift on hover */
+.flip-card:hover {
+    transform: translateY(-5px);
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* Flip transition: Smoother, bouncier flip */
+    transition: transform 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    /* Default state: Flipped to front (0deg) */
+    transform: rotateY(0deg);
+}
+
+/* Initial state for scroll-flip effect: Card Back showing */
+.flip-card-inner.initial-back {
+    transform: rotateY(180deg);
+}
+
+/* Base styles for both front and back */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* ==============================================
+   CARD CONTENT
+   ============================================== */
+/* Card Images */
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #2a2a2a;
+}
+
+/* Card Info Overlay */
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    color: white;
+    backdrop-filter: blur(2px);
+}
+
+.card-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.card-info p {
+    margin: 4px 0;
+    font-size: 12px;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* ==============================================
+   RARITY GLOW EFFECTS
+   ============================================== */
+/* Base hover effect for card inner */
+.flip-card-inner:hover {
+    box-shadow: none !important; /* Remove default shadow */
+    transform: rotateY(0deg) scale(1.02); /* Slight scale for feedback */
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Rarity Glow Definitions (applied on hover to .flip-card-inner) */
+.flip-card-inner.common-glow:hover {
+    /* White glow (Common) */
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7), 0 0 50px rgba(255, 255, 255, 0.2);
+}
+.flip-card-inner.uncommon-glow:hover {
+    /* Green glow (Uncommon) */
+    box-shadow: 0 0 15px 5px rgba(30, 255, 0, 0.7), 0 0 50px rgba(30, 255, 0, 0.2);
+}
+.flip-card-inner.rare-glow:hover {
+    /* Blue glow (Rare) */
+    box-shadow: 0 0 15px 5px rgba(0, 112, 255, 0.7), 0 0 50px rgba(0, 112, 255, 0.2);
+}
+.flip-card-inner.epic-glow:hover {
+    /* Purple glow (Epic) */
+    box-shadow: 0 0 15px 5px rgba(163, 53, 238, 0.7), 0 0 50px rgba(163, 53, 238, 0.2);
+}
+.flip-card-inner.ultimate-glow:hover {
+    /* Orange glow (Ultimate) */
+    box-shadow: 0 0 15px 5px rgba(255, 128, 0, 0.7), 0 0 50px rgba(255, 128, 0, 0.2);
+}
+
+/* ==============================================
+   RARITY TEXT AND DOTS (COLOR DEFINITIONS)
+   ============================================== */
+/* Rarity Text Colors */
+.rarity-text.common    { color: #ffffff; } /* White */
+.rarity-text.uncommon  { color: #1eff00; } /* Green */
+.rarity-text.rare      { color: #0070ff; } /* Blue */
+.rarity-text.epic      { color: #a335ee; } /* Purple */
+.rarity-text.ultimate  { color: #ff8000; } /* Orange */
+
+/* Rarity Dot Colors */
+.rarity-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px; 
+}
+.rarity-dot.common   { background-color: #ffffff; }
+.rarity-dot.uncommon { background-color: #1eff00; }
+.rarity-dot.rare     { background-color: #0070ff; }
+.rarity-dot.epic     { background-color: #a335ee; }
+.rarity-dot.ultimate { background-color: #ff8000; }
+
+
+/* Generic Rarity Class Colors */
+.common   { color: #ffffff; } 
+.uncommon { color: #1eff00; }
+.rare     { color: #0070ff; }
+.epic     { color: #a335ee; }
+.ultimate { color: #ff8000; }
+
+
+/* ==============================================
+   RARITY FILTER BUTTONS
+   ============================================== */
+/* Common Filter Button */
+.filter-btn[data-rarity="Common"] {
+    border-color: #0070ff; 
+    color: #ffffff;
+}
+.filter-btn[data-rarity="Common"]:hover,
+.filter-btn[data-rarity="Common"].active {
+    background-color: #0070ff;
+    color: white;
+}
+
+/* Uncommon Filter Button */
+.filter-btn[data-rarity="Uncommon"] {
+    border-color: #1eff00;
+    color: #1eff00;
+}
+.filter-btn[data-rarity="Uncommon"]:hover,
+.filter-btn[data-rarity="Uncommon"].active {
+    background-color: #1eff00;
+    color: #1a1a1a;
+}
+
+/* Rare Filter Button */
+.filter-btn[data-rarity="Rare"] {
+    border-color: #0070ff;
+    color: #0070ff;
+}
+.filter-btn[data-rarity="Rare"]:hover,
+.filter-btn[data-rarity="Rare"].active {
+    background-color: #0070ff;
+    color: white;
+}
+
+/* Epic Filter Button */
+.filter-btn[data-rarity="Epic"] {
+    border-color: #a335ee;
+    color: #a335ee;
+}
+.filter-btn[data-rarity="Epic"]:hover,
+.filter-btn[data-rarity="Epic"].active {
+    background-color: #a335ee;
+    color: white;
+}
+
+/* Ultimate Filter Button */
+.filter-btn[data-rarity="Ultimate"] {
+    border-color: #ff8000;
+    color: #ff8000;
+}
+.filter-btn[data-rarity="Ultimate"]:hover,
+.filter-btn[data-rarity="Ultimate"].active {
+    background-color: #ff8000;
+    color: #1a1a1a;
+}
+
+/* All Filter Button (General Blue) */
+.filter-btn[data-rarity="all"] {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+/* ==============================================
+   TOOLTIP STYLES
+   ============================================== */
+.stat-value:hover .rarity-tooltip {
+    opacity: 1;
+    visibility: visible;
+    /* Adjust based on typical tooltip placement */
+    transform: translateX(-50%) translateY(5px); 
+}
+
+.rarity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+.rarity-name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rarity-count {
+    font-weight: bold;
+}
+
+
+/* ==============================================
+   MEDIA QUERIES (RESPONSIVE DESIGN)
+   ============================================== */
+@media (max-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 25px;
+    }
+    
+    .flip-card {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+    }
+    
+    .flip-card {
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+    
+    .flip-card {
+        height: 250px;
+    }
+    
+    .card-info {
+        padding: 12px;
+    }
+    
+    .card-info h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    
+    .card-info p {
+        font-size: 11px;
+        margin: 3px 0;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .flip-card-inner {
+        /* Faster transition for touch-based flips */
+        transition: transform 0.8s;
+    }
+    
+    /* Add tap indication for mobile (slight press effect) */
+    .flip-card:active .flip-card-inner {
+        transform: scale(0.98);
+    }
+}
