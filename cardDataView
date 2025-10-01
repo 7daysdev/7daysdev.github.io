@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Data Filter & Sort</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="card-styles.css">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+
+    <div class="container">
+        <h1>Advanced Card Data View</h1>
+
+        <div class="header-actions">
+            <a href="index.html" class="btn">← Back to Cards</a>
+            <a href="cardCreator.html" class="btn">Create Card</a>
+        </div>
+
+        <div class="data-controls">
+            <select id="type-filter">
+                <option value="all">Filter by Type (All)</option>
+                <option value="Summon">Summon</option>
+                <option value="Spell">Spell</option>
+                </select>
+            
+            <select id="sort-by">
+                <option value="name">Sort by Name</option>
+                <option value="id">Sort by ID</option>
+                <option value="rarity">Sort by Rarity</option>
+            </select>
+
+            <input type="text" id="search-bar" placeholder="Search by name or description...">
+        </div>
+        
+        <h2 style="text-align: center;">Filtered Results</h2>
+        <div id="cards-container" class="card-grid">
+            <p class="loading">Loading and filtering cards...</p>
+        </div>
+    </div>
+
+    <script src="dataViewLogic.js"></script> 
+</body>
+</html>
