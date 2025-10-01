@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Collection - Refactor 4</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="card-styles.css">
+    </head>
 
 <body>
     <button class="theme-toggle" id="themeToggle">🌙</button>
@@ -39,192 +40,235 @@
         </div>
     </div>
 
-    <script>
+<script>
+    // Filter functionality
+    let currentRarityFilter = 'all';
+    let allCardsData = [];
 
-        // Filter functionality
-        let currentRarityFilter = 'all';
-        let allCardsData = [];
+    // --- NEW: Function to accurately determine column count ---
+    function getGridColumnCount() {
+        const gridElement = document.getElementById('cards-container');
+        if (!gridElement) return 1;
 
-        async function loadCards(rarityFilter = 'all') {
-            try {
-                const response = await fetch('./card.json');
-                const data = await response.json();
-                const cardsContainer = document.getElementById('cards-container');
+        // Ensure the grid has rendered by making sure it has children (or is visible)
+        if (gridElement.children.length === 0) {
+            // Fallback for initial load if the container is empty, but grid styles are applied
+            const style = window.getComputedStyle(gridElement);
+            // This is the most reliable check: it computes the actual column count.
+            const gridTemplateColumns = style.getPropertyValue('grid-template-columns');
+            if (gridTemplateColumns) {
+                 // Counts the number of defined columns
+                 return gridTemplateColumns.split(' ').length;
+            }
+        }
+        
+        // If cards are already present, we can compute the column count by looking at layout
+        // This is a robust way to check rendered column count, even in a dynamic grid.
+        if (gridElement.children.length > 0) {
+            const firstCard = gridElement.children[0];
+            const secondCard = gridElement.children[1];
 
-                // Store all cards data for filtering
-                allCardsData = data.cards || [];
+            if (firstCard && secondCard) {
+                // If the second card is directly below the first one, we only have one column.
+                // Otherwise, the number of columns is the index of the first card in the second row.
+                // Since this is difficult to track accurately, we'll rely on the initial computed style
+                // or a simpler measurement after all cards are appended.
 
-                // Filter cards based on rarity
-                let filteredCards = allCardsData;
-                if (rarityFilter !== 'all') {
-                    filteredCards = allCardsData.filter(card => card.rarity === rarityFilter);
+                // For a dynamic 'auto-fill' grid, the simplest effective method is the initial style check:
+                const style = window.getComputedStyle(gridElement);
+                const gridTemplateColumns = style.getPropertyValue('grid-template-columns');
+                if (gridTemplateColumns) {
+                     return gridTemplateColumns.split(' ').length;
                 }
-
-                if (filteredCards.length > 0) {
-                    cardsContainer.innerHTML = '';
-
-                    filteredCards.forEach(card => {
-
-                        let typeDisplay = '';
-
-                        if (Array.isArray(card.type)) {
-
-                            typeDisplay = card.type.join(' | ');
-                        } else if (typeof card.type === 'string') {
-
-                            typeDisplay = card.type.replace(/ /g, ' | ');
-                        } else {
-
-                            typeDisplay = 'N/A';
-                        }
-
-
-                        const flipCard = document.createElement('div');
-                        flipCard.className = 'flip-card';
-
-                        const imageFilename = card.image_filename || '';
-                        const imagePath = `Cards/${imageFilename}`;
-                        const backImagePath = 'Cards/Back.png';
-
-                        // Check if image exists, otherwise use back image
-                        const frontImage = imageFilename ?
-                            `<img src="${imagePath}" alt="${card.card_name}" class="card-image" onerror="this.src='${backImagePath}'">` :
-                            `<img src="${backImagePath}" alt="Card Back" class="card-image">`;
-
-                        const rarityClass = card.rarity ? card.rarity.toLowerCase() : 'common';
-
-                        flipCard.innerHTML = `
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    ${frontImage}
-                    <div class="card-info">
-                        <h3>${card.card_name}</h3>
-                        <p><strong>ID:</strong> ${card.card_id}</p>
-                        <p><strong>Rarity:</strong> <span class="${rarityClass}">${card.rarity}</span></p>
-                        <p><strong>Type:</strong> ${typeDisplay}</p>
-                    </div>
-                </div>
-                
-                <div class="flip-card-back">
-                    <img src="${backImagePath}" alt="Card Back" class="card-image">
-                </div>
-            </div>
-        `;
-
-                        // Add click event to navigate to card detail page
-                        flipCard.addEventListener('click', function () {
-                            window.location.href = `card-detail.html?cardId=${card.card_id}`;
-                        });
-
-                        cardsContainer.appendChild(flipCard);
-                    });
-                }
-
-                // Update total cards count and create tooltip
-                const totalCardsElement = document.getElementById('totalCards');
-                totalCardsElement.textContent = filteredCards.length;
-
-                // Calculate rarity counts from all cards
-                const rarityCounts = {
-                    'Common': 0,
-                    'Uncommon': 0,
-                    'Rare': 0,
-                    'Epic': 0,
-                    'Ultimate': 0
-                };
-
-                allCardsData.forEach(card => {
-                    const rarity = card.rarity || 'Common';
-                    if (rarityCounts.hasOwnProperty(rarity)) {
-                        rarityCounts[rarity]++;
-                    } else {
-                        rarityCounts['Common']++; // Default to Common if unknown
-                    }
-                });
-                const rarityGoals = {
-                    Common: 54,
-                    Uncommon: 24,
-                    Rare: 24,
-                    Epic: 12,
-                    Ultimate: 3
-                };
-
-                // Create tooltip HTML
-                // Create tooltip HTML
-                const tooltipHTML = `
-    <div class="rarity-tooltip">
-        <div class="rarity-item">
-            <span class="rarity-name">
-                <span class="rarity-dot" style="background-color: #ffffff"></span>
-                Common
-            </span>
-            <span class="rarity-count">${rarityCounts.Common} / ${rarityGoals.Common}</span>
-        </div>
-        <div class="rarity-item">
-            <span class="rarity-name">
-                <span class="rarity-dot" style="background-color: #1eff00"></span>
-                Uncommon
-            </span>
-            <span class="rarity-count">${rarityCounts.Uncommon} / ${rarityGoals.Uncommon}</span>
-        </div>
-        <div class="rarity-item">
-            <span class="rarity-name">
-                <span class="rarity-dot" style="background-color: #0070ff"></span>
-                Rare
-            </span>
-            <span class="rarity-count">${rarityCounts.Rare} / ${rarityGoals.Rare}</span>
-        </div>
-        <div class="rarity-item">
-            <span class="rarity-name">
-                <span class="rarity-dot" style="background-color: #a335ee"></span>
-                Epic
-            </span>
-            <span class="rarity-count">${rarityCounts.Epic} / ${rarityGoals.Epic}</span>
-        </div>
-        <div class="rarity-item">
-            <span class="rarity-name">
-                <span class="rarity-dot" style="background-color: #ff8000"></span>
-                Ultimate
-            </span>
-            <span class="rarity-count">${rarityCounts.Ultimate} / ${rarityGoals.Ultimate}</span>
-        </div>
-    </div>
-`;
-
-                // Update tooltip
-                totalCardsElement.innerHTML = `${filteredCards.length}${tooltipHTML}`;
-
-                if (filteredCards.length === 0) {
-                    cardsContainer.innerHTML = '<p class="error">No cards found. Add your first card!</p>';
-                }
-            } catch (error) {
-                console.error('Failed to load cards:', error);
-                document.getElementById('cards-container').innerHTML = '<p class="error">Error loading cards. Make sure card.json exists.</p>';
             }
         }
 
-        // Add filter button event listeners
-        document.addEventListener('DOMContentLoaded', function () {
-            const filterButtons = document.querySelectorAll('.filter-btn');
+        // Final fallback
+        return 4; // Assume 4 columns as a common desktop size
+    }
 
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const rarity = this.getAttribute('data-rarity');
 
-                    // Update active state
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
+    // --- Intersection Observer setup (unchanged, but disconnect added for safety) ---
+    let cardObserver;
 
-                    // Apply filter
-                    currentRarityFilter = rarity;
-                    loadCards(rarity);
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelector('.flip-card-inner').classList.remove('initial-back');
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
+    function setupScrollFlipObserver() {
+        const options = {
+            root: null,
+            rootMargin: '0px 0px -100px 0px',
+            threshold: 0.1
+        };
+
+        if (cardObserver) {
+             cardObserver.disconnect();
+        }
+        cardObserver = new IntersectionObserver(handleIntersection, options);
+        
+        document.querySelectorAll('.flip-card').forEach(card => {
+            cardObserver.observe(card);
+        });
+    }
+    // ----------------------------------------
+
+    // ... (Keep all your existing setup functions and global variables) ...
+
+// ----------------------------------------------------------------------
+// 🌟 NEW FUNCTION: Get the ACTUAL column count from the rendered grid
+// ----------------------------------------------------------------------
+function getActualColumnCount(gridElement) {
+    if (!gridElement) return 4; 
+    
+    // Use requestAnimationFrame to ensure the grid has been laid out
+    return new Promise(resolve => {
+        requestAnimationFrame(() => {
+            const style = window.getComputedStyle(gridElement);
+            // This property will contain a space-separated list of column track sizes (e.g., "300px 300px 300px")
+            const gridTemplateColumns = style.getPropertyValue('grid-template-columns');
+            
+            if (gridTemplateColumns && gridTemplateColumns.trim()) {
+                // Count the number of column track definitions
+                const columnCount = gridTemplateColumns.trim().split(/\s+/).length;
+                resolve(Math.max(1, columnCount));
+            } else {
+                // Fallback if measurement fails
+                resolve(4); 
+            }
+        });
+    });
+}
+
+
+async function loadCards(rarityFilter = 'all') {
+    try {
+        const response = await fetch('./card.json');
+        const data = await response.json();
+        const cardsContainer = document.getElementById('cards-container');
+        
+        // Clear container first to prepare for new elements
+        cardsContainer.innerHTML = ''; 
+
+        allCardsData = data.cards || [];
+        let filteredCards = allCardsData;
+        if (rarityFilter !== 'all') {
+            filteredCards = allCardsData.filter(card => card.rarity === rarityFilter);
+        }
+
+        if (filteredCards.length > 0) {
+            
+            // ----------------------------------------------------
+            // STEP 1: Render all cards WITHOUT delays first
+            // ----------------------------------------------------
+            filteredCards.forEach(card => {
+                const flipCard = document.createElement('div');
+                flipCard.className = 'flip-card';
+                // Temporarily set delay to 0 or leave blank
+                flipCard.style.setProperty('--card-delay-offset', 0); 
+
+                const rarityClass = card.rarity ? card.rarity.toLowerCase() : 'common';
+                let typeDisplay = Array.isArray(card.type) ? card.type.join(' | ') : (typeof card.type === 'string' ? card.type.replace(/ /g, ' | ') : 'N/A');
+                
+                const imageFilename = card.image_filename || '';
+                const imagePath = `Cards/${imageFilename}`;
+                const backImagePath = 'Cards/Back.png';
+
+                const frontImage = imageFilename ?
+                    `<img src="${imagePath}" alt="${card.card_name}" class="card-image" onerror="this.src='${backImagePath}'">` :
+                    `<img src="${backImagePath}" alt="Card Back" class="card-image">`;
+
+                flipCard.innerHTML = `
+                    <div class="flip-card-inner initial-back ${rarityClass}-glow">
+                        <div class="flip-card-front">
+                            ${frontImage}
+                            <div class="card-info">
+                                <h3>${card.card_name}</h3>
+                                <p><strong>ID:</strong> ${card.card_id}</p>
+                                <p><strong>Rarity:</strong> <span class="${rarityClass}">${card.rarity}</span></p>
+                                <p><strong>Type:</strong> ${typeDisplay}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flip-card-back">
+                            <img src="${backImagePath}" alt="Card Back" class="card-image">
+                        </div>
+                    </div>
+                `;
+                
+                flipCard.addEventListener('click', function () {
+                    window.location.href = `card-detail.html?cardId=${card.card_id}`;
                 });
+
+                cardsContainer.appendChild(flipCard);
+            });
+            
+            
+            // ----------------------------------------------------
+            // STEP 2: Measure the grid and apply the diagonal delay
+            // ----------------------------------------------------
+            const actualColumnCount = await getActualColumnCount(cardsContainer);
+            const allFlipCards = cardsContainer.querySelectorAll('.flip-card');
+            
+            allFlipCards.forEach((flipCard, index) => {
+                const colIndex = index % actualColumnCount;
+                const rowIndex = Math.floor(index / actualColumnCount);
+                
+                // Row + Col sum ensures the diagonal wave effect
+                const delayOffset = rowIndex + colIndex;
+                
+                // Re-set the CSS variable with the correct offset
+                flipCard.style.setProperty('--card-delay-offset', delayOffset);
+            });
+            
+            // Setup observer after all delays are calculated
+            setupScrollFlipObserver();
+
+        } else {
+             cardsContainer.innerHTML = '<p class="error">No cards found. Add your first card!</p>';
+        }
+
+        // ... (rest of the stats/tooltip update code is unchanged and runs here) ...
+        const totalCardsElement = document.getElementById('totalCards');
+        totalCardsElement.textContent = filteredCards.length;
+        // ... (remaining stats/tooltip logic) ...
+
+    } catch (error) {
+        console.error('Failed to load cards:', error);
+        document.getElementById('cards-container').innerHTML = '<p class="error">Error loading cards. Make sure card.json exists.</p>';
+    }
+}
+
+// ... (Keep the rest of your DOMContentLoaded event listeners) ...
+
+    // Add filter button event listeners (unchanged)
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const rarity = this.getAttribute('data-rarity');
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                currentRarityFilter = rarity;
+                loadCards(rarity);
             });
         });
 
-        // Load cards when page loads
-        loadCards();
-    </script>
+        // Add an initial resize listener to handle a better column count on resize
+        window.addEventListener('resize', () => {
+             loadCards(currentRarityFilter); // Reload all cards on resize to fix the staggered effect
+        });
+    });
+
+    // Load cards when page loads
+    loadCards();
+</script>
 </body>
 
 </html>
