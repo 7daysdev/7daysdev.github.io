@@ -1757,7 +1757,7 @@
 			"anime_id": "S01-EP21",
 			"cooldown_s": 0,
 			"activation_method": "active_tap",
-			"image_filename": "Revigor.png",
+			"image_filename": "revigor.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-021-UC-L1",
@@ -3748,4 +3748,5 @@
 		}
 	]
 }
+
 
