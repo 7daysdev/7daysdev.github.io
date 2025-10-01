@@ -104,67 +104,6 @@ h2 {
     color: white;
 }
 
-/* Rarity-specific button colors */
-.filter-btn[data-rarity="Common"] {
-    border-color: #ffffff;
-    color: #ffffff;
-}
-
-.filter-btn[data-rarity="Common"]:hover,
-.filter-btn[data-rarity="Common"].active {
-    background-color: #ffffff;
-    color: #1a1a1a;
-}
-
-.filter-btn[data-rarity="Uncommon"] {
-    border-color: #1eff00;
-    color: #1eff00;
-}
-
-.filter-btn[data-rarity="Uncommon"]:hover,
-.filter-btn[data-rarity="Uncommon"].active {
-    background-color: #1eff00;
-    color: #1a1a1a;
-}
-
-.filter-btn[data-rarity="Rare"] {
-    border-color: #0070ff;
-    color: #0070ff;
-}
-
-.filter-btn[data-rarity="Rare"]:hover,
-.filter-btn[data-rarity="Rare"].active {
-    background-color: #0070ff;
-    color: white;
-}
-
-.filter-btn[data-rarity="Epic"] {
-    border-color: #a335ee;
-    color: #a335ee;
-}
-
-.filter-btn[data-rarity="Epic"]:hover,
-.filter-btn[data-rarity="Epic"].active {
-    background-color: #a335ee;
-    color: white;
-}
-
-.filter-btn[data-rarity="Ultimate"] {
-    border-color: #ff8000;
-    color: #ff8000;
-}
-
-.filter-btn[data-rarity="Ultimate"]:hover,
-.filter-btn[data-rarity="Ultimate"].active {
-    background-color: #ff8000;
-    color: #1a1a1a;
-}
-
-.filter-btn[data-rarity="all"] {
-    border-color: #007bff;
-    color: #007bff;
-}
-
 .filter-btn[data-rarity="all"]:hover,
 .filter-btn[data-rarity="all"].active {
     background-color: #007bff;
@@ -190,119 +129,13 @@ h2 {
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
-/* ==============================================
-   CARD COMPONENT STYLES
-   ============================================== */
 
-/* Card Grid Layout */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
-    margin: 20px 0;
-}
-
-/* Flip Card Container */
-.flip-card {
-    perspective: 1000px;
-    height: 320px;
-    animation: fadeIn 0.6s ease forwards;
-}
-
-.flip-card:nth-child(1) { animation-delay: 0.1s; }
-.flip-card:nth-child(2) { animation-delay: 0.2s; }
-.flip-card:nth-child(3) { animation-delay: 0.3s; }
-.flip-card:nth-child(4) { animation-delay: 0.4s; }
-.flip-card:nth-child(5) { animation-delay: 0.5s; }
-.flip-card:nth-child(6) { animation-delay: 0.6s; }
-
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-}
-
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: box-shadow 0.3s ease;
-}
-
-.flip-card-back {
-    transform: rotateY(180deg);
-}
-
-.flip-card:hover .flip-card-front,
-.flip-card:hover .flip-card-back {
-    box-shadow: 0 12px 24px rgba(0,0,0,0.6);
-}
-
-.flip-card {
-    transition: transform 0.3s ease;
-}
-
-.flip-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Card Images */
-.card-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background-color: #2a2a2a;
-}
-
-/* Card Info Overlay */
-.card-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px;
-    color: white;
-    backdrop-filter: blur(2px);
-}
-
-.card-info h3 {
-    margin: 0 0 8px 0;
-    font-size: 16px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-}
-
-.card-info p {
-    margin: 4px 0;
-    font-size: 12px;
-    opacity: 0.95;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-}
 
 /* ==============================================
    UI ELEMENTS & COMPONENTS
    ============================================== */
 
-/* Rarity Colors */
-.common { color: #0070ff; }
-.uncommon { color: #1eff00; }
-.rare { color: #FFFFFF; }
-.epic { color: #a335ee; }
-.ultimate { color: #ff8000; }
+
 
 /* Loading and Error States */
 .loading {
@@ -337,36 +170,7 @@ h2 {
     margin-top: 10px;
 }
 
-.stat-value:hover .rarity-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(5px);
-}
 
-.rarity-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px 0;
-    font-size: 12px;
-}
-
-.rarity-name {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.rarity-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.rarity-count {
-    font-weight: bold;
-}
 
 /* ==============================================
    THEME & UTILITIES
@@ -501,4 +305,11 @@ html {
         transform: scale(0.98);
     }
 }
+
+
+
+
+
+
+
 
