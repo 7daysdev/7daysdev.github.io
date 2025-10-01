@@ -356,7 +356,10 @@
 			"card_id": "AMF-007",
 			"card_name": "Armored Fortress",
 			"rarity": "Common",
-			"type": "Passive Buff",
+			"type": [
+				"Passive",
+				"Buff"
+			],
 			"anime_id": "S01-EP07",
 			"activation": {
 				"method": "passive",
@@ -393,7 +396,10 @@
 			"card_id": "PDR-008",
 			"card_name": "Paladin's Resolve",
 			"rarity": "Common",
-			"type": "Passive Buff",
+			"type": [
+				"Passive",
+				"Buff"
+			],
 			"anime_id": "S01-EP08",
 			"activation": {
 				"method": "passive",
@@ -422,7 +428,10 @@
 			"card_id": "QKE-009",
 			"card_name": "Quake",
 			"rarity": "Common",
-			"type": "Active Utility",
+			"type": [
+				"Active",
+				"Utility"
+			],
 			"anime_id": "S01-EP09",
 			"activation": {
 				"method": "trigger",
@@ -700,7 +709,10 @@
 			"card_id": "NUA-020",
 			"card_name": "Nuelen's Guard",
 			"rarity": "Common",
-			"type": "Active Defense",
+			"type": [
+				"Active",
+				"Defense"
+			],
 			"anime_id": "S01-EP20",
 			"activation_method": "active_tap",
 			"activation": {
@@ -756,7 +768,10 @@
 			"card_id": "NUA-021",
 			"card_name": "Blazing Slide",
 			"rarity": "Common",
-			"type": "Active Mobility",
+			"type": [
+				"Active",
+				"Mobility"
+			],
 			"anime_id": "S01-EP02",
 			"activation_method": "active_tap",
 			"activation": {
@@ -811,7 +826,10 @@
 			"card_id": "VNO-022",
 			"card_name": "Venom Orchid",
 			"rarity": "Common",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S01-EP16",
 			"activation": {
 				"method": "trigger",
@@ -857,7 +875,10 @@
 			"card_id": "STM-024",
 			"card_name": "Horned Heirs Breath",
 			"rarity": "Common",
-			"type": "Passive Trigger",
+			"type": [
+				"Passive",
+				"Trigger"
+			],
 			"anime_id": "S04-EP24",
 			"activation": {
 				"method": "trigger",
@@ -877,7 +898,10 @@
 			"card_id": "AVW-025",
 			"card_name": "Avowed Warrior",
 			"rarity": "Common",
-			"type": "Passive Buff",
+			"type": [
+				"Passive",
+				"Buff"
+			],
 			"anime_id": "S01-EP106",
 			"activation_method": "passive",
 			"activation": {
@@ -3748,5 +3772,6 @@
 		}
 	]
 }
+
 
 
