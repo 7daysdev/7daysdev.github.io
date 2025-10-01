@@ -922,21 +922,33 @@
 			}
 		},
 		{
-			"card_id": "XXX-026",
-			"card_name": "???",
+			"card_id": "SUM-026",
+			"card_name": "Little Trumpet Triumph",
 			"rarity": "Common",
-			"type": "???",
-			"anime_id": "S??-EP??",
+			"type": [
+				"Active",
+				"Summon",
+				"Utility"
+			],
+			"anime_id": "S01-EP24",
 			"activation": {
-				"method": "passive",
+				"method": "tap",
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "???.png",
+			"image_filename": "little_trumpet_triumph.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-026-C-L1",
-					"ability_text": "???"
+					"ability_text": "Summons a small, cute creature that plays a trumpet to aggro nearby enemies and trigger low-level traps. Moves in a general direction for a short duration.",
+					"charge_type": "none",
+					"limit": 2,
+					"props": {
+						"cooldown": 15,
+						"duration": 6,
+						"stamina_cost": 8
+					},
+					"scaling": {}
 				}
 			}
 		},
@@ -1041,40 +1053,62 @@
 			}
 		},
 		{
-			"card_id": "XXX-031",
-			"card_name": "???",
+			"card_id": "TRP-031",
+			"card_name": "Trap Sense",
 			"rarity": "Common",
-			"type": "???",
-			"anime_id": "S??-EP??",
+			"type": [
+				"Active",
+				"Utility"
+			],
+			"anime_id": "S01-EP23",
 			"activation": {
-				"method": "passive",
+				"method": "tap",
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "???.png",
+			"image_filename": "trap_sense.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-031-C-L1",
-					"ability_text": "???"
+					"ability_text": "Reveals low-level traps in the nearby area. A flashing UI indicator alerts the player when a trap is detected.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 10,
+						"stamina_cost": 6
+					},
+					"scaling": {}
 				}
 			}
 		},
 		{
-			"card_id": "XXX-032",
-			"card_name": "???",
+			"card_id": "RES-032",
+			"card_name": "Hoarder’s Glint",
 			"rarity": "Common",
-			"type": "???",
-			"anime_id": "S??-EP??",
+			"type": [
+				"Active",
+				"Utility",
+				"Resource"
+			],
+			"anime_id": "S01-EP25",
 			"activation": {
-				"method": "passive",
+				"method": "tap",
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "???.png",
+			"image_filename": "hoarders_glint.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-032-C-L1",
-					"ability_text": "???"
+					"ability_text": "Briefly highlights rare items, coins, and consumables in the nearby environment.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 12,
+						"duration": 6,
+						"stamina_cost": 5
+					},
+					"scaling": {}
 				}
 			}
 		},
@@ -1111,21 +1145,31 @@
 			}
 		},
 		{
-			"card_id": "XXX-034",
-			"card_name": "???",
+			"card_id": "LGT-034",
+			"card_name": "Guiding Light",
 			"rarity": "Common",
-			"type": "???",
-			"anime_id": "S??-EP??",
+			"type": [
+				"Active",
+				"Utility"
+			],
+			"anime_id": "S01-EP22",
 			"activation": {
-				"method": "passive",
+				"method": "tap",
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "???.png",
+			"image_filename": "guiding_light.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-034-C-L1",
-					"ability_text": "???"
+					"ability_text": "Spawns a glowing card above your head that illuminates the surrounding area, revealing hidden paths and dark corners.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 12,
+						"stamina_cost": 8
+					},
+					"scaling": {}
 				}
 			}
 		},
@@ -1149,21 +1193,36 @@
 			}
 		},
 		{
-			"card_id": "XXX-038",
-			"card_name": "???",
+			"card_id": "ELE-038",
+			"card_name": "Thunder Stomp",
 			"rarity": "Common",
-			"type": "???",
-			"anime_id": "S??-EP??",
+			"type": [
+				"Active",
+				"AoE",
+				"Elemental"
+			],
+			"anime_id": "S01-EP21",
 			"activation": {
-				"method": "passive",
+				"method": "tap",
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "???.png",
+			"image_filename": "thunder_stomp.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-038-C-L1",
-					"ability_text": "???"
+					"ability_text": "Stomp the ground to release a quick wave of lightning in front of you. Deals minor electric damage and builds up stagger.",
+					"charge_type": "none",
+					"limit": 4,
+					"props": {
+						"cooldown": 12,
+						"stamina_cost": 11
+					},
+					"scaling": {
+						"strength": 0.8,
+						"dexterity": 0.5,
+						"magic": 1
+					}
 				}
 			}
 		},
