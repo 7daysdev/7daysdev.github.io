@@ -3702,8 +3702,8 @@
 			"flavor_text": "From the heavens descends the circle of judgment, its light burning away all resistance. Few have seen it fire twice."
 		},
 		{
-			"card_id": "CRV-102",
-			"card_name": "Crush Card Virus",
+			"card_id": "BOH-102",
+			"card_name": "Blight of the Heirs",
 			"rarity": "Ultimate",
 			"type": "Active Debuff",
 			"anime_id": "S01-EP102",
@@ -3713,7 +3713,7 @@
 				"charge": "none",
 				"release": "manual"
 			},
-			"image_filename": "crush_card_virus.png",
+			"image_filename": "blight_of_the_heirs.png",
 			"flavor_text": "A dark power that feeds on life to dismantle the will of even the mightiest foes.",
 			"abilities": {
 				"level_1": {
@@ -3748,3 +3748,4 @@
 		}
 	]
 }
+
