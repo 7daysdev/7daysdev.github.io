@@ -16,13 +16,14 @@
         <h1>Card Collection Manager</h1>
 
         <div class="header-actions">
-            <a href="index.html" class="btn">← Back to Hub</a>
-            <div class="stats-container">
-                <div class="stat-item">
-                    <span class="stat-label">Total Cards:</span>
-                    <span class="stat-value" id="totalCards">0</span>
-                </div>
-            </div>
+    <a href="index.html" class="btn">← Back to Hub</a>
+    <a href="cardDataView.html" class="btn primary-btn">Data View & Filter</a>
+    <div class="stats-container">
+    </div>
+    <div class="filter-container" id="rarityFilters">
+    </div>
+    <a href="cardCreator.html" class="btn">Create Card</a>
+</div>
             <div class="filter-container" id="rarityFilters">
                 <button class="filter-btn active" data-rarity="all">All</button>
                 <button class="filter-btn" data-rarity="Common">Common</button>
@@ -272,3 +273,4 @@ async function loadCards(rarityFilter = 'all') {
 </body>
 
 </html>
+
