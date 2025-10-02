@@ -292,6 +292,7 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
+				"Ability",
 				"Projectile"
 			],
 			"anime_id": "S01-EP06",
@@ -430,7 +431,8 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Utility"
+				"Utility",\
+				"Mobility"
 			],
 			"anime_id": "S01-EP09",
 			"activation": {
@@ -465,7 +467,8 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
-				"Buff"
+				"Buff",
+				"Combat"
 			],
 			"anime_id": "S01-EP10",
 			"activation": {
@@ -575,7 +578,7 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
-				"Buff"
+				"Combat"
 			],
 			"anime_id": "S01-EP15",
 			"activation": {
@@ -655,6 +658,7 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
+				"Summon",
 				"Combat"
 			],
 			"anime_id": "S01-EP17",
@@ -711,6 +715,7 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
+				"Ability",
 				"Defense"
 			],
 			"anime_id": "S01-EP20",
@@ -770,7 +775,8 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Mobility"
+				"Mobility",
+				"Combat"
 			],
 			"anime_id": "S01-EP02",
 			"activation_method": "active_tap",
@@ -855,7 +861,8 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
-				"Buff"
+				"Buff",
+				"Trigger"
 			],
 			"anime_id": "S02-EP04",
 			"activation": {
@@ -900,7 +907,7 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
-				"Buff"
+				"Combat"
 			],
 			"anime_id": "S01-EP106",
 			"activation_method": "passive",
@@ -980,7 +987,10 @@
 			"card_id": "HLI-027",
 			"card_name": "Healing Lily",
 			"rarity": "Common",
-			"type": "Active Combat",
+			"type": [
+				"Active",
+				"Restoration"
+			],
 			"anime_id": "S01-EP16",
 			"image_filename": "healing_lily.png",
 			"activation": {
@@ -1201,7 +1211,10 @@
 			"card_id": "RBW-035",
 			"card_name": "Rebellious Whistle",
 			"rarity": "Common",
-			"type": "Active Ability",
+			"type": [
+				"Active",
+				"Ability"
+			],
 			"anime_id": "S01-EP01",
 			"activation": {
 				"method": "passive",
@@ -1254,7 +1267,11 @@
 			"card_id": "BRK-039",
 			"card_name": "Blood Red Knight",
 			"rarity": "Common",
-			"type": "Passive Trigger",
+			"type": [
+				"Passive",
+				"Combat"
+				"Trigger"
+			],
 			"anime_id": "S01-EP39",
 			"activation_method": "on_hp_threshold",
 			"activation": {
@@ -1363,7 +1380,8 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Weapon Ability"
+				"Weapon Ability",
+				"Attack"
 			],
 			"anime_id": "S01-EP18",
 			"activation": {
@@ -1457,7 +1475,12 @@
 			"card_id": "CSH-042",
 			"card_name": "Widow's Blessing",
 			"rarity": "Common",
-			"type": "Active Combat",
+			"type": [
+				"Active",
+				"Ability",
+				"Elemental",
+				"Combat"
+			],
 			"anime_id": "S01-EP42",
 			"activation_method": "active_tap",
 			"activation": {
@@ -1493,7 +1516,8 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Weapon Ability"
+				"Combat",
+				"Ability"
 			],
 			"anime_id": "S01-EP19",
 			"activation": {
@@ -1523,7 +1547,10 @@
 			"card_id": "MRA-044",
 			"card_name": "Mire-Cursed Aegis",
 			"rarity": "Common",
-			"type": "Passive Buff",
+			"type": [
+				"Passive",
+				"Buff"
+			],
 			"anime_id": "S01-EP43",
 			"activation_method": "passive",
 			"activation": {
@@ -1571,7 +1598,10 @@
 			"card_id": "EXI-045",
 			"card_name": "Executioner's Insight",
 			"rarity": "Common",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S01-EP44",
 			"activation_method": "on_heavy_attack",
 			"activation": {
@@ -1619,7 +1649,10 @@
 			"card_id": "WNL-048",
 			"card_name": "Wanderer's Luck",
 			"rarity": "Common",
-			"type": "Passive Utility",
+			"type": [
+				"Passive",
+				"Utility"
+			],
 			"anime_id": "S01-EP48",
 			"activation_method": "passive",
 			"activation": {
@@ -1667,7 +1700,11 @@
 			"card_id": "EMB-049",
 			"card_name": "Ember Charge",
 			"rarity": "Common",
-			"type": "Active Combat",
+			"type": [
+				"Active",
+				Combat",
+				"Ability"
+			],
 			"anime_id": "S01-EP49",
 			"activation_method": "active_hold",
 			"activation": {
@@ -1729,7 +1766,10 @@
 			"card_id": "ESH-061",
 			"card_name": "Tremorsaur",
 			"rarity": "Uncommon",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S02-EP05",
 			"activation_method": "passive",
 			"activation": {
@@ -1777,7 +1817,10 @@
 			"card_id": "RVI-021",
 			"card_name": "Revigor",
 			"rarity": "Uncommon",
-			"type": "Active Restoration",
+			"type": [
+				"Active",
+				"Restoration"
+			],
 			"anime_id": "S01-EP21",
 			"cooldown_s": 0,
 			"activation_method": "active_tap",
@@ -1794,7 +1837,10 @@
 			"card_id": "CCR-022",
 			"card_name": "Card Collector – Rookie Edition",
 			"rarity": "Uncommon",
-			"type": "Trait Buff",
+			"type": [
+				"Trait",
+				"Buff"
+			],
 			"anime_id": "S01-EP22",
 			"activation_method": "passive",
 			"image_filename": "card_collector–rookie_edition.png",
@@ -1809,7 +1855,10 @@
 			"card_id": "BRG-023",
 			"card_name": "Brawler’s Grip",
 			"rarity": "Uncommon",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S01-EP23",
 			"activation_method": "passive",
 			"image_filename": "brawlers_grip.png",
@@ -1824,7 +1873,11 @@
 			"card_id": "VPK-062",
 			"card_name": "Viper's Venom",
 			"rarity": "Uncommon",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat",
+				"Elemental"
+			],
 			"anime_id": "S02-EP06",
 			"activation_method": "passive",
 			"activation": {
@@ -3960,6 +4013,7 @@
 		}
 	]
 }
+
 
 
 
