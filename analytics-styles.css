@@ -1,0 +1,202 @@
+/* --- analytics-styles.css (Updated for Dark Theme Compatibility) --- */
+
+/* General Layout & Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Info Block Style (Updated Colors for Dark Theme) */
+.info-block {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 5px solid #007bff; /* Primary color indicator */
+    background-color: #2a2a2a; /* Darker background to match theme */
+    color: #ccc; /* Lighter text for readability on dark background */
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+.info-block p {
+    margin: 0;
+}
+
+/* Filter Controls Style (Maintained dark theme look) */
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid var(--border-color, #444);
+    border-radius: 8px;
+    background-color: var(--card-bg, #2a2a2a);
+}
+
+#searchInput,
+#typeFilter {
+    padding: 10px;
+    border: 1px solid var(--border-color, #444);
+    border-radius: 4px;
+    font-size: 16px;
+    max-width: 400px; 
+    
+    /* FIX: Ensure filter inputs are readable */
+    background-color: #333;
+    color: #fff;
+}
+
+#searchInput {
+    flex-grow: 1;
+}
+
+/* Analytics Table Structure */
+.analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for dark theme */
+}
+
+.analytics-table th,
+.analytics-table td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color, #333); /* Darker border */
+    text-align: left;
+}
+
+/* FIX: Explicitly set table cell text color to dark for light backgrounds */
+.analytics-table td {
+    color: #1a1a1a; 
+}
+
+
+.analytics-table th {
+    background-color: var(--header-bg, #007bff);
+    color: var(--header-text, white);
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap; 
+}
+
+/* Row Styling FIX: Use dark/light contrast rows */
+.analytics-table tr:nth-child(odd) td {
+    background-color: var(--table-alt-row-odd, #fcfcfc); /* Very light background for contrast */
+}
+
+.analytics-table tr:nth-child(even) td {
+    background-color: var(--table-alt-row-even, #e5e5e5); /* Slightly darker light background */
+}
+
+.analytics-table tr:hover td {
+    background-color: var(--table-hover, #ccc); /* Even lighter hover background */
+}
+
+/* Sorting Indicators */
+.analytics-table th.sorted-asc::after {
+    content: ' ▲';
+    position: absolute;
+    right: 5px;
+    color: white;
+    font-size: 0.8em;
+}
+
+.analytics-table th.sorted-desc::after {
+    content: ' ▼';
+    position: absolute;
+    right: 5px;
+    color: white;
+    font-size: 0.8em;
+}
+
+/* Rarity Styling (These look fine, keeping them the same) */
+.rarity-Common { color: #888; font-weight: bold; }
+.rarity-Uncommon { color: #28a745; font-weight: bold; }
+.rarity-Rare { color: #007bff; font-weight: bold; }
+.rarity-Epic { color: #6f42c1; font-weight: bold; }
+.rarity-Ultimate { color: #dc3545; font-weight: bold; }
+
+
+/* --- analytics-styles.css (Updated for Filter Buttons) --- */
+
+/* ... (Keep your existing styles for .container, .info-block, .analytics-table, etc.) ... */
+
+/* Filter Controls Style - Adjusting flex-grow and removing the select element styles */
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px; /* Reduced margin to fit the type buttons below */
+    padding: 15px;
+    border: 1px solid var(--border-color, #444);
+    border-radius: 8px;
+    background-color: var(--card-bg, #2a2a2a);
+}
+
+#searchInput {
+    padding: 10px;
+    border: 1px solid var(--border-color, #444);
+    border-radius: 4px;
+    font-size: 16px;
+    max-width: 400px;
+    flex-grow: 1;
+    background-color: #333;
+    color: #fff;
+}
+
+/* 🌟 NEW: Styling for the Type Filter Button Container 🌟 */
+.type-filter-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows buttons to wrap to the next line */
+    gap: 8px; /* Space between buttons */
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid var(--border-color, #444);
+    border-radius: 8px;
+    background-color: var(--card-bg, #2a2a2a);
+}
+
+/* 🌟 NEW: Styling for the individual Type Filter Buttons 🌟 */
+.type-filter-btn {
+    /* Basic button styles to match the dark theme chips */
+    background-color: #444; /* Default inactive color */
+    color: #ccc;
+    border: 1px solid #555;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    white-space: nowrap; /* Keep the button from wrapping text */
+}
+
+.type-filter-btn:hover {
+    background-color: #555;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* Active (Selected) state for the AND logic */
+.type-filter-btn.active {
+    background-color: #007bff; /* Primary color when active */
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* ... (Keep existing table styles like .analytics-table th, td, .rarity-*, etc.) ... */
+/* FIX: Explicitly set table cell text color to dark for light backgrounds */
+.analytics-table td {
+    color: #1a1a1a; 
+}
+.analytics-table tr:nth-child(odd) td {
+    background-color: var(--table-alt-row-odd, #fcfcfc);
+}
+.analytics-table tr:nth-child(even) td {
+    background-color: var(--table-alt-row-even, #e5e5e5);
+}
+.analytics-table tr:hover td {
+    background-color: var(--table-hover, #ccc);
+}
