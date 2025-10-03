@@ -3963,7 +3963,9 @@
 			"card_name": "Midas Touch",
 			"rarity": "Ultimate",
 			"type": [
-				"Passive"
+				"Ability", 
+				"Aoe", 
+				"Debuff"
 			],
 			"anime_id": "S01-EP92",
 			"activation_method": "passive",
@@ -3976,7 +3978,7 @@
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-092-ULT-L1",
-					"ability_text": "A powerful, game-changing ability related to transforming enemies or objects."
+					"ability_text": "A powerful, game-changing ability related to summoning the hand of golden judgment to do devastating damage and transforming enemies or objects into the finast and most brilliant sentencing."
 				}
 			}
 		},
@@ -3986,7 +3988,7 @@
 			"rarity": "Ultimate",
 			"type": [
 				"Active",
-				"Abiltity"
+				"Ability"
 			],
 			"anime_id": "S01-EP12",
 			"activation_method": "active_charge",
@@ -4031,7 +4033,8 @@
 			"rarity": "Ultimate",
 			"type": [
 				"Active",
-				"Abiltity"
+				"Ability", 
+				"AoE" 
 			],
 			"anime_id": "S01-EP12",
 			"activation_method": "active_charge",
@@ -4120,3 +4123,4 @@
 		}
 	]
 }
+
