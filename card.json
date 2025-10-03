@@ -716,7 +716,7 @@
 			"type": [
 				"Active",
 				"Ability",
-				"Defense"
+				"Defensive"
 			],
 			"anime_id": "S01-EP20",
 			"activation_method": "active_tap",
@@ -4123,5 +4123,6 @@
 		}
 	]
 }
+
 
 
