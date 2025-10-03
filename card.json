@@ -2599,6 +2599,7 @@
 				"Combat"
 			],
 			"anime_id": "S02-EP14",
+			"activation_method": "straightsword",
 			"activation": {
 				"method": "tap",
 				"charge": "instant",
@@ -2611,7 +2612,10 @@
 			"card_id": "BLD-105",
 			"card_name": "Bloodletting",
 			"rarity": "Uncommon",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S02-EP16",
 			"activation": {
 				"method": "passive",
@@ -2630,7 +2634,11 @@
 			"card_id": "BRN-107",
 			"card_name": "Ash Covering",
 			"rarity": "Uncommon",
-			"type": "Active Aura Buff",
+			"type": [
+				"Active",
+				"Buff",
+				"Weapon Ability"
+			],
 			"anime_id": "S02-EP18",
 			"activation": {
 				"method": "tap",
@@ -2649,7 +2657,11 @@
 			"card_id": "RRT-105",
 			"card_name": "Ring of Retribution",
 			"rarity": "Uncommon",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat",
+				"Trigger"
+			],
 			"anime_id": "S01-EP105",
 			"activation_method": "on_enemy_kill",
 			"activation": {
@@ -2707,8 +2719,13 @@
 			"card_id": "LOH-051",
 			"card_name": "The Lips of Hypocrisy",
 			"rarity": "Rare",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat",
+				"Trigger"
+			],
 			"anime_id": "S01-EP51",
+			"activation_method": "on_hp_threshold",
 			"activation": {
 				"method": "passive",
 				"charge": "none",
@@ -2726,7 +2743,11 @@
 			"card_id": "OGR-052",
 			"card_name": "Ogre's Grumble",
 			"rarity": "Rare",
-			"type": "Active Buff",
+			"type": [
+				"Active",
+				"Buff",
+				"Ability"
+			],
 			"anime_id": "S01-EP52",
 			"activation": {
 				"method": "tap",
@@ -2750,9 +2771,13 @@
 			"card_id": "RVL-053",
 			"card_name": "Re Volte",
 			"rarity": "Rare",
-			"type": "Hybrid Active",
+			"type": [
+				"Active",
+				"Weapon Ability"
+			],
 			"anime_id": "S01-EP53",
 			"image_filename": "re_volte.png",
+			"activation_method": "rapier-weapon",
 			"activation": {
 				"method": "tap",
 				"charge": "true",
@@ -2818,8 +2843,13 @@
 			"card_id": "WLF-053",
 			"card_name": "Wolf Fang",
 			"rarity": "Rare",
-			"type": "Active Attack Modifier",
+			"type": [
+				"Active",
+				"Attack",
+				"Weapon Ability"
+			],
 			"anime_id": "S01-EP53",
+			"activation_method": "greatsword-weapon",
 			"activation": {
 				"method": "tap",
 				"charge": "false",
@@ -2840,7 +2870,10 @@
 			"card_id": "TRW-054",
 			"card_name": "T-rex's Wraith",
 			"rarity": "Rare",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S01-EP54",
 			"activation": {
 				"method": "passive",
@@ -2859,7 +2892,10 @@
 			"card_id": "LSE-055",
 			"card_name": "Lantern Saint of the Endless Steps",
 			"rarity": "Rare",
-			"type": "Active Summon",
+			"type": [
+				"Active",
+				"Summon"
+			],
 			"anime_id": "S02-EP03",
 			"activation": {
 				"method": "tap",
@@ -2881,7 +2917,11 @@
 			"card_id": "TKC-056",
 			"card_name": "The King's Chalice",
 			"rarity": "Rare",
-			"type": "Passive",
+			"type": [
+				"Passive",
+				"Trigger",
+				"Restoration"
+			],
 			"anime_id": "S02-EP03",
 			"activation": {
 				"method": "passive",
