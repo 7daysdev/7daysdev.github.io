@@ -3779,7 +3779,7 @@
 			"card_name": "8-bit Dave",
 			"rarity": "Epic",
 			"type": [
-				"Transform",
+				"Transformative",
 				"Combat"
 			],
 			"anime_id": "S03-EP12",
@@ -4123,6 +4123,7 @@
 		}
 	]
 }
+
 
 
 
