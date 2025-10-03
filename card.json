@@ -2944,7 +2944,7 @@
 			"card_name": "Rogue Step",
 			"rarity": "Rare",
 			"type": [
-				"Mobility "
+				"Mobility"
 			],
 			"anime_id": "S01-EP52",
 			"activation": {
@@ -4123,6 +4123,7 @@
 		}
 	]
 }
+
 
 
 
