@@ -2943,7 +2943,9 @@
 			"card_id": "RST-057",
 			"card_name": "Rogue Step",
 			"rarity": "Rare",
-			"type": "Mobility ",
+			"type": [
+				"Mobility "
+			],
 			"anime_id": "S01-EP52",
 			"activation": {
 				"method": "tap",
@@ -3058,8 +3060,13 @@
 			"card_id": "MES-059",
 			"card_name": "Moon Edge Slice",
 			"rarity": "Rare",
-			"type": "Active Combat",
+			"type": [
+				"Active",
+				"Combat",
+				"Weapon Ability"
+			],
 			"anime_id": "S02-EP03",
+			"activation_method": "dagger-weapon",
 			"activation": {
 				"method": "tap",
 				"charge": "none",
@@ -3224,7 +3231,11 @@
 			"card_id": "DEF-001",
 			"card_name": "Graveyard",
 			"rarity": "Rare",
-			"type": "Defensive / Area Control",
+			"type": [
+				"Defensive",
+				"Area Control",
+				"AoE"
+			],
 			"anime_id": "S01-EP01",
 			"activation": {
 				"method": "tap",
