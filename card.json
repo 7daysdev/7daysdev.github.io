@@ -3848,7 +3848,7 @@
 			"card_name": "Struggle no more",
 			"rarity": "Epic",
 			"type": [
-				"Active ",
+				"Active",
 				"Utility"
 			],
 			"anime_id": "S03-EP12",
@@ -3964,7 +3964,7 @@
 			"rarity": "Ultimate",
 			"type": [
 				"Ability", 
-				"Aoe", 
+				"AoE", 
 				"Debuff"
 			],
 			"anime_id": "S01-EP92",
@@ -4123,4 +4123,5 @@
 		}
 	]
 }
+
 
