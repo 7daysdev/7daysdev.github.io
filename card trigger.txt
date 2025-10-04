@@ -1,0 +1,57 @@
+Ah, got it—you're looking at the full picture, not just tap-based cards. Let’s step back and frame the activation system cleanly for all card types, so you can handle tap, passive, and trigger cards consistently.
+
+Here’s a structured overview:
+
+1. Activation Method
+Method	Description
+tap	Player actively taps the card to start its effect. Can have charge/release behaviors.
+passive	Always active or provides a modifier without player input. No charge/release.
+trigger	Activates automatically when certain conditions in the game are met. Can have cooldowns.
+2. Charge (for tap/trigger only)
+Charge Type	Description
+none	No charging; ability fires immediately (or on second tap if release = tap).
+auto	Ability charges itself after initial activation; releases automatically or on second tap.
+manual	(Not used in your system) Typically would imply player control like holding down. We skip this.
+3. Release (for tap/trigger only)
+Release Type	Description
+instant	Fires immediately after activation.
+auto	Fires automatically after charge completes.
+tap	Waits for a second tap to execute.
+4. Passive Cards
+
+No charge or release—effect is always on.
+
+Can scale with level.
+
+Can include modifiers, buffs, or stat changes.
+
+Example:
+
+"activation": {
+  "method": "passive",
+  "charge": "none",
+  "release": "instant"
+}
+
+5. Trigger Cards
+
+Fires automatically when a condition is met (enemy hits, HP < 50%, etc.).
+
+Can have cooldowns.
+
+Charge/release can still apply if needed.
+
+Example:
+
+"activation": {
+  "method": "trigger",
+  "charge": "auto",
+  "release": "auto"
+}
+
+
+So now, every card—tap, passive, or trigger—fits this activation blueprint. Tap cards just have extra options with charge/release. Passive cards skip that, and trigger cards sit somewhere in between.
+
+If you want, I can make a single table that shows all possible card types + their activation/charge/release combos so you can literally reference it while building your JSON. That way you don’t get lost between tap, passive, and trigger.
+
+Do you want me to do that?
