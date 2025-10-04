@@ -1155,6 +1155,7 @@
 				"Weapon Ability"
 			],
 			"anime_id": "S01-EP27",
+			"activation_method": "dagger-weapon",
 			"activation": {
 				"method": "tap",
 				"charge": "none",
@@ -1236,9 +1237,11 @@
 			"type": [
 				"Active",
 				"AoE",
-				"Elemental"
+				"Elemental",
+				"Ability"
 			],
 			"anime_id": "S01-EP21",
+			"activation_method": "player",
 			"activation": {
 				"method": "tap",
 				"charge": "none",
@@ -1384,6 +1387,7 @@
 				"Attack"
 			],
 			"anime_id": "S01-EP18",
+			"activation_method": "fist-weapon",
 			"activation": {
 				"method": "tap",
 				"charge": "none",
@@ -1520,6 +1524,7 @@
 				"Ability"
 			],
 			"anime_id": "S01-EP19",
+			"activation_method":"active_tap",
 			"activation": {
 				"method": "tap",
 				"charge": "none",
@@ -1544,8 +1549,8 @@
 			}
 		},
 		{
-			"card_id": "MRA-044",
-			"card_name": "Mire-Cursed Aegis",
+			"card_id": "GBB-044",
+			"card_name": "Glade Bloom Berries",
 			"rarity": "Common",
 			"type": [
 				"Passive",
@@ -1558,7 +1563,7 @@
 				"charge": "none",
 				"release": "instant"
 			},
-			"image_filename": "mire_cursed_aegis.png",
+			"image_filename": "glade_bloom_berries.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-044-C-L1",
@@ -1600,10 +1605,12 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
-				"Combat"
+				"Combat",
+				"Buff",
+				"Weapon Ability"
 			],
 			"anime_id": "S01-EP44",
-			"activation_method": "on_heavy_attack",
+			"activation_method": "axe-on_heavy_attack",
 			"activation": {
 				"method": "passive",
 				"charge": "none",
@@ -4139,3 +4146,4 @@
 		}
 	]
 }
+
