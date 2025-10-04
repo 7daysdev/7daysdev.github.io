@@ -1877,7 +1877,6 @@
 				"release": "instant"
 			},
 			"image_filename": "brawlers_grip.png",
-			
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-023-UC-L1",
@@ -3430,7 +3429,7 @@
 			"activation_method": "manual_trigger",
 			"activation": {
 				"method": "tap",
-				"charge":"false",
+				"charge": "false",
 				"stamina_cost": 0.25,
 				"cooldown": 25.0,
 				"release": "instant"
@@ -3980,8 +3979,8 @@
 			"card_name": "Midas Touch",
 			"rarity": "Ultimate",
 			"type": [
-				"Ability", 
-				"AoE", 
+				"Ability",
+				"AoE",
 				"Debuff"
 			],
 			"anime_id": "S01-EP92",
@@ -4050,8 +4049,8 @@
 			"rarity": "Ultimate",
 			"type": [
 				"Active",
-				"Ability", 
-				"AoE" 
+				"Ability",
+				"AoE"
 			],
 			"anime_id": "S01-EP12",
 			"activation_method": "active_charge",
@@ -4140,7 +4139,3 @@
 		}
 	]
 }
-
-
-
-
