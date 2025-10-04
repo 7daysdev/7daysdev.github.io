@@ -1708,7 +1708,7 @@
 			"anime_id": "S01-EP49",
 			"activation_method": "active_hold",
 			"activation": {
-				"method": "hold",
+				"method": "passive",
 				"charge": "linear_increase",
 				"release": "manual"
 			},
@@ -1824,6 +1824,11 @@
 			"anime_id": "S01-EP21",
 			"cooldown_s": 0,
 			"activation_method": "active_tap",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
 			"image_filename": "revigor.png",
 			"abilities": {
 				"level_1": {
@@ -1843,6 +1848,11 @@
 			],
 			"anime_id": "S01-EP22",
 			"activation_method": "passive",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
 			"image_filename": "card_collector–rookie_edition.png",
 			"abilities": {
 				"level_1": {
@@ -1861,7 +1871,13 @@
 			],
 			"anime_id": "S01-EP23",
 			"activation_method": "passive",
+			"activation": {
+				"method": "passive",
+				"charge": "none",
+				"release": "instant"
+			},
 			"image_filename": "brawlers_grip.png",
+			
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-023-UC-L1",
@@ -3413,7 +3429,8 @@
 			"anime_id": "S01-EP12",
 			"activation_method": "manual_trigger",
 			"activation": {
-				"method": "button_press",
+				"method": "tap",
+				"charge":"false",
 				"stamina_cost": 0.25,
 				"cooldown": 25.0,
 				"release": "instant"
@@ -3599,7 +3616,7 @@
 			"anime_id": "S02-EP10",
 			"activation_method": "active_charge",
 			"activation": {
-				"method": "charge",
+				"method": "tap",
 				"charge": "true",
 				"release": "manual"
 			},
@@ -3638,7 +3655,7 @@
 			],
 			"anime_id": "S01-EP89",
 			"activation": {
-				"method": "charge",
+				"method": "tap",
 				"charge": "true",
 				"release": "tap"
 			},
@@ -3664,7 +3681,7 @@
 			"activation": {
 				"method": "tap",
 				"charge": "none",
-				"release": "sequenced"
+				"release": "tap"
 			},
 			"image_filename": "dregthorn_malachiah_specialist.png",
 			"abilities": {
@@ -3785,7 +3802,7 @@
 			"anime_id": "S03-EP12",
 			"activation_method": "transform",
 			"activation": {
-				"method": "equip_override",
+				"method": "tap",
 				"charge": "none",
 				"release": "manual"
 			},
@@ -3854,7 +3871,7 @@
 			"anime_id": "S03-EP12",
 			"activation_method": "Acivte",
 			"activation": {
-				"method": "equip_override",
+				"method": "tap",
 				"charge": "none",
 				"release": "manual"
 			},
@@ -3993,7 +4010,7 @@
 			"anime_id": "S01-EP12",
 			"activation_method": "active_charge",
 			"activation": {
-				"method": "charge",
+				"method": "tap",
 				"charge_time": 5,
 				"cancelable": true
 			},
@@ -4039,7 +4056,7 @@
 			"anime_id": "S01-EP12",
 			"activation_method": "active_charge",
 			"activation": {
-				"method": "charge",
+				"method": "tap",
 				"charge_time": 5,
 				"cancelable": true
 			},
@@ -4123,7 +4140,6 @@
 		}
 	]
 }
-
 
 
 
