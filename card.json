@@ -2293,6 +2293,67 @@
 			}
 		},
 		{
+	"card_id": "VGM-049",
+	"card_name": "Voltic Gem Mines",
+	"rarity": "Uncommon",
+	"type": [
+		"Active",
+		"Ability",
+		"Area Control"
+	],
+	"anime_id": "S02-EP15",
+	"activation_method": "active_tap",
+	"activation": {
+		"method": "tap",
+		"charge": "none",
+		"release": "manual"
+	},
+	"image_filename": "voltic_gem_mines.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP2-049-U-L1",
+			"ability_text": "Crystals erupt from the ground in a 3m radius, dealing 15 piercing damage to enemies that pass through. Lasts 4s.",
+			"effects": [
+				{
+					"type": "spawn_entity",
+					"parameters": {
+						"entity_type": "gem_crystal",
+						"count": 5,
+						"piercing_damage": 15,
+						"duration": 4,
+						"area_radius": 3
+					},
+					"visual_feedback": "crystal_pop_effect"
+				}
+			]
+		},
+		"level_5": {
+			"serial_number": "BP2-049-U-L5",
+			"ability_text": "Crystals erupt from the ground in a 4m radius, dealing 25 piercing damage. After 5 enemies pass through, stored static energy discharges a lightning blast dealing 80 electric damage to all enemies in the area. Lasts 6s.",
+			"upgrade_cost": {
+				"required_level": 4,
+				"required_count": 5
+			},
+			"effects": [
+				{
+					"type": "spawn_entity",
+					"parameters": {
+						"entity_type": "gem_crystal",
+						"count": 7,
+						"piercing_damage": 25,
+						"duration": 6,
+						"area_radius": 4,
+						"static_build_threshold": 5,
+						"static_discharge_damage": 80,
+						"static_discharge_type": "electric"
+					},
+					"visual_feedback": "crystal_static_discharge_effect"
+				}
+			]
+		}
+	}
+},
+		{
 			"card_id": "QKF-099",
 			"card_name": "Quickfang",
 			"rarity": "Uncommon",
@@ -4392,6 +4453,7 @@
 		}
 	]
 }
+
 
 
 
