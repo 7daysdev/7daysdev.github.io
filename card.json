@@ -2067,7 +2067,11 @@
 			"card_id": "TRP-096",
 			"card_name": "Briarwood",
 			"rarity": "Uncommon",
-			"type": "Active Utility",
+			"type": [
+				"Active", 
+				"Utility",
+				"Area Control"
+			],
 			"anime_id": "S02-EP07",
 			"activation": {
 				"method": "tap",
@@ -4388,6 +4392,7 @@
 		}
 	]
 }
+
 
 
 
