@@ -3612,6 +3612,66 @@
 			}
 		},
 		{
+	"card_id": "WHE-045",
+	"card_name": "White Elephant",
+	"rarity": "Epic",
+	"type": [
+		"Active",
+		"Ability",
+		"Defensive"
+	],
+	"anime_id": "S02-EP11",
+	"activation_method": "active_tap",
+	"activation": {
+		"method": "tap",
+		"charge": "none",
+		"release": "manual"
+	},
+	"image_filename": "white_elephant.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP2-045-E-L1",
+			"ability_text": "Summons a massive elephant ribcage from the ground, creating a bone barrier with 300 HP that blocks melee and ranged attacks. Barrier visibly fractures as it takes damage. Lasts 15s.",
+			"effects": [
+				{
+					"type": "spawn_entity",
+					"parameters": {
+						"entity_type": "bone_barrier",
+						"count": 1,
+						"health": 300,
+						"duration": 15,
+						"block_ranged": true,
+						"block_melee": true
+					},
+					"visual_feedback": "ribcage_fracture_effect"
+				}
+			]
+		},
+		"level_2": {
+			"serial_number": "BP2-045-E-L2",
+			"ability_text": "Summons a reinforced elephant ribcage with 400 HP that lasts 18s. Barrier fractures and crumbles as damage is taken.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 5
+			},
+			"effects": [
+				{
+					"type": "spawn_entity",
+					"parameters": {
+						"entity_type": "bone_barrier",
+						"count": 1,
+						"health": 400,
+						"duration": 18,
+						"block_ranged": true,
+						"block_melee": true
+					},
+					"visual_feedback": "ribcage_fracture_effect"
+				}
+			]
+		}
+	}
+},
+		{
 			"card_id": "DRG-079",
 			"card_name": "Dragon Assault",
 			"rarity": "Epic",
@@ -4146,4 +4206,5 @@
 		}
 	]
 }
+
 
