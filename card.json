@@ -3424,6 +3424,66 @@
 			}
 		},
 		{
+	"card_id": "EVH-047",
+	"card_name": "Event Horizon",
+	"rarity": "Epic",
+	"type": [
+		"Active",
+		"Ability",
+		"Area Control"
+	],
+	"anime_id": "S02-EP13",
+	"activation_method": "active_tap",
+	"activation": {
+		"method": "tap",
+		"charge": "none",
+		"release": "manual"
+	},
+	"image_filename": "event_horizon.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP2-047-E-L1",
+			"ability_text": "Summons a gravitational field in a 4m radius. Enemies inside are pulled toward the center at 2 m/s and take 25 damage per second while inside the field. Lasts 8s.",
+			"effects": [
+				{
+					"type": "spawn_entity",
+					"parameters": {
+						"entity_type": "gravity_field",
+						"count": 1,
+						"pull_speed": 2,
+						"damage_per_second": 25,
+						"duration": 8,
+						"area_radius": 4
+					},
+					"visual_feedback": "gravity_field_pull_effect"
+				}
+			]
+		},
+		"level_2": {
+			"serial_number": "BP2-047-E-L2",
+			"ability_text": "Gravitational field intensifies: enemies pulled at 3 m/s and take 35 damage per second. Lasts 10s.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 5
+			},
+			"effects": [
+				{
+					"type": "spawn_entity",
+					"parameters": {
+						"entity_type": "gravity_field",
+						"count": 1,
+						"pull_speed": 3,
+						"damage_per_second": 35,
+						"duration": 10,
+						"area_radius": 4
+					},
+					"visual_feedback": "gravity_field_pull_effect"
+				}
+			]
+		}
+	}
+},
+		{
 			"card_id": "MID-028",
 			"card_name": "Midnight Delivery",
 			"rarity": "Epic",
@@ -3735,6 +3795,68 @@
 				}
 			}
 		},
+		{
+	"card_id": "POJ-046",
+	"card_name": "Pillars of Judgment",
+	"rarity": "Epic",
+	"type": [
+		"Active",
+		"Ability",
+		"Area Control"
+	],
+	"anime_id": "S02-EP12",
+	"activation_method": "active_tap",
+	"activation": {
+		"method": "tap",
+		"charge": "none",
+		"release": "manual"
+	},
+	"image_filename": "pillars_of_judgment.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP2-046-E-L1",
+			"ability_text": "Summons 3 dark pillars that slam into the ground, dealing 50 impact damage on arrival. Pillars emit a burning aura that deals 20 fire damage per second to enemies inside. After 10s, pillars collapse with a burst of 100 burn damage.",
+			"effects": [
+				{
+					"type": "spawn_entity",
+					"parameters": {
+						"entity_type": "dark_pillar",
+						"count": 3,
+						"impact_damage": 50,
+						"burn_damage_per_second": 20,
+						"duration": 10,
+						"despawn_burst_damage": 100,
+						"area_radius": 3.5
+					},
+					"visual_feedback": "pillar_burn_and_collapse_effect"
+				}
+			]
+		},
+		"level_2": {
+			"serial_number": "BP2-046-E-L2",
+			"ability_text": "Summons 3 reinforced dark pillars that slam into the ground, dealing 70 impact damage. Pillars emit stronger burning aura (30 fire damage per second). After 12s, collapse with a burst of 120 burn damage.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 5
+			},
+			"effects": [
+				{
+					"type": "spawn_entity",
+					"parameters": {
+						"entity_type": "dark_pillar",
+						"count": 3,
+						"impact_damage": 70,
+						"burn_damage_per_second": 30,
+						"duration": 12,
+						"despawn_burst_damage": 120,
+						"area_radius": 3.5
+					},
+					"visual_feedback": "pillar_burn_and_collapse_effect"
+				}
+			]
+		}
+	}
+},
 		{
 			"card_id": "DST-091",
 			"card_name": "Dregthorn Malachiah Specialist",
@@ -4206,5 +4328,6 @@
 		}
 	]
 }
+
 
 
