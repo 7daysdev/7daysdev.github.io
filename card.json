@@ -3106,6 +3106,66 @@
 			}
 		},
 		{
+	"card_id": "FNL-048",
+	"card_name": "Frankenstein's Lab",
+	"rarity": "Rare",
+	"type": [
+		"Active",
+		"Ability",
+		"Area Control"
+	],
+	"anime_id": "S02-EP14",
+	"activation_method": "active_tap",
+	"activation": {
+		"method": "tap",
+		"charge": "none",
+		"release": "manual"
+	},
+	"image_filename": "frankensteins_lab.png",
+	"abilities": {
+		"level_1": {
+			"serial_number": "BP2-048-R-L1",
+			"ability_text": "Chains and lab equipment rise from the ground, releasing electrical arcs that deal 40 instant damage and 15 damage per second for 6s to enemies in a 3m radius.",
+			"effects": [
+				{
+					"type": "spawn_entity",
+					"parameters": {
+						"entity_type": "electric_hazard",
+						"count": 1,
+						"initial_damage": 40,
+						"damage_per_second": 15,
+						"duration": 6,
+						"area_radius": 3
+					},
+					"visual_feedback": "electric_arc_effect"
+				}
+			]
+		},
+		"level_2": {
+			"serial_number": "BP2-048-R-L2",
+			"ability_text": "Enhanced lab hazard: chains and machines release stronger electrical arcs dealing 60 instant damage and 25 damage per second for 8s to enemies in a 3.5m radius.",
+			"upgrade_cost": {
+				"required_level": 1,
+				"required_count": 5
+			},
+			"effects": [
+				{
+					"type": "spawn_entity",
+					"parameters": {
+						"entity_type": "electric_hazard",
+						"count": 1,
+						"initial_damage": 60,
+						"damage_per_second": 25,
+						"duration": 8,
+						"area_radius": 3.5
+					},
+					"visual_feedback": "electric_arc_effect"
+				}
+			]
+		}
+	}
+},
+		{
 			"card_id": "ASV-060",
 			"card_name": "Assassin's Veil",
 			"rarity": "Rare",
@@ -4328,6 +4388,7 @@
 		}
 	]
 }
+
 
 
 
