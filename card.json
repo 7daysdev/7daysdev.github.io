@@ -6,7 +6,8 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
-				"Buff"
+				"Buff",
+				"Combat"
 			],
 			"anime_id": "S01-EP01",
 			"activation_method": "passive",
@@ -292,8 +293,9 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Ability",
-				"Projectile"
+				"Projectile",
+				"Summon",
+				"Restoration"
 			],
 			"anime_id": "S01-EP06",
 			"image_filename": "ogres_ache.png",
@@ -359,7 +361,8 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
-				"Buff"
+				"Buff",
+				"Defense"
 			],
 			"anime_id": "S01-EP07",
 			"activation": {
@@ -398,8 +401,7 @@
 			"card_name": "Paladin's Resolve",
 			"rarity": "Common",
 			"type": [
-				"Passive",
-				"Buff"
+				"Passive", "Buff", "Defense"
 			],
 			"anime_id": "S01-EP08",
 			"activation": {
@@ -430,9 +432,7 @@
 			"card_name": "Quake",
 			"rarity": "Common",
 			"type": [
-				"Active",
-				"Utility",
-				"Mobility"
+				"Active", "Mobility", "AoE"
 			],
 			"anime_id": "S01-EP09",
 			"activation": {
@@ -466,9 +466,7 @@
 			"card_name": "Armadilie",
 			"rarity": "Common",
 			"type": [
-				"Passive",
-				"Buff",
-				"Combat"
+				"Passive", "Buff", "Combat", "Defense"
 			],
 			"anime_id": "S01-EP10",
 			"activation": {
@@ -489,8 +487,7 @@
 			"card_name": "Glass Rose",
 			"rarity": "Common",
 			"type": [
-				"Passive",
-				"Combat"
+				"Passive", "Combat", "Projectile"
 			],
 			"anime_id": "S01-EP11",
 			"activation": {
@@ -533,8 +530,7 @@
 			"card_name": "Iron Might",
 			"rarity": "Common",
 			"type": [
-				"Passive",
-				"Buff"
+				"Passive", "Buff", "Defense"
 			],
 			"anime_id": "S01-EP13",
 			"activation": {
@@ -555,8 +551,7 @@
 			"card_name": "Pondering Orb",
 			"rarity": "Common",
 			"type": [
-				"Passive",
-				"Buff"
+				"Passive", "Buff", "Spell"
 			],
 			"anime_id": "S01-EP14",
 			"activation": {
@@ -599,8 +594,7 @@
 			"card_name": "Ember Might",
 			"rarity": "Common",
 			"type": [
-				"Active",
-				"Summon"
+				"Active", "Summon", "Projectile"
 			],
 			"anime_id": "S01-EP16",
 			"activation": {
@@ -659,7 +653,8 @@
 			"type": [
 				"Passive",
 				"Summon",
-				"Combat"
+				"Combat",
+				"Resource"
 			],
 			"anime_id": "S01-EP17",
 			"activation": {
@@ -1030,21 +1025,60 @@
 			}
 		},
 		{
-			"card_id": "XXX-028",
-			"card_name": "???",
+			"card_id": "CSC-028",
+			"card_name": "Crystal Scotch",
 			"rarity": "Common",
-			"type": "???",
-			"anime_id": "S??-EP??",
+			"type": [
+				"Active",
+				"Ability",
+				"Area Control"
+			],
+			"anime_id": "S01-EP28",
+			"activation_method": "active_tap",
 			"activation": {
-				"method": "passive",
+				"method": "tap",
 				"charge": "none",
-				"release": "instant"
+				"release": "manual"
 			},
-			"image_filename": "???.png",
+			"image_filename": "crystal_scotch.png",
 			"abilities": {
 				"level_1": {
 					"serial_number": "BP1-028-C-L1",
-					"ability_text": "???"
+					"ability_text": "Creates a 3m jagged line of crystals. Each jag deals 15 piercing damage. Ends in a small crystal cluster that lingers 3s, dealing 5 damage per second.",
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "crystal_line",
+								"length": 3,
+								"damage_per_jag": 15,
+								"cluster_damage_per_second": 5,
+								"cluster_duration": 3
+							},
+							"visual_feedback": "crystal_line_spawn"
+						}
+					]
+				},
+				"level_2": {
+					"serial_number": "BP1-028-C-L2",
+					"ability_text": "Line extends to 4m. Each jag deals 20 piercing damage. Cluster lingers 4s.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 5
+					},
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "crystal_line",
+								"length": 4,
+								"damage_per_jag": 20,
+								"cluster_damage_per_second": 5,
+								"cluster_duration": 4
+							},
+							"visual_feedback": "crystal_line_spawn"
+						}
+					]
 				}
 			}
 		},
@@ -1524,7 +1558,7 @@
 				"Ability"
 			],
 			"anime_id": "S01-EP19",
-			"activation_method":"active_tap",
+			"activation_method": "active_tap",
 			"activation": {
 				"method": "tap",
 				"charge": "none",
@@ -2068,7 +2102,7 @@
 			"card_name": "Briarwood",
 			"rarity": "Uncommon",
 			"type": [
-				"Active", 
+				"Active",
 				"Utility",
 				"Area Control"
 			],
@@ -2293,66 +2327,66 @@
 			}
 		},
 		{
-	"card_id": "VGM-049",
-	"card_name": "Voltic Gem Mines",
-	"rarity": "Uncommon",
-	"type": [
-		"Active",
-		"Ability",
-		"Area Control"
-	],
-	"anime_id": "S02-EP15",
-	"activation_method": "active_tap",
-	"activation": {
-		"method": "tap",
-		"charge": "none",
-		"release": "manual"
-	},
-	"image_filename": "voltic_gem_mines.png",
-	"abilities": {
-		"level_1": {
-			"serial_number": "BP2-049-U-L1",
-			"ability_text": "Crystals erupt from the ground in a 3m radius, dealing 15 piercing damage to enemies that pass through. Lasts 4s.",
-			"effects": [
-				{
-					"type": "spawn_entity",
-					"parameters": {
-						"entity_type": "gem_crystal",
-						"count": 5,
-						"piercing_damage": 15,
-						"duration": 4,
-						"area_radius": 3
-					},
-					"visual_feedback": "crystal_pop_effect"
-				}
-			]
-		},
-		"level_5": {
-			"serial_number": "BP2-049-U-L5",
-			"ability_text": "Crystals erupt from the ground in a 4m radius, dealing 25 piercing damage. After 5 enemies pass through, stored static energy discharges a lightning blast dealing 80 electric damage to all enemies in the area. Lasts 6s.",
-			"upgrade_cost": {
-				"required_level": 4,
-				"required_count": 5
+			"card_id": "VGM-049",
+			"card_name": "Voltic Gem Mines",
+			"rarity": "Uncommon",
+			"type": [
+				"Active",
+				"Ability",
+				"Area Control"
+			],
+			"anime_id": "S02-EP15",
+			"activation_method": "active_tap",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "manual"
 			},
-			"effects": [
-				{
-					"type": "spawn_entity",
-					"parameters": {
-						"entity_type": "gem_crystal",
-						"count": 7,
-						"piercing_damage": 25,
-						"duration": 6,
-						"area_radius": 4,
-						"static_build_threshold": 5,
-						"static_discharge_damage": 80,
-						"static_discharge_type": "electric"
+			"image_filename": "voltic_gem_mines.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP2-049-U-L1",
+					"ability_text": "Crystals erupt from the ground in a 3m radius, dealing 15 piercing damage to enemies that pass through. Lasts 4s.",
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "gem_crystal",
+								"count": 5,
+								"piercing_damage": 15,
+								"duration": 4,
+								"area_radius": 3
+							},
+							"visual_feedback": "crystal_pop_effect"
+						}
+					]
+				},
+				"level_5": {
+					"serial_number": "BP2-049-U-L5",
+					"ability_text": "Crystals erupt from the ground in a 4m radius, dealing 25 piercing damage. After 5 enemies pass through, stored static energy discharges a lightning blast dealing 80 electric damage to all enemies in the area. Lasts 6s.",
+					"upgrade_cost": {
+						"required_level": 4,
+						"required_count": 5
 					},
-					"visual_feedback": "crystal_static_discharge_effect"
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "gem_crystal",
+								"count": 7,
+								"piercing_damage": 25,
+								"duration": 6,
+								"area_radius": 4,
+								"static_build_threshold": 5,
+								"static_discharge_damage": 80,
+								"static_discharge_type": "electric"
+							},
+							"visual_feedback": "crystal_static_discharge_effect"
+						}
+					]
 				}
-			]
-		}
-	}
-},
+			}
+		},
 		{
 			"card_id": "QKF-099",
 			"card_name": "Quickfang",
@@ -3171,65 +3205,65 @@
 			}
 		},
 		{
-	"card_id": "FNL-048",
-	"card_name": "Frankenstein's Lab",
-	"rarity": "Rare",
-	"type": [
-		"Active",
-		"Ability",
-		"Area Control"
-	],
-	"anime_id": "S02-EP14",
-	"activation_method": "active_tap",
-	"activation": {
-		"method": "tap",
-		"charge": "none",
-		"release": "manual"
-	},
-	"image_filename": "frankensteins_lab.png",
-	"abilities": {
-		"level_1": {
-			"serial_number": "BP2-048-R-L1",
-			"ability_text": "Chains and lab equipment rise from the ground, releasing electrical arcs that deal 40 instant damage and 15 damage per second for 6s to enemies in a 3m radius.",
-			"effects": [
-				{
-					"type": "spawn_entity",
-					"parameters": {
-						"entity_type": "electric_hazard",
-						"count": 1,
-						"initial_damage": 40,
-						"damage_per_second": 15,
-						"duration": 6,
-						"area_radius": 3
-					},
-					"visual_feedback": "electric_arc_effect"
-				}
-			]
-		},
-		"level_2": {
-			"serial_number": "BP2-048-R-L2",
-			"ability_text": "Enhanced lab hazard: chains and machines release stronger electrical arcs dealing 60 instant damage and 25 damage per second for 8s to enemies in a 3.5m radius.",
-			"upgrade_cost": {
-				"required_level": 1,
-				"required_count": 5
+			"card_id": "FNL-048",
+			"card_name": "Frankenstein's Lab",
+			"rarity": "Rare",
+			"type": [
+				"Active",
+				"Ability",
+				"Area Control"
+			],
+			"anime_id": "S02-EP14",
+			"activation_method": "active_tap",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "manual"
 			},
-			"effects": [
-				{
-					"type": "spawn_entity",
-					"parameters": {
-						"entity_type": "electric_hazard",
-						"count": 1,
-						"initial_damage": 60,
-						"damage_per_second": 25,
-						"duration": 8,
-						"area_radius": 3.5
+			"image_filename": "frankensteins_lab.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP2-048-R-L1",
+					"ability_text": "Chains and lab equipment rise from the ground, releasing electrical arcs that deal 40 instant damage and 15 damage per second for 6s to enemies in a 3m radius.",
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "electric_hazard",
+								"count": 1,
+								"initial_damage": 40,
+								"damage_per_second": 15,
+								"duration": 6,
+								"area_radius": 3
+							},
+							"visual_feedback": "electric_arc_effect"
+						}
+					]
+				},
+				"level_2": {
+					"serial_number": "BP2-048-R-L2",
+					"ability_text": "Enhanced lab hazard: chains and machines release stronger electrical arcs dealing 60 instant damage and 25 damage per second for 8s to enemies in a 3.5m radius.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 5
 					},
-					"visual_feedback": "electric_arc_effect"
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "electric_hazard",
+								"count": 1,
+								"initial_damage": 60,
+								"damage_per_second": 25,
+								"duration": 8,
+								"area_radius": 3.5
+							},
+							"visual_feedback": "electric_arc_effect"
+						}
+					]
 				}
-			]
-		}
-	}
-},
+			}
+		},
 		{
 			"card_id": "ASV-060",
 			"card_name": "Assassin's Veil",
@@ -3549,65 +3583,65 @@
 			}
 		},
 		{
-	"card_id": "EVH-047",
-	"card_name": "Event Horizon",
-	"rarity": "Epic",
-	"type": [
-		"Active",
-		"Ability",
-		"Area Control"
-	],
-	"anime_id": "S02-EP13",
-	"activation_method": "active_tap",
-	"activation": {
-		"method": "tap",
-		"charge": "none",
-		"release": "manual"
-	},
-	"image_filename": "event_horizon.png",
-	"abilities": {
-		"level_1": {
-			"serial_number": "BP2-047-E-L1",
-			"ability_text": "Summons a gravitational field in a 4m radius. Enemies inside are pulled toward the center at 2 m/s and take 25 damage per second while inside the field. Lasts 8s.",
-			"effects": [
-				{
-					"type": "spawn_entity",
-					"parameters": {
-						"entity_type": "gravity_field",
-						"count": 1,
-						"pull_speed": 2,
-						"damage_per_second": 25,
-						"duration": 8,
-						"area_radius": 4
-					},
-					"visual_feedback": "gravity_field_pull_effect"
-				}
-			]
-		},
-		"level_2": {
-			"serial_number": "BP2-047-E-L2",
-			"ability_text": "Gravitational field intensifies: enemies pulled at 3 m/s and take 35 damage per second. Lasts 10s.",
-			"upgrade_cost": {
-				"required_level": 1,
-				"required_count": 5
+			"card_id": "EVH-047",
+			"card_name": "Event Horizon",
+			"rarity": "Epic",
+			"type": [
+				"Active",
+				"Ability",
+				"Area Control"
+			],
+			"anime_id": "S02-EP13",
+			"activation_method": "active_tap",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "manual"
 			},
-			"effects": [
-				{
-					"type": "spawn_entity",
-					"parameters": {
-						"entity_type": "gravity_field",
-						"count": 1,
-						"pull_speed": 3,
-						"damage_per_second": 35,
-						"duration": 10,
-						"area_radius": 4
+			"image_filename": "event_horizon.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP2-047-E-L1",
+					"ability_text": "Summons a gravitational field in a 4m radius. Enemies inside are pulled toward the center at 2 m/s and take 25 damage per second while inside the field. Lasts 8s.",
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "gravity_field",
+								"count": 1,
+								"pull_speed": 2,
+								"damage_per_second": 25,
+								"duration": 8,
+								"area_radius": 4
+							},
+							"visual_feedback": "gravity_field_pull_effect"
+						}
+					]
+				},
+				"level_2": {
+					"serial_number": "BP2-047-E-L2",
+					"ability_text": "Gravitational field intensifies: enemies pulled at 3 m/s and take 35 damage per second. Lasts 10s.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 5
 					},
-					"visual_feedback": "gravity_field_pull_effect"
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "gravity_field",
+								"count": 1,
+								"pull_speed": 3,
+								"damage_per_second": 35,
+								"duration": 10,
+								"area_radius": 4
+							},
+							"visual_feedback": "gravity_field_pull_effect"
+						}
+					]
 				}
-			]
-		}
-	}
-},
+			}
+		},
 		{
 			"card_id": "MID-028",
 			"card_name": "Midnight Delivery",
@@ -3797,65 +3831,65 @@
 			}
 		},
 		{
-	"card_id": "WHE-045",
-	"card_name": "White Elephant",
-	"rarity": "Epic",
-	"type": [
-		"Active",
-		"Ability",
-		"Defensive"
-	],
-	"anime_id": "S02-EP11",
-	"activation_method": "active_tap",
-	"activation": {
-		"method": "tap",
-		"charge": "none",
-		"release": "manual"
-	},
-	"image_filename": "white_elephant.png",
-	"abilities": {
-		"level_1": {
-			"serial_number": "BP2-045-E-L1",
-			"ability_text": "Summons a massive elephant ribcage from the ground, creating a bone barrier with 300 HP that blocks melee and ranged attacks. Barrier visibly fractures as it takes damage. Lasts 15s.",
-			"effects": [
-				{
-					"type": "spawn_entity",
-					"parameters": {
-						"entity_type": "bone_barrier",
-						"count": 1,
-						"health": 300,
-						"duration": 15,
-						"block_ranged": true,
-						"block_melee": true
-					},
-					"visual_feedback": "ribcage_fracture_effect"
-				}
-			]
-		},
-		"level_2": {
-			"serial_number": "BP2-045-E-L2",
-			"ability_text": "Summons a reinforced elephant ribcage with 400 HP that lasts 18s. Barrier fractures and crumbles as damage is taken.",
-			"upgrade_cost": {
-				"required_level": 1,
-				"required_count": 5
+			"card_id": "WHE-045",
+			"card_name": "White Elephant",
+			"rarity": "Epic",
+			"type": [
+				"Active",
+				"Ability",
+				"Defensive"
+			],
+			"anime_id": "S02-EP11",
+			"activation_method": "active_tap",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "manual"
 			},
-			"effects": [
-				{
-					"type": "spawn_entity",
-					"parameters": {
-						"entity_type": "bone_barrier",
-						"count": 1,
-						"health": 400,
-						"duration": 18,
-						"block_ranged": true,
-						"block_melee": true
+			"image_filename": "white_elephant.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP2-045-E-L1",
+					"ability_text": "Summons a massive elephant ribcage from the ground, creating a bone barrier with 300 HP that blocks melee and ranged attacks. Barrier visibly fractures as it takes damage. Lasts 15s.",
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "bone_barrier",
+								"count": 1,
+								"health": 300,
+								"duration": 15,
+								"block_ranged": true,
+								"block_melee": true
+							},
+							"visual_feedback": "ribcage_fracture_effect"
+						}
+					]
+				},
+				"level_2": {
+					"serial_number": "BP2-045-E-L2",
+					"ability_text": "Summons a reinforced elephant ribcage with 400 HP that lasts 18s. Barrier fractures and crumbles as damage is taken.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 5
 					},
-					"visual_feedback": "ribcage_fracture_effect"
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "bone_barrier",
+								"count": 1,
+								"health": 400,
+								"duration": 18,
+								"block_ranged": true,
+								"block_melee": true
+							},
+							"visual_feedback": "ribcage_fracture_effect"
+						}
+					]
 				}
-			]
-		}
-	}
-},
+			}
+		},
 		{
 			"card_id": "DRG-079",
 			"card_name": "Dragon Assault",
@@ -3921,67 +3955,67 @@
 			}
 		},
 		{
-	"card_id": "POJ-046",
-	"card_name": "Pillars of Judgment",
-	"rarity": "Epic",
-	"type": [
-		"Active",
-		"Ability",
-		"Area Control"
-	],
-	"anime_id": "S02-EP12",
-	"activation_method": "active_tap",
-	"activation": {
-		"method": "tap",
-		"charge": "none",
-		"release": "manual"
-	},
-	"image_filename": "pillars_of_judgment.png",
-	"abilities": {
-		"level_1": {
-			"serial_number": "BP2-046-E-L1",
-			"ability_text": "Summons 3 dark pillars that slam into the ground, dealing 50 impact damage on arrival. Pillars emit a burning aura that deals 20 fire damage per second to enemies inside. After 10s, pillars collapse with a burst of 100 burn damage.",
-			"effects": [
-				{
-					"type": "spawn_entity",
-					"parameters": {
-						"entity_type": "dark_pillar",
-						"count": 3,
-						"impact_damage": 50,
-						"burn_damage_per_second": 20,
-						"duration": 10,
-						"despawn_burst_damage": 100,
-						"area_radius": 3.5
-					},
-					"visual_feedback": "pillar_burn_and_collapse_effect"
-				}
-			]
-		},
-		"level_2": {
-			"serial_number": "BP2-046-E-L2",
-			"ability_text": "Summons 3 reinforced dark pillars that slam into the ground, dealing 70 impact damage. Pillars emit stronger burning aura (30 fire damage per second). After 12s, collapse with a burst of 120 burn damage.",
-			"upgrade_cost": {
-				"required_level": 1,
-				"required_count": 5
+			"card_id": "POJ-046",
+			"card_name": "Pillars of Judgment",
+			"rarity": "Epic",
+			"type": [
+				"Active",
+				"Ability",
+				"Area Control"
+			],
+			"anime_id": "S02-EP12",
+			"activation_method": "active_tap",
+			"activation": {
+				"method": "tap",
+				"charge": "none",
+				"release": "manual"
 			},
-			"effects": [
-				{
-					"type": "spawn_entity",
-					"parameters": {
-						"entity_type": "dark_pillar",
-						"count": 3,
-						"impact_damage": 70,
-						"burn_damage_per_second": 30,
-						"duration": 12,
-						"despawn_burst_damage": 120,
-						"area_radius": 3.5
+			"image_filename": "pillars_of_judgment.png",
+			"abilities": {
+				"level_1": {
+					"serial_number": "BP2-046-E-L1",
+					"ability_text": "Summons 3 dark pillars that slam into the ground, dealing 50 impact damage on arrival. Pillars emit a burning aura that deals 20 fire damage per second to enemies inside. After 10s, pillars collapse with a burst of 100 burn damage.",
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "dark_pillar",
+								"count": 3,
+								"impact_damage": 50,
+								"burn_damage_per_second": 20,
+								"duration": 10,
+								"despawn_burst_damage": 100,
+								"area_radius": 3.5
+							},
+							"visual_feedback": "pillar_burn_and_collapse_effect"
+						}
+					]
+				},
+				"level_2": {
+					"serial_number": "BP2-046-E-L2",
+					"ability_text": "Summons 3 reinforced dark pillars that slam into the ground, dealing 70 impact damage. Pillars emit stronger burning aura (30 fire damage per second). After 12s, collapse with a burst of 120 burn damage.",
+					"upgrade_cost": {
+						"required_level": 1,
+						"required_count": 5
 					},
-					"visual_feedback": "pillar_burn_and_collapse_effect"
+					"effects": [
+						{
+							"type": "spawn_entity",
+							"parameters": {
+								"entity_type": "dark_pillar",
+								"count": 3,
+								"impact_damage": 70,
+								"burn_damage_per_second": 30,
+								"duration": 12,
+								"despawn_burst_damage": 120,
+								"area_radius": 3.5
+							},
+							"visual_feedback": "pillar_burn_and_collapse_effect"
+						}
+					]
 				}
-			]
-		}
-	}
-},
+			}
+		},
 		{
 			"card_id": "DST-091",
 			"card_name": "Dregthorn Malachiah Specialist",
@@ -4453,9 +4487,3 @@
 		}
 	]
 }
-
-
-
-
-
-
