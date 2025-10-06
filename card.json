@@ -710,8 +710,8 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Ability",
-				"Defensive"
+				"Defensive",
+				"Summon"
 			],
 			"anime_id": "S01-EP20",
 			"activation_method": "active_tap",
@@ -765,13 +765,15 @@
 			}
 		},
 		{
-			"card_id": "NUA-021",
+			"card_id": "BLS-021",
 			"card_name": "Blazing Slide",
 			"rarity": "Common",
 			"type": [
 				"Active",
 				"Mobility",
-				"Combat"
+				"Combat", 
+				"Fire", 
+				"AoE"
 			],
 			"anime_id": "S01-EP02",
 			"activation_method": "active_tap",
@@ -829,7 +831,10 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
-				"Combat"
+				"Combat", 
+				"Debuff", 
+				"Poison", 
+				"DoT"
 			],
 			"anime_id": "S01-EP16",
 			"activation": {
@@ -837,6 +842,7 @@
 				"charge": "none",
 				"release": "instant"
 			},
+			"activation_method":"trigger",
 			"image_filename": "venom_orchid.png",
 			"abilities": {
 				"level_1": {
@@ -855,11 +861,12 @@
 			"card_name": "Gremish",
 			"rarity": "Common",
 			"type": [
-				"Passive",
-				"Buff",
-				"Trigger"
+				"Passive", 
+				"Buff", 
+				"Combat"
 			],
 			"anime_id": "S02-EP04",
+			"activation_method":"trigger",
 			"activation": {
 				"method": "passive",
 				"charge": "none",
@@ -878,10 +885,13 @@
 			"card_name": "Horned Heirs Breath",
 			"rarity": "Common",
 			"type": [
-				"Passive",
-				"Trigger"
+				"Passive", 
+				"Defense", 
+				"Utility", 
+				"Resource"
 			],
 			"anime_id": "S04-EP24",
+			"activation_method":" trigger",
 			"activation": {
 				"method": "trigger",
 				"charge": "none",
@@ -948,13 +958,14 @@
 			}
 		},
 		{
-			"card_id": "SUM-026",
+			"card_id": "LTT-026",
 			"card_name": "Little Trumpet Triumph",
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Summon",
-				"Utility"
+				"Summon", 
+				"Utility",
+				"AoE"
 			],
 			"anime_id": "S01-EP24",
 			"activation": {
@@ -1030,8 +1041,9 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Ability",
-				"Area Control"
+				"Area Control",
+				"Combat",
+				"DoT"
 			],
 			"anime_id": "S01-EP28",
 			"activation_method": "active_tap",
@@ -1125,8 +1137,9 @@
 			"card_name": "Trap Sense",
 			"rarity": "Common",
 			"type": [
-				"Active",
-				"Utility"
+				"Active", 
+				"Utility",
+				"Detection"
 			],
 			"anime_id": "S01-EP23",
 			"activation": {
@@ -1150,12 +1163,13 @@
 			}
 		},
 		{
-			"card_id": "RES-032",
+			"card_id": "HGL-032",
 			"card_name": "Hoarder’s Glint",
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Utility",
+				"Utility", 
+				"Detection", 
 				"Resource"
 			],
 			"anime_id": "S01-EP25",
@@ -1185,8 +1199,11 @@
 			"card_name": "Twin Slice",
 			"rarity": "Common",
 			"type": [
-				"Active",
-				"Weapon Ability"
+				"Active", 
+				"Weapon Ability",
+				"Combat",
+				"Debuff",
+				"Bleed"
 			],
 			"anime_id": "S01-EP27",
 			"activation_method": "dagger-weapon",
@@ -1219,7 +1236,9 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Utility"
+				"Utility", 
+				"Illumination",
+				"Summon"
 			],
 			"anime_id": "S01-EP22",
 			"activation": {
@@ -1247,13 +1266,15 @@
 			"card_name": "Rebellious Whistle",
 			"rarity": "Common",
 			"type": [
-				"Active",
-				"Ability"
+				"Active", 
+				"Combat",
+				"Projectile", 
+				"Charge"
 			],
 			"anime_id": "S01-EP01",
 			"activation": {
-				"method": "passive",
-				"charge": "none",
+				"method": "tap",
+				"charge": "true",
 				"release": "instant"
 			},
 			"image_filename": "rebellious_whistle.png",
@@ -1269,10 +1290,11 @@
 			"card_name": "Thunder Stomp",
 			"rarity": "Common",
 			"type": [
-				"Active",
-				"AoE",
-				"Elemental",
-				"Ability"
+				"Active", 
+				"AoE", 
+				"Elemental", 
+				"Electric",
+				"Combat"
 			],
 			"anime_id": "S01-EP21",
 			"activation_method": "player",
@@ -1307,6 +1329,7 @@
 			"type": [
 				"Passive",
 				"Combat",
+				"Buff",
 				"Trigger"
 			],
 			"anime_id": "S01-EP39",
@@ -1418,7 +1441,9 @@
 			"type": [
 				"Active",
 				"Weapon Ability",
-				"Attack"
+				"Combat", 
+				"Defense", 
+				"Fire"
 			],
 			"anime_id": "S01-EP18",
 			"activation_method": "fist-weapon",
@@ -1515,9 +1540,10 @@
 			"rarity": "Common",
 			"type": [
 				"Active",
-				"Ability",
-				"Elemental",
-				"Combat"
+				"Combat",
+				"Elemental", 
+				"Fire", 
+				"Ranged"
 			],
 			"anime_id": "S01-EP42",
 			"activation_method": "active_tap",
@@ -4486,4 +4512,5 @@
 			}
 		}
 	]
+
 }
