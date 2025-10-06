@@ -25,14 +25,14 @@
             </div>
             <div class="filter-container" id="rarityFilters">
                 <button class="filter-btn active" data-rarity="all">All</button>
-                <button class="filter-btn" data-rarity="Common">Common</button>
-                <button class="filter-btn" data-rarity="Uncommon">Uncommon</button>
-                <button class="filter-btn" data-rarity="Rare">Rare</button>
-                <button class="filter-btn" data-rarity="Epic">Epic</button>
-                <button class="filter-btn" data-rarity="Ultimate">Ultimate</button>
+                <button class="filter-btn" data-rarity="Common">🔵Common</button>
+                <button class="filter-btn" data-rarity="Uncommon">🟢Uncommon</button>
+                <button class="filter-btn" data-rarity="Rare">⚪Rare</button>
+                <button class="filter-btn" data-rarity="Epic">🟣Epic</button>
+                <button class="filter-btn" data-rarity="Ultimate">🟠Ultimate</button>
             </div>
-            <a href="cardCreator.html" class="btn">Create Card</a>
-            <a href="card-analytics.html" class="btn">Card Stats & Search</a>
+            <a href="cardCreator.html" class="btn">Create Card 🃏</a>
+            <a href="card-analytics.html" class="btn">Card Stats & Search  📈🎴</a>
         </div>
 
         <h2 style="text-align: center;">Your Trading Cards</h2>
@@ -90,36 +90,9 @@
 
 
     // --- Intersection Observer setup (unchanged, but disconnect added for safety) ---
-    let cardObserver;
+   
 
-    function handleIntersection(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.querySelector('.flip-card-inner').classList.remove('initial-back');
-                observer.unobserve(entry.target);
-            }
-        });
-    }
 
-    function setupScrollFlipObserver() {
-        const options = {
-            root: null,
-            rootMargin: '0px 0px -100px 0px',
-            threshold: 0.1
-        };
-
-        if (cardObserver) {
-             cardObserver.disconnect();
-        }
-        cardObserver = new IntersectionObserver(handleIntersection, options);
-        
-        document.querySelectorAll('.flip-card').forEach(card => {
-            cardObserver.observe(card);
-        });
-    }
-    // ----------------------------------------
-
-    // ... (Keep all your existing setup functions and global variables) ...
 
 // ----------------------------------------------------------------------
 // 🌟 NEW FUNCTION: Get the ACTUAL column count from the rendered grid
@@ -185,7 +158,7 @@ async function loadCards(rarityFilter = 'all') {
                     `<img src="${backImagePath}" alt="Card Back" class="card-image">`;
 
                 flipCard.innerHTML = `
-                    <div class="flip-card-inner initial-back ${rarityClass}-glow">
+                    <div class="flip-card-inner ${rarityClass}-glow">
                         <div class="flip-card-front">
                             ${frontImage}
                             <div class="card-info">
@@ -196,9 +169,7 @@ async function loadCards(rarityFilter = 'all') {
                             </div>
                         </div>
                         
-                        <div class="flip-card-back">
-                            <img src="${backImagePath}" alt="Card Back" class="card-image">
-                        </div>
+                        
                     </div>
                 `;
                 
@@ -227,8 +198,7 @@ async function loadCards(rarityFilter = 'all') {
                 flipCard.style.setProperty('--card-delay-offset', delayOffset);
             });
             
-            // Setup observer after all delays are calculated
-            setupScrollFlipObserver();
+            
 
         } else {
              cardsContainer.innerHTML = '<p class="error">No cards found. Add your first card!</p>';

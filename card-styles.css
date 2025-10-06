@@ -28,7 +28,7 @@
    ============================================== */
 /* ... in the FLIP CARD BASE section ... */
 .flip-card {
-    perspective: 1000px;
+    
     height: 320px;
     
     /* Apply staggered animation */
@@ -43,11 +43,7 @@
     transition: transform 0.3s ease; 
 }
 
-/* Note: You must add an inline style `--card-index: N;` to each flip-card 
-   element in your HTML/JavaScript for this to work, where N is its index 
-   (0, 1, 2, 3, etc.). */
 
-/* Card lift on hover */
 .flip-card:hover {
     transform: translateY(-5px);
 }
@@ -56,34 +52,22 @@
     position: relative;
     width: 100%;
     height: 100%;
-    /* Flip transition: Smoother, bouncier flip */
-    transition: transform 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transform-style: preserve-3d;
-    cursor: pointer;
-    /* Default state: Flipped to front (0deg) */
-    transform: rotateY(0deg);
+    
 }
 
-/* Initial state for scroll-flip effect: Card Back showing */
-.flip-card-inner.initial-back {
-    transform: rotateY(180deg);
-}
 
 /* Base styles for both front and back */
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transition: box-shadow 0.3s ease;
 }
 
-.flip-card-back {
-    transform: rotateY(180deg);
-}
 
 /* ==============================================
    CARD CONTENT
@@ -161,9 +145,9 @@
    RARITY TEXT AND DOTS (COLOR DEFINITIONS)
    ============================================== */
 /* Rarity Text Colors */
-.rarity-text.common    { color: #ffffff; } /* White */
+.rarity-text.common    { color: #0070ff; } /* White */
 .rarity-text.uncommon  { color: #1eff00; } /* Green */
-.rarity-text.rare      { color: #0070ff; } /* Blue */
+.rarity-text.rare      { color: #ffffff; } /* Blue */
 .rarity-text.epic      { color: #a335ee; } /* Purple */
 .rarity-text.ultimate  { color: #ff8000; } /* Orange */
 
@@ -175,17 +159,17 @@
     display: inline-block;
     margin-right: 5px; 
 }
-.rarity-dot.common   { background-color: #ffffff; }
+.rarity-dot.common   { background-color: #0070ff; }
 .rarity-dot.uncommon { background-color: #1eff00; }
-.rarity-dot.rare     { background-color: #0070ff; }
+.rarity-dot.rare     { background-color: #ffffff; }
 .rarity-dot.epic     { background-color: #a335ee; }
 .rarity-dot.ultimate { background-color: #ff8000; }
 
 
 /* Generic Rarity Class Colors */
-.common   { color: #ffffff; } 
+.common   { color: #0070ff; } 
 .uncommon { color: #1eff00; }
-.rare     { color: #0070ff; }
+.rare     { color: #ffffff; }
 .epic     { color: #a335ee; }
 .ultimate { color: #ff8000; }
 
@@ -217,13 +201,13 @@
 
 /* Rare Filter Button */
 .filter-btn[data-rarity="Rare"] {
-    border-color: #0070ff;
-    color: #0070ff;
+    border-color: #ffffff;
+    color: #ffffff;
 }
 .filter-btn[data-rarity="Rare"]:hover,
 .filter-btn[data-rarity="Rare"].active {
-    background-color: #0070ff;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
 }
 
 /* Epic Filter Button */
