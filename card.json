@@ -1138,8 +1138,7 @@
 			"rarity": "Common",
 			"type": [
 				"Tap", 
-				"Utility",
-				"Detection"
+				"Utility"
 			],
 			"anime_id": "S01-EP23",
 			"activation": {
@@ -1169,7 +1168,6 @@
 			"type": [
 				"Tap",
 				"Utility", 
-				"Detection", 
 				"Resource"
 			],
 			"anime_id": "S01-EP25",
@@ -4516,6 +4514,7 @@
 	]
 
 }
+
 
 
 
