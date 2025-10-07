@@ -2991,8 +2991,7 @@
 			"card_name": "Wolf Fang",
 			"rarity": "Rare",
 			"type": [
-				"Active",
-				"Attack",
+				"Tap",
 				"Weapon Ability"
 			],
 			"anime_id": "S01-EP53",
@@ -4514,5 +4513,6 @@
 	]
 
 }
+
 
 
