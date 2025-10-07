@@ -551,7 +551,7 @@
 			"card_name": "Pondering Orb",
 			"rarity": "Common",
 			"type": [
-				"Passive", "Buff", "Spell"
+				"Passive", "Buff"
 			],
 			"anime_id": "S01-EP14",
 			"activation": {
@@ -1040,7 +1040,7 @@
 			"card_name": "Crystal Scotch",
 			"rarity": "Common",
 			"type": [
-				"Active",
+				"Tap",
 				"Area Control",
 				"Combat",
 				"DoT"
@@ -1137,7 +1137,7 @@
 			"card_name": "Trap Sense",
 			"rarity": "Common",
 			"type": [
-				"Active", 
+				"Tap", 
 				"Utility",
 				"Detection"
 			],
@@ -1167,7 +1167,7 @@
 			"card_name": "Hoarder’s Glint",
 			"rarity": "Common",
 			"type": [
-				"Active",
+				"Tap",
 				"Utility", 
 				"Detection", 
 				"Resource"
@@ -1199,7 +1199,7 @@
 			"card_name": "Twin Slice",
 			"rarity": "Common",
 			"type": [
-				"Active", 
+				"Tap", 
 				"Weapon Ability",
 				"Combat",
 				"Debuff",
@@ -1235,9 +1235,8 @@
 			"card_name": "Guiding Light",
 			"rarity": "Common",
 			"type": [
-				"Active",
+				"Tap",
 				"Utility", 
-				"Illumination",
 				"Summon"
 			],
 			"anime_id": "S01-EP22",
@@ -1266,7 +1265,7 @@
 			"card_name": "Rebellious Whistle",
 			"rarity": "Common",
 			"type": [
-				"Active", 
+				"Tap", 
 				"Combat",
 				"Projectile", 
 				"Charge"
@@ -1441,8 +1440,7 @@
 			"type": [
 				"Tap",
 				"Weapon Ability",
-				"Combat", 
-				"Defense", 
+				"Combat",  
 				"Fire"
 			],
 			"anime_id": "S01-EP18",
@@ -1543,7 +1541,6 @@
 				"Combat",
 				"Elemental", 
 				"Fire", 
-				"Ranged"
 			],
 			"anime_id": "S01-EP42",
 			"activation_method": "active_tap",
@@ -2010,7 +2007,10 @@
 			"card_id": "ARH-024",
 			"card_name": "Archer's Hand",
 			"rarity": "Uncommon",
-			"type": "Passive Combat",
+			"type": [
+				"Passive",
+				"Combat"
+			],
 			"anime_id": "S01-EP24",
 			"activation": {
 				"method": "passive",
@@ -4516,6 +4516,7 @@
 	]
 
 }
+
 
 
 
