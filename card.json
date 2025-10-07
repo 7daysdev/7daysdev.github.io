@@ -7,7 +7,6 @@
 			"type": [
 				"Passive",
 				"Buff",
-				"Combat"
 			],
 			"anime_id": "S01-EP01",
 			"activation_method": "passive",
@@ -112,7 +111,8 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
-				"Combat"
+				"Buff",
+				"Stagger" 
 			],
 			"anime_id": "S01-EP02",
 			"activation_method": "passive",
@@ -181,7 +181,7 @@
 			"rarity": "Common",
 			"type": [
 				"Passive",
-				"Combat"
+				"Buff"
 			],
 			"anime_id": "S01-EP03",
 			"activation_method": "passive",
@@ -213,8 +213,8 @@
 			"card_name": "Puppet's Last Dance",
 			"rarity": "Common",
 			"type": [
-				"Active",
-				"Mobility"
+				"Tap",
+				"Buff"
 			],
 			"anime_id": "S01-EP04",
 			"activation_method": "active_tap",
@@ -4514,3 +4514,4 @@
 	]
 
 }
+
