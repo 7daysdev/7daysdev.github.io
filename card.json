@@ -1290,8 +1290,8 @@
 			"card_name": "Thunder Stomp",
 			"rarity": "Common",
 			"type": [
-				"Active", 
-				"AoE", 
+				"Tap", 
+				"Projectile", 
 				"Elemental", 
 				"Electric",
 				"Combat"
@@ -1439,7 +1439,7 @@
 			"card_name": "Pierce Beyond Steel",
 			"rarity": "Common",
 			"type": [
-				"Active",
+				"Tap",
 				"Weapon Ability",
 				"Combat", 
 				"Defense", 
@@ -1539,7 +1539,7 @@
 			"card_name": "Widow's Blessing",
 			"rarity": "Common",
 			"type": [
-				"Active",
+				"Tap",
 				"Combat",
 				"Elemental", 
 				"Fire", 
@@ -1579,7 +1579,7 @@
 			"card_name": "Goblin sandwich",
 			"rarity": "Common",
 			"type": [
-				"Active",
+				"Tap",
 				"Combat",
 				"Ability"
 			],
@@ -1768,7 +1768,7 @@
 			"card_name": "Ember Charge",
 			"rarity": "Common",
 			"type": [
-				"Active",
+				"Tap",
 				"Combat",
 				"Ability"
 			],
@@ -1885,7 +1885,7 @@
 			"card_name": "Revigor",
 			"rarity": "Uncommon",
 			"type": [
-				"Active",
+				"Tap",
 				"Restoration"
 			],
 			"anime_id": "S01-EP21",
@@ -2105,7 +2105,10 @@
 			"card_id": "CRF-028",
 			"card_name": "Crimson Fist",
 			"rarity": "Uncommon",
-			"type": "Active Aura Buff",
+			"type": [
+				"Tap", 
+				"Buff"
+			],
 			"anime_id": "S01-EP28",
 			"activation": {
 				"method": "tap",
@@ -4513,6 +4516,7 @@
 	]
 
 }
+
 
 
 
