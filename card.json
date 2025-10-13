@@ -292,7 +292,7 @@
       "card_name": "Ogre's Ache",
       "rarity": "Common",
       "type": [
-        "Active",
+        "Tap",
         "Projectile",
         "Summon",
         "Restoration"
@@ -362,7 +362,7 @@
       "type": [
         "Passive",
         "Buff",
-        "Defense"
+        "Defensive"
       ],
       "anime_id": "S01-EP07",
       "activation": {
@@ -403,7 +403,7 @@
       "type": [
         "Passive",
         "Buff",
-        "Defense"
+        "Defensive"
       ],
       "anime_id": "S01-EP08",
       "activation": {
@@ -434,9 +434,10 @@
       "card_name": "Quake",
       "rarity": "Common",
       "type": [
-        "Active",
+        "Tap",
         "Mobility",
-        "AoE"
+        "AoE",
+        "Trigger"
       ],
       "anime_id": "S01-EP09",
       "activation": {
@@ -473,7 +474,7 @@
         "Passive",
         "Buff",
         "Combat",
-        "Defense"
+        "Defensive"
       ],
       "anime_id": "S01-EP10",
       "activation": {
@@ -541,7 +542,7 @@
       "type": [
         "Passive",
         "Buff",
-        "Defense"
+        "Defensive"
       ],
       "anime_id": "S01-EP13",
       "activation": {
@@ -606,7 +607,7 @@
       "card_name": "Ember Might",
       "rarity": "Common",
       "type": [
-        "Active",
+        "Tap",
         "Summon",
         "Projectile"
       ],
@@ -665,7 +666,7 @@
       "card_name": "Sunpetal Bloom",
       "rarity": "Common",
       "type": [
-        "Passive",
+        "Tap",
         "Summon",
         "Combat",
         "Resource"
@@ -695,7 +696,7 @@
       "card_name": "Voltaic Vespoid",
       "rarity": "Common",
       "type": [
-        "Active",
+        "Tap",
         "Summon"
       ],
       "anime_id": "S01-EP17",
@@ -723,7 +724,7 @@
       "card_name": "Nuelen's Guard",
       "rarity": "Common",
       "type": [
-        "Active",
+        "Tap",
         "Defensive",
         "Summon"
       ],
@@ -783,7 +784,7 @@
       "card_name": "Blazing Slide",
       "rarity": "Common",
       "type": [
-        "Active",
+        "Tap",
         "Mobility",
         "Combat",
         "Fire",
@@ -904,7 +905,7 @@
       "rarity": "Common",
       "type": [
         "Passive",
-        "Defense",
+        "Defensive",
         "Utility",
         "Resource"
       ],
@@ -982,7 +983,7 @@
       "card_name": "Little Trumpet Triumph",
       "rarity": "Common",
       "type": [
-        "Active",
+        "Tap",
         "Summon",
         "Utility",
         "AoE"
@@ -1016,7 +1017,7 @@
       "card_name": "Healing Lily",
       "rarity": "Common",
       "type": [
-        "Active",
+        "Tap",
         "Restoration"
       ],
       "anime_id": "S01-EP16",
@@ -1604,8 +1605,7 @@
       "rarity": "Common",
       "type": [
         "Tap",
-        "Combat",
-        "Ability"
+        "Combat"
       ],
       "anime_id": "S01-EP19",
       "activation_method": "active_tap",
@@ -1793,8 +1793,7 @@
       "rarity": "Common",
       "type": [
         "Tap",
-        "Combat",
-        "Ability"
+        "Combat"
       ],
       "anime_id": "S01-EP49",
       "activation_method": "active_hold",
@@ -2056,7 +2055,7 @@
       "card_id": "HPS-025",
       "card_name": "Hipposurus",
       "rarity": "Uncommon",
-      "type": "Passive Buff",
+      "type": ["Passive", "Buff"],
       "anime_id": "S01-EP25",
       "activation": {
         "method": "passive",
@@ -2094,7 +2093,7 @@
       "card_id": "JGA-027",
       "card_name": "Joh-gaur",
       "rarity": "Uncommon",
-      "type": "Passive Buff",
+      "type": ["Passive", "Buff"],
       "anime_id": "S01-EP27",
       "activation": {
         "method": "passive",
@@ -2158,7 +2157,7 @@
       "card_name": "Briarwood",
       "rarity": "Uncommon",
       "type": [
-        "Active",
+        "Tap",
         "Utility",
         "Area Control"
       ],
@@ -2250,7 +2249,7 @@
       "card_id": "CRS-097",
       "card_name": "Crystal Sentry",
       "rarity": "Uncommon",
-      "type": "Active Summon",
+      "type": ["Tap", "Summon"],
       "anime_id": "S02-EP08",
       "activation": {
         "method": "tap",
@@ -2342,7 +2341,7 @@
       "card_id": "IRH-098",
       "card_name": "Henge Stone",
       "rarity": "Uncommon",
-      "type": "Passive Combat",
+      "type": ["Passive", "Combat"],
       "anime_id": "S02-EP09",
       "activation": {
         "method": "passive",
@@ -2387,8 +2386,7 @@
       "card_name": "Voltic Gem Mines",
       "rarity": "Uncommon",
       "type": [
-        "Active",
-        "Ability",
+        "Tap",
         "Area Control"
       ],
       "anime_id": "S02-EP15",
@@ -2447,7 +2445,7 @@
       "card_id": "QKF-099",
       "card_name": "Quickfang",
       "rarity": "Uncommon",
-      "type": "Passive Combat",
+      "type":[ "Passive", "Combat"],
       "anime_id": "S02-EP10",
       "activation": {
         "method": "passive",
@@ -2543,8 +2541,7 @@
       "card_name": "Warrior Skill no.3",
       "rarity": "Uncommon",
       "type": [
-        "Active",
-        "Utility",
+        "Tap",
         "Weapon Ability"
       ],
       "activation_method": "axe-weapon",
@@ -2661,7 +2658,7 @@
       "card_name": "Echo Stone",
       "rarity": "Uncommon",
       "type": [
-        "Active",
+        "Tap",
         "Buff"
       ],
       "anime_id": "S02-EP13",
@@ -2771,7 +2768,7 @@
       "card_name": "Splitfang Strike",
       "rarity": "Uncommon",
       "type": [
-        "Active",
+        "Tap",
         "Weapon Ability",
         "Combat"
       ],
@@ -2812,7 +2809,7 @@
       "card_name": "Ash Covering",
       "rarity": "Uncommon",
       "type": [
-        "Active",
+        "Tap",
         "Buff",
         "Weapon Ability"
       ],
@@ -2921,9 +2918,9 @@
       "card_name": "Ogre's Grumble",
       "rarity": "Rare",
       "type": [
-        "Active",
+        "Tap",
         "Buff",
-        "Ability"
+        "AoE"
       ],
       "anime_id": "S01-EP52",
       "activation": {
@@ -2949,7 +2946,7 @@
       "card_name": "Re Volte",
       "rarity": "Rare",
       "type": [
-        "Active",
+        "Tap",
         "Weapon Ability"
       ],
       "anime_id": "S01-EP53",
@@ -3069,7 +3066,8 @@
       "card_name": "Lantern Saint of the Endless Steps",
       "rarity": "Rare",
       "type": [
-        "Active",
+        "Tap",
+        "AoE",
         "Summon"
       ],
       "anime_id": "S02-EP03",
@@ -3124,6 +3122,7 @@
       "card_name": "Rogue Step",
       "rarity": "Rare",
       "type": [
+        "Tap",
         "Mobility"
       ],
       "anime_id": "S01-EP52",
@@ -3150,7 +3149,7 @@
       "card_name": "El Lucha",
       "rarity": "Rare",
       "type": [
-        "Active",
+        "Tap",
         "Transformative"
       ],
       "anime_id": "S01-EP52",
@@ -3241,7 +3240,7 @@
       "card_name": "Moon Edge Slice",
       "rarity": "Rare",
       "type": [
-        "Active",
+        "Tap",
         "Combat",
         "Weapon Ability"
       ],
@@ -3270,8 +3269,8 @@
       "card_name": "Frankenstein's Lab",
       "rarity": "Rare",
       "type": [
-        "Active",
-        "Ability",
+        "Tap",
+        "Electric",
         "Area Control"
       ],
       "anime_id": "S02-EP14",
@@ -3411,7 +3410,9 @@
       "card_name": "Wyvern Surge",
       "rarity": "Rare",
       "type": [
-        "Active",
+        "Tap",
+        "AoE",
+        "Electric",
         "Projectile"
       ],
       "anime_id": "S02-EP11",
@@ -3449,10 +3450,12 @@
       "card_name": "Dragon's Fang",
       "rarity": "Rare",
       "type": [
+        "Tap",
         "Combat",
-        "Ability"
+        "Weapon Ability"
       ],
       "anime_id": "S01-EP94",
+      "activation_method":"spear-weapon",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -3474,6 +3477,7 @@
       "card_name": "Graveyard",
       "rarity": "Rare",
       "type": [
+        "Tap",
         "Defensive",
         "Area Control",
         "AoE"
@@ -3528,8 +3532,8 @@
       "card_name": "Phantom Remembrance",
       "rarity": "Rare",
       "type": [
-        "Active",
-        "Ability",
+        "Tap",
+        "Defensive",
         "Summon"
       ],
       "anime_id": "S01-EP101",
@@ -3625,8 +3629,9 @@
       "card_name": "Ogre's Greed",
       "rarity": "Epic",
       "type": [
-        "Active",
-        "Ability"
+        "Tap",
+        "AoE",
+        "Debuff"
       ],
       "anime_id": "S01-EP76",
       "activation": {
@@ -3638,7 +3643,7 @@
       "abilities": {
         "level_1": {
           "serial_number": "BP1-076-E-L1",
-          "ability_text": "Release auro status effect and fire off devouring greeds phantoms.",
+          "ability_text": "Release pulsing auro status effect and fire off devouring phantoms that if land consume health points to add to your own health points.",
           "charge_type": "charge-tap"
         }
       }
@@ -3648,15 +3653,15 @@
       "card_name": "Event Horizon",
       "rarity": "Epic",
       "type": [
-        "Active",
-        "Ability",
+        "Tap",
+        "AoE",
         "Area Control"
       ],
       "anime_id": "S02-EP13",
       "activation_method": "active_tap",
       "activation": {
         "method": "tap",
-        "charge": "none",
+        "charge": "true",
         "release": "manual"
       },
       "image_filename": "event_horizon.png",
@@ -3708,7 +3713,7 @@
       "card_name": "Midnight Delivery",
       "rarity": "Epic",
       "type": [
-        "Active",
+        "Tap",
         "Utility",
         "Swap"
       ],
@@ -3896,8 +3901,8 @@
       "card_name": "White Elephant",
       "rarity": "Epic",
       "type": [
-        "Active",
-        "Ability",
+        "Tap",
+        "Area Control",
         "Defensive"
       ],
       "anime_id": "S02-EP11",
@@ -3956,7 +3961,7 @@
       "card_name": "Dragon Assault",
       "rarity": "Epic",
       "type": [
-        "Active",
+        "Tap",
         "Combat"
       ],
       "anime_id": "S02-EP10",
@@ -3996,7 +4001,7 @@
       "card_name": "Executioner's Oath",
       "rarity": "Epic",
       "type": [
-        "Active",
+        "Tap",
         "Buff"
       ],
       "anime_id": "S01-EP89",
@@ -4020,8 +4025,7 @@
       "card_name": "Pillars of Judgment",
       "rarity": "Epic",
       "type": [
-        "Active",
-        "Ability",
+        "Tap",
         "Area Control"
       ],
       "anime_id": "S02-EP12",
@@ -4082,7 +4086,7 @@
       "card_name": "Dregthorn Malachiah Specialist",
       "rarity": "Epic",
       "type": [
-        "Active",
+        "Tap",
         "Weapon Ability"
       ],
       "anime_id": "S02-EP14",
@@ -4204,6 +4208,7 @@
       "card_name": "8-bit Dave",
       "rarity": "Epic",
       "type": [
+        "Tap",
         "Transformative",
         "Combat"
       ],
@@ -4273,7 +4278,7 @@
       "card_name": "Struggle no more",
       "rarity": "Epic",
       "type": [
-        "Active",
+        "Tap",
         "Utility"
       ],
       "anime_id": "S03-EP12",
@@ -4388,7 +4393,7 @@
       "card_name": "Midas Touch",
       "rarity": "Ultimate",
       "type": [
-        "Ability",
+        "Tap",
         "AoE",
         "Debuff"
       ],
@@ -4412,8 +4417,8 @@
       "card_name": "Final Strike",
       "rarity": "Ultimate",
       "type": [
-        "Active",
-        "Ability"
+        "Tap"
+
       ],
       "anime_id": "S01-EP12",
       "activation_method": "active_charge",
@@ -4457,8 +4462,7 @@
       "card_name": "Orbital Choir",
       "rarity": "Ultimate",
       "type": [
-        "Active",
-        "Ability",
+        "Tap",
         "AoE"
       ],
       "anime_id": "S01-EP12",
@@ -4503,7 +4507,7 @@
       "card_name": "Blight of the Heirs",
       "rarity": "Ultimate",
       "type": [
-        "Active",
+        "Tap",
         "Debuff"
       ],
       "anime_id": "S01-EP102",
