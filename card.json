@@ -1118,40 +1118,45 @@
       }
     },
     {
-      "card_id": "XXX-029",
-      "card_name": "???",
+      "card_id": "WS2-029",
+      "card_name": "Warrior Skill no.2",
       "rarity": "Common",
-      "type": "???",
-      "anime_id": "S??-EP??",
+      "type": [
+        "Tap",
+        "Weapon Ability"
+      ],
+      "anime_id": "S01-EP20",
+      "activation_method": "straightsword-weapon",
       "activation": {
-        "method": "passive",
+        "method": "Tap",
         "charge": "none",
         "release": "instant"
       },
-      "image_filename": "???.png",
+      "image_filename": "warrior_skill-no2.png",
       "abilities": {
         "level_1": {
           "serial_number": "BP1-029-C-L1",
-          "ability_text": "???"
+          "ability_text": "Perform a fast advancing slash that parries weak projectiles."
         }
       }
     },
     {
-      "card_id": "XXX-030",
-      "card_name": "???",
+      "card_id": "PRF-030",
+      "card_name": "Precise Footwork",
       "rarity": "Common",
-      "type": "???",
-      "anime_id": "S??-EP??",
+      "type": ["Passive", "Weapon Ability", "Combat" ],
+      "anime_id": "S02-EP07",
+      "activation_method":"passive_rapier",
       "activation": {
         "method": "passive",
         "charge": "none",
         "release": "instant"
       },
-      "image_filename": "???.png",
+      "image_filename": "precise_footwork.png",
       "abilities": {
         "level_1": {
           "serial_number": "BP1-030-C-L1",
-          "ability_text": "???"
+          "ability_text": "Light attacks consume slightly less stamina while at full health. (~10%)"
         }
       }
     },
