@@ -253,7 +253,8 @@
       "rarity": "Common",
       "type": [
         "Passive",
-        "Combat"
+        "Combat",
+        "Buff"
       ],
       "anime_id": "S01-EP05",
       "activation": {
@@ -294,7 +295,6 @@
       "type": [
         "Tap",
         "Projectile",
-        "Summon",
         "Restoration"
       ],
       "anime_id": "S01-EP06",
@@ -564,7 +564,8 @@
       "rarity": "Common",
       "type": [
         "Passive",
-        "Buff"
+        "Buff",
+        "Magic"
       ],
       "anime_id": "S01-EP14",
       "activation": {
@@ -609,7 +610,8 @@
       "type": [
         "Tap",
         "Summon",
-        "Projectile"
+        "Projectile",
+        "Fire"
       ],
       "anime_id": "S01-EP16",
       "activation": {
@@ -645,7 +647,8 @@
       "rarity": "Common",
       "type": [
         "Passive",
-        "Combat"
+        "Combat",
+        "Stagger"
       ],
       "anime_id": "S01-EP17",
       "activation": {
@@ -697,7 +700,8 @@
       "rarity": "Common",
       "type": [
         "Tap",
-        "Summon"
+        "Summon",
+        "Electric"
       ],
       "anime_id": "S01-EP17",
       "activation": {
@@ -705,12 +709,12 @@
         "charge": "true",
         "release": "auto"
       },
-      "descriptsion": "A gentle flower that bathes its surroundings in life-giving light, mending wounds and rejuvenating spirits.",
+      "descriptsion": "Summons A Wasp Companion that Shocks Foes",
       "image_filename": "voltaic_vespoid.png",
       "abilities": {
         "level_1": {
           "serial_number": "BP1-018-C-L1",
-          "ability_text": "Summons a small sprite flower that heals 3% HP every 5s."
+          "ability_text": "Summons a small electriefied wasp that deals 3minor eletric damgae."
         },
         "level_5": {
           "serial_number": "BP1-018-C-L1",
@@ -4557,3 +4561,4 @@
     }
   ]
 }
+
