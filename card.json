@@ -1802,7 +1802,9 @@
       "rarity": "Common",
       "type": [
         "Tap",
-        "Combat"
+        "Combat",
+        "Weapon Ability",
+        "Fire"
       ],
       "anime_id": "S01-EP49",
       "activation_method": "active_hold",
@@ -1966,7 +1968,8 @@
       "rarity": "Uncommon",
       "type": [
         "Passive",
-        "Combat"
+        "Combat",
+        "Weapon Ability"
       ],
       "anime_id": "S01-EP23",
       "activation_method": "passive",
@@ -1990,7 +1993,9 @@
       "type": [
         "Passive",
         "Combat",
-        "Elemental"
+        "Elemental",
+        "Weapon Ability",
+        "Poison"
       ],
       "anime_id": "S02-EP06",
       "activation_method": "passive",
@@ -2044,7 +2049,8 @@
       "rarity": "Uncommon",
       "type": [
         "Passive",
-        "Combat"
+        "Combat",
+        "Weapon Ability"
       ],
       "anime_id": "S01-EP24",
       "activation": {
@@ -2102,7 +2108,7 @@
       "card_id": "JGA-027",
       "card_name": "Joh-gaur",
       "rarity": "Uncommon",
-      "type": ["Passive", "Buff"],
+      "type": ["Passive", "Buff", "Magic"],
       "anime_id": "S01-EP27",
       "activation": {
         "method": "passive",
@@ -2121,7 +2127,7 @@
       "card_id": "GRD-028",
       "card_name": "Great Devourer",
       "rarity": "Uncommon",
-      "type": "Passive Combat",
+      "type": ["Passive", "Combat"],
       "anime_id": "S01-EP28",
       "activation": {
         "method": "passive",
@@ -2142,7 +2148,9 @@
       "rarity": "Uncommon",
       "type": [
         "Tap",
-        "Buff"
+        "Buff",
+        "Weapon Ability",
+        "Fire"
       ],
       "anime_id": "S01-EP28",
       "activation": {
@@ -2258,7 +2266,7 @@
       "card_id": "CRS-097",
       "card_name": "Crystal Sentry",
       "rarity": "Uncommon",
-      "type": ["Tap", "Summon"],
+      "type": ["Tap", "Summon", "DoT"],
       "anime_id": "S02-EP08",
       "activation": {
         "method": "tap",
@@ -2350,7 +2358,7 @@
       "card_id": "IRH-098",
       "card_name": "Henge Stone",
       "rarity": "Uncommon",
-      "type": ["Passive", "Combat"],
+      "type": ["Passive", "Combat", "Defensive"],
       "anime_id": "S02-EP09",
       "activation": {
         "method": "passive",
@@ -2454,8 +2462,9 @@
       "card_id": "QKF-099",
       "card_name": "Quickfang",
       "rarity": "Uncommon",
-      "type":[ "Passive", "Combat"],
+      "type":[ "Passive", "Combat", "Weapon Ability"],
       "anime_id": "S02-EP10",
+      "activation_method":"fist-sword-dagger-weapons",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -2668,7 +2677,8 @@
       "rarity": "Uncommon",
       "type": [
         "Tap",
-        "Buff"
+        "Buff",
+        "Magic"
       ],
       "anime_id": "S02-EP13",
       "activation": {
@@ -2727,7 +2737,8 @@
       "rarity": "Uncommon",
       "type": [
         "Passive",
-        "Combat"
+        "Combat",
+        "Bleed"
       ],
       "anime_id": "S02-EP11",
       "activation": {
@@ -2744,7 +2755,8 @@
       "rarity": "Uncommon",
       "type": [
         "Passive",
-        "Buff"
+        "Buff",
+        "Poison"
       ],
       "anime_id": "S02-EP12",
       "activation": {
@@ -2779,7 +2791,8 @@
       "type": [
         "Tap",
         "Weapon Ability",
-        "Combat"
+        "Combat",
+        "Stagger"
       ],
       "anime_id": "S02-EP14",
       "activation_method": "straightsword",
@@ -2797,7 +2810,8 @@
       "rarity": "Uncommon",
       "type": [
         "Passive",
-        "Combat"
+        "Combat",
+        "Bleed"
       ],
       "anime_id": "S02-EP16",
       "activation": {
@@ -2820,7 +2834,8 @@
       "type": [
         "Tap",
         "Buff",
-        "Weapon Ability"
+        "Weapon Ability",
+        "Fire"
       ],
       "anime_id": "S02-EP18",
       "activation": {
@@ -2928,7 +2943,7 @@
       "rarity": "Rare",
       "type": [
         "Tap",
-        "Buff",
+        "Debuff",
         "AoE"
       ],
       "anime_id": "S01-EP52",
@@ -2941,7 +2956,7 @@
       "abilities": {
         "level_1": {
           "serial_number": "BP1-052-R-L1",
-          "ability_text": "Releases an aura that damages nearby enemies.",
+          "ability_text": "Releases a pulsing aura that damages nearby enemies.",
           "charge_type": "auto-charge",
           "charge_time": 7,
           "props": {
@@ -3077,7 +3092,8 @@
       "type": [
         "Tap",
         "AoE",
-        "Summon"
+        "Summon",
+        "Fire"
       ],
       "anime_id": "S02-EP03",
       "activation": {
@@ -3105,7 +3121,8 @@
       "type": [
         "Passive",
         "Trigger",
-        "Restoration"
+        "Restoration",
+        "Magic"
       ],
       "anime_id": "S02-EP03",
       "activation": {
@@ -3489,7 +3506,9 @@
         "Tap",
         "Defensive",
         "Area Control",
-        "AoE"
+        "AoE",
+        "Debuff",
+        "Poison"
       ],
       "anime_id": "S01-EP01",
       "activation": {
@@ -3971,7 +3990,8 @@
       "rarity": "Epic",
       "type": [
         "Tap",
-        "Combat"
+        "Combat",
+        "Fire"
       ],
       "anime_id": "S02-EP10",
       "activation_method": "active_charge",
@@ -4011,7 +4031,8 @@
       "rarity": "Epic",
       "type": [
         "Tap",
-        "Buff"
+        "Buff",
+        "Weapon Ability"
       ],
       "anime_id": "S01-EP89",
       "activation": {
@@ -4035,7 +4056,8 @@
       "rarity": "Epic",
       "type": [
         "Tap",
-        "Area Control"
+        "Area Control",
+        "Fire"
       ],
       "anime_id": "S02-EP12",
       "activation_method": "active_tap",
@@ -4357,7 +4379,8 @@
       "rarity": "Epic",
       "type": [
         "Passive",
-        "Buff"
+        "Buff",
+        "Magic"
       ],
       "anime_id": "S01-EP78",
       "activation_method": "on_cast",
@@ -4426,7 +4449,8 @@
       "card_name": "Final Strike",
       "rarity": "Ultimate",
       "type": [
-        "Tap"
+        "Tap",
+        "Combat"
 
       ],
       "anime_id": "S01-EP12",
@@ -4440,7 +4464,7 @@
       "abilities": {
         "level_1": {
           "serial_number": "BP1-077-E-L1",
-          "ability_text": "Massive laser beam descends from orbital ring, Obliterates most standard enemies instantly, Heavy stagger effect on bosses"
+          "ability_text": "A daring & risky final charge to do devasting amount of damge on a target enemy"
         }
       },
       "effect": {
@@ -4472,7 +4496,8 @@
       "rarity": "Ultimate",
       "type": [
         "Tap",
-        "AoE"
+        "AoE",
+        "Stagger"
       ],
       "anime_id": "S01-EP12",
       "activation_method": "active_charge",
@@ -4561,4 +4586,5 @@
     }
   ]
 }
+
 
