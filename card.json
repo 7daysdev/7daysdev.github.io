@@ -4025,6 +4025,47 @@
         }
       }
     },
+{
+      "card_id": "PAP-079",
+      "card_name": "Part and Parcel",
+      "rarity": "Epic",
+      "type": [
+        "Tap",
+        "Defensive", 
+        "Buff" 
+      ],
+      "anime_id": "S02-EP10",
+      "activation_method": "active_charge",
+      "activation": {
+        "method": "tap",
+        "charge": "true",
+        "release": "manual"
+      },
+      "image_filename": "part_and_parcel.png",
+      "abilities": {
+        "level_1": {
+          "serial_number": "BP1-079-E-L1",
+          "ability_text": "Charges a massive fire AOE cone attack with high raw damage. Slower charge but overwhelming power.",
+          "mana_cost": 25,
+          "props": {
+            "cooldown": 45,
+            "charge_time": 3
+          },
+          "effects": [
+            {
+              "type": "aoe_cone",
+              "parameters": {
+                "damage": 75,
+                "range": 8,
+                "angle": 60,
+                "element": "fire"
+              },
+              "visual_feedback": "fire_cone_effect"
+            }
+          ]
+        }
+      }
+    },
     {
       "card_id": "AXE-089",
       "card_name": "Executioner's Oath",
@@ -4586,5 +4627,6 @@
     }
   ]
 }
+
 
 
