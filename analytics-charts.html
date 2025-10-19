@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Summary Charts</title>
+    <!-- Load Tailwind CSS via CDN for responsive, utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <style>
+        /* Define custom styles for the page and charts */
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            min-height: 100vh;
+        }
+
+        /* Chart container styling */
+        .chart-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            height: 450px; /* Fixed height for consistent look */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-container {
+            position: relative;
+            flex-grow: 1;
+        }
+
+        /* Responsive adjustments for Chart.js text/tooltips */
+        .chart-js-tooltip {
+            font-size: 0.875rem !important; /* sm:text-sm */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto p-4 sm:p-8 max-w-7xl">
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-2">Card Set Summary</h1>
+            <p class="text-xl text-gray-500">Visualizing Rarity, Type Distribution, and Key Statistics</p>
+            <div class="mt-4 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                <a href="analytics-table.html"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-200">
+                    ← Back to Data Table & Search
+                </a>
+                <a href="cards-index.html"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-md transition duration-200">
+                    View Cards Index (Grid)
+                </a>
+            </div>
+        </header>
+
+        <!-- Loading & Error Messages -->
+        <div id="loading" class="text-center p-8 bg-yellow-100 text-yellow-800 rounded-lg hidden">
+            <p class="font-semibold">Loading card data and generating charts...</p>
+        </div>
+        <div id="error-message" class="text-center p-8 bg-red-100 text-red-800 rounded-lg hidden">
+            <p class="font-semibold">Error: Could not load card data. Check console for details.</p>
+        </div>
+
+        <!-- Charts Grid -->
+        <div id="charts-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+            <!-- Rarity Distribution Chart -->
+            <div class="chart-card">
+                <h2 class="text-2xl font-bold mb-4 text-gray-700">Rarity Distribution</h2>
+                <div class="chart-container">
+                    <canvas id="rarityChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Card Type Breakdown Chart -->
+            <div class="chart-card">
+                <h2 class="text-2xl font-bold mb-4 text-gray-700">Card Type Breakdown</h2>
+                <div class="chart-container">
+                    <canvas id="typeChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- (Placeholder for future charts - e.g., Cost Distribution) -->
+            <div class="chart-card col-span-1 lg:col-span-2">
+                <h2 class="text-2xl font-bold mb-4 text-gray-700">Primary Effect Diversity</h2>
+                <div class="chart-container">
+                    <canvas id="effectChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loadingEl = document.getElementById('loading');
+        const errorEl = document.getElementById('error-message');
+        const chartsGridEl = document.getElementById('charts-grid');
+
+        // Chart color palette for consistency and accessibility
+        const CHART_COLORS = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(201, 203, 207)',
+            teal: 'rgb(0, 128, 128)',
+            navy: 'rgb(0, 0, 128)',
+            gold: 'rgb(255, 215, 0)'
+        };
+
+        const BACKGROUND_COLORS = [
+            CHART_COLORS.blue, CHART_COLORS.green, CHART_COLORS.orange, CHART_COLORS.purple,
+            CHART_COLORS.red, CHART_COLORS.teal, CHART_COLORS.yellow, CHART_COLORS.navy,
+            CHART_COLORS.gold, CHART_COLORS.grey
+        ];
+
+        // --- Data Fetching and Processing ---
+
+        /**
+         * Extracts a simplified primary effect string from the card's effects object.
+         * This function is reused from the analytics-table file for consistency.
+         */
+        function getPrimaryEffect(card) {
+            const effect = card.abilities?.level_1?.effects?.[0];
+            if (!effect) return 'N/A';
+
+            const { type, parameters } = effect;
+            if (type === 'stat_modifier' && parameters?.modifier) {
+                const modifier = (parameters.modifier * 100).toFixed(0);
+                const target = parameters.target?.replace(/_/g, ' ') || 'Stat';
+                const sign = modifier > 0 ? '+' : '';
+                return `Stat Modifier: ${sign}${modifier}% ${target}`;
+            }
+            if (type === 'summon' && parameters?.on_hit?.lifesteal) {
+                const lifesteal = (parameters.on_hit.lifesteal * 100).toFixed(0);
+                return `Summon + Lifesteal: ${lifesteal}%`;
+            }
+            if (type === 'state_toggle' && parameters?.duration) {
+                return `State Toggle (${parameters.duration}s)`;
+            }
+            return type.replace(/_/g, ' ') || 'Complex/Other';
+        }
+
+        /**
+         * Fetches card data and orchestrates chart generation.
+         */
+        async function loadAndRenderCharts() {
+            loadingEl.classList.remove('hidden');
+            chartsGridEl.classList.add('hidden');
+
+            try {
+                const response = await fetch('./card.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                const allCardsData = data.cards || data;
+
+                if (!allCardsData || allCardsData.length === 0) {
+                    throw new Error('Card data is empty or malformed.');
+                }
+
+                const rarityData = aggregateByRarity(allCardsData);
+                const typeData = aggregateByType(allCardsData);
+                const effectData = aggregateByEffect(allCardsData);
+
+                renderRarityChart(rarityData);
+                renderTypeChart(typeData);
+                renderEffectChart(effectData);
+
+                loadingEl.classList.add('hidden');
+                chartsGridEl.classList.remove('hidden');
+
+            } catch (error) {
+                console.error('Chart data loading failed:', error);
+                loadingEl.classList.add('hidden');
+                errorEl.classList.remove('hidden');
+            }
+        }
+
+        /**
+         * Counts cards grouped by rarity.
+         */
+        function aggregateByRarity(cards) {
+            const counts = {};
+            cards.forEach(card => {
+                const rarity = card.rarity || 'Unknown';
+                counts[rarity] = (counts[rarity] || 0) + 1;
+            });
+            return counts;
+        }
+
+        /**
+         * Counts cards grouped by individual types (handles array or string types).
+         */
+        function aggregateByType(cards) {
+            const counts = {};
+            cards.forEach(card => {
+                let cardTypes = [];
+                if (Array.isArray(card.type)) {
+                    cardTypes = card.type;
+                } else if (typeof card.type === 'string') {
+                    // Split common delimiters like '|' or space
+                    cardTypes = card.type.split(/\s*\|\s*|\s+/).map(t => t.trim()).filter(t => t);
+                }
+                if (cardTypes.length === 0) cardTypes = ['Untyped'];
+
+                cardTypes.forEach(type => {
+                    counts[type] = (counts[type] || 0) + 1;
+                });
+            });
+            return counts;
+        }
+
+        /**
+         * Counts cards grouped by primary effect (using the utility function).
+         */
+        function aggregateByEffect(cards) {
+            const counts = {};
+            cards.forEach(card => {
+                const effect = getPrimaryEffect(card);
+                counts[effect] = (counts[effect] || 0) + 1;
+            });
+            return counts;
+        }
+
+        // --- Chart Rendering Functions ---
+
+        /**
+         * Renders the Rarity Distribution Bar Chart.
+         */
+        function renderRarityChart(data) {
+            const ctx = document.getElementById('rarityChart').getContext('2d');
+            const labels = Object.keys(data);
+            const counts = Object.values(data);
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Number of Cards',
+                        data: counts,
+                        backgroundColor: BACKGROUND_COLORS.slice(0, labels.length),
+                        borderColor: BACKGROUND_COLORS.slice(0, labels.length).map(c => c.replace('rgb', 'rgba').replace(')', ', 1)')),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y', // Horizontal bars
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Card Count' },
+                            grid: { drawOnChartArea: false }
+                        },
+                        y: {
+                            grid: { drawOnChartArea: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        /**
+         * Renders the Card Type Breakdown Doughnut Chart.
+         */
+        function renderTypeChart(data) {
+            const ctx = document.getElementById('typeChart').getContext('2d');
+            const labels = Object.keys(data);
+            const counts = Object.values(data);
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Card Count',
+                        data: counts,
+                        backgroundColor: BACKGROUND_COLORS,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                boxWidth: 10,
+                                padding: 15
+                            }
+                        },
+                        title: { display: false }
+                    }
+                }
+            });
+        }
+
+        /**
+         * Renders the Primary Effect Diversity Bar Chart (for complex objects).
+         */
+         function renderEffectChart(data) {
+            const ctx = document.getElementById('effectChart').getContext('2d');
+            const labels = Object.keys(data);
+            const counts = Object.values(data);
+
+            // Sort by count descending
+            const sortedData = labels.map((label, index) => ({
+                label,
+                count: counts[index]
+            })).sort((a, b) => b.count - a.count);
+
+            const sortedLabels = sortedData.map(d => d.label);
+            const sortedCounts = sortedData.map(d => d.count);
+
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sortedLabels,
+                    datasets: [{
+                        label: 'Count',
+                        data: sortedCounts,
+                        backgroundColor: BACKGROUND_COLORS[5], // Use a single color for this chart
+                        borderColor: BACKGROUND_COLORS[5].replace('rgb', 'rgba').replace(')', ', 1)'),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Number of Cards' },
+                            ticks: { precision: 0 }
+                        },
+                        x: {
+                           grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', loadAndRenderCharts);
+    </script>
+</body>
+
+</html>
