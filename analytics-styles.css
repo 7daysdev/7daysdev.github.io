@@ -2,34 +2,36 @@
     ANALYTICS STYLES - CHRISTMAS RED/GOLD THEME
     ============================================== */
 
-/* General Layout & Containers (No change needed) */
+/* --- General Layout & Headers --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Info Block Style */
-.info-block {
-    margin-bottom: 20px;
-    padding: 15px;
-    /* Primary Accent: Deep Red indicator */
-    border-left: 5px solid #5d0018; 
-    /* Element Background: Dark Grey */
-    background-color: #252628; 
-    /* Text Color: Lightened Gold */
+h1 {
+    /* Header text color: Gold */
     color: #e0c86e; 
-    border-radius: 4px;
-    font-size: 0.95em;
-    /* Adding a subtle border for definition */
-    border: 1px solid #3a3b3c;
+    margin-bottom: 20px;
 }
 
-.info-block p {
-    margin: 0;
+.filter-count-display {
+    /* Style for the Total Cards count */
+    color: #d29f22; /* Vibrant Gold */
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 0;
+    margin-bottom: 5px;
 }
 
-/* Filter Controls Style */
+.header-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* --- Filter & Search Controls --- */
 .filter-controls {
     display: flex;
     align-items: center;
@@ -43,41 +45,41 @@
     background-color: #252628;
 }
 
-#searchInput,
-#typeFilter {
+/* New Search Group to contain input and buttons if needed for flexible layouts */
+.search-group {
+    display: flex;
+    flex-grow: 1;
+    gap: 10px;
+    align-items: center;
+}
+
+#searchInput {
     padding: 10px;
-    /* Border: Darker grey */
     border: 1px solid #3a3b3c;
     border-radius: 4px;
     font-size: 16px;
-    max-width: 400px; 
+    flex-grow: 1;
+    max-width: 400px;
     
     /* Input FIX: Dark Background, Light Gold Text */
     background-color: #19171b; /* Body background for deep input contrast */
     color: #e0c86e; /* Light Gold text */
 }
 
-#searchInput {
-    flex-grow: 1;
-}
-
-/* 🌟 Styling for the Type Filter Button Container 🌟 */
+/* Type Filter Container */
 .type-filter-container {
     display: flex;
     flex-wrap: wrap; 
     gap: 8px; 
     margin-bottom: 25px;
     padding: 15px;
-    /* Border: Darker grey */
     border: 1px solid #3a3b3c;
     border-radius: 8px;
-    /* Background: Dark Grey */
     background-color: #252628;
 }
 
-/* 🌟 Styling for the individual Type Filter Buttons 🌟 */
+/* Individual Type Filter Buttons */
 .type-filter-btn {
-    /* Default inactive color: Dark Grey background, Muted Gold text */
     background-color: #3a3b3c; 
     color: #bfa04a;
     border: 1px solid #4a4a4a;
@@ -90,7 +92,6 @@
 }
 
 .type-filter-btn:hover {
-    /* Hover state: Gold Border, Darker background for pop */
     background-color: #4a4a4a;
     color: #d29f22; /* Vibrant Gold text */
     border-color: #d29f22; 
@@ -98,26 +99,23 @@
 
 /* Active (Selected) state for the AND logic */
 .type-filter-btn.active {
-    /* Active Color: Gold fill */
     background-color: #d29f22; 
     color: #19171b; /* Very Dark Text on Gold for contrast */
     border-color: #d29f22;
     box-shadow: 0 0 8px rgba(210, 159, 34, 0.6); /* Gold glow */
 }
 
-/* Analytics Table Structure */
+/* --- Analytics Table --- */
 .analytics-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 0.9em;
-    /* Shadow remains strong for dark theme */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); 
 }
 
 .analytics-table th,
 .analytics-table td {
-    /* Border: Darker grey */
     border: 1px solid #3a3b3c; 
     padding: 12px 15px;
     text-align: left;
@@ -125,89 +123,110 @@
 
 /* Table Header (th) */
 .analytics-table th {
-    /* Header Background: Deep Red */
-    background-color: #5d0018;
-    /* Header Text: White for contrast */
+    background-color: #5d0018; /* Deep Red */
     color: white; 
     cursor: pointer;
     position: relative;
     white-space: nowrap; 
-    /* Adding a slight bottom border for definition */
     border-bottom: 3px solid #d29f22; /* Gold underline */
+    vertical-align: middle; /* Ensure content is centered if it wraps */
 }
 
-/* Table Body (td) - NOW FIXED */
-.analytics-table td {
-    /* REMOVE: color: #1a1a1a; <-- This was overriding the rarity colors */
-    color: #e0c86e; /* Set default text color to light gold */
-}
-
-
-/* Row Styling FIX: Use dark/darker-dark contrast rows */
+/* Row Striping */
 .analytics-table tr:nth-child(odd) td {
-    /* Dark Row 1: Dark Grey */
     background-color: #252628; 
 }
 
 .analytics-table tr:nth-child(even) td {
-    /* Dark Row 2: Slightly lighter dark grey */
     background-color: #333436; 
 }
 
 .analytics-table tr:hover td {
-    /* Hover background: Muted Gold/Grey for hover effect */
     background-color: #3a3b3c; 
 }
 
 /* Sorting Indicators */
-.analytics-table th.sorted-asc::after {
-    content: ' ▲';
+.analytics-table th.sorted-asc::after,
+.analytics-table th.sorted-desc::after {
     position: absolute;
     right: 5px;
-    /* Indicator Color: Gold */
     color: #d29f22; 
     font-size: 0.8em;
+    line-height: 1; /* Keep indicator centered */
+}
+
+.analytics-table th.sorted-asc::after {
+    content: ' ▲';
 }
 
 .analytics-table th.sorted-desc::after {
     content: ' ▼';
-    position: absolute;
-    right: 5px;
-    /* Indicator Color: Gold */
-    color: #d29f22; 
-    font-size: 0.8em;
 }
 
-/* Table Body (td) - MUST be set to light/gold text for dark backgrounds */
+/* Table Body (td) - Default Text Color */
 .analytics-table td {
     color: #e0c86e; /* Set default text color to light gold */
+    vertical-align: top; /* Align content to the top for truncated text */
+}
+
+/* --- NEW Styles for Image Column --- */
+.card-icon {
+    width: 40px; /* Small size for analytics table */
+    height: 40px;
+    object-fit: contain;
+    border-radius: 4px;
+    border: 1px solid #d29f22; /* Gold border for visual appeal */
+    display: block; /* Ensures it behaves nicely in the table cell */
 }
 
 
-
-.analytics-table td {
-    color: #e0c86e; /* Set default text color to light gold */
+/* --- NEW Styles for Type Badges --- */
+.type-badge {
+    display: inline-block;
+    padding: 3px 6px;
+    margin-right: 4px;
+    margin-bottom: 2px;
+    border-radius: 3px;
+    font-size: 0.75em;
+    font-weight: bold;
+    white-space: nowrap;
+    line-height: 1;
+    /* Default badge color */
+    background-color: #4a4a4a;
+    color: #f5f5f5;
 }
 
+/* (Optional) Add specific colors for types if known in your data, e.g.: */
+.type-badge.type-creature {
+    background-color: #7b241c; /* Muted Red */
+    color: #fff;
+}
+.type-badge.type-spell {
+    background-color: #2471a3; /* Muted Blue */
+    color: #fff;
+}
+/* ... add more type-specific styles as needed ... */
 
+
+/* --- Rarity Color Override (Ensure these remain visible against dark background) --- */
 td.rarity-Common { 
     color: #aaaaaa; 
     font-weight: bold; 
 } 
 td.rarity-Uncommon { 
-    color: #2ecc71; 
+    color: #2ecc71; /* Green */
     font-weight: bold; 
 } 
 td.rarity-Rare { 
-    color: #3498db; 
+    color: #3498db; /* Blue */
     font-weight: bold; 
 } 
 td.rarity-Epic { 
-    color: #9b59b6; 
+    color: #9b59b6; /* Purple */
     font-weight: bold; 
 } 
 td.rarity-Ultimate { 
-    color: #e74c3c; 
+    color: #e74c3c; /* Bright Red */
     font-weight: bold; 
+    text-shadow: 0 0 5px rgba(231, 76, 60, 0.5); /* Subtle glow for ultimate */
 }
-
