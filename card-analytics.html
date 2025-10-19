@@ -220,7 +220,7 @@
                     abilityText;
 
                 const imageFilename = card.image_filename || 'placeholder.png'; // Use a placeholder if missing
-                const imageHTML = `<img src="./images/${imageFilename}" alt="${card.card_name}" class="card-icon" loading="lazy">`;
+                const imageHTML = `<img src="./cards/${imageFilename}" alt="${card.card_name}" class="card-icon" loading="lazy">`;
 
 
                 tableHTML += `
@@ -310,3 +310,4 @@
 </body>
 
 </html>
+
