@@ -166,78 +166,80 @@
         // --- Rendering Table ---
 
         function renderCardsTable(cards) {
-            const cardCount = cards.length;
-            
-            // 1. Update the count display
-            if (cardCountDisplay) {
-                cardCountDisplay.textContent = `Total Cards: ${cardCount}`;
-            }
-            
-            // Clear and re-append count element
-            resultsContainer.innerHTML = '';
-            resultsContainer.appendChild(cardCountDisplay); 
+    const cardCount = cards.length;
+    
+    // 1. Update the count display
+    if (cardCountDisplay) {
+        cardCountDisplay.textContent = `Total Cards: ${cardCount}`;
+    }
+    
+    // Clear and re-append count element
+    resultsContainer.innerHTML = '';
+    resultsContainer.appendChild(cardCountDisplay); 
 
-            if (cardCount === 0) {
-                const noResultsMessage = document.createElement('p');
-                noResultsMessage.className = 'error';
-                noResultsMessage.textContent = 'No cards match the current filters.';
-                resultsContainer.appendChild(noResultsMessage);
-                return;
-            }
+    if (cardCount === 0) {
+        const noResultsMessage = document.createElement('p');
+        noResultsMessage.className = 'error';
+        noResultsMessage.textContent = 'No cards match the current filters.';
+        resultsContainer.appendChild(noResultsMessage);
+        return;
+    }
 
-            let tableHTML = `
-                <table class="analytics-table">
-                    <thead>
-                        <tr>
-                            <th></th> 
-                            <th data-sort-key="card_name" class="${lastSortKey === 'card_name' ? 'sorted-' + sortDirection : ''}">Name</th>
-                            <th data-sort-key="card_id" class="${lastSortKey === 'card_id' ? 'sorted-' + sortDirection : ''}">ID</th>
-                            <th data-sort-key="rarity" class="${lastSortKey === 'rarity' ? 'sorted-' + sortDirection : ''}">Rarity</th>
-                            <th data-sort-key="type" class="${lastSortKey === 'type' ? 'sorted-' + sortDirection : ''}">Types</th>
-                            
-                            <th data-sort-key="primary_effect" class="${lastSortKey === 'primary_effect' ? 'sorted-' + sortDirection : ''}">Primary Effect</th>
+    let tableHTML = `
+        <table class="analytics-table">
+            <thead>
+                <tr>
+                    <th></th> 
+                    <th data-sort-key="card_name" class="${lastSortKey === 'card_name' ? 'sorted-' + sortDirection : ''}">Name</th>
+                    <th data-sort-key="card_id" class="${lastSortKey === 'card_id' ? 'sorted-' + sortDirection : ''}">ID</th>
+                    <th data-sort-key="rarity" class="${lastSortKey === 'rarity' ? 'sorted-' + sortDirection : ''}">Rarity</th>
+                    <th data-sort-key="type" class="${lastSortKey === 'type' ? 'sorted-' + sortDirection : ''}">Types</th>
+                    
+                    <th data-sort-key="primary_effect" class="${lastSortKey === 'primary_effect' ? 'sorted-' + sortDirection : ''}">Primary Effect</th>
 
-                            <th data-sort-key="ability_text" class="${lastSortKey === 'ability_text' ? 'sorted-' + sortDirection : ''}">L1 Ability Text</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
+                    <th data-sort-key="ability_text" class="${lastSortKey === 'ability_text' ? 'sorted-' + sortDirection : ''}">L1 Ability Text</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
 
-            cards.forEach(card => {
-                const rarityClass = card.rarity ? `rarity-${card.rarity}` : 'rarity-unknown';
-                
-                // Convert types to visual badges (use spans for CSS styling)
-                const typeBadges = Array.isArray(card.type) ? 
-                    card.type.map(t => `<span class="type-badge type-${t.toLowerCase()}">${t}</span>`).join(' ') : 
-                    `<span class="type-badge">${card.type || 'N/A'}</span>`;
+    cards.forEach(card => {
+        const rarityClass = card.rarity ? `rarity-${card.rarity}` : 'rarity-unknown';
+        
+        // Convert types to visual badges (use spans for CSS styling)
+        const typeBadges = Array.isArray(card.type) ? 
+            card.type.map(t => `<span class="type-badge type-${t.toLowerCase()}">${t}</span>`).join(' ') : 
+            `<span class="type-badge">${card.type || 'N/A'}</span>`;
 
-                const primaryEffect = getPrimaryEffect(card); 
+        const primaryEffect = getPrimaryEffect(card); 
 
-                let abilityText = card.abilities?.level_1?.ability_text || 'N/A';
-                // Truncate long ability text for table view
-                const truncatedAbilityText = abilityText.length > ABILITY_TEXT_MAX_LENGTH ?
-                    `${abilityText.substring(0, ABILITY_TEXT_MAX_LENGTH)}...` :
-                    abilityText;
+        let abilityText = card.abilities?.level_1?.ability_text || 'N/A';
+        // Truncate long ability text for table view
+        const truncatedAbilityText = abilityText.length > ABILITY_TEXT_MAX_LENGTH ?
+            `${abilityText.substring(0, ABILITY_TEXT_MAX_LENGTH)}...` :
+            abilityText;
 
-                const imageFilename = card.image_filename || 'placeholder.png'; // Use a placeholder if missing
-                const imageHTML = `<img src="./cards/${imageFilename}" alt="${card.card_name}" class="card-icon" loading="lazy">`;
+        const imageFilename = card.image_filename || 'placeholder.png'; // Use a placeholder if missing
+        
+        // ✅ FIX APPLIED HERE: Changed directory from './images/' to './cards/'
+        const imageHTML = `<img src="./cards/${imageFilename}" alt="${card.card_name}" class="card-icon" loading="lazy">`;
 
 
-                tableHTML += `
-                    <tr data-card-id="${card.card_id}" title="${abilityText}"> <td>${imageHTML}</td>
-                        <td>${card.card_name}</td>
-                        <td>${card.card_id}</td>
-                        <td class="${rarityClass}">${card.rarity || 'N/A'}</td>
-                        <td>${typeBadges}</td>
-                        <td>${primaryEffect}</td>
-                        <td>${truncatedAbilityText}</td>
-                    </tr>
-                `;
-            });
+        tableHTML += `
+            <tr data-card-id="${card.card_id}" title="${abilityText}"> <td>${imageHTML}</td>
+                <td>${card.card_name}</td>
+                <td>${card.card_id}</td>
+                <td class="${rarityClass}">${card.rarity || 'N/A'}</td>
+                <td>${typeBadges}</td>
+                <td>${primaryEffect}</td>
+                <td>${truncatedAbilityText}</td>
+            </tr>
+        `;
+    });
 
-            tableHTML += '</tbody></table>';
-            resultsContainer.insertAdjacentHTML('beforeend', tableHTML);
-        }
+    tableHTML += '</tbody></table>';
+    resultsContainer.insertAdjacentHTML('beforeend', tableHTML);
+}
 
 
         // --- Sorting Logic ---
@@ -310,4 +312,5 @@
 </body>
 
 </html>
+
 
