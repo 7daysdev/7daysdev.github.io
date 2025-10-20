@@ -867,15 +867,11 @@
         "level_1": {
           "serial_number": "BP1-022-C-L1",
           "ability_text": "Weapon attacks inflict minor poison buildup.",
-          "effect": {
-            
-          }
+          "effect": {}
         },
         "level_2": {
           "ability_text": null,
-          "effect": {
-            
-          }
+          "effect": {}
         }
       }
     },
@@ -925,9 +921,7 @@
         "level_1": {
           "serial_number": "BP1-024-C-L1",
           "ability_text": "Successful parries restore 5 stamina.",
-          "effect": {
-            
-          }
+          "effect": {}
         }
       }
     },
@@ -1010,9 +1004,7 @@
             "duration": 6,
             "stamina_cost": 8
           },
-          "scaling": {
-            
-          }
+          "scaling": {}
         }
       }
     },
@@ -1148,9 +1140,13 @@
       "card_id": "PRF-030",
       "card_name": "Precise Footwork",
       "rarity": "Common",
-      "type": ["Passive", "Weapon Ability", "Combat" ],
+      "type": [
+        "Passive",
+        "Weapon Ability",
+        "Combat"
+      ],
       "anime_id": "S02-EP07",
-      "activation_method":"passive_rapier",
+      "activation_method": "passive_rapier",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -1189,9 +1185,7 @@
             "cooldown": 10,
             "stamina_cost": 6
           },
-          "scaling": {
-            
-          }
+          "scaling": {}
         }
       }
     },
@@ -1222,9 +1216,7 @@
             "duration": 6,
             "stamina_cost": 5
           },
-          "scaling": {
-            
-          }
+          "scaling": {}
         }
       }
     },
@@ -1290,9 +1282,7 @@
             "cooldown": 12,
             "stamina_cost": 8
           },
-          "scaling": {
-            
-          }
+          "scaling": {}
         }
       }
     },
@@ -1577,7 +1567,6 @@
         "Combat",
         "Elemental",
         "Fire"
-        
       ],
       "anime_id": "S01-EP42",
       "activation_method": "active_tap",
@@ -1972,7 +1961,7 @@
         "Weapon Ability"
       ],
       "anime_id": "S01-EP23",
-      "activation_method": "passive",
+      "activation_method": "fist-weapon",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -2053,6 +2042,7 @@
         "Weapon Ability"
       ],
       "anime_id": "S01-EP24",
+      "activation_method": "ranged-weapon",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -2070,7 +2060,10 @@
       "card_id": "HPS-025",
       "card_name": "Hipposurus",
       "rarity": "Uncommon",
-      "type": ["Passive", "Buff"],
+      "type": [
+        "Passive",
+        "Buff"
+      ],
       "anime_id": "S01-EP25",
       "activation": {
         "method": "passive",
@@ -2108,7 +2101,11 @@
       "card_id": "JGA-027",
       "card_name": "Joh-gaur",
       "rarity": "Uncommon",
-      "type": ["Passive", "Buff", "Magic"],
+      "type": [
+        "Passive",
+        "Buff",
+        "Magic"
+      ],
       "anime_id": "S01-EP27",
       "activation": {
         "method": "passive",
@@ -2127,7 +2124,10 @@
       "card_id": "GRD-028",
       "card_name": "Great Devourer",
       "rarity": "Uncommon",
-      "type": ["Passive", "Combat"],
+      "type": [
+        "Passive",
+        "Combat"
+      ],
       "anime_id": "S01-EP28",
       "activation": {
         "method": "passive",
@@ -2153,6 +2153,7 @@
         "Fire"
       ],
       "anime_id": "S01-EP28",
+      "activation_method": "fist-weapon",
       "activation": {
         "method": "tap",
         "charge": "false",
@@ -2266,7 +2267,11 @@
       "card_id": "CRS-097",
       "card_name": "Crystal Sentry",
       "rarity": "Uncommon",
-      "type": ["Tap", "Summon", "DoT"],
+      "type": [
+        "Tap",
+        "Summon",
+        "DoT"
+      ],
       "anime_id": "S02-EP08",
       "activation": {
         "method": "tap",
@@ -2358,7 +2363,11 @@
       "card_id": "IRH-098",
       "card_name": "Henge Stone",
       "rarity": "Uncommon",
-      "type": ["Passive", "Combat", "Defensive"],
+      "type": [
+        "Passive",
+        "Combat",
+        "Defensive"
+      ],
       "anime_id": "S02-EP09",
       "activation": {
         "method": "passive",
@@ -2462,9 +2471,13 @@
       "card_id": "QKF-099",
       "card_name": "Quickfang",
       "rarity": "Uncommon",
-      "type":[ "Passive", "Combat", "Weapon Ability"],
+      "type": [
+        "Passive",
+        "Combat",
+        "Weapon Ability"
+      ],
       "anime_id": "S02-EP10",
-      "activation_method":"fist-sword-dagger-weapons",
+      "activation_method": "fist-sword-dagger-weapons",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -3108,9 +3121,7 @@
           "ability_text": "Summons the Lantern Saint for 8 seconds, dealing continuous fire AoE damage in a small radius around him",
           "charge_type": "charge-tap",
           "charge_time": 45,
-          "effect": {
-            
-          }
+          "effect": {}
         }
       }
     },
@@ -3137,9 +3148,7 @@
           "ability_text": "Restore 10% of your max mana (or FP equivalent) upon defeating an enemy.",
           "charge_type": "charge-tap",
           "charge_time": 45,
-          "effect": {
-            
-          }
+          "effect": {}
         }
       }
     },
@@ -3284,9 +3293,7 @@
           "ability_text": "Fires 2 quick projectiles in an arc, hitting multiple enemies",
           "charge_type": "charge-tap",
           "charge_time": 20,
-          "effect": {
-            
-          }
+          "effect": {}
         }
       }
     },
@@ -3481,7 +3488,7 @@
         "Weapon Ability"
       ],
       "anime_id": "S01-EP94",
-      "activation_method":"spear-weapon",
+      "activation_method": "spear-weapon",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -4025,14 +4032,14 @@
         }
       }
     },
-{
+    {
       "card_id": "PAP-079",
       "card_name": "Part and Parcel",
       "rarity": "Epic",
       "type": [
         "Tap",
-        "Defensive", 
-        "Buff" 
+        "Defensive",
+        "Buff"
       ],
       "anime_id": "S02-EP10",
       "activation_method": "active_charge",
@@ -4076,6 +4083,7 @@
         "Weapon Ability"
       ],
       "anime_id": "S01-EP89",
+      "activation_method": "axe-weapon",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -4162,6 +4170,7 @@
         "Weapon Ability"
       ],
       "anime_id": "S02-EP14",
+      "activation_method": "shotgun-weapon",
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -4364,7 +4373,7 @@
       "levels": {
         "level_1": {
           "serial_number": "CHR-082-E-L1",
-          "ability_text": "Weapons unequipped. Light attack becomes pixel punch/kick combo. Heavy attack becomes Glitch Slam — a blocky sprite fist drop.",
+          "ability_text": "When your health drops below 25%, all equipped cards gain a temporary +1 level boost for 8 seconds.Once the effect ends, this card enters a 60-second cooldown before it can trigger again",
           "charge_type": "none",
           "scaling": {
             "strength": 1,
@@ -4439,6 +4448,52 @@
       }
     },
     {
+      "card_id": "BIM-090",
+      "card_name": "Bison March",
+      "rarity": "Epic",
+      "type": [
+        "Tap",
+        "Buff",
+        "Combat",
+        "Weapon Ability",
+        "Ice"
+      ],
+      "anime_id": "S03-EP12",
+      "activation_method": "hammer-weapon",
+      "activation": {
+        "method": "tap",
+        "charge": "false",
+        "release": "tap"
+      },
+      "image_filename": "bison_march.png",
+      "abilities": {
+        "level_1": {
+          "serial_number": "BP1-0890-E-L1",
+          "ability_text": "Ground slam sends a short frost shockwave. Gain frost buildup buff.",
+          "effect": "execute_bonus",
+          "hp_cost": "10%"
+        },
+        "level_2": {
+          "serial_number": "BP1-0890-E-L2",
+          "ability_text": "Shockwave travels further and slightly staggers enemies. Frost buildup bonus increased.",
+          "effect": "ice_wave_buff",
+          "frost_build_up_bonus": "+50%",
+          "duration": "10s",
+          "cooldown": "25s",
+          "hp_cost": "10%"
+        },
+        "level_3": {
+          "serial_number": "BP1-0890-E-L3",
+          "ability_text": "Upon buff end, a frost burst erupts around you, dealing small AoE Frost damage. Maximum Frost buildup bonus.",
+          "effect": "ice_wave_buff_explosion",
+          "frost_build_up_bonus": "+60%",
+          "duration": "12s",
+          "cooldown": "25s",
+          "hp_cost": "10%"
+        }
+      }
+    },
+    {
       "card_id": "RKR-091",
       "card_name": "The Ruin Kings last ring",
       "rarity": "Ultimate",
@@ -4492,7 +4547,6 @@
       "type": [
         "Tap",
         "Combat"
-
       ],
       "anime_id": "S01-EP12",
       "activation_method": "active_charge",
@@ -4627,6 +4681,3 @@
     }
   ]
 }
-
-
-
