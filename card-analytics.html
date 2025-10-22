@@ -23,17 +23,22 @@
             <div class="search-group">
                 <input type="text" id="searchInput" placeholder="Search Card Name, ID, or Ability Text...">
                 <button id="clearFiltersBtn" class="btn btn-secondary">Clear Filters</button>
+                <button id="exportDataBtn" class="btn btn-primary">Export Filtered Data 📄</button>
             </div>
-
         </div>
 
-        <div id="typeFilterContainer" class="type-filter-container">
-        </div>
+        <textarea id="exportOutput" rows="10" cols="80"
+            style="width: 100%; display: none; margin-top: 15px; font-family: monospace;"></textarea>
 
-        <div id="analytics-results-container">
-            <p id="cardCountDisplay" class="filter-count-display">Total Cards: Loading...</p>
-            <p class="loading">Loading card data...</p>
-        </div>
+    </div>
+
+    <div id="typeFilterContainer" class="type-filter-container">
+    </div>
+
+    <div id="analytics-results-container">
+        <p id="cardCountDisplay" class="filter-count-display">Total Cards: Loading...</p>
+        <p class="loading">Loading card data...</p>
+    </div>
     </div>
 
     <script>
@@ -43,6 +48,10 @@
         let sortDirection = 'asc';
         let lastSortKey = 'card_id'; // Default sort key
         const ABILITY_TEXT_MAX_LENGTH = 70; // Truncation limit for table display
+        // --- DOM Elements ---
+        // ... (existing elements)
+        const exportButton = document.getElementById('exportDataBtn'); // NEW
+        const exportOutput = document.getElementById('exportOutput'); // NEW
 
         // --- DOM Elements ---
         const resultsContainer = document.getElementById('analytics-results-container');
@@ -234,7 +243,55 @@
                     sortTable(th.dataset.sortKey);
                 }
             });
+            // NEW EXPORT BUTTON LISTENER
+            if (exportButton) {
+                exportButton.addEventListener('click', exportData);
+            }
         });
+
+        // --- New Export Function ---
+        function exportData() {
+            if (currentFilteredCards.length === 0) {
+                alert("No cards are currently filtered to export.");
+                return;
+            }
+
+            // 1. Format the data for easy reading (Plain Text)
+            const formattedText = currentFilteredCards.map(card => {
+                const name = card.card_name || 'N/A';
+                const id = card.card_id || 'N/A';
+                const rarity = card.rarity || 'N/A';
+                const types = Array.isArray(card.type) ? card.type.join(', ') : (card.type || 'N/A');
+                const activation = card.activation_method || card.activation?.method || 'N/A';
+
+                // **This pulls the FULL, UNTRUNCATED ability text:**
+                const fullAbilityText = card.abilities?.level_1?.ability_text || 'N/A';
+
+                // Use a clear, consistent template for the AI
+                return `
+Card Name: ${name}
+Card ID: ${id}
+Rarity: ${rarity}
+Types: ${types}
+Activation: ${activation}
+Ability Text (L1): ${fullAbilityText}
+-------------------------------------`;
+            }).join('\n'); // Join all card strings
+
+            // 2. Display the formatted text in the textarea
+            exportOutput.value = formattedText;
+            exportOutput.style.display = 'block'; // Make the textarea visible
+            exportOutput.select(); // Select the text
+
+            // Optional: Copy to clipboard (modern browsers only)
+            try {
+                document.execCommand('copy');
+                alert('Filtered card data copied to clipboard! Ready to paste into the AI.');
+            } catch (err) {
+                // Fallback message if automatic copy fails
+                alert('Filtered data is ready below. Press Ctrl+C (Cmd+C) to copy the text.');
+            }
+        }
     </script>
 
 </body>
