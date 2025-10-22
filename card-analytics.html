@@ -24,12 +24,12 @@
                 <input type="text" id="searchInput" placeholder="Search Card Name, ID, or Ability Text...">
                 <button id="clearFiltersBtn" class="btn btn-secondary">Clear Filters</button>
             </div>
-            
+
         </div>
 
         <div id="typeFilterContainer" class="type-filter-container">
-            </div>
-        
+        </div>
+
         <div id="analytics-results-container">
             <p id="cardCountDisplay" class="filter-count-display">Total Cards: Loading...</p>
             <p class="loading">Loading card data...</p>
@@ -50,37 +50,9 @@
         const searchInput = document.getElementById('searchInput');
         const clearButton = document.getElementById('clearFiltersBtn');
         const cardCountDisplay = document.getElementById('cardCountDisplay');
-        // The original 'applyButton' is now removed as filtering is dynamic.
-        
+
         // --- Utility Functions ---
-
-        /**
-         * Extracts a simplified primary effect string from the card's effects object.
-         * Used for the new 'Primary Effect' column.
-         */
-        function getPrimaryEffect(card) {
-            const effect = card.abilities?.level_1?.effects?.[0];
-            if (!effect) return 'N/A';
-
-            const { type, parameters } = effect;
-            if (type === 'stat_modifier' && parameters?.modifier) {
-                const modifier = (parameters.modifier * 100).toFixed(0);
-                const target = parameters.target?.replace(/_/g, ' ') || 'Stat';
-                const sign = modifier > 0 ? '+' : '';
-                return `${sign}${modifier}% ${target}`;
-            }
-            if (type === 'summon' && parameters?.on_hit?.lifesteal) {
-                const lifesteal = (parameters.on_hit.lifesteal * 100).toFixed(0);
-                return `Lifesteal: ${lifesteal}%`;
-            }
-            if (type === 'state_toggle' && parameters?.duration) {
-                const duration = parameters.duration;
-                const modifier = parameters.modifier ? `+${(parameters.modifier * 100).toFixed(0)}%` : '';
-                return `${modifier} Buff for ${duration}s`;
-            }
-            return type.replace(/_/g, ' ') || 'Complex';
-        }
-
+        // (Can remove getPrimaryEffect if no longer used)
 
         // --- Data Fetching ---
         async function fetchCards() {
@@ -90,9 +62,7 @@
                 allCardsData = data.cards || data;
 
                 populateTypeFilters(allCardsData);
-                // Initial call to filter and render all cards, sorted by default ID
-                sortTable(lastSortKey); 
-
+                sortTable(lastSortKey); // initial render
             } catch (error) {
                 console.error('Failed to load card data:', error);
                 resultsContainer.innerHTML = '<p class="error">Error loading card data. Make sure card.json exists and is valid.</p>';
@@ -114,137 +84,107 @@
             });
 
             typeFilterContainer.innerHTML = '';
-
             Array.from(uniqueTypes).sort().forEach(type => {
                 const button = document.createElement('button');
                 button.className = 'type-filter-btn';
                 button.textContent = type;
                 button.dataset.type = type;
                 button.type = 'button';
-
-                // **DYNAMIC FILTERING CHANGE:** Attach filter on click
-                button.addEventListener('click', function () {
-                    this.classList.toggle('active');
+                button.addEventListener('click', () => {
+                    button.classList.toggle('active');
                     filterAndRenderCards();
                 });
-
                 typeFilterContainer.appendChild(button);
             });
         }
 
-        // --- Filtering Logic (Called dynamically) ---
+        // --- Filtering Logic ---
         function filterAndRenderCards() {
             const searchTerm = searchInput.value.toLowerCase().trim();
             const selectedTypes = Array.from(typeFilterContainer.querySelectorAll('.type-filter-btn.active'))
-                .map(button => button.dataset.type);
+                .map(btn => btn.dataset.type);
 
             currentFilteredCards = allCardsData.filter(card => {
                 const cardTypes = Array.isArray(card.type) ? card.type : (typeof card.type === 'string' ? card.type.split(/\s*\|\s*|\s+/).map(t => t.trim()).filter(t => t) : []);
-                
-                // Type Filter: Must include ALL selected types (AND logic)
                 let matchesType = selectedTypes.length === 0 || selectedTypes.every(type => cardTypes.includes(type));
-
                 if (!matchesType) return false;
 
-                // Text Search: Check Name, ID, or Ability Text
                 if (!searchTerm) return true;
 
                 const cardName = card.card_name.toLowerCase();
                 const cardId = card.card_id.toLowerCase();
                 let abilityText = card.abilities?.level_1?.ability_text?.toLowerCase() || '';
-                
-                return cardName.includes(searchTerm) ||
-                    cardId.includes(searchTerm) ||
-                    abilityText.includes(searchTerm);
+                return cardName.includes(searchTerm) || cardId.includes(searchTerm) || abilityText.includes(searchTerm);
             });
 
-            // Re-render the table using the current sort key
-            sortTable(lastSortKey, true); // true prevents sort direction flip, just applies current sort
+            sortTable(lastSortKey, true);
         }
 
-
         // --- Rendering Table ---
-
         function renderCardsTable(cards) {
-    const cardCount = cards.length;
-    
-    // 1. Update the count display
-    if (cardCountDisplay) {
-        cardCountDisplay.textContent = `Total Cards: ${cardCount}`;
-    }
-    
-    // Clear and re-append count element
-    resultsContainer.innerHTML = '';
-    resultsContainer.appendChild(cardCountDisplay); 
+            const cardCount = cards.length;
+            if (cardCountDisplay) cardCountDisplay.textContent = `Total Cards: ${cardCount}`;
+            resultsContainer.innerHTML = '';
+            resultsContainer.appendChild(cardCountDisplay);
 
-    if (cardCount === 0) {
-        const noResultsMessage = document.createElement('p');
-        noResultsMessage.className = 'error';
-        noResultsMessage.textContent = 'No cards match the current filters.';
-        resultsContainer.appendChild(noResultsMessage);
-        return;
-    }
+            if (cardCount === 0) {
+                const noResultsMessage = document.createElement('p');
+                noResultsMessage.className = 'error';
+                noResultsMessage.textContent = 'No cards match the current filters.';
+                resultsContainer.appendChild(noResultsMessage);
+                return;
+            }
 
-    let tableHTML = `
-        <table class="analytics-table">
-            <thead>
-                <tr>
-                    <th></th> 
-                    <th data-sort-key="card_name" class="${lastSortKey === 'card_name' ? 'sorted-' + sortDirection : ''}">Name</th>
-                    <th data-sort-key="card_id" class="${lastSortKey === 'card_id' ? 'sorted-' + sortDirection : ''}">ID</th>
-                    <th data-sort-key="rarity" class="${lastSortKey === 'rarity' ? 'sorted-' + sortDirection : ''}">Rarity</th>
-                    <th data-sort-key="type" class="${lastSortKey === 'type' ? 'sorted-' + sortDirection : ''}">Types</th>
-                    
-                    <th data-sort-key="primary_effect" class="${lastSortKey === 'primary_effect' ? 'sorted-' + sortDirection : ''}">Primary Effect</th>
-
-                    <th data-sort-key="ability_text" class="${lastSortKey === 'ability_text' ? 'sorted-' + sortDirection : ''}">L1 Ability Text</th>
-                </tr>
-            </thead>
-            <tbody>
-    `;
-
-    cards.forEach(card => {
-        const rarityClass = card.rarity ? `rarity-${card.rarity}` : 'rarity-unknown';
-        
-        // Convert types to visual badges (use spans for CSS styling)
-        const typeBadges = Array.isArray(card.type) ? 
-            card.type.map(t => `<span class="type-badge type-${t.toLowerCase()}">${t}</span>`).join(' ') : 
-            `<span class="type-badge">${card.type || 'N/A'}</span>`;
-
-        const primaryEffect = getPrimaryEffect(card); 
-
-        let abilityText = card.abilities?.level_1?.ability_text || 'N/A';
-        // Truncate long ability text for table view
-        const truncatedAbilityText = abilityText.length > ABILITY_TEXT_MAX_LENGTH ?
-            `${abilityText.substring(0, ABILITY_TEXT_MAX_LENGTH)}...` :
-            abilityText;
-
-        const imageFilename = card.image_filename || 'placeholder.png'; // Use a placeholder if missing
-        
-        // ✅ FIX APPLIED HERE: Changed directory from './images/' to './cards/'
-        const imageHTML = `<img src="./cards/${imageFilename}" alt="${card.card_name}" class="card-icon" loading="lazy">`;
-
-
-        tableHTML += `
-            <tr data-card-id="${card.card_id}" title="${abilityText}"> <td>${imageHTML}</td>
-                <td>${card.card_name}</td>
-                <td>${card.card_id}</td>
-                <td class="${rarityClass}">${card.rarity || 'N/A'}</td>
-                <td>${typeBadges}</td>
-                <td>${primaryEffect}</td>
-                <td>${truncatedAbilityText}</td>
-            </tr>
+            let tableHTML = `
+            <table class="analytics-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th data-sort-key="card_name" class="${lastSortKey === 'card_name' ? 'sorted-' + sortDirection : ''}">Name</th>
+                        <th data-sort-key="card_id" class="${lastSortKey === 'card_id' ? 'sorted-' + sortDirection : ''}">ID</th>
+                        <th data-sort-key="rarity" class="${lastSortKey === 'rarity' ? 'sorted-' + sortDirection : ''}">Rarity</th>
+                        <th data-sort-key="type" class="${lastSortKey === 'type' ? 'sorted-' + sortDirection : ''}">Types</th>
+                        <th data-sort-key="activation_method" class="${lastSortKey === 'activation_method' ? 'sorted-' + sortDirection : ''}">Activation Method</th>
+                        <th data-sort-key="ability_text" class="${lastSortKey === 'ability_text' ? 'sorted-' + sortDirection : ''}">L1 Ability Text</th>
+                    </tr>
+                </thead>
+                <tbody>
         `;
-    });
 
-    tableHTML += '</tbody></table>';
-    resultsContainer.insertAdjacentHTML('beforeend', tableHTML);
-}
+            cards.forEach(card => {
+                const rarityClass = card.rarity ? `rarity-${card.rarity}` : 'rarity-unknown';
+                const typeBadges = Array.isArray(card.type)
+                    ? card.type.map(t => `<span class="type-badge type-${t.toLowerCase()}">${t}</span>`).join(' ')
+                    : `<span class="type-badge">${card.type || 'N/A'}</span>`;
 
+                const activationMethod = card.activation_method || card.activation?.method || 'N/A';
+                let abilityText = card.abilities?.level_1?.ability_text || 'N/A';
+                const truncatedAbilityText = abilityText.length > ABILITY_TEXT_MAX_LENGTH
+                    ? `${abilityText.substring(0, ABILITY_TEXT_MAX_LENGTH)}...`
+                    : abilityText;
+
+                const imageFilename = card.image_filename || 'placeholder.png';
+                const imageHTML = `<img src="./cards/${imageFilename}" alt="${card.card_name}" class="card-icon" loading="lazy">`;
+
+                tableHTML += `
+                <tr data-card-id="${card.card_id}" title="${abilityText}">
+                    <td>${imageHTML}</td>
+                    <td>${card.card_name}</td>
+                    <td>${card.card_id}</td>
+                    <td class="${rarityClass}">${card.rarity || 'N/A'}</td>
+                    <td>${typeBadges}</td>
+                    <td>${activationMethod}</td>
+                    <td>${truncatedAbilityText}</td>
+                </tr>
+            `;
+            });
+
+            tableHTML += '</tbody></table>';
+            resultsContainer.insertAdjacentHTML('beforeend', tableHTML);
+        }
 
         // --- Sorting Logic ---
         function sortTable(key, preventDirectionFlip = false) {
-            // Determine sort direction
             if (lastSortKey === key && !preventDirectionFlip) {
                 sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
             } else if (lastSortKey !== key) {
@@ -254,20 +194,16 @@
 
             currentFilteredCards.sort((a, b) => {
                 let valA, valB;
-
-                // Handle complex sorting keys
                 if (key === 'ability_text') {
                     valA = (a.abilities?.level_1?.ability_text || '').toLowerCase();
                     valB = (b.abilities?.level_1?.ability_text || '').toLowerCase();
                 } else if (key === 'type') {
                     valA = (Array.isArray(a.type) ? a.type.join(' ') : (a.type || '')).toLowerCase();
                     valB = (Array.isArray(b.type) ? b.type.join(' ') : (b.type || '')).toLowerCase();
-                } else if (key === 'primary_effect') {
-                    // Sort based on the extracted effect value
-                    valA = getPrimaryEffect(a);
-                    valB = getPrimaryEffect(b);
-                }
-                else {
+                } else if (key === 'activation_method') {
+                    valA = (a.activation_method || a.activation?.method || '').toLowerCase();
+                    valB = (b.activation_method || b.activation?.method || '').toLowerCase();
+                } else {
                     valA = (a[key] || '').toString().toLowerCase();
                     valB = (b[key] || '').toString().toLowerCase();
                 }
@@ -277,40 +213,30 @@
                 return 0;
             });
 
-            // Re-render the table
             renderCardsTable(currentFilteredCards);
         }
-
 
         // --- Event Listeners ---
         document.addEventListener('DOMContentLoaded', () => {
             fetchCards();
 
-            // 1. DYNAMIC SEARCH: Trigger filter on every input change
             searchInput.addEventListener('input', filterAndRenderCards);
-            
-            // 2. CLEAR FILTERS BUTTON
+
             clearButton.addEventListener('click', () => {
                 searchInput.value = '';
-                typeFilterContainer.querySelectorAll('.type-filter-btn.active').forEach(btn => {
-                    btn.classList.remove('active');
-                });
+                typeFilterContainer.querySelectorAll('.type-filter-btn.active').forEach(btn => btn.classList.remove('active'));
                 filterAndRenderCards();
             });
 
-            // 3. TABLE HEADER SORTING
             resultsContainer.addEventListener('click', function (e) {
                 const th = e.target.closest('th');
                 if (th && th.dataset.sortKey) {
-                    const sortKey = th.dataset.sortKey;
-                    // The function now handles the sort and render
-                    sortTable(sortKey); 
+                    sortTable(th.dataset.sortKey);
                 }
             });
         });
     </script>
+
 </body>
 
 </html>
-
-
