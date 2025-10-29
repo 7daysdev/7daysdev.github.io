@@ -41,110 +41,115 @@
     </div>
     </div>
 
-    <script>
-        // --- Global State ---
-        let allCardsData = [];
-        let currentFilteredCards = [];
-        let sortDirection = 'asc';
-        let lastSortKey = 'card_id'; // Default sort key
-        const ABILITY_TEXT_MAX_LENGTH = 70; // Truncation limit for table display
-        // --- DOM Elements ---
-        // ... (existing elements)
-        const exportButton = document.getElementById('exportDataBtn'); // NEW
-        const exportOutput = document.getElementById('exportOutput'); // NEW
+   <script>
+    // --- Global State ---
+    let allCardsData = [];
+    let currentFilteredCards = [];
+    let sortDirection = 'asc';
+    let lastSortKey = 'card_id'; // Default sort key
+    const ABILITY_TEXT_MAX_LENGTH = 70; // Truncation limit for table display
+    // --- DOM Elements ---
+    // ... (existing elements)
+    const exportButton = document.getElementById('exportDataBtn'); // NEW
+    const exportOutput = document.getElementById('exportOutput'); // NEW
 
-        // --- DOM Elements ---
-        const resultsContainer = document.getElementById('analytics-results-container');
-        const typeFilterContainer = document.getElementById('typeFilterContainer');
-        const searchInput = document.getElementById('searchInput');
-        const clearButton = document.getElementById('clearFiltersBtn');
-        const cardCountDisplay = document.getElementById('cardCountDisplay');
+    // --- DOM Elements ---
+    const resultsContainer = document.getElementById('analytics-results-container');
+    const typeFilterContainer = document.getElementById('typeFilterContainer');
+    const searchInput = document.getElementById('searchInput');
+    const clearButton = document.getElementById('clearFiltersBtn');
+    const cardCountDisplay = document.getElementById('cardCountDisplay');
 
-        // --- Utility Functions ---
-        // (Can remove getPrimaryEffect if no longer used)
+    // --- Utility Functions ---
+    // (Can remove getPrimaryEffect if no longer used)
 
-        // --- Data Fetching ---
-        async function fetchCards() {
-            try {
-                const response = await fetch('./card.json');
-                const data = await response.json();
-                allCardsData = data.cards || data;
+    // --- Data Fetching ---
+    async function fetchCards() {
+        try {
+            const response = await fetch('./card.json');
+            const data = await response.json();
+            allCardsData = data.cards || data;
 
-                populateTypeFilters(allCardsData);
-                sortTable(lastSortKey); // initial render
-            } catch (error) {
-                console.error('Failed to load card data:', error);
-                resultsContainer.innerHTML = '<p class="error">Error loading card data. Make sure card.json exists and is valid.</p>';
-                if (cardCountDisplay) cardCountDisplay.textContent = 'Total Cards: 0';
-            }
+            populateTypeFilters(allCardsData);
+            sortTable(lastSortKey); // initial render
+        } catch (error) {
+            console.error('Failed to load card data:', error);
+            resultsContainer.innerHTML = '<p class="error">Error loading card data. Make sure card.json exists and is valid.</p>';
+            if (cardCountDisplay) cardCountDisplay.textContent = 'Total Cards: 0';
         }
+    }
 
-        // --- Filter Population ---
-        function populateTypeFilters(cards) {
-            const uniqueTypes = new Set();
-            cards.forEach(card => {
-                if (Array.isArray(card.type)) {
-                    card.type.forEach(t => uniqueTypes.add(t));
-                } else if (typeof card.type === 'string') {
-                    card.type.split(/\s*\|\s*|\s+/).forEach(t => {
-                        if (t.trim()) uniqueTypes.add(t.trim());
-                    });
-                }
-            });
-
-            typeFilterContainer.innerHTML = '';
-            Array.from(uniqueTypes).sort().forEach(type => {
-                const button = document.createElement('button');
-                button.className = 'type-filter-btn';
-                button.textContent = type;
-                button.dataset.type = type;
-                button.type = 'button';
-                button.addEventListener('click', () => {
-                    button.classList.toggle('active');
-                    filterAndRenderCards();
+    // --- Filter Population ---
+    function populateTypeFilters(cards) {
+        const uniqueTypes = new Set();
+        cards.forEach(card => {
+            if (Array.isArray(card.type)) {
+                card.type.forEach(t => uniqueTypes.add(t));
+            } else if (typeof card.type === 'string') {
+                card.type.split(/\s*\|\s*|\s+/).forEach(t => {
+                    if (t.trim()) uniqueTypes.add(t.trim());
                 });
-                typeFilterContainer.appendChild(button);
-            });
-        }
-
-        // --- Filtering Logic ---
-        function filterAndRenderCards() {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            const selectedTypes = Array.from(typeFilterContainer.querySelectorAll('.type-filter-btn.active'))
-                .map(btn => btn.dataset.type);
-
-            currentFilteredCards = allCardsData.filter(card => {
-                const cardTypes = Array.isArray(card.type) ? card.type : (typeof card.type === 'string' ? card.type.split(/\s*\|\s*|\s+/).map(t => t.trim()).filter(t => t) : []);
-                let matchesType = selectedTypes.length === 0 || selectedTypes.every(type => cardTypes.includes(type));
-                if (!matchesType) return false;
-
-                if (!searchTerm) return true;
-
-                const cardName = card.card_name.toLowerCase();
-                const cardId = card.card_id.toLowerCase();
-                let abilityText = card.abilities?.level_1?.ability_text?.toLowerCase() || '';
-                return cardName.includes(searchTerm) || cardId.includes(searchTerm) || abilityText.includes(searchTerm);
-            });
-
-            sortTable(lastSortKey, true);
-        }
-
-        // --- Rendering Table ---
-        function renderCardsTable(cards) {
-            const cardCount = cards.length;
-            if (cardCountDisplay) cardCountDisplay.textContent = `Total Cards: ${cardCount}`;
-            resultsContainer.innerHTML = '';
-            resultsContainer.appendChild(cardCountDisplay);
-
-            if (cardCount === 0) {
-                const noResultsMessage = document.createElement('p');
-                noResultsMessage.className = 'error';
-                noResultsMessage.textContent = 'No cards match the current filters.';
-                resultsContainer.appendChild(noResultsMessage);
-                return;
             }
+        });
 
-            let tableHTML = `
+        typeFilterContainer.innerHTML = '';
+        Array.from(uniqueTypes).sort().forEach(type => {
+            const button = document.createElement('button');
+            
+            // --- START FIX/UPDATE: Apply dynamic class for color coordination and remove duplicates ---
+            const className = type.trim().toLowerCase().replace(/[^a-z0-9]/g, ''); // Sanitizes for CSS class name
+            button.className = `type-filter-btn type-${className}`;
+            button.textContent = type;
+            button.dataset.type = type;
+            // --- END FIX/UPDATE ---
+            
+            button.type = 'button';
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                filterAndRenderCards();
+            });
+            typeFilterContainer.appendChild(button);
+        });
+    }
+
+    // --- Filtering Logic ---
+    function filterAndRenderCards() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const selectedTypes = Array.from(typeFilterContainer.querySelectorAll('.type-filter-btn.active'))
+            .map(btn => btn.dataset.type);
+
+        currentFilteredCards = allCardsData.filter(card => {
+            const cardTypes = Array.isArray(card.type) ? card.type : (typeof card.type === 'string' ? card.type.split(/\s*\|\s*|\s+/).map(t => t.trim()).filter(t => t) : []);
+            let matchesType = selectedTypes.length === 0 || selectedTypes.every(type => cardTypes.includes(type));
+            if (!matchesType) return false;
+
+            if (!searchTerm) return true;
+
+            const cardName = card.card_name.toLowerCase();
+            const cardId = card.card_id.toLowerCase();
+            let abilityText = card.abilities?.level_1?.ability_text?.toLowerCase() || '';
+            return cardName.includes(searchTerm) || cardId.includes(searchTerm) || abilityText.includes(searchTerm);
+        });
+
+        sortTable(lastSortKey, true);
+    }
+
+    // --- Rendering Table ---
+    function renderCardsTable(cards) {
+        const cardCount = cards.length;
+        if (cardCountDisplay) cardCountDisplay.textContent = `Total Cards: ${cardCount}`;
+        resultsContainer.innerHTML = '';
+        resultsContainer.appendChild(cardCountDisplay);
+
+        if (cardCount === 0) {
+            const noResultsMessage = document.createElement('p');
+            noResultsMessage.className = 'error';
+            noResultsMessage.textContent = 'No cards match the current filters.';
+            resultsContainer.appendChild(noResultsMessage);
+            return;
+        }
+
+        let tableHTML = `
             <table class="analytics-table">
                 <thead>
                     <tr>
@@ -160,22 +165,37 @@
                 <tbody>
         `;
 
-            cards.forEach(card => {
-                const rarityClass = card.rarity ? `rarity-${card.rarity}` : 'rarity-unknown';
-                const typeBadges = Array.isArray(card.type)
-                    ? card.type.map(t => `<span class="type-badge type-${t.toLowerCase()}">${t}</span>`).join(' ')
-                    : `<span class="type-badge">${card.type || 'N/A'}</span>`;
+        cards.forEach(card => {
+            const rarityClass = card.rarity ? `rarity-${card.rarity}` : 'rarity-unknown';
+            
+            // --- START FIX/UPDATE: Use the robust badge creation for color coordination ---
+            const typesArray = Array.isArray(card.type)
+                ? card.type
+                : (typeof card.type === 'string' && card.type.trim() ? card.type.split(/\s*\|\s*|\s+/) : []);
 
-                const activationMethod = card.activation_method || card.activation?.method || 'N/A';
-                let abilityText = card.abilities?.level_1?.ability_text || 'N/A';
-                const truncatedAbilityText = abilityText.length > ABILITY_TEXT_MAX_LENGTH
-                    ? `${abilityText.substring(0, ABILITY_TEXT_MAX_LENGTH)}...`
-                    : abilityText;
+            let typeBadges = typesArray.map(t => {
+                const trimmedType = t.trim();
+                // Sanitizes for CSS class name (e.g., "Weapon Ability" -> "weaponability")
+                const className = trimmedType.toLowerCase().replace(/[^a-z0-9]/g, ''); 
+                return `<span class="type-badge type-${className}">${trimmedType}</span>`;
+            }).join(' ');
 
-                const imageFilename = card.image_filename || 'placeholder.png';
-                const imageHTML = `<img src="./cards/${imageFilename}" alt="${card.card_name}" class="card-icon" loading="lazy">`;
+            // Fallback for no types
+            if (typeBadges === '') {
+                typeBadges = '<span class="type-badge">N/A</span>';
+            }
+            // --- END FIX/UPDATE ---
 
-                tableHTML += `
+            const activationMethod = card.activation_method || card.activation?.method || 'N/A';
+            let abilityText = card.abilities?.level_1?.ability_text || 'N/A';
+            const truncatedAbilityText = abilityText.length > ABILITY_TEXT_MAX_LENGTH
+                ? `${abilityText.substring(0, ABILITY_TEXT_MAX_LENGTH)}...`
+                : abilityText;
+
+            const imageFilename = card.image_filename || 'placeholder.png';
+            const imageHTML = `<img src="./cards/${imageFilename}" alt="${card.card_name}" class="card-icon" loading="lazy">`;
+
+            tableHTML += `
                 <tr data-card-id="${card.card_id}" title="${abilityText}">
                     <td>${imageHTML}</td>
                     <td>${card.card_name}</td>
@@ -186,89 +206,89 @@
                     <td>${truncatedAbilityText}</td>
                 </tr>
             `;
-            });
-
-            tableHTML += '</tbody></table>';
-            resultsContainer.insertAdjacentHTML('beforeend', tableHTML);
-        }
-
-        // --- Sorting Logic ---
-        function sortTable(key, preventDirectionFlip = false) {
-            if (lastSortKey === key && !preventDirectionFlip) {
-                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-            } else if (lastSortKey !== key) {
-                sortDirection = 'asc';
-                lastSortKey = key;
-            }
-
-            currentFilteredCards.sort((a, b) => {
-                let valA, valB;
-                if (key === 'ability_text') {
-                    valA = (a.abilities?.level_1?.ability_text || '').toLowerCase();
-                    valB = (b.abilities?.level_1?.ability_text || '').toLowerCase();
-                } else if (key === 'type') {
-                    valA = (Array.isArray(a.type) ? a.type.join(' ') : (a.type || '')).toLowerCase();
-                    valB = (Array.isArray(b.type) ? b.type.join(' ') : (b.type || '')).toLowerCase();
-                } else if (key === 'activation_method') {
-                    valA = (a.activation_method || a.activation?.method || '').toLowerCase();
-                    valB = (b.activation_method || b.activation?.method || '').toLowerCase();
-                } else {
-                    valA = (a[key] || '').toString().toLowerCase();
-                    valB = (b[key] || '').toString().toLowerCase();
-                }
-
-                if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
-                if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
-                return 0;
-            });
-
-            renderCardsTable(currentFilteredCards);
-        }
-
-        // --- Event Listeners ---
-        document.addEventListener('DOMContentLoaded', () => {
-            fetchCards();
-
-            searchInput.addEventListener('input', filterAndRenderCards);
-
-            clearButton.addEventListener('click', () => {
-                searchInput.value = '';
-                typeFilterContainer.querySelectorAll('.type-filter-btn.active').forEach(btn => btn.classList.remove('active'));
-                filterAndRenderCards();
-            });
-
-            resultsContainer.addEventListener('click', function (e) {
-                const th = e.target.closest('th');
-                if (th && th.dataset.sortKey) {
-                    sortTable(th.dataset.sortKey);
-                }
-            });
-            // NEW EXPORT BUTTON LISTENER
-            if (exportButton) {
-                exportButton.addEventListener('click', exportData);
-            }
         });
 
-        // --- New Export Function ---
-        function exportData() {
-            if (currentFilteredCards.length === 0) {
-                alert("No cards are currently filtered to export.");
-                return;
+        tableHTML += '</tbody></table>';
+        resultsContainer.insertAdjacentHTML('beforeend', tableHTML);
+    }
+
+    // --- Sorting Logic ---
+    function sortTable(key, preventDirectionFlip = false) {
+        if (lastSortKey === key && !preventDirectionFlip) {
+            sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+        } else if (lastSortKey !== key) {
+            sortDirection = 'asc';
+            lastSortKey = key;
+        }
+
+        currentFilteredCards.sort((a, b) => {
+            let valA, valB;
+            if (key === 'ability_text') {
+                valA = (a.abilities?.level_1?.ability_text || '').toLowerCase();
+                valB = (b.abilities?.level_1?.ability_text || '').toLowerCase();
+            } else if (key === 'type') {
+                valA = (Array.isArray(a.type) ? a.type.join(' ') : (a.type || '')).toLowerCase();
+                valB = (Array.isArray(b.type) ? b.type.join(' ') : (b.type || '')).toLowerCase();
+            } else if (key === 'activation_method') {
+                valA = (a.activation_method || a.activation?.method || '').toLowerCase();
+                valB = (b.activation_method || b.activation?.method || '').toLowerCase();
+            } else {
+                valA = (a[key] || '').toString().toLowerCase();
+                valB = (b[key] || '').toString().toLowerCase();
             }
 
-            // 1. Format the data for easy reading (Plain Text)
-            const formattedText = currentFilteredCards.map(card => {
-                const name = card.card_name || 'N/A';
-                const id = card.card_id || 'N/A';
-                const rarity = card.rarity || 'N/A';
-                const types = Array.isArray(card.type) ? card.type.join(', ') : (card.type || 'N/A');
-                const activation = card.activation_method || card.activation?.method || 'N/A';
+            if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
+            if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
+            return 0;
+        });
 
-                // **This pulls the FULL, UNTRUNCATED ability text:**
-                const fullAbilityText = card.abilities?.level_1?.ability_text || 'N/A';
+        renderCardsTable(currentFilteredCards);
+    }
 
-                // Use a clear, consistent template for the AI
-                return `
+    // --- Event Listeners ---
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchCards();
+
+        searchInput.addEventListener('input', filterAndRenderCards);
+
+        clearButton.addEventListener('click', () => {
+            searchInput.value = '';
+            typeFilterContainer.querySelectorAll('.type-filter-btn.active').forEach(btn => btn.classList.remove('active'));
+            filterAndRenderCards();
+        });
+
+        resultsContainer.addEventListener('click', function (e) {
+            const th = e.target.closest('th');
+            if (th && th.dataset.sortKey) {
+                sortTable(th.dataset.sortKey);
+            }
+        });
+        // NEW EXPORT BUTTON LISTENER
+        if (exportButton) {
+            exportButton.addEventListener('click', exportData);
+        }
+    });
+
+    // --- New Export Function ---
+    function exportData() {
+        if (currentFilteredCards.length === 0) {
+            alert("No cards are currently filtered to export.");
+            return;
+        }
+
+        // 1. Format the data for easy reading (Plain Text)
+        const formattedText = currentFilteredCards.map(card => {
+            const name = card.card_name || 'N/A';
+            const id = card.card_id || 'N/A';
+            const rarity = card.rarity || 'N/A';
+            const types = Array.isArray(card.type) ? card.type.join(', ') : (card.type || 'N/A');
+            const activation = card.activation_method || card.activation?.method || 'N/A';
+
+            // **This pulls the FULL, UNTRUNCATED ability text:**
+            const fullAbilityText = card.abilities?.level_1?.ability_text || 'N/A';
+
+            // Use a clear, consistent template for the AI
+            return `
 Card Name: ${name}
 Card ID: ${id}
 Rarity: ${rarity}
@@ -276,24 +296,25 @@ Types: ${types}
 Activation: ${activation}
 Ability Text (L1): ${fullAbilityText}
 -------------------------------------`;
-            }).join('\n'); // Join all card strings
+        }).join('\n'); // Join all card strings
 
-            // 2. Display the formatted text in the textarea
-            exportOutput.value = formattedText;
-            exportOutput.style.display = 'block'; // Make the textarea visible
-            exportOutput.select(); // Select the text
+        // 2. Display the formatted text in the textarea
+        exportOutput.value = formattedText;
+        exportOutput.style.display = 'block'; // Make the textarea visible
+        exportOutput.select(); // Select the text
 
-            // Optional: Copy to clipboard (modern browsers only)
-            try {
-                document.execCommand('copy');
-                alert('Filtered card data copied to clipboard! Ready to paste into the AI.');
-            } catch (err) {
-                // Fallback message if automatic copy fails
-                alert('Filtered data is ready below. Press Ctrl+C (Cmd+C) to copy the text.');
-            }
+        // Optional: Copy to clipboard (modern browsers only)
+        try {
+            document.execCommand('copy');
+            alert('Filtered card data copied to clipboard! Ready to paste into the AI.');
+        } catch (err) {
+            // Fallback message if automatic copy fails
+            alert('Filtered data is ready below. Press Ctrl+C (Cmd+C) to copy the text.');
         }
-    </script>
+    }
+</script>
 
 </body>
 
 </html>
+
