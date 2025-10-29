@@ -230,3 +230,76 @@ td.rarity-Ultimate {
     font-weight: bold; 
     text-shadow: 0 0 5px rgba(231, 76, 60, 0.5); /* Subtle glow for ultimate */
 }
+
+
+/* --- NEW Styles for Type Badges & Color Coordination --- */
+.type-badge {
+    display: inline-block;
+    padding: 3px 6px;
+    margin-right: 4px;
+    margin-bottom: 2px;
+    border-radius: 3px;
+    font-size: 0.75em;
+    font-weight: bold;
+    white-space: nowrap;
+    line-height: 1;
+    color: #19171b; /* Ensure dark text for maximum readability on colored backgrounds */
+    background-color: #95a5a6; /* Default/Fallback Gray */
+    border: 1px solid transparent;
+}
+
+/* Base Style for Filter Buttons to inherit colors, but keep the gold active state */
+.type-filter-btn {
+    color: #19171b; /* Dark text for clarity */
+    border: 1px solid transparent; /* Remove the old gray border */
+    background-color: #5c5c5c; /* Default filter button background */
+}
+
+/* --- Type-Specific Colors (Badges and Buttons) --- */
+/* The filter buttons will use these colors until they are clicked (.active) */
+
+/* General Card Categories */
+.type-badge.type-tap, .type-filter-btn.type-tap { background-color: #4a90e2; } /* Bright Blue */
+.type-badge.type-passive, .type-filter-btn.type-passive { background-color: #7ed321; } /* Vibrant Green */
+.type-badge.type-weaponability, .type-filter-btn.type-weaponability { background-color: #f8e71c; } /* Yellow/Gold */
+.type-badge.type-combat, .type-filter-btn.type-combat { background-color: #9013fe; } /* Deep Violet */
+
+/* Modifier & Status Types */
+.type-badge.type-buff, .type-filter-btn.type-buff { background-color: #00c6ff; } /* Aqua */
+.type-badge.type-debuff, .type-filter-btn.type-debuff { background-color: #ff6e40; } /* Orange-Red */
+.type-badge.type-stagger, .type-filter-btn.type-stagger { background-color: #b84d1a; } /* Rust/Impact */
+
+/* Elemental/DoT Types */
+.type-badge.type-elemental, .type-filter-btn.type-elemental { background-color: #e9860c; } /* Muted Orange (for the general type) */
+.type-badge.type-poison, .type-filter-btn.type-poison { background-color: #50e3c2; } /* Mint Green */
+.type-badge.type-bleed, .type-filter-btn.type-bleed { background-color: #d0021b; } /* Blood Red */
+.type-badge.type-fire, .type-filter-btn.type-fire { background-color: #f44336; } /* Red */
+.type-badge.type-ice, .type-filter-btn.type-ice { background-color: #4db6ac; } /* Teal */
+
+
+/* Filter Button Overrides */
+/* 1. Ensure uncolored buttons use a dark theme default */
+.type-filter-btn:not([class*="type-"]):not(.active) {
+    background-color: #3a3b3c;
+    color: #bfa04a; /* Light gold for default inactive buttons */
+}
+.type-filter-btn:not([class*="type-"]):not(.active):hover {
+    background-color: #4a4a4a;
+    color: #d29f22;
+    border-color: #d29f22;
+}
+
+/* 2. Overrides for Type Buttons Hover State */
+.type-filter-btn:hover:not(.active) {
+    /* Slightly darken the specific color on hover */
+    opacity: 0.85;
+}
+
+/* 3. The Active (Selected) State MUST remain the Christmas Gold for clarity */
+.type-filter-btn.active {
+    background-color: #d29f22 !important; /* Vibrant Gold - Force override */
+    color: #19171b !important;
+    border-color: #d29f22 !important;
+    box-shadow: 0 0 8px rgba(210, 159, 34, 0.6) !important;
+    opacity: 1 !important; /* Ensure full opacity when active */
+}
