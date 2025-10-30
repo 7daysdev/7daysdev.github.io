@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swords Index</title>
+    <title>Fist Weapons Index</title>
     <style>
         /* Base styles */
         body {
@@ -13,7 +13,7 @@
             font-family: sans-serif;
             padding: 20px;
         }
-        .swords-container {
+        .weapons-container {
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -26,7 +26,7 @@
         }
 
         /* Grid and Card Styles */
-        .swords-grid {
+        .weapons-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
@@ -45,7 +45,7 @@
         }
         .weapon-card:hover {
             transform: translateY(-3px);
-            border-color: #ff4500; /* Deep orange/red for Swords */
+            border-color: #ff4500; /* OrangeRed for Fist Weapons */
         }
 
         .weapon-header {
@@ -57,7 +57,7 @@
         .weapon-name {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #ff7f50; /* Coral for name */
+            color: #ffa07a; /* Light Salmon for name */
         }
         .weapon-type {
             padding: 4px 8px;
@@ -76,7 +76,7 @@
         }
         .weapon-ability {
             font-size: 0.95rem;
-            color: #90ee90; /* Light green for ability */
+            color: #90ee90;
             margin-bottom: 15px;
         }
         
@@ -121,24 +121,36 @@
             color: white;
             cursor: pointer;
         }
+        /* Custom Back Link Style (using the Swords color for consistency) */
+        .back-link {
+            display: inline-block;
+            color: #ff7f50; 
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #ff7f50;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #ff7f50;
+            color: #1a1a1a;
+        }
     </style>
 </head>
 
 <body>
-    <div class="swords-container">
-        <h1 style="text-align: center; margin-bottom: 10px;">⚔️ Sword Arsenal ⚔️</h1>
-        <p style="text-align: center; color: #ccc; margin-bottom: 40px;">Straight Swords, Rapiers, and Greatswords for every adventurer.</p>
-        
+    <div class="weapons-container">
+        <h1 style="text-align: center; margin-bottom: 10px;">👊 Fist Weapon Arsenal 👊</h1>
+        <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Gauntlets, claws, and weapons focused on close-quarters brawling.</p>
+
+        <p style="text-align: center; margin-bottom: 40px;">
+            <a href="index.html" class="back-link">
+                &larr; Back to Weapon Hub
+            </a>
+        </p>
+
         <div class="filter-controls">
-            <div>
-                <label for="type-filter">Filter by Type:</label>
-                <select id="type-filter" onchange="filterWeapons()">
-                    <option value="All">All Sword Types</option>
-                    <option value="straight_sword">Straight Sword</option>
-                    <option value="rapier">Rapier</option>
-                    <option value="greatsword">Greatsword</option>
-                </select>
-            </div>
             <div>
                 <label for="faction-filter">Filter by Faction:</label>
                 <select id="faction-filter" onchange="filterWeapons()">
@@ -151,33 +163,31 @@
             </div>
         </div>
 
-        <div class="swords-grid" id="weaponsGrid">
-            </div>
+        <div class="weapons-grid" id="weaponsGrid">
+        </div>
     </div>
 
     <script>
-        let allSwords = []; 
+        let allFists = []; // Stores all fetched and filtered Fist Weapons
 
         async function fetchWeapons() {
             try {
-                // IMPORTANT: Ensure 'weapons.json' is in the correct location
-                const response = await fetch('weapon.json'); 
+                // IMPORTANT: Ensure 'weapon.json' is in the correct location
+                const response = await fetch('weapon.json');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                
-                // Filter the data to include only the relevant sword types
-                allSwords = data.weapons.filter(weapon => 
-                    weapon.type === 'straight_sword' || 
-                    weapon.type === 'rapier' || 
-                    weapon.type === 'greatsword'
+
+                // CRITICAL: Filter data to include ONLY the 'fist_weapon' type
+                allFists = data.weapons.filter(weapon =>
+                    weapon.type === 'fist_weapon'
                 );
 
-                displayWeapons(allSwords); // Display all swords initially
+                displayWeapons(allFists); 
             } catch (error) {
-                console.error("Could not fetch weapons data:", error);
-                document.getElementById('weaponsGrid').innerHTML = '<p>Error loading sword data. Check the console for details.</p>';
+                console.error("Could not fetch fist weapon data:", error);
+                document.getElementById('weaponsGrid').innerHTML = '<p>Error loading fist weapon data. Check the console for details.</p>';
             }
         }
 
@@ -189,15 +199,15 @@
                 const card = document.createElement('div');
                 card.className = 'weapon-card';
 
-                // Format type nicely for display
+                // Format type nicely (e.g., 'fist_weapon' -> 'Fist Weapon')
                 const displayType = weapon.type.replace(/_/g, ' '); 
-                
+
                 // Ability/Special details
                 const abilityText = weapon.ability && weapon.ability !== 'none' 
                     ? `<p class="weapon-ability">Ability: ${weapon.ability}</p>` 
                     : `<p class="weapon-ability" style="color:#aaa;">Ability: None</p>`;
 
-                // Get upgrade information (if available, like on Frostfang)
+                // Get upgrade information 
                 let upgradeInfo = '';
                 if (weapon.upgrades && weapon.upgrades.length > 0) {
                     const maxUpgrade = weapon.upgrades[weapon.upgrades.length - 1];
@@ -214,7 +224,7 @@
                 } else if (weapon.upgrade_tree) {
                     upgradeInfo = `
                         <div class="footer-detail">
-                            <strong>${weapon.upgrade_tree.replace(/_/g, ' ')}</strong>
+                            <strong>${weapon.upgrade_tree ? weapon.upgrade_tree.replace(/_/g, ' ') : 'N/A'}</strong>
                             <span>Upgrade Path</span>
                         </div>
                     `;
@@ -237,7 +247,7 @@
                             <span>Weight</span>
                         </div>
                         <div class="footer-detail">
-                            <strong>${weapon.faction.replace(/_/g, ' ')}</strong>
+                            <strong>${weapon.faction ? weapon.faction.replace(/_/g, ' ') : 'N/A'}</strong>
                             <span>Faction</span>
                         </div>
                         ${upgradeInfo}
@@ -247,18 +257,17 @@
             });
 
             if (weapons.length === 0) {
-                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #aaa;">No swords match the current filter criteria.</p>';
+                grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #aaa;">No Fist Weapons found in the data or match the current filter criteria.</p>';
             }
         }
 
         function filterWeapons() {
-            const typeFilter = document.getElementById('type-filter').value;
             const factionFilter = document.getElementById('faction-filter').value;
 
-            const filtered = allSwords.filter(weapon => {
-                const passesType = (typeFilter === 'All' || weapon.type === typeFilter);
+            // Filters the local array (allFists) based only on the faction filter
+            const filtered = allFists.filter(weapon => {
                 const passesFaction = (factionFilter === 'All' || weapon.faction === factionFilter);
-                return passesType && passesFaction;
+                return passesFaction;
             });
 
             displayWeapons(filtered);
@@ -267,5 +276,4 @@
         document.addEventListener('DOMContentLoaded', fetchWeapons);
     </script>
 </body>
-
 </html>

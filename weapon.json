@@ -5,26 +5,383 @@
       "name": "Envoys Edge",
       "type": "straight_sword",
       "lore": "A dependable blade carried by the scouts.",
+      "faction": "christmas_elf",
+      "ability": "none",
+      "weight": 12.0,
       "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_002",
+      "name": "Officers Sword ",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "christmas_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_003",
+      "name": "The Eve Sword",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "christmas_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_004",
+      "name": "Minty Fresh",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "foodkin",
+      "ability": "restores stamina slightly higher rate",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_005",
+      "name": "Bone sword",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_006",
+      "name": "Crab Saber",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_007",
+      "name": "Grief",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_008",
+      "name": "Epoch Blade",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_009",
+      "name": "Porciline",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_010",
+      "name": "Radiant Refraction",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_011",
+      "name": "RC Blade",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_012",
+      "name": "Short Hand",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "rapier_003",
+      "name": "Wall Captain's Rapier",
+      "type": "rapier",
+      "lore": "A light, precise sidearm for high-ranking officers, emphasizing speed and finesse.",
+      "faction": "christmas_elf",
+      "ability": "quick_parry",
+      "weight": 8.0,
+      "upgrade_tree": "rapier_advanced"
+    },
+    {
+      "id": "rapier_004",
+      "name": "Gift Ribbon Foil",
+      "type": "rapier",
+      "lore": "A rapier with a surprisingly sharp blade made from compressed festive ribbon, granting fast, light attacks.",
+      "faction": "christmas_elf",
+      "ability": "fast_jab",
+      "weight": 7.5,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_005",
+      "name": "Pretzel Rod Rapier",
+      "type": "rapier",
+      "lore": "A long, salted pretzel rod reinforced for combat. Its savory flavor is distracting to foes.",
+      "faction": "foodkin",
+      "ability": "saline_distraction",
+      "weight": 9.0,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_006",
+      "name": "Swordfish Bake",
+      "type": "rapier",
+      "lore": "The hardened, baked bill of a swordfish, used as a naturally pointy thrusting weapon.",
+      "faction": "foodkin",
+      "ability": "pierce_defense",
+      "weight": 11.0,
+      "upgrade_tree": "rapier_advanced"
+    },
+    {
+      "id": "rapier_007",
+      "name": "Tea Cup Sword",
+      "type": "rapier",
+      "lore": "A fine porcelain teacup acts as the guard for this delicate but sharp blade. Best used at formal duels.",
+      "faction": "foodkin",
+      "ability": "none",
+      "weight": 8.5,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_008",
+      "name": "Harpoon Thruster",
+      "type": "rapier",
+      "lore": "A repurposed harpoon used for quick, deep thrusts. A charged attack releases a powerful backward shove.",
+      "faction": "ice_elf",
+      "ability": "harpoon_back_thrust",
+      "weight": 12.0,
+      "upgrade_tree": "rapier_advanced"
+    },
+    {
+      "id": "rapier_009",
+      "name": "Narwhal Tusk",
+      "type": "rapier",
+      "lore": "The horn-like tooth of a Narwhal, revered by the Ice Elves as a pure, piercing weapon.",
+      "faction": "ice_elf",
+      "ability": "pure_frost_pierce",
+      "weight": 10.0,
+      "upgrade_tree": "rapier_legendary"
+    },
+    {
+      "id": "rapier_010",
+      "name": "Icicle Thorn",
+      "type": "rapier",
+      "lore": "A needle-thin rapier made from magically compressed, long-lasting ice.",
+      "faction": "ice_elf",
+      "ability": "frost_jab",
+      "weight": 7.0,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_011",
+      "name": "Giant Sewing Needle",
+      "type": "rapier",
+      "lore": "A massive sewing needle with a thread-wrapped grip and a button guard. Perfect for precision stabbing.",
+      "faction": "toykin",
+      "ability": "high_precision",
+      "weight": 9.5,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_012",
+      "name": "Pipe Puncture",
+      "type": "rapier",
+      "lore": "Various metal pipes welded and sharpened into a durable, unrefined rapier.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 11.5,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_013",
+      "name": "Quill Puncture",
+      "type": "rapier",
+      "lore": "A long quill with an enchanted, extremely sharp point that builds up poison damage.",
+      "faction": "toykin",
+      "ability": "poison_ink_buildup",
+      "weight": 6.5,
+      "upgrade_tree": "rapier_advanced"
+    },
+    {
+      "id": "rapier_014",
+      "name": "Slinky Saber",
+      "type": "rapier",
+      "lore": "A compressed slinky forms the body of the blade. It can dramatically extend its reach on a charged lunge.",
+      "faction": "toykin",
+      "ability": "extended_reach_charge",
+      "weight": 10.5,
+      "upgrade_tree": "rapier_unique"
+    },
+    {
+      "id": "rapier_015",
+      "name": "Tesla Coil Rapier",
+      "type": "rapier",
+      "lore": "A gear coil attached to a handle that discharges focused electricity on charged thrusts.",
+      "faction": "toykin",
+      "ability": "electric_thrust_aoe",
+      "weight": 13.0,
+      "upgrade_tree": "rapier_legendary"
     },
     {
       "id": "wand_001",
       "name": "Frost Wand",
       "type": "magic_wand",
       "lore": "Carved from ancient Ice Elf roots, it hums with frost.",
+      "faction": "ice_elf",
       "upgrade_tree": "basic_wand"
+    },
+    {
+      "id": "greatsword_002",
+      "name": "Wall Captain Great Sword",
+      "type": "greatsword",
+      "lore": "The ceremonial sword awarded to a Wall Captain, symbolizing unwavering dedication to duty.",
+      "faction": "christmas_elf",
+      "ability": "fortify_defense",
+      "weight": 24.0,
+      "upgrade_tree": "greatsword_advanced"
+    },
+    {
+      "id": "greatsword_003",
+      "name": "Sleigh Runner Blade",
+      "type": "greatsword",
+      "lore": "Crafted from a reinforced sleigh runner, giving it unparalleled straight-line speed.",
+      "faction": "christmas_elf",
+      "ability": "charge_damage",
+      "weight": 25.5,
+      "upgrade_tree": "greatsword_basic"
+    },
+    {
+      "id": "greatsword_004",
+      "name": "Bread Slicer",
+      "type": "greatsword",
+      "lore": "A gargantuan bread knife that delivers incredibly clean, deep cuts. Always slightly warm.",
+      "faction": "foodkin",
+      "ability": "high_critical_hit",
+      "weight": 22.0,
+      "upgrade_tree": "greatsword_basic"
+    },
+    {
+      "id": "greatsword_005",
+      "name": "Choc Wok",
+      "type": "greatsword",
+      "lore": "A massive slab of hardened chocolate, sweet in smell but brutally heavy in combat.",
+      "faction": "foodkin",
+      "ability": "slow_sticky_effect",
+      "weight": 28.0,
+      "upgrade_tree": "greatsword_advanced"
+    },
+    {
+      "id": "greatsword_006",
+      "name": "Great Grater",
+      "type": "greatsword",
+      "lore": "A large blade covered in deep grating holes, designed to shred the armor of enemies.",
+      "faction": "foodkin",
+      "ability": "armor_shred",
+      "weight": 23.5,
+      "upgrade_tree": "greatsword_advanced"
+    },
+    {
+      "id": "greatsword_007",
+      "name": "Ice Lolli Blade",
+      "type": "greatsword",
+      "lore": "A giant, frozen confection shaped like a sword. Cold enough to cause frost buildup quickly.",
+      "faction": "foodkin",
+      "ability": "frost_buildup",
+      "weight": 20.0,
+      "upgrade_tree": "greatsword_basic"
+    },
+    {
+      "id": "greatsword_008",
+      "name": "Strife",
+      "type": "greatsword",
+      "lore": "A shard of ancient, pure ice. Its power builds in a widening circle around the wielder.",
+      "faction": "ice_elf",
+      "ability": "bitterness_aoe_frost",
+      "weight": 26.0,
+      "upgrade_tree": "greatsword_legendary"
+    },
+    {
+      "id": "greatsword_009",
+      "name": "Whalebone Greatsword",
+      "type": "greatsword",
+      "lore": "Forged from the fused spine bones of a gargantuan Arctic whale. Exceptionally strong and light for its size.",
+      "faction": "ice_elf",
+      "ability": "impact_stun",
+      "weight": 23.0,
+      "upgrade_tree": "greatsword_advanced"
+    },
+    {
+      "id": "greatsword_010",
+      "name": "Expenda-Man Sword",
+      "type": "greatsword",
+      "lore": "A futuristic sci-fi blade from an old action figure set. Its heavy attacks shoot fire slashes.",
+      "faction": "toykin",
+      "ability": "fire_slash_heavy",
+      "weight": 21.0,
+      "upgrade_tree": "greatsword_special"
+    },
+    {
+      "id": "greatsword_011",
+      "name": "Stained Glass Greatsword",
+      "type": "greatsword",
+      "lore": "A magnificent, full-sized blade constructed entirely from hardened stained glass panels.",
+      "faction": "toykin",
+      "ability": "light_refraction_damage",
+      "weight": 22.5,
+      "upgrade_tree": "greatsword_advanced"
+    },
+    {
+      "id": "greatsword_012",
+      "name": "Teddy Bear Stitcher",
+      "type": "greatsword",
+      "lore": "A giant sewing needle mounted on a hilt. Used to stitch up toy breaches, but capable of devastating piercing damage.",
+      "faction": "toykin",
+      "ability": "high_piercing_damage",
+      "weight": 19.5,
+      "upgrade_tree": "greatsword_basic"
     },
     {
       "id": "greatsword_unique_001",
       "name": "Frostfang",
       "type": "greatsword",
       "lore": "Forged by Ice Elf chiefs, its chill never fades.",
+      "faction": "ice_elf",
       "upgrades": [
         {
           "level": 1,
           "attack": 200,
           "frost_damage": 50,
-          "materials": ["frost_core"],
+          "materials": [
+            "frost_core"
+          ],
           "souls": 1000,
           "coins": 1
         },
@@ -32,7 +389,10 @@
           "level": 2,
           "attack": 240,
           "frost_damage": 80,
-          "materials": ["frost_core", "ancient_steel"],
+          "materials": [
+            "frost_core",
+            "ancient_steel"
+          ],
           "souls": 2000,
           "coins": 2
         },
@@ -40,7 +400,10 @@
           "level": 3,
           "attack": 280,
           "frost_damage": 120,
-          "materials": ["frost_core", "eternal_ember"],
+          "materials": [
+            "frost_core",
+            "eternal_ember"
+          ],
           "souls": 4000,
           "coins": 3
         }
@@ -51,6 +414,7 @@
       "name": "Swift Needle",
       "type": "rapier",
       "lore": "A lightning-fast thrusting sword favored by duelists.",
+      "faction": "toykin",
       "upgrade_tree": "rapier_basic"
     },
     {
@@ -67,7 +431,7 @@
     {
       "id": "shield_e_sleigh",
       "name": "Sleigh Shield",
-      "type": "medium_shield", 
+      "type": "medium_shield",
       "lore": "Crafted from reinforced sleigh materials, used by elite delivery units.",
       "defense": 75,
       "stability": 55,
@@ -325,6 +689,959 @@
       "faction": "christmas_elf_toykin",
       "special_effect": "Locomotion: sustained charge with ethereal train",
       "upgrade_tree": "great_shield_legendary"
-    }
+    },
+    {
+      "id": "shield_et_train",
+      "name": "Train Cow Catcher",
+      "type": "great_hammer",
+      "lore": "",
+      "defense": 125,
+      "stability": 95,
+      "weight": 16.0,
+      "faction": "christmas_elf_toykin",
+      "special_effect": "Locomotion: sustained charge with ethereal train",
+      "upgrade_tree": "great_shield_legendary"
+    },
+    {
+      "id": "hammer_001",
+      "name": "Jolly Mallet",
+      "type": "great_hammer",
+      "lore": "A heavy hammer used to build Santa's workshop, now for battle.",
+      "faction": "christmas_elf",
+      "ability": "stun_hit",
+      "weight": 25.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_002",
+      "name": "Coal Forger",
+      "type": "great_hammer",
+      "lore": "A dense, heavy hammer used to compress and purify raw coal for the workshop's furnaces.",
+      "faction": "christmas_elf",
+      "ability": "heat_transfer",
+      "weight": 26.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_003",
+      "name": "Guardian Hammer",
+      "type": "great_hammer",
+      "lore": "A reward for the highest-ranking Wall Guards, symbolizing the strength of the command.",
+      "faction": "christmas_elf",
+      "ability": "area_taunt",
+      "weight": 28.0,
+      "upgrade_tree": "great_hammer_advanced"
+    },
+    {
+      "id": "hammer_004",
+      "name": "Reindeer Sledgehammer",
+      "type": "great_hammer",
+      "lore": "A tool used for constructing the sleigh dock, its mass delivers immense blunt force.",
+      "faction": "christmas_elf",
+      "ability": "locomotive_strike",
+      "weight": 30.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_005",
+      "name": "Brussel Sprout Club",
+      "type": "great_hammer",
+      "lore": "A giant, dense brussel sprout fixed to a sturdy stick. Infamous for its powerful spin attack.",
+      "faction": "foodkin",
+      "ability": "cabbage_patch_swing",
+      "weight": 23.0,
+      "upgrade_tree": "great_hammer_unique"
+    },
+    {
+      "id": "hammer_006",
+      "name": "Soda Can Basher",
+      "type": "great_hammer",
+      "lore": "A hammer made from a massive, pressurized soda can. Explodes with fizzy damage on heavy hits.",
+      "faction": "foodkin",
+      "ability": "soda_fizz_burst",
+      "weight": 21.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_007",
+      "name": "Honey Dipper Mace",
+      "type": "great_hammer",
+      "lore": "A giant, sticky honey dipper. Enemies struck are slowed by the thick, sweet residue.",
+      "faction": "foodkin",
+      "ability": "sticky_slow",
+      "weight": 24.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_008",
+      "name": "Inferno Hot Pot",
+      "type": "great_hammer",
+      "lore": "A cooking pot filled with scalding liquid, serving as the hammer's head.",
+      "faction": "foodkin",
+      "ability": "fire_damage",
+      "weight": 27.0,
+      "upgrade_tree": "great_hammer_advanced"
+    },
+    {
+      "id": "hammer_009",
+      "name": "Maki Slammer",
+      "type": "great_hammer",
+      "lore": "A giant, tightly rolled maki sushi on a stick. Heavy and densely packed.",
+      "faction": "foodkin",
+      "ability": "none",
+      "weight": 25.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_010",
+      "name": "Nigiri Basher",
+      "type": "great_hammer",
+      "lore": "A huge slab of nigiri rice and fish. Smells great, hits hard.",
+      "faction": "foodkin",
+      "ability": "none",
+      "weight": 24.5,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_011",
+      "name": "Watermelon Masher",
+      "type": "great_hammer",
+      "lore": "Half a watermelon mounted on a haft. Its juicy, blunt impact is surprisingly effective.",
+      "faction": "foodkin",
+      "ability": "hydro_damage",
+      "weight": 26.5,
+      "upgrade_tree": "great_hammer_advanced"
+    },
+    {
+      "id": "hammer_012",
+      "name": "Melted Anchor",
+      "type": "great_hammer",
+      "lore": "The hook of a great naval anchor, partially melted down and reforged into a mighty hammerhead.",
+      "faction": "ice_elf",
+      "ability": "chain_pull",
+      "weight": 32.0,
+      "upgrade_tree": "great_hammer_advanced"
+    },
+    {
+      "id": "hammer_013",
+      "name": "Mammoth Tusk Masher",
+      "type": "great_hammer",
+      "lore": "The base of a massive mammoth tusk, granting devastating frost damage and area-of-effect ice waves.",
+      "faction": "ice_elf",
+      "ability": "frost_range_swing",
+      "weight": 35.0,
+      "upgrade_tree": "great_hammer_legendary"
+    },
+    {
+      "id": "hammer_014",
+      "name": "Nordic Forger",
+      "type": "great_hammer",
+      "lore": "A hammer forged in the Ice Elf's ancient mountain workshops, capable of shattering frozen armor.",
+      "faction": "ice_elf",
+      "ability": "shattering_blow",
+      "weight": 29.0,
+      "upgrade_tree": "great_hammer_advanced"
+    },
+    {
+      "id": "hammer_015",
+      "name": "Bell Ringer",
+      "type": "great_hammer",
+      "lore": "A heavy clapper from the Clock Tower bell. Capable of unleashing destructive sonic ripples.",
+      "faction": "toykin",
+      "ability": "ground_ripple_aoe",
+      "weight": 28.5,
+      "upgrade_tree": "great_hammer_unique"
+    },
+    {
+      "id": "hammer_016",
+      "name": "Kaleidoscope Club",
+      "type": "great_hammer",
+      "lore": "The scope on a stick. Its hits don't just strike, they carve brilliant, kaleidoscopic energy waves.",
+      "faction": "toykin",
+      "ability": "slash_aoe",
+      "weight": 25.5,
+      "upgrade_tree": "great_hammer_unique"
+    },
+    {
+      "id": "hammer_017",
+      "name": "Melody Mallet",
+      "type": "great_hammer",
+      "lore": "A music box mounted on a stick. Each heavy swing plays a tune that can confuse enemies.",
+      "faction": "toykin",
+      "ability": "confusion_tune",
+      "weight": 22.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_018",
+      "name": "Rainbow Rumbler",
+      "type": "great_hammer",
+      "lore": "Dozens of crayons rubber-banded together on a pencil shaft, leaving colorful trails on impact.",
+      "faction": "toykin",
+      "ability": "elemental_color_damage",
+      "weight": 20.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_019",
+      "name": "Train Hammer",
+      "type": "great_hammer",
+      "lore": "A heavy toy train mounted on an old rail switcher. Uses steam power for powerful, fire-based heavy attacks.",
+      "faction": "toykin",
+      "ability": "steam_fire_damage",
+      "weight": 31.0,
+      "upgrade_tree": "great_hammer_legendary"
+    },
+    {
+      "id": "polearm_001",
+      "name": "Banner Spear",
+      "type": "polearm",
+      "lore": "A spear decorated with Christmas Elf battle banners. Excellent reach.",
+      "faction": "christmas_elf",
+      "ability": "increased_reach",
+      "weight": 15.0,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_002",
+      "name": "Candy Cane Lance",
+      "type": "polearm",
+      "lore": "A decorative yet deadly lance made from reinforced peppermint.",
+      "faction": "foodkin",
+      "ability": "sweet_smell_healing",
+      "weight": 10.0,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_003",
+      "name": "Ice Drill",
+      "type": "polearm",
+      "lore": "Used by Ice Elves to bore through thick ice. Extremely high piercing damage.",
+      "faction": "ice_elf",
+      "ability": "pierce_defense",
+      "weight": 18.0,
+      "upgrade_tree": "polearm_advanced"
+    },
+    {
+      "id": "polearm_004",
+      "name": "Robot Antenna",
+      "type": "polearm",
+      "lore": "A salvaged antenna from a giant Toykin robot, repurposed as a staff.",
+      "faction": "toykin",
+      "ability": "lightning_damage",
+      "weight": 13.5,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_005",
+      "name": "North Star Spear",
+      "type": "polearm",
+      "lore": "Topped with a crystalline star that guides the wielder. Used by elite guard.",
+      "faction": "christmas_elf",
+      "ability": "guidance_light",
+      "weight": 14.5,
+      "upgrade_tree": "polearm_advanced"
+    },
+    {
+      "id": "polearm_006",
+      "name": "Hard Chocolate Spear",
+      "type": "polearm",
+      "lore": "Made from tempered, dark chocolate. Surprisingly durable, but melts near fire.",
+      "faction": "foodkin",
+      "ability": "minor_hp_regen",
+      "weight": 16.0,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_007",
+      "name": "Sundae Skewer",
+      "type": "polearm",
+      "lore": "A tall, sharp ice-cream cone polearm. Hits cause opponents to suffer a momentary cold shock.",
+      "faction": "foodkin",
+      "ability": "cold_shock",
+      "weight": 12.0,
+      "upgrade_tree": "polearm_advanced"
+    },
+    {
+      "id": "polearm_008",
+      "name": "Fisherman's Harpoon",
+      "type": "polearm",
+      "lore": "A heavy, barbed spear designed for hunting large ice creatures in the frozen seas.",
+      "faction": "ice_elf",
+      "ability": "high_bleed_chance",
+      "weight": 19.5,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_009",
+      "name": "Hunting Spear",
+      "type": "polearm",
+      "lore": "Standard issue hunting equipment for Ice Elf tribesmen.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 16.5,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_010",
+      "name": "Bone Spear",
+      "type": "polearm",
+      "lore": "Simple, sharp spear crafted from the leg bone of a frozen mammoth.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 15.0,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_011",
+      "name": "Caribaser",
+      "type": "polearm",
+      "lore": "Refactored from the parts and shell of a giant crab. Its strikes are heavy and blunt.",
+      "faction": "ice_elf",
+      "ability": "shell_shatter",
+      "weight": 21.0,
+      "upgrade_tree": "polearm_unique"
+    },
+    {
+      "id": "polearm_012",
+      "name": "Luminescent Staff",
+      "type": "polearm",
+      "lore": "A simple staff with a permanently lit Toykin candle. Used to light dark corridors.",
+      "faction": "toykin",
+      "ability": "minor_fire_damage",
+      "weight": 13.0,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_013",
+      "name": "Stained Glass Lance",
+      "type": "polearm",
+      "lore": "A delicate yet powerful lance made from enchanted stained glass. Shatters on impact but reforms quickly.",
+      "faction": "toykin",
+      "ability": "area_shatter",
+      "weight": 17.0,
+      "upgrade_tree": "polearm_advanced"
+    },
+    {
+      "id": "axe_001",
+      "name": "Wood Cutter's Axe",
+      "type": "axe",
+      "lore": "A sturdy, reliable axe used by logging elves to harvest festive timber.",
+      "faction": "christmas_elf",
+      "ability": "none",
+      "weight": 18.0,
+      "upgrade_tree": "axe_basic"
+    },
+    {
+      "id": "axe_002",
+      "name": "Wall Guard Axe",
+      "type": "axe",
+      "lore": "A dependable axe given to guards who survive the academy but fall short of Guardian rank.",
+      "faction": "christmas_elf",
+      "ability": "minor_defense_boost",
+      "weight": 20.0,
+      "upgrade_tree": "axe_advanced"
+    },
+    {
+      "id": "axe_003",
+      "name": "Pick Axe",
+      "type": "axe",
+      "lore": "Used primarily for excavation, its sharp point is surprisingly useful in combat.",
+      "faction": "christmas_elf",
+      "ability": "piercing_strike",
+      "weight": 16.5,
+      "upgrade_tree": "axe_basic"
+    },
+    {
+      "id": "axe_004",
+      "name": "Spade Axe",
+      "type": "axe",
+      "lore": "A simple garden spade with a sharpened edge. Useful for both digging and battle.",
+      "faction": "christmas_elf",
+      "ability": "ground_breaking",
+      "weight": 15.0,
+      "upgrade_tree": "axe_basic"
+    },
+    {
+      "id": "axe_005",
+      "name": "Meat Cleaver",
+      "type": "axe",
+      "lore": "A massive, heavy cleaver with an extended, sturdy handle, wielded by Foodkin butchers.",
+      "faction": "foodkin",
+      "ability": "bleed_damage",
+      "weight": 22.0,
+      "upgrade_tree": "axe_advanced"
+    },
+    {
+      "id": "axe_006",
+      "name": "Pizza Cutter",
+      "type": "axe",
+      "lore": "A large, wickedly sharp rotary blade on a wooden haft. Deals continuous cutting damage.",
+      "faction": "foodkin",
+      "ability": "continuous_cutting",
+      "weight": 14.0,
+      "upgrade_tree": "axe_unique"
+    },
+    {
+      "id": "axe_007",
+      "name": "Bone Axe",
+      "type": "axe",
+      "lore": "Crude but effective axe made from bone and sinew. Common Ice Elf weaponry.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 17.5,
+      "upgrade_tree": "axe_basic"
+    },
+    {
+      "id": "axe_008",
+      "name": "Jaw Bone",
+      "type": "axe",
+      "lore": "A terrifying axe fashioned from the preserved jawbone of a giant frozen creature.",
+      "faction": "ice_elf",
+      "ability": "fear_effect",
+      "weight": 19.0,
+      "upgrade_tree": "axe_advanced"
+    },
+    {
+      "id": "axe_009",
+      "name": "Megalodon Tooth",
+      "type": "axe",
+      "lore": "A prehistoric megalodon tooth shaped and mounted as a massive, jagged axe head.",
+      "faction": "ice_elf",
+      "ability": "shredding_damage",
+      "weight": 23.0,
+      "upgrade_tree": "axe_legendary"
+    },
+    {
+      "id": "axe_010",
+      "name": "Dice of Fortune",
+      "type": "axe",
+      "lore": "A weapon built around a Dungeons & Dragons style die, granting random elemental effects.",
+      "faction": "toykin",
+      "ability": "random_elemental_hit",
+      "weight": 16.0,
+      "upgrade_tree": "axe_special"
+    },
+    {
+      "id": "axe_011",
+      "name": "Gear Axe",
+      "type": "axe",
+      "lore": "A large, half-cut gear cog affixed to a stick. Its spinning teeth remain dangerously sharp.",
+      "faction": "toykin",
+      "ability": "high_rotation_speed",
+      "weight": 15.5,
+      "upgrade_tree": "axe_basic"
+    },
+    {
+      "id": "axe_012",
+      "name": "Stained Glass Axe",
+      "type": "axe",
+      "lore": "A beautiful but fragile axe, its light refractions can momentarily blind opponents.",
+      "faction": "toykin",
+      "ability": "dazzle_effect",
+      "weight": 17.0,
+      "upgrade_tree": "axe_advanced"
+    },
+    {
+      "id": "axe_013",
+      "name": "Tambourine Axe",
+      "type": "axe",
+      "lore": "The sharpened jingles and frame of a tambourine repurposed for chopping.",
+      "faction": "toykin",
+      "ability": "sonic_stagger",
+      "weight": 14.0,
+      "upgrade_tree": "axe_advanced"
+    },
+    {
+      "id": "wand_002",
+      "name": "Tinsel Twister",
+      "type": "magic_wand",
+      "lore": "A wand wrapped in enchanted tinsel, capable of launching harmless but dazzling distractions.",
+      "faction": "christmas_elf",
+      "ability": "dazzling_light",
+      "weight": 5.0,
+      "upgrade_tree": "basic_wand"
+    },
+    {
+      "id": "wand_003",
+      "name": "Peppermint Rod",
+      "type": "magic_wand",
+      "lore": "Carved from solidified peppermint oil. Emits gusts of invigorating, frosty air.",
+      "faction": "foodkin",
+      "ability": "invigorate_stamina",
+      "weight": 4.5,
+      "upgrade_tree": "basic_wand"
+    },
+    {
+      "id": "wand_004",
+      "name": "Gingerbread Stick",
+      "type": "magic_wand",
+      "lore": "A fragile-looking wand that smells of spices. It can summon minor gingerbread minions.",
+      "faction": "foodkin",
+      "ability": "summon_minion",
+      "weight": 3.8,
+      "upgrade_tree": "advanced_wand"
+    },
+    {
+      "id": "wand_001",
+      "name": "Frost Wand",
+      "type": "magic_wand",
+      "lore": "Carved from ancient Ice Elf roots, it hums with frost.",
+      "faction": "ice_elf",
+      "ability": "frost_bolt",
+      "weight": 4.0,
+      "upgrade_tree": "basic_wand"
+    },
+    {
+      "id": "wand_005",
+      "name": "Blizzard Spire",
+      "type": "magic_wand",
+      "lore": "A masterfully crafted spire that can conjure powerful, localized blizzards.",
+      "faction": "ice_elf",
+      "ability": "blizzard_call",
+      "weight": 5.5,
+      "upgrade_tree": "legendary_wand"
+    },
+    {
+      "id": "wand_006",
+      "name": "Wind-up Key",
+      "type": "magic_wand",
+      "lore": "A giant, enchanted wind-up key that manipulates time around enemies.",
+      "faction": "toykin",
+      "ability": "slow_time_field",
+      "weight": 6.0,
+      "upgrade_tree": "advanced_wand"
+    },
+    {
+      "id": "wand_007",
+      "name": "Blink Rod",
+      "type": "magic_wand",
+      "lore": "A Toykin rod that allows the caster to teleport short distances.",
+      "faction": "toykin",
+      "ability": "short_teleport",
+      "weight": 3.5,
+      "upgrade_tree": "basic_wand"
+    },
+
+    {
+    "id": "fist_001",
+    "name": "High Forger Gloves",
+    "type": "fist_weapon",
+    "lore": "Blacksmith gloves treated to withstand extreme temperatures, granting the wielder fire damage on strike.",
+    "faction": "christmas_elf",
+    "ability": "fire_damage",
+    "weight": 8.0,
+    "upgrade_tree": "fist_advanced"
+  },
+  {
+    "id": "fist_002",
+    "name": "Kringle Knuckles",
+    "type": "fist_weapon",
+    "lore": "Brass knuckles wrapped in tough leather, used to deliver surprisingly solid holiday cheer.",
+    "faction": "christmas_elf",
+    "ability": "none",
+    "weight": 7.5,
+    "upgrade_tree": "fist_basic"
+  },
+
+
+  {
+    "id": "fist_003",
+    "name": "Grater Gauntlets",
+    "type": "fist_weapon",
+    "lore": "Gauntlets crafted from salvaged cheese graters. Their rough surface shreds armor and flesh.",
+    "faction": "foodkin",
+    "ability": "armor_shred",
+    "weight": 9.5,
+    "upgrade_tree": "fist_advanced"
+  },
+  {
+    "id": "fist_004",
+    "name": "Donut Glazes",
+    "type": "fist_weapon",
+    "lore": "Gloves covered in crystallized sugar glaze, making the fists heavy and sticky upon impact.",
+    "faction": "foodkin",
+    "ability": "sticky_slow",
+    "weight": 7.0,
+    "upgrade_tree": "fist_basic"
+  },
+
+
+  {
+    "id": "fist_005",
+    "name": "Bear Claws",
+    "type": "fist_weapon",
+    "lore": "Gloves reinforced with the actual claws of a massive ice bear, guaranteeing severe bleed damage.",
+    "faction": "ice_elf",
+    "ability": "bleed_damage",
+    "weight": 10.0,
+    "upgrade_tree": "fist_advanced"
+  },
+  {
+    "id": "fist_006",
+    "name": "Bone Claws",
+    "type": "fist_weapon",
+    "lore": "Simple, lightweight claws carved from ice creature bone for swift, consecutive attacks.",
+    "faction": "ice_elf",
+    "ability": "none",
+    "weight": 6.0,
+    "upgrade_tree": "fist_basic"
+  },
+  {
+    "id": "fist_007",
+    "name": "Wolf Fang Claws",
+    "type": "fist_weapon",
+    "lore": "A reward given to hunters who successfully collect 50 high-quality wolf pelts. Deep, jagged bleed wounds.",
+    "faction": "ice_elf",
+    "ability": "high_bleed_damage",
+    "weight": 8.5,
+    "upgrade_tree": "fist_unique"
+  },
+
+
+  {
+    "id": "fist_008",
+    "name": "Jester Gloves",
+    "type": "fist_weapon",
+    "lore": "Gloves worn by the Toykin tricksters. Lined with a subtle coating of irritating poison.",
+    "faction": "toykin",
+    "ability": "poison_damage",
+    "weight": 5.5,
+    "upgrade_tree": "fist_basic"
+  },
+  {
+    "id": "fist_009",
+    "name": "RC Gauntlets",
+    "type": "fist_weapon",
+    "lore": "Gauntlets built from old remote control parts. They store and release high bursts of electricity.",
+    "faction": "toykin",
+    "ability": "electric_damage",
+    "weight": 11.0,
+    "upgrade_tree": "fist_advanced"
+  },
+
+
+
+
+  {
+    "id": "dagger_001",
+    "name": "Toy Maker's Knife",
+    "type": "dagger",
+    "lore": "A precision blade used by master elves to carve intricate wooden toys. Deadly in the right hands.",
+    "faction": "christmas_elf",
+    "ability": "precision_strike",
+    "weight": 3.0,
+    "upgrade_tree": "dagger_basic"
+  },
+  {
+    "id": "dagger_002",
+    "name": "Ornament Shard",
+    "type": "dagger",
+    "lore": "A jagged dagger made from a broken, reinforced holiday ornament. Surprisingly sharp.",
+    "faction": "christmas_elf",
+    "ability": "bleed_damage",
+    "weight": 2.5,
+    "upgrade_tree": "dagger_basic"
+  },
+
+
+  {
+    "id": "dagger_003",
+    "name": "Fish Dreger",
+    "type": "dagger",
+    "lore": "Shaped like a curved sickle, traditionally used for pulling in large fishing nets. Can be thrown like a boomerang.",
+    "faction": "foodkin",
+    "ability": "boomerang_frost_throw",
+    "weight": 4.5,
+    "upgrade_tree": "dagger_unique"
+  },
+  {
+    "id": "dagger_004",
+    "name": "Skewered Fruit Knife",
+    "type": "dagger",
+    "lore": "A short, sharp knife used for preparing delicate fruit skewers. Applies a minor paralyzing poison.",
+    "faction": "foodkin",
+    "ability": "minor_paralysis_poison",
+    "weight": 2.8,
+    "upgrade_tree": "dagger_basic"
+  },
+
+
+  {
+    "id": "dagger_005",
+    "name": "Hunter Bone Dagger",
+    "type": "dagger",
+    "lore": "A ceremonial dagger crafted from the first kill of a young Ice Elf hunter. Deals high critical damage.",
+    "faction": "ice_elf",
+    "ability": "high_critical_hit",
+    "weight": 3.5,
+    "upgrade_tree": "dagger_advanced"
+  },
+  {
+    "id": "dagger_006",
+    "name": "Ice Sliver",
+    "type": "dagger",
+    "lore": "A pure shard of magical ice that never melts, used for quick, quiet assassinations.",
+    "faction": "ice_elf",
+    "ability": "frost_buildup",
+    "weight": 2.0,
+    "upgrade_tree": "dagger_basic"
+  },
+
+
+  {
+    "id": "dagger_007",
+    "name": "Miniature Scissors",
+    "type": "dagger",
+    "lore": "Giant sewing scissors reduced in size and sharpened into two separate daggers.",
+    "faction": "toykin",
+    "ability": "dual_wield_bonus",
+    "weight": 4.0,
+    "upgrade_tree": "dagger_advanced"
+  },
+  {
+    "id": "dagger_008",
+    "name": "Dart Tip",
+    "type": "dagger",
+    "lore": "A highly aerodynamic tip of a projectile dart, engineered for maximum throw distance.",
+    "faction": "toykin",
+    "ability": "high_throw_range",
+    "weight": 1.5,
+    "upgrade_tree": "dagger_basic"
+  },
+
+
+
+
+
+  {
+    "id": "firearm_001",
+    "name": "Bell Ringer Pistol",
+    "type": "firearm",
+    "sub_type": "pistol",
+    "lore": "Fires small, hardened brass bells, or unleashes a disorienting sonic blast upon impact.",
+    "faction": "christmas_elf",
+    "ability": "sonic_blast",
+    "weight": 4.5,
+    "upgrade_tree": "pistol_basic"
+  },
+
+  {
+    "id": "firearm_002",
+    "name": "Gumball Shooter",
+    "type": "firearm",
+    "sub_type": "pistol",
+    "lore": "A simple, candy-dispenser weapon that fires pressurized gumballs. Surprisingly sticky.",
+    "faction": "foodkin",
+    "ability": "sticky_slow",
+    "weight": 3.0,
+    "upgrade_tree": "pistol_basic"
+  },
+
+  {
+    "id": "firearm_003",
+    "name": "Bone Pistol",
+    "type": "firearm",
+    "sub_type": "pistol",
+    "lore": "A crude, powerful pistol assembled from various bones that fires small, sharp bone fragments.",
+    "faction": "ice_elf",
+    "ability": "piercing_shrapnel",
+    "weight": 5.5,
+    "upgrade_tree": "pistol_advanced"
+  },
+ 
+  {
+    "id": "firearm_004",
+    "name": "Cork Gun",
+    "type": "firearm",
+    "sub_type": "pistol",
+    "lore": "A classic Toykin pistol, fires blunt, pressurized corks for non-lethal stuns.",
+    "faction": "toykin",
+    "ability": "stun_effect",
+    "weight": 2.5,
+    "upgrade_tree": "pistol_basic"
+  },
+
+
+  {
+    "id": "firearm_005",
+    "name": "Coal Gun",
+    "type": "firearm",
+    "sub_type": "shotgun",
+    "lore": "A devastating close-range weapon that fires lumps of compressed, fiery coal.",
+    "faction": "christmas_elf",
+    "ability": "fire_damage_pellets",
+    "weight": 9.0,
+    "upgrade_tree": "shotgun_advanced"
+  },
+
+  {
+    "id": "firearm_006",
+    "name": "Double Barrel Ice Breaker",
+    "type": "firearm",
+    "sub_type": "shotgun",
+    "lore": "A specialized shotgun designed to shatter thick ice, firing hardened steel slugs.",
+    "faction": "ice_elf",
+    "ability": "armor_shred_blast",
+    "weight": 11.0,
+    "upgrade_tree": "shotgun_advanced"
+  },
+
+  {
+    "id": "firearm_007",
+    "name": "Bubble Barrel Bouncing Ball Gun",
+    "type": "firearm",
+    "sub_type": "shotgun",
+    "lore": "The BBBB Gun. Fires a wide spread of hyper-bouncy balls that ricochet around the battlefield.",
+    "faction": "toykin",
+    "ability": "ricochet_damage",
+    "weight": 7.5,
+    "upgrade_tree": "shotgun_unique"
+  },
+  {
+    "id": "firearm_008",
+    "name": "Bubble Barrel Battery Gun",
+    "type": "firearm",
+    "sub_type": "shotgun",
+    "lore": "A weapon that fires old batteries, dealing explosive electric shock on impact.",
+    "faction": "toykin",
+    "ability": "electric_shock_blast",
+    "weight": 10.0,
+    "upgrade_tree": "shotgun_advanced"
+  },
+
+
+
+  {
+    "id": "firearm_009",
+    "name": "Retro Repuncher SMG",
+    "type": "firearm",
+    "sub_type": "smg",
+    "lore": "A game console SMG. Insert a cartridge to rapidly fire pixel-like energy bolts. Requires a blow to the magazine to clear jams.",
+    "faction": "toykin",
+    "ability": "rapid_pixel_fire",
+    "weight": 6.0,
+    "upgrade_tree": "smg_unique"
+  },
+
+  {
+    "id": "firearm_010",
+    "name": "Smarties SMG",
+    "type": "firearm",
+    "sub_type": "smg",
+    "lore": "Built into a Smarties box casing, it rapidly fires hard candies or M&M's. Highly distracting.",
+    "faction": "foodkin",
+    "ability": "distraction_fire",
+    "weight": 5.0,
+    "upgrade_tree": "smg_basic"
+  },
+  {
+    "id": "firearm_011",
+    "name": "Cardboard Gun",
+    "type": "firearm",
+    "sub_type": "smg",
+    "lore": "A weapon built almost entirely from cardboard that fires backing peanuts. Highly susceptible to water damage.",
+    "faction": "toykin",
+    "ability": "soft_impact",
+    "weight": 4.0,
+    "upgrade_tree": "smg_basic"
+  },
+
+  {
+    "id": "firearm_012",
+    "name": "Present Wrap Repeater",
+    "type": "firearm",
+    "sub_type": "smg",
+    "lore": "Fires tightly rolled wads of heavy-duty gift wrap, dealing surprising blunt force trauma.",
+    "faction": "christmas_elf",
+    "ability": "rapid_blunt_fire",
+    "weight": 6.5,
+    "upgrade_tree": "smg_advanced"
+  },
+
+
+  {
+    "id": "firearm_013",
+    "name": "Teapot Sniper",
+    "type": "firearm",
+    "sub_type": "sniper",
+    "lore": "A sniper rifle built from a teapot, firing focused, high-pressure streams of scalding hot tea for severe burn damage.",
+    "faction": "foodkin",
+    "ability": "high_burn_damage",
+    "weight": 14.0,
+    "upgrade_tree": "sniper_unique"
+  },
+
+  {
+    "id": "firearm_014",
+    "name": "Zink Pipe Sniper",
+    "type": "firearm",
+    "sub_type": "sniper",
+    "lore": "Built from zinc piping with a high-pressure gas chamber, firing razor-sharp screws with extreme velocity.",
+    "faction": "toykin",
+    "ability": "high_piercing_damage",
+    "weight": 12.5,
+    "upgrade_tree": "sniper_advanced"
+  },
+  {
+    "id": "firearm_015",
+    "name": "Toy Rail Gun",
+    "type": "firearm",
+    "sub_type": "sniper",
+    "lore": "A retro-steampunk design that uses magnetic rails to accelerate toy trains to incredible, destructive speeds.",
+    "faction": "toykin",
+    "ability": "electromagnetic_pierce",
+    "weight": 16.0,
+    "upgrade_tree": "sniper_legendary"
+  },
+
+  {
+    "id": "firearm_016",
+    "name": "Bone Sniper",
+    "type": "firearm",
+    "sub_type": "sniper",
+    "lore": "A long-range rifle that uses a massive pressure chamber to fire dense rib bones for heavy armor piercing.",
+    "faction": "ice_elf",
+    "ability": "extreme_pierce",
+    "weight": 15.0,
+    "upgrade_tree": "sniper_advanced"
+  },
+  {
+    "id": "firearm_017",
+    "name": "Harpoon Launcher",
+    "type": "firearm",
+    "sub_type": "sniper",
+    "lore": "A massive rifle that fires heavy, tethered harpoons. Capable of reeling in targets after a successful shot.",
+    "faction": "ice_elf",
+    "ability": "harpoon_reel",
+    "weight": 18.0,
+    "upgrade_tree": "sniper_unique"
+  },
+
+
+
+  {
+    "id": "firearm_018",
+    "name": "Cone Launcher",
+    "type": "firearm",
+    "sub_type": "specialist",
+    "lore": "A shoulder-mounted launcher that fires frozen, lock-on ice cream cones that home in on the target.",
+    "faction": "foodkin",
+    "ability": "homing_frost_projectile",
+    "weight": 20.0,
+    "upgrade_tree": "launcher_unique"
+  },
+
+  {
+    "id": "firearm_019",
+    "name": "Hunting Bow",
+    "type": "firearm",
+    "sub_type": "specialist",
+    "lore": "A heavy-duty compound bow used by Ice Elf hunters. While technically not a firearm, it serves a similar long-range role.",
+    "faction": "ice_elf",
+    "ability": "high_crit_chance",
+    "weight": 10.5,
+    "upgrade_tree": "bow_basic"
+  }
   ]
 }
