@@ -257,6 +257,7 @@
         "Buff"
       ],
       "anime_id": "S01-EP05",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -298,12 +299,14 @@
         "Restoration"
       ],
       "anime_id": "S01-EP06",
-      "image_filename": "ogres_ache.png",
+      "activation_method": "a",
+      
       "activation": {
         "method": "tap",
         "charge": "none",
         "release": "manual"
       },
+      "image_filename": "ogres_ache.png",
       "abilities": {
         "level_1": {
           "serial_number": "BP1-006-C-L1",
@@ -365,6 +368,7 @@
         "Defensive"
       ],
       "anime_id": "S01-EP07",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -406,6 +410,7 @@
         "Defensive"
       ],
       "anime_id": "S01-EP08",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -440,6 +445,7 @@
         "Trigger"
       ],
       "anime_id": "S01-EP09",
+      "activation_method": "a",
       "activation": {
         "method": "trigger",
         "charge": "none",
@@ -477,6 +483,7 @@
         "Defensive"
       ],
       "anime_id": "S01-EP10",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -500,6 +507,7 @@
         "Projectile"
       ],
       "anime_id": "S01-EP11",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -522,6 +530,7 @@
         "Combat"
       ],
       "anime_id": "S01-EP12",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -545,6 +554,7 @@
         "Defensive"
       ],
       "anime_id": "S01-EP13",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -568,6 +578,7 @@
         "Magic"
       ],
       "anime_id": "S01-EP14",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -590,6 +601,7 @@
         "Combat"
       ],
       "anime_id": "S01-EP15",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -604,7 +616,7 @@
       }
     },
     {
-      "card_id": "EMB-016",
+      "card_id": "EBM-016",
       "card_name": "Ember Might",
       "rarity": "Common",
       "type": [
@@ -614,6 +626,7 @@
         "Fire"
       ],
       "anime_id": "S01-EP16",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -651,6 +664,7 @@
         "Stagger"
       ],
       "anime_id": "S01-EP17",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -675,6 +689,7 @@
         "Resource"
       ],
       "anime_id": "S01-EP17",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -704,6 +719,7 @@
         "Electric"
       ],
       "anime_id": "S01-EP17",
+      "activation_method": "active_tap",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -987,6 +1003,7 @@
         "AoE"
       ],
       "anime_id": "S01-EP24",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -1017,12 +1034,13 @@
         "Restoration"
       ],
       "anime_id": "S01-EP16",
-      "image_filename": "healing_lily.png",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "none",
         "release": "instant"
       },
+      "image_filename": "healing_lily.png",
       "abilities": {
         "level_1": {
           "serial_number": "BP1-027-C-L1",
@@ -1169,6 +1187,7 @@
         "Utility"
       ],
       "anime_id": "S01-EP23",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -1199,6 +1218,7 @@
         "Resource"
       ],
       "anime_id": "S01-EP25",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -1266,6 +1286,7 @@
         "Summon"
       ],
       "anime_id": "S01-EP22",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -1297,6 +1318,7 @@
         "Charge"
       ],
       "anime_id": "S01-EP01",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -1311,13 +1333,61 @@
       }
     },
     {
+      "card_id": "AQT-036",
+      "card_name": "Aquatic Thrust",
+      "rarity": "Common",
+      "type": [
+        "Tap",
+        "Weapon Ability"
+      ],
+      "anime_id": "S01-EP07",
+      "activation_method": "spear-weapon",
+      "activation": {
+        "method": "tap",
+        "charge": "cooldown",
+        "release": "instant"
+      },
+      "image_filename": "aquatic_thrust.png",
+      "abilities": {
+        "level_1": {
+          "tap": "single",
+          "serial_number": "SP1-036-C-L1",
+          "ability_text": "Dash forward up to 3m, leaving a brief water trail. Damage the first enemy hit for light piercing damage.",
+          "props": {
+            "cooldown": 25,
+            "range": 3,
+            "damage_type": "piercing",
+            "damage_multiplier": 1.0
+          },
+          "effects": [
+            {
+              "type": "movement_dash",
+              "parameters": {
+                "distance": 3,
+                "speed": 20
+              },
+              "visual_feedback": "water_trail_wake"
+            },
+            {
+              "type": "damage_hit",
+              "parameters": {
+                "target": "first_enemy_hit",
+                "damage_type": "piercing",
+                "multiplier": 1.0
+              },
+              "visual_feedback": "splash_impact"
+            }
+          ]
+        }
+      }
+    },
+    {
       "card_id": "ELE-038",
       "card_name": "Thunder Stomp",
       "rarity": "Common",
       "type": [
         "Tap",
         "Projectile",
-        "Elemental",
         "Electric",
         "Combat"
       ],
@@ -1559,13 +1629,92 @@
       }
     },
     {
+      "card_id": "SSW-041",
+      "card_name": "Sundering Sweep",
+      "rarity": "Common",
+      "type": [
+        "Tap",
+        "Weapon Ability"
+      ],
+      "anime_id": "S01-EP09",
+      "activation_method": "axe-weapon",
+      "activation": {
+        "method": "tap",
+        "charge": "cooldown",
+        "release": "instant"
+      },
+      "image_filename": "sundering_sweep.png",
+      "abilities": {
+        "level_1": {
+          "tap": "single",
+          "serial_number": "GS1-041-C-L1",
+          "ability_text": "Deliver a wide horizontal sweep that damages and can stagger multiple enemies in front of you.",
+          "props": {
+            "cooldown": 30,
+            "range": 3.5,
+            "damage_type": "slashing",
+            "damage_multiplier": 1.2
+          },
+          "effects": [
+            {
+              "type": "area_hit",
+              "parameters": {
+                "arc_angle": 110,
+                "distance": 3.5
+              },
+              "visual_feedback": "heavy_sweep_wave"
+            },
+            {
+              "type": "stagger_increase",
+              "parameters": {
+                "modifier": 0.2
+              }
+            }
+          ]
+        },
+        "level_5": {
+          "tap": "single",
+          "serial_number": "GS1-041-C-L5",
+          "ability_text": "Deliver axe a wide electrified sweep that deals bonus electric damage and can stagger multiple enemies.",
+          "props": {
+            "cooldown": 30,
+            "range": 3.5,
+            "damage_type": "slashing_electric",
+            "damage_multiplier": 1.4
+          },
+          "effects": [
+            {
+              "type": "area_hit",
+              "parameters": {
+                "arc_angle": 110,
+                "distance": 3.5
+              },
+              "visual_feedback": "electric_arc_sweep"
+            },
+            {
+              "type": "stagger_increase",
+              "parameters": {
+                "modifier": 0.25
+              }
+            },
+            {
+              "type": "elemental_damage",
+              "parameters": {
+                "element": "electric",
+                "bonus_multiplier": 0.2
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
       "card_id": "CSH-042",
       "card_name": "Widow's Blessing",
       "rarity": "Common",
       "type": [
         "Tap",
         "Combat",
-        "Elemental",
         "Fire"
       ],
       "anime_id": "S01-EP42",
@@ -1692,9 +1841,9 @@
         "Weapon Ability"
       ],
       "anime_id": "S01-EP44",
-      "activation_method": "axe-on_heavy_attack",
+      "activation_method": "axe-weapon",
       "activation": {
-        "method": "passive",
+        "method": "axe-on_heavy_attackive",
         "charge": "none",
         "release": "instant"
       },
@@ -1729,6 +1878,97 @@
                 "modifier": 0.12
               },
               "visual_feedback": "basic_cardUI_effect"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "STS-046",
+      "card_name": "Flashpoint Slash",
+      "rarity": "Common",
+      "type": [
+        "Tap",
+        "Weapon Ability",
+        "Combat"
+      ],
+      "anime_id": "S01-EP12",
+      "activation_method": "dagger-weapon",
+      "activation": {
+        "method": "tap",
+        "charge": "cooldown",
+        "release": "instant"
+      },
+      "image_filename": "flashpoint_slash.png",
+      "abilities": {
+        "level_1": {
+          "tap": "single",
+          "serial_number": "STS1-046-C-L1",
+          "ability_text": "Deliver a quick horizontal slash that slightly boosts your attack speed if it connects.",
+          "props": {
+            "cooldown": 15,
+            "range": 2.5,
+            "damage_type": "slashing",
+            "damage_multiplier": 1.0
+          },
+          "effects": [
+            {
+              "type": "single_hit",
+              "parameters": {
+                "range": 2.5
+              },
+              "visual_feedback": "fast_slash_trail"
+            },
+            {
+              "type": "state_toggle",
+              "parameters": {
+                "state": "attack_speed",
+                "modifier": 0.1,
+                "duration": 3
+              }
+            }
+          ]
+        },
+        "level_5": {
+          "tap": "single",
+          "serial_number": "STS1-046-C-L5",
+          "ability_text": "Deliver a blazing horizontal slash that ignites enemies and increases your attack speed briefly.",
+          "props": {
+            "cooldown": 15,
+            "range": 2.5,
+            "damage_type": "slashing_fire",
+            "damage_multiplier": 1.2
+          },
+          "effects": [
+            {
+              "type": "single_hit",
+              "parameters": {
+                "range": 2.5
+              },
+              "visual_feedback": "flame_arc_trail"
+            },
+            {
+              "type": "elemental_damage",
+              "parameters": {
+                "element": "fire",
+                "bonus_multiplier": 0.2
+              }
+            },
+            {
+              "type": "status_effect",
+              "parameters": {
+                "effect": "ignite",
+                "duration": 4,
+                "tick_damage": 3
+              }
+            },
+            {
+              "type": "state_toggle",
+              "parameters": {
+                "state": "attack_speed",
+                "modifier": 0.15,
+                "duration": 3
+              }
             }
           ]
         }
@@ -1786,7 +2026,7 @@
       }
     },
     {
-      "card_id": "EMB-049",
+      "card_id": "EMC-049",
       "card_name": "Ember Charge",
       "rarity": "Common",
       "type": [
@@ -1853,7 +2093,162 @@
       }
     },
     {
-      "card_id": "ESH-061",
+      "card_id": "FIS-050",
+      "card_name": "Breaker Rush",
+      "rarity": "Common",
+      "type": [
+        "Tap",
+        "Weapon Ability"
+      ],
+      "anime_id": "S01-EP14",
+      "activation_method": "fist-weapon",
+      "activation": {
+        "method": "tap",
+        "charge": "cooldown",
+        "release": "instant"
+      },
+      "image_filename": "breaker_rush.png",
+      "abilities": {
+        "level_1": {
+          "tap": "single",
+          "serial_number": "FIS1-070-C-L1",
+          "ability_text": "Rush forward with a flurry of punches that ends in a strong finishing blow.",
+          "props": {
+            "cooldown": 20,
+            "range": 2.0,
+            "damage_type": "blunt",
+            "damage_multiplier": 1.2
+          },
+          "effects": [
+            {
+              "type": "multi_hit",
+              "parameters": {
+                "hits": 3,
+                "interval": 0.2,
+                "range": 2.0
+              },
+              "visual_feedback": "rapid_punch_flurry"
+            },
+            {
+              "type": "knockback",
+              "parameters": {
+                "force": 2.5
+              }
+            }
+          ]
+        },
+        "level_5": {
+          "tap": "single",
+          "serial_number": "FIS1-050-C-L5",
+          "ability_text": "Rush forward unleashing a rapid flurry of punches, ending in a powerful shockwave that staggers nearby foes.",
+          "props": {
+            "cooldown": 20,
+            "range": 2.0,
+            "damage_type": "blunt_shock",
+            "damage_multiplier": 1.3
+          },
+          "effects": [
+            {
+              "type": "multi_hit",
+              "parameters": {
+                "hits": 3,
+                "interval": 0.2,
+                "range": 2.0
+              },
+              "visual_feedback": "impact_punch_blur"
+            },
+            {
+              "type": "finisher_hit",
+              "parameters": {
+                "damage_bonus": 0.3
+              },
+              "visual_feedback": "ground_shock_burst"
+            },
+            {
+              "type": "shockwave",
+              "parameters": {
+                "radius": 2.0,
+                "stagger": 1.0
+              },
+              "visual_feedback": "shockwave_ripple"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "EMJ-051",
+      "card_name": "Ember Eject",
+      "rarity": "Common",
+      "type": [
+        "Tap",
+        "Weapon Ability",
+        "Fire"
+      ],
+      "anime_id": "S01-EP18",
+      "activation_method": "greatsword-weapon",
+      "activation": {
+        "method": "tap",
+        "charge": "cooldown",
+        "release": "instant"
+      },
+      "image_filename": "ember_eject.png",
+      "abilities": {
+        "level_1": {
+          "tap": "single",
+          "serial_number": "EMB1-058-C-L1",
+          "ability_text": "Swing your weapon to release a short burst of embers in front of you, dealing light fire damage in a cone.",
+          "props": {
+            "cooldown": 20,
+            "range": 2.5,
+            "damage_type": "fire",
+            "damage_multiplier": 1.0
+          },
+          "effects": [
+            {
+              "type": "cone_attack",
+              "parameters": {
+                "angle": 60,
+                "radius": 2.5
+              },
+              "visual_feedback": "ember_cone_burst"
+            }
+          ]
+        },
+        "level_5": {
+          "tap": "single",
+          "serial_number": "EMB1-058-C-L5",
+          "ability_text": "Release a longer burst of fire that leaves a smoldering ground effect for 2 seconds, dealing minor burn damage over time.",
+          "props": {
+            "cooldown": 20,
+            "range": 2.5,
+            "damage_type": "fire",
+            "damage_multiplier": 1.1
+          },
+          "effects": [
+            {
+              "type": "cone_attack",
+              "parameters": {
+                "angle": 70,
+                "radius": 2.8
+              },
+              "visual_feedback": "flame_cone_burst"
+            },
+            {
+              "type": "ground_effect",
+              "parameters": {
+                "duration": 2,
+                "damage_per_second": 5,
+                "radius": 2.0
+              },
+              "visual_feedback": "ground_fire_trail"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "TRS-051",
       "card_name": "Tremorsaur",
       "rarity": "Uncommon",
       "type": [
@@ -1904,7 +2299,7 @@
       }
     },
     {
-      "card_id": "RVI-021",
+      "card_id": "RVI-052",
       "card_name": "Revigor",
       "rarity": "Uncommon",
       "type": [
@@ -1929,7 +2324,7 @@
       }
     },
     {
-      "card_id": "CCR-022",
+      "card_id": "CCR-053",
       "card_name": "Card Collector – Rookie Edition",
       "rarity": "Uncommon",
       "type": [
@@ -1946,13 +2341,13 @@
       "image_filename": "card_collector–rookie_edition.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-022-UC-L1",
+          "serial_number": "BP1-053-UC-L1",
           "ability_text": "Gain +10% card shard drops from enemies."
         }
       }
     },
     {
-      "card_id": "BRG-023",
+      "card_id": "BRG-054",
       "card_name": "Brawler’s Grip",
       "rarity": "Uncommon",
       "type": [
@@ -1970,19 +2365,18 @@
       "image_filename": "brawlers_grip.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-023-UC-L1",
+          "serial_number": "BP1-054-UC-L1",
           "ability_text": "+8% damage with fist weapons and daggers, +10% bonus damage on counter hits."
         }
       }
     },
     {
-      "card_id": "VPK-062",
+      "card_id": "VPK-055",
       "card_name": "Viper's Venom",
       "rarity": "Uncommon",
       "type": [
         "Passive",
         "Combat",
-        "Elemental",
         "Weapon Ability",
         "Poison"
       ],
@@ -1996,7 +2390,7 @@
       "image_filename": "vipers_venom.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-062-UC-L1",
+          "serial_number": "BP1-055-UC-L1",
           "ability_text": "Critical hits have a 25% chance to poison enemies, dealing damage over time.",
           "effect": {
             "poison_chance": 0.25,
@@ -2033,7 +2427,100 @@
       }
     },
     {
-      "card_id": "ARH-024",
+      "card_id": "EXS-056",
+      "card_name": "Execution Sweep",
+      "rarity": "Uncommon",
+      "type": [
+        "Tap",
+        "Weapon Ability"
+      ],
+      "anime_id": "S01-EP13",
+      "activation_method": "axe-weapon",
+      "activation": {
+        "method": "tap",
+        "charge": "cooldown",
+        "release": "instant"
+      },
+      "image_filename": "execution_sweep.png",
+      "abilities": {
+        "level_1": {
+          "tap": "single",
+          "serial_number": "AXE1-056-U-L1",
+          "ability_text": "Perform a wide, grounded sweep that deals heavy slashing damage and slightly reduces enemy defense for 5 seconds.",
+          "props": {
+            "cooldown": 28,
+            "range": 3.5,
+            "damage_type": "slashing",
+            "damage_multiplier": 1.4
+          },
+          "effects": [
+            {
+              "type": "arc_hit",
+              "parameters": {
+                "angle": 120,
+                "radius": 3.5
+              },
+              "visual_feedback": "heavy_slash_trail"
+            },
+            {
+              "type": "debuff",
+              "parameters": {
+                "target_stat": "defense",
+                "modifier": -0.1,
+                "duration": 5
+              }
+            }
+          ]
+        },
+        "level_5": {
+          "tap": "single",
+          "serial_number": "AXE1-062-U-L5",
+          "ability_text": "Perform a fiery execution sweep, reducing enemy defense and leaving a burning trail behind.",
+          "props": {
+            "cooldown": 28,
+            "range": 3.5,
+            "damage_type": "slashing_fire",
+            "damage_multiplier": 1.6
+          },
+          "effects": [
+            {
+              "type": "arc_hit",
+              "parameters": {
+                "angle": 120,
+                "radius": 3.5
+              },
+              "visual_feedback": "flaming_slash_arc"
+            },
+            {
+              "type": "elemental_damage",
+              "parameters": {
+                "element": "fire",
+                "bonus_multiplier": 0.25
+              }
+            },
+            {
+              "type": "ground_effect",
+              "parameters": {
+                "trail_duration": 4,
+                "trail_damage": 5,
+                "radius": 2.5
+              },
+              "visual_feedback": "fire_trail_ground"
+            },
+            {
+              "type": "debuff",
+              "parameters": {
+                "target_stat": "defense",
+                "modifier": -0.15,
+                "duration": 6
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "ARH-057",
       "card_name": "Archer's Hand",
       "rarity": "Uncommon",
       "type": [
@@ -2051,13 +2538,13 @@
       "image_filename": "archers_hand.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-024-UC-L1",
+          "serial_number": "BP1-057-UC-L1",
           "ability_text": "Increases range weapon damage and piercing damage and accuracy."
         }
       }
     },
     {
-      "card_id": "HPS-025",
+      "card_id": "HPS-058",
       "card_name": "Hipposurus",
       "rarity": "Uncommon",
       "type": [
@@ -2065,6 +2552,7 @@
         "Buff"
       ],
       "anime_id": "S01-EP25",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -2073,17 +2561,103 @@
       "image_filename": "hipposurus.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-025-UC-L1",
+          "serial_number": "BP1-058-UC-L1",
           "ability_text": "Increases damage of charged attacks."
         }
       }
     },
     {
-      "card_id": "BGV-026",
+      "card_id": "RPR-059",
+      "card_name": "Gale Point",
+      "rarity": "Uncommon",
+      "type": [
+        "Tap",
+        "Weapon Ability",
+        "Combat"
+      ],
+      "anime_id": "S01-EP10",
+      "activation_method": "rapier-weapon",
+      "activation": {
+        "method": "tap",
+        "charge": "cooldown",
+        "release": "instant"
+      },
+      "image_filename": "gale_point.png",
+      "abilities": {
+        "level_1": {
+          "tap": "multi",
+          "serial_number": "RP1-059-U-L1",
+          "ability_text": "Perform a rapid three-hit thrust combo. If all hits connect, gain brief poise damage boost.",
+          "props": {
+            "cooldown": 20,
+            "combo_hits": 3,
+            "damage_type": "piercing",
+            "damage_multiplier": 0.6
+          },
+          "effects": [
+            {
+              "type": "multi_hit",
+              "parameters": {
+                "count": 3,
+                "interval": 0.25
+              },
+              "visual_feedback": "rapid_thrust_trail"
+            },
+            {
+              "type": "state_toggle",
+              "parameters": {
+                "state": "poise_damage_boost",
+                "modifier": 0.15,
+                "duration": 2
+              }
+            }
+          ]
+        },
+        "level_5": {
+          "tap": "multi",
+          "serial_number": "RP1-046-U-L5",
+          "ability_text": "Perform an electrified three-hit thrust combo. Each hit deals bonus lightning damage, and the final thrust can chain to a nearby enemy.",
+          "props": {
+            "cooldown": 20,
+            "combo_hits": 3,
+            "damage_type": "piercing_electric",
+            "damage_multiplier": 0.7
+          },
+          "effects": [
+            {
+              "type": "multi_hit",
+              "parameters": {
+                "count": 3,
+                "interval": 0.25
+              },
+              "visual_feedback": "lightning_thrust_trail"
+            },
+            {
+              "type": "elemental_damage",
+              "parameters": {
+                "element": "electric",
+                "bonus_multiplier": 0.25
+              }
+            },
+            {
+              "type": "chain_lightning",
+              "parameters": {
+                "range": 2.5,
+                "max_targets": 1
+              },
+              "visual_feedback": "electric_arc_chain"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "BGV-060",
       "card_name": "Beggar’s Vigor",
       "rarity": "Uncommon",
       "type": "Passive Buff",
       "anime_id": "S01-EP26",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -2092,13 +2666,13 @@
       "image_filename": "beggars_vigor.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-026-UC-L1",
+          "serial_number": "BP1-060-UC-L1",
           "ability_text": "Slightly increases fire attack and frost resistance."
         }
       }
     },
     {
-      "card_id": "JGA-027",
+      "card_id": "JGA-061",
       "card_name": "Joh-gaur",
       "rarity": "Uncommon",
       "type": [
@@ -2107,6 +2681,7 @@
         "Magic"
       ],
       "anime_id": "S01-EP27",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -2115,13 +2690,13 @@
       "image_filename": "joh-gaur.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-027-UC-L1",
+          "serial_number": "BP1-061-UC-L1",
           "ability_text": "Increase to ice magic damage."
         }
       }
     },
     {
-      "card_id": "GRD-028",
+      "card_id": "GRD-062",
       "card_name": "Great Devourer",
       "rarity": "Uncommon",
       "type": [
@@ -2129,6 +2704,7 @@
         "Combat"
       ],
       "anime_id": "S01-EP28",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -2137,13 +2713,13 @@
       "image_filename": "great_devourer.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-028-UC-L1",
+          "serial_number": "BP1-062-UC-L1",
           "ability_text": "Deals +20% damage vs. Food-type enemies."
         }
       }
     },
     {
-      "card_id": "CRF-028",
+      "card_id": "CRF-063",
       "card_name": "Crimson Fist",
       "rarity": "Uncommon",
       "type": [
@@ -2162,7 +2738,7 @@
       "image_filename": "crimson_fist.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-028-U-L1",
+          "serial_number": "BP1-063-U-L1",
           "ability_text": "For 5 seconds, your fists are wreathed in crimson energy. Light attacks deal slightly more damage and inflict minor burn damage.",
           "charge_type": "instant",
           "buff_duration": "5 seconds",
@@ -2171,7 +2747,7 @@
       }
     },
     {
-      "card_id": "TRP-096",
+      "card_id": "TRP-064",
       "card_name": "Briarwood",
       "rarity": "Uncommon",
       "type": [
@@ -2180,6 +2756,7 @@
         "Area Control"
       ],
       "anime_id": "S02-EP07",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -2188,7 +2765,7 @@
       "image_filename": "briarwood.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-096-UC-L1",
+          "serial_number": "BP1-064-UC-L1",
           "ability_text": "Places a hidden trap that roots enemies for 3 seconds and deals 25 piercing damage when triggered. Max 2 traps active.",
           "mana_cost": 15,
           "props": {
@@ -2210,7 +2787,7 @@
           ]
         },
         "level_2": {
-          "serial_number": "BP1-096-UC-L2",
+          "serial_number": "BP1-064-UC-L2",
           "ability_text": "Trap damage increased to 30 and root duration extended to 3.5 seconds.",
           "upgrade_cost": {
             "required_level": 1,
@@ -2236,7 +2813,7 @@
           ]
         },
         "level_3": {
-          "serial_number": "BP1-096-UC-L3",
+          "serial_number": "BP1-064-UC-L3",
           "ability_text": "Trap damage increased to 35, root duration to 4 seconds, and max traps increased to 3.",
           "upgrade_cost": {
             "required_level": 2,
@@ -2264,7 +2841,95 @@
       }
     },
     {
-      "card_id": "CRS-097",
+      "card_id": "GHM-065",
+      "card_name": "Ironbound Charge",
+      "rarity": "Uncommon",
+      "type": [
+        "Tap",
+        "Weapon Ability"
+      ],
+      "anime_id": "S01-EP11",
+      "activation_method": "hammer-weapon",
+      "activation": {
+        "method": "tap",
+        "charge": "cooldown",
+        "release": "instant"
+      },
+      "image_filename": "ironbound_charge.png",
+      "abilities": {
+        "level_1": {
+          "tap": "single",
+          "serial_number": "GHM1-065-U-L1",
+          "ability_text": "Charge forward a short distance and deliver a heavy hammer slam that can knock back enemies.",
+          "props": {
+            "cooldown": 30,
+            "range": 4.0,
+            "damage_type": "blunt",
+            "damage_multiplier": 1.4
+          },
+          "effects": [
+            {
+              "type": "dash",
+              "parameters": {
+                "distance": 4.0,
+                "speed": 12
+              },
+              "visual_feedback": "dust_dash_trail"
+            },
+            {
+              "type": "area_hit",
+              "parameters": {
+                "radius": 2.0
+              },
+              "visual_feedback": "impact_dust_burst"
+            },
+            {
+              "type": "knockback",
+              "parameters": {
+                "force": 4.0
+              }
+            }
+          ]
+        },
+        "level_5": {
+          "tap": "single",
+          "serial_number": "GHM1-065-U-L5",
+          "ability_text": "Charge forward and slam the hammer down with immense force, creating a shockwave that damages and staggers nearby enemies.",
+          "props": {
+            "cooldown": 30,
+            "range": 4.0,
+            "damage_type": "blunt_shock",
+            "damage_multiplier": 1.6
+          },
+          "effects": [
+            {
+              "type": "dash",
+              "parameters": {
+                "distance": 4.0,
+                "speed": 12
+              },
+              "visual_feedback": "electric_surge_trail"
+            },
+            {
+              "type": "shockwave",
+              "parameters": {
+                "radius": 2.5,
+                "knockback_force": 5.0
+              },
+              "visual_feedback": "ground_shockwave_ripple"
+            },
+            {
+              "type": "stagger_increase",
+              "parameters": {
+                "modifier": 0.25
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "CRS-066",
       "card_name": "Crystal Sentry",
       "rarity": "Uncommon",
       "type": [
@@ -2273,6 +2938,7 @@
         "DoT"
       ],
       "anime_id": "S02-EP08",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -2281,7 +2947,7 @@
       "image_filename": "crystal_sentry.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-097-UC-L1",
+          "serial_number": "BP1-066-UC-L1",
           "ability_text": "Summons a stationary crystal sentry that fires energy projectiles at enemies within 8m range. Lasts 15 seconds.",
           "mana_cost": 20,
           "props": {
@@ -2304,7 +2970,7 @@
           ]
         },
         "level_2": {
-          "serial_number": "BP1-097-UC-L2",
+          "serial_number": "BP1-066-UC-L2",
           "ability_text": "Sentry damage increased to 14 and attack rate improved to 1.3 seconds.",
           "upgrade_cost": {
             "required_level": 1,
@@ -2331,7 +2997,7 @@
           ]
         },
         "level_3": {
-          "serial_number": "BP1-097-UC-L3",
+          "serial_number": "BP1-066-UC-L3",
           "ability_text": "Sentry damage increased to 16, range to 10m, and duration to 18 seconds.",
           "upgrade_cost": {
             "required_level": 2,
@@ -2360,7 +3026,7 @@
       }
     },
     {
-      "card_id": "IRH-098",
+      "card_id": "IRH-067",
       "card_name": "Henge Stone",
       "rarity": "Uncommon",
       "type": [
@@ -2369,6 +3035,7 @@
         "Defensive"
       ],
       "anime_id": "S02-EP09",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -2377,14 +3044,14 @@
       "image_filename": "henge_stone.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-098-UC-L1",
+          "serial_number": "BP1-067-UC-L1",
           "ability_text": "Reduces physical damage taken by 8%.",
           "effect": {
             "damage_reduction": 0.08
           }
         },
         "level_2": {
-          "serial_number": "BP1-098-UC-L2",
+          "serial_number": "BP1-067-UC-L2",
           "ability_text": "Reduces physical damage taken by 10%.",
           "upgrade_cost": {
             "required_level": 1,
@@ -2395,7 +3062,7 @@
           }
         },
         "level_3": {
-          "serial_number": "BP1-098-UC-L3",
+          "serial_number": "BP1-067-UC-L3",
           "ability_text": "Reduces physical damage taken by 12%.",
           "upgrade_cost": {
             "required_level": 2,
@@ -2408,7 +3075,7 @@
       }
     },
     {
-      "card_id": "VGM-049",
+      "card_id": "VGM-068",
       "card_name": "Voltic Gem Mines",
       "rarity": "Uncommon",
       "type": [
@@ -2425,7 +3092,7 @@
       "image_filename": "voltic_gem_mines.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP2-049-U-L1",
+          "serial_number": "BP2-068-U-L1",
           "ability_text": "Crystals erupt from the ground in a 3m radius, dealing 15 piercing damage to enemies that pass through. Lasts 4s.",
           "effects": [
             {
@@ -2442,7 +3109,7 @@
           ]
         },
         "level_5": {
-          "serial_number": "BP2-049-U-L5",
+          "serial_number": "BP2-068-U-L5",
           "ability_text": "Crystals erupt from the ground in a 4m radius, dealing 25 piercing damage. After 5 enemies pass through, stored static energy discharges a lightning blast dealing 80 electric damage to all enemies in the area. Lasts 6s.",
           "upgrade_cost": {
             "required_level": 4,
@@ -2468,7 +3135,7 @@
       }
     },
     {
-      "card_id": "QKF-099",
+      "card_id": "QKF-069",
       "card_name": "Quickfang",
       "rarity": "Uncommon",
       "type": [
@@ -2486,7 +3153,7 @@
       "image_filename": "quickfang.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-099-UC-L1",
+          "serial_number": "BP1-069-UC-L1",
           "ability_text": "Consecutive light attacks deal +4% more damage (stacks up to 3x).",
           "effect": {
             "bonus_per_stack": 0.04,
@@ -2494,7 +3161,7 @@
           }
         },
         "level_2": {
-          "serial_number": "BP1-099-UC-L2",
+          "serial_number": "BP1-069-UC-L2",
           "ability_text": "Consecutive light attacks deal +5% more damage (stacks up to 3x).",
           "upgrade_cost": {
             "required_level": 1,
@@ -2506,7 +3173,7 @@
           }
         },
         "level_3": {
-          "serial_number": "BP1-099-UC-L3",
+          "serial_number": "BP1-069-UC-L3",
           "ability_text": "Consecutive light attacks deal +6% more damage (stacks up to 3x).",
           "upgrade_cost": {
             "required_level": 2,
@@ -2520,7 +3187,7 @@
       }
     },
     {
-      "card_id": "MGW-100",
+      "card_id": "MGW-070",
       "card_name": "Mana Gravewell",
       "rarity": "Uncommon",
       "type": [
@@ -2529,6 +3196,7 @@
         "Buff"
       ],
       "anime_id": "S02-EP11",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -2537,14 +3205,14 @@
       "image_filename": "mana_gravewell.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-100-UC-L1",
+          "serial_number": "BP1-070-UC-L1",
           "ability_text": "Killing an enemy restores 3% of max mana.",
           "effect": {
             "mana_restore_percent": 0.03
           }
         },
         "level_2": {
-          "serial_number": "BP1-100-UC-L2",
+          "serial_number": "BP1-070-UC-L2",
           "ability_text": "Killing an enemy restores 4% of max mana.",
           "upgrade_cost": {
             "required_level": 1,
@@ -2555,7 +3223,7 @@
           }
         },
         "level_3": {
-          "serial_number": "BP1-100-UC-L3",
+          "serial_number": "BP1-070-UC-L3",
           "ability_text": "Killing an enemy restores 5% of max mana.",
           "upgrade_cost": {
             "required_level": 2,
@@ -2568,7 +3236,7 @@
       }
     },
     {
-      "card_id": "WS3-101",
+      "card_id": "WS3-071",
       "card_name": "Warrior Skill no.3",
       "rarity": "Uncommon",
       "type": [
@@ -2585,7 +3253,7 @@
       "image_filename": "warrior_skill-no3.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-101-UC-L1",
+          "serial_number": "BP1-071-UC-L1",
           "ability_text": "Dash forward 4m, dealing 20 slashing damage in a line.",
           "mana_cost": 12,
           "props": {
@@ -2610,7 +3278,7 @@
           ]
         },
         "level_2": {
-          "serial_number": "BP1-101-UC-L2",
+          "serial_number": "BP1-071-UC-L2",
           "ability_text": "Dash forward 5m, dealing 25 slashing damage in a line.",
           "upgrade_cost": {
             "required_level": 1,
@@ -2635,7 +3303,7 @@
           ]
         },
         "level_3": {
-          "serial_number": "BP1-101-UC-L3",
+          "serial_number": "BP1-071-UC-L3",
           "ability_text": "Dash forward 6m, dealing 30 slashing damage in a line.",
           "upgrade_cost": {
             "required_level": 2,
@@ -2662,7 +3330,7 @@
       }
     },
     {
-      "card_id": "CNR-091",
+      "card_id": "CNR-072",
       "card_name": "Corination Ring",
       "rarity": "Uncommon",
       "type": [
@@ -2679,13 +3347,13 @@
       "image_filename": "coronation_ring.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-091-ULT-L1",
+          "serial_number": "BP1-072-ULT-L1",
           "ability_text": "When HP drops below 20%, active cards cool down reduce by 20%."
         }
       }
     },
     {
-      "card_id": "ECT-102",
+      "card_id": "ECT-073",
       "card_name": "Echo Stone",
       "rarity": "Uncommon",
       "type": [
@@ -2694,6 +3362,7 @@
         "Magic"
       ],
       "anime_id": "S02-EP13",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "false",
@@ -2702,7 +3371,7 @@
       "image_filename": "echo_stone.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-102-UC-L1",
+          "serial_number": "BP1-073-UC-L1",
           "ability_text": "For 8 seconds, spell casts cost 15% less mana.",
           "mana_cost": 15,
           "charge_type": "instant",
@@ -2713,7 +3382,7 @@
           }
         },
         "level_2": {
-          "serial_number": "BP1-102-UC-L2",
+          "serial_number": "BP1-073-UC-L2",
           "ability_text": "For 12 seconds, spell casts cost 15% less mana.",
           "upgrade_cost": {
             "required_level": 1,
@@ -2728,7 +3397,7 @@
           }
         },
         "level_3": {
-          "serial_number": "BP1-102-UC-L3",
+          "serial_number": "BP1-073-UC-L3",
           "ability_text": "For 15 seconds, spell casts cost 15% less mana.",
           "upgrade_cost": {
             "required_level": 2,
@@ -2745,7 +3414,7 @@
       }
     },
     {
-      "card_id": "BRH-067",
+      "card_id": "BRH-074",
       "card_name": "Briarheart",
       "rarity": "Uncommon",
       "type": [
@@ -2754,16 +3423,22 @@
         "Bleed"
       ],
       "anime_id": "S02-EP11",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
         "release": "instant"
       },
-      "ability_text": "Attacks have a 15% chance to inflict Bleed, dealing 5 damage per second for 5s.",
-      "image_filename": "briarheart.png"
+      "image_filename": "briarheart.png",
+      "abilities": {
+        "level_1": {
+          "serial_number": "BP1-068-UC-L1",
+          "ability_text": "Attacks have a 15% chance to inflict Bleed, dealing 5 damage per second for 5s."
+        }
+      }
     },
     {
-      "card_id": "VNL-068",
+      "card_id": "VNL-075",
       "card_name": "Venomlash",
       "rarity": "Uncommon",
       "type": [
@@ -2772,16 +3447,22 @@
         "Poison"
       ],
       "anime_id": "S02-EP12",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
         "release": "instant"
       },
-      "ability_text": "Dodging through an enemy leaves behind a venom cloud, dealing 10 poison damage over 3s.",
-      "image_filename": "venomlash.png"
+      "image_filename": "venomlash.png",
+      "abilities": {
+        "level_1": {
+          "serial_number": "BP1-068-UC-L1",
+          "ability_text": "Dodging through an enemy leaves behind a venom cloud, dealing 10 poison damage over 3s."
+        }
+      }
     },
     {
-      "card_id": "BLO-069",
+      "card_id": "BLO-076",
       "card_name": "Blood Rush",
       "rarity": "Uncommon",
       "type": [
@@ -2789,16 +3470,22 @@
         "Buff"
       ],
       "anime_id": "S02-EP13",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "none",
         "release": "instant"
       },
-      "ability_text": "Sacrifice 5% of max HP to gain +10% attack power until next rest.",
-      "image_filename": "blood_rush.png"
+      "image_filename": "blood_rush.png",
+      "abilities": {
+        "level_1": {
+          "serial_number": "BP1-068-UC-L1",
+          "ability_text": "Sacrifice 5% of max HP to gain +10% attack power until next rest."
+        }
+      }
     },
     {
-      "card_id": "SFS-070",
+      "card_id": "SFS-077",
       "card_name": "Splitfang Strike",
       "rarity": "Uncommon",
       "type": [
@@ -2814,11 +3501,16 @@
         "charge": "instant",
         "release": "manual"
       },
-      "ability_text": "Perform a leaping overhead slash that deals 40 damage and staggers. Cooldown 15s.",
-      "image_filename": "splitfang_strike.png"
+      "image_filename": "splitfang_strike.png",
+      "abilities": {
+        "level_1": {
+          "serial_number": "BP1-068-UC-L1",
+          "ability_text": "Perform a leaping overhead slash that deals 40 damage and staggers. Cooldown 15s."
+        }
+      }
     },
     {
-      "card_id": "BLD-105",
+      "card_id": "BLD-078",
       "card_name": "Bloodletting",
       "rarity": "Uncommon",
       "type": [
@@ -2827,6 +3519,7 @@
         "Bleed"
       ],
       "anime_id": "S02-EP16",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -2835,13 +3528,13 @@
       "image_filename": "bloodletting.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-105-UC-L1",
+          "serial_number": "BP1-076-UC-L1",
           "ability_text": "Heavy attacks cause minor bleed buildup on enemies."
         }
       }
     },
     {
-      "card_id": "BRN-107",
+      "card_id": "BRN-079",
       "card_name": "Ash Covering",
       "rarity": "Uncommon",
       "type": [
@@ -2851,6 +3544,7 @@
         "Fire"
       ],
       "anime_id": "S02-EP18",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "false",
@@ -2859,13 +3553,13 @@
       "image_filename": "ash_covering.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-107-UC-L1",
+          "serial_number": "BP1-077-UC-L1",
           "ability_text": "For 6 seconds, weapon attacks deal minor fire damage. Cooldown: 20s."
         }
       }
     },
     {
-      "card_id": "RRT-105",
+      "card_id": "RRT-080",
       "card_name": "Ring of Retribution",
       "rarity": "Uncommon",
       "type": [
@@ -2883,7 +3577,7 @@
       "image_filename": "ring_of_retribution.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-105-UC-L1",
+          "serial_number": "BP1-078-UC-L1",
           "ability_text": "When you kill an enemy, you lose 1% of your total HP. In return, all other enemies within a 3-meter radius take minor damage.",
           "effects": [
             {
@@ -2902,7 +3596,7 @@
           ]
         },
         "level_2": {
-          "serial_number": "BP1-105-UC-L2",
+          "serial_number": "BP1-078-UC-L2",
           "ability_text": "Damage radius and aoe damage increased. Self-damage remains the same.",
           "upgrade_cost": {
             "required_level": 1,
@@ -2927,7 +3621,7 @@
       }
     },
     {
-      "card_id": "LOH-051",
+      "card_id": "LOH-081",
       "card_name": "The Lips of Hypocrisy",
       "rarity": "Rare",
       "type": [
@@ -2945,13 +3639,13 @@
       "image_filename": "the_lips_of_hypocrisy.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-051-R-L1",
+          "serial_number": "BP1-079-R-L1",
           "ability_text": "When health is below 30%, piercing damage increases."
         }
       }
     },
     {
-      "card_id": "OGR-052",
+      "card_id": "OGR-082",
       "card_name": "Ogre's Grumble",
       "rarity": "Rare",
       "type": [
@@ -2960,6 +3654,7 @@
         "AoE"
       ],
       "anime_id": "S01-EP52",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "auto",
@@ -2979,7 +3674,7 @@
       }
     },
     {
-      "card_id": "RVL-053",
+      "card_id": "RVL-083",
       "card_name": "Re Volte",
       "rarity": "Rare",
       "type": [
@@ -2987,16 +3682,17 @@
         "Weapon Ability"
       ],
       "anime_id": "S01-EP53",
-      "image_filename": "re_volte.png",
+      
       "activation_method": "rapier-weapon",
       "activation": {
         "method": "tap",
         "charge": "true",
         "release": "tap"
       },
+      "image_filename": "re_volte.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-053-R-L1",
+          "serial_number": "BP1-081-R-L1",
           "ability_text": "Charge your rapier with pure will. Release a piercing aura that flies straight and true.",
           "props": {
             "cooldown": 35,
@@ -3011,7 +3707,7 @@
           }
         },
         "level_2": {
-          "serial_number": "BP1-053-R-L2",
+          "serial_number": "BP1-081-R-L2",
           "ability_text": "Charge your rapier with pure will. Release a piercing aura that flies straight and true.",
           "upgrade_cost": {
             "required_level": 1,
@@ -3030,7 +3726,7 @@
           }
         },
         "level_3": {
-          "serial_number": "BP1-053-R-L3",
+          "serial_number": "BP1-081-R-L3",
           "ability_text": "Charge your rapier with pure will. Release a piercing aura that flies straight and true.",
           "upgrade_cost": {
             "required_level": 2,
@@ -3051,7 +3747,7 @@
       }
     },
     {
-      "card_id": "WLF-053",
+      "card_id": "WLF-084",
       "card_name": "Wolf Fang",
       "rarity": "Rare",
       "type": [
@@ -3068,7 +3764,7 @@
       "image_filename": "wolf_fang.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-053-R-L1",
+          "serial_number": "BP1-082-R-L1",
           "ability_text": "Arms your next heavy attack with the Wolf Fang. If performed within 5 seconds, the heavy attack becomes a powerful slash, adding damage and a unique particle effect.",
           "charge_type": "instant",
           "buff_duration": "5 seconds",
@@ -3077,7 +3773,7 @@
       }
     },
     {
-      "card_id": "TRW-054",
+      "card_id": "TRW-085",
       "card_name": "T-rex's Wraith",
       "rarity": "Rare",
       "type": [
@@ -3085,6 +3781,7 @@
         "Combat"
       ],
       "anime_id": "S01-EP54",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -3093,13 +3790,13 @@
       "image_filename": "t-rexs_wraith.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-054-R-L1",
+          "serial_number": "BP1-082-R-L1",
           "ability_text": "Significantly increases damage of air attacks and blunt force attacks."
         }
       }
     },
     {
-      "card_id": "LSE-055",
+      "card_id": "LSE-086",
       "card_name": "Lantern Saint of the Endless Steps",
       "rarity": "Rare",
       "type": [
@@ -3109,6 +3806,7 @@
         "Fire"
       ],
       "anime_id": "S02-EP03",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -3117,7 +3815,7 @@
       "image_filename": "lantern_saint_of_the_endless_steps.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-055-R-L1",
+          "serial_number": "BP1-083-R-L1",
           "ability_text": "Summons the Lantern Saint for 8 seconds, dealing continuous fire AoE damage in a small radius around him",
           "charge_type": "charge-tap",
           "charge_time": 45,
@@ -3126,7 +3824,7 @@
       }
     },
     {
-      "card_id": "TKC-056",
+      "card_id": "TKC-087",
       "card_name": "The King's Chalice",
       "rarity": "Rare",
       "type": [
@@ -3136,6 +3834,7 @@
         "Magic"
       ],
       "anime_id": "S02-EP03",
+      "activation_method": "a",
       "activation": {
         "method": "passive",
         "charge": "none",
@@ -3144,7 +3843,7 @@
       "image_filename": "the_kings_chalice.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-056-R-L1",
+          "serial_number": "BP1-084-R-L1",
           "ability_text": "Restore 10% of your max mana (or FP equivalent) upon defeating an enemy.",
           "charge_type": "charge-tap",
           "charge_time": 45,
@@ -3153,7 +3852,7 @@
       }
     },
     {
-      "card_id": "RST-057",
+      "card_id": "RST-088",
       "card_name": "Rogue Step",
       "rarity": "Rare",
       "type": [
@@ -3161,6 +3860,7 @@
         "Mobility"
       ],
       "anime_id": "S01-EP52",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -3169,7 +3869,7 @@
       "image_filename": "rogue_step.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-057-R-L1",
+          "serial_number": "BP1-085-R-L1",
           "ability_text": "Upon tap, player disappears and reappears in a roll direction.",
           "charge_type": "auto-charge",
           "limit": 3,
@@ -3180,7 +3880,7 @@
       }
     },
     {
-      "card_id": "RST-058",
+      "card_id": "ELL-089",
       "card_name": "El Lucha",
       "rarity": "Rare",
       "type": [
@@ -3188,6 +3888,7 @@
         "Transformative"
       ],
       "anime_id": "S01-EP52",
+      "activation_method": "a",
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -3196,7 +3897,7 @@
       "image_filename": "el_lucha.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-057-R-L1",
+          "serial_number": "BP1-086-R-L1",
           "ability_text": "Instantly transforms the player into a luchador stance. Weapons/wands are disabled. Light/heavy attacks become wrestling moves for 10s.",
           "charge_type": "none",
           "limit": 3,
@@ -3210,7 +3911,7 @@
           }
         },
         "level_2": {
-          "serial_number": "BP1-057-R-L2",
+          "serial_number": "BP1-086-R-L2",
           "ability_text": "El Lucha form extended. Unlocks running tackle as a light attack finisher.",
           "charge_type": "none",
           "limit": 3,
@@ -3224,7 +3925,7 @@
           }
         },
         "level_3": {
-          "serial_number": "BP1-057-R-L3",
+          "serial_number": "BP1-086-R-L3",
           "ability_text": "El Lucha form grows stronger. Unlocks German suplex as a heavy attack finisher.",
           "charge_type": "none",
           "limit": 3,
@@ -3238,7 +3939,7 @@
           }
         },
         "level_4": {
-          "serial_number": "BP1-057-R-L4",
+          "serial_number": "BP1-086-R-L4",
           "ability_text": "El Lucha form empowers further. Adds flying elbow drop as an aerial heavy attack.",
           "charge_type": "none",
           "limit": 3,
@@ -3252,7 +3953,7 @@
           }
         },
         "level_5": {
-          "serial_number": "BP1-057-R-L5",
+          "serial_number": "BP1-086-R-L5",
           "ability_text": "El Lucha becomes unstoppable. Duration increased and poise resistance is boosted while active.",
           "charge_type": "none",
           "limit": 3,
@@ -3271,7 +3972,7 @@
       }
     },
     {
-      "card_id": "MES-059",
+      "card_id": "MES-090",
       "card_name": "Moon Edge Slice",
       "rarity": "Rare",
       "type": [
@@ -3289,7 +3990,7 @@
       "image_filename": "moon_edge_slice.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-056-R-L1",
+          "serial_number": "BP1-087-R-L1",
           "ability_text": "Fires 2 quick projectiles in an arc, hitting multiple enemies",
           "charge_type": "charge-tap",
           "charge_time": 20,
@@ -3298,7 +3999,7 @@
       }
     },
     {
-      "card_id": "FNL-048",
+      "card_id": "FNL-091",
       "card_name": "Frankenstein's Lab",
       "rarity": "Rare",
       "type": [
@@ -3316,7 +4017,7 @@
       "image_filename": "frankensteins_lab.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP2-048-R-L1",
+          "serial_number": "BP2-088-R-L1",
           "ability_text": "Chains and lab equipment rise from the ground, releasing electrical arcs that deal 40 instant damage and 15 damage per second for 6s to enemies in a 3m radius.",
           "effects": [
             {
@@ -3334,7 +4035,7 @@
           ]
         },
         "level_2": {
-          "serial_number": "BP2-048-R-L2",
+          "serial_number": "BP2-088-R-L2",
           "ability_text": "Enhanced lab hazard: chains and machines release stronger electrical arcs dealing 60 instant damage and 25 damage per second for 8s to enemies in a 3.5m radius.",
           "upgrade_cost": {
             "required_level": 1,
@@ -3358,7 +4059,7 @@
       }
     },
     {
-      "card_id": "ASV-060",
+      "card_id": "ASV-092",
       "card_name": "Assassin's Veil",
       "rarity": "Rare",
       "type": [
@@ -3384,7 +4085,7 @@
           }
         },
         "level_2": {
-          "serial_number": "BP1-060-R-L2",
+          "serial_number": "BP1-089-R-L2",
           "ability_text": "Reduces enemy detection range by 35% and increases backstab damage by 25%. Movement is completely silent.",
           "upgrade_cost": {
             "required_level": 1,
@@ -3397,7 +4098,7 @@
           }
         },
         "level_3": {
-          "serial_number": "BP1-060-R-L3",
+          "serial_number": "BP1-089-R-L3",
           "ability_text": "Reduces enemy detection range by 40% and increases backstab damage by 30%. Movement is completely silent.",
           "upgrade_cost": {
             "required_level": 2,
@@ -3410,7 +4111,7 @@
           }
         },
         "level_4": {
-          "serial_number": "BP1-060-R-L4",
+          "serial_number": "BP1-089-R-L4",
           "ability_text": "Reduces enemy detection range by 45% and increases backstab damage by 35%. Movement is completely silent.",
           "upgrade_cost": {
             "required_level": 3,
@@ -3423,7 +4124,7 @@
           }
         },
         "level_5": {
-          "serial_number": "BP1-060-R-L5",
+          "serial_number": "BP1-089-R-L5",
           "ability_text": "Reduces enemy detection range by 50% and increases backstab damage by 40%. Movement is completely silent. Critical hits have a chance to temporarily stun enemies.",
           "upgrade_cost": {
             "required_level": 4,
@@ -3439,7 +4140,7 @@
       }
     },
     {
-      "card_id": "WYR-061",
+      "card_id": "WYR-093",
       "card_name": "Wyvern Surge",
       "rarity": "Rare",
       "type": [
@@ -3506,7 +4207,7 @@
       }
     },
     {
-      "card_id": "DEF-001",
+      "card_id": "DEF-095",
       "card_name": "Graveyard",
       "rarity": "Rare",
       "type": [
@@ -3563,7 +4264,167 @@
       }
     },
     {
-      "card_id": "GOS-101",
+      "card_id": "GGT-096",
+      "card_name": "Garygomites Trio",
+      "rarity": "Rare",
+      "type": [
+        "Tap",
+        "Summon",
+        "Fire",
+        "Ice",
+        "Electric",
+        "Combat"
+      ],
+      "anime_id": "S01-EP12",
+      "activation_method": "a",
+      "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "instant"
+      },
+      "image_filename": "garygomites_trio.png",
+      "abilities": {
+        "level_1": {
+          "serial_number": "BP1-073-R-L1",
+          "ability_text": "Summons the Garygomites, a trio of tiny elemental gargoyles, for 10s. Ignit (Fire) deals minor burn. Volt (Electric) emits a shock pulse every 4s. Chillip (Frost) slows targets by 20% on hit. They share a group HP pool.",
+          "mana_cost": 28,
+          "props": {
+            "cooldown": 32,
+            "duration": 10,
+            "group_hp": 120,
+            "fire_burn_damage": 4,
+            "fire_burn_duration": 3,
+            "electric_pulse_damage": 6,
+            "electric_pulse_interval": 4,
+            "frost_slow_amount": 0.20,
+            "frost_slow_duration": 2
+          },
+          "effects": [
+            {
+              "type": "summon",
+              "parameters": {
+                "entity": "garygomites_trio",
+                "behavior": "multi_pet",
+                "units": [
+                  {
+                    "name": "Ignit",
+                    "element": "fire",
+                    "attack_type": "burn_puff"
+                  },
+                  {
+                    "name": "Volt",
+                    "element": "electric",
+                    "attack_type": "shock_pulse"
+                  },
+                  {
+                    "name": "Chillip",
+                    "element": "frost",
+                    "attack_type": "bite_slow"
+                  }
+                ]
+              },
+              "visual_feedback": "elemental_trio_summon_effect"
+            }
+          ]
+        },
+        "level_2": {
+          "serial_number": "BP1-073-R-L2",
+          "ability_text": "Increases group HP to 140. Ignit's burn damage increases. Volt pulses every 3.5s. Chillip slow increased to 25%.",
+          "upgrade_cost": {
+            "required_level": 1,
+            "required_count": 3
+          },
+          "mana_cost": 28,
+          "props": {
+            "cooldown": 30,
+            "duration": 10,
+            "group_hp": 140,
+            "fire_burn_damage": 5,
+            "fire_burn_duration": 3,
+            "electric_pulse_damage": 7,
+            "electric_pulse_interval": 3.5,
+            "frost_slow_amount": 0.25,
+            "frost_slow_duration": 2
+          },
+          "effects": [
+            {
+              "type": "summon",
+              "parameters": {
+                "entity": "garygomites_trio",
+                "behavior": "multi_pet",
+                "units": [
+                  {
+                    "name": "Ignit",
+                    "element": "fire",
+                    "attack_type": "burn_puff"
+                  },
+                  {
+                    "name": "Volt",
+                    "element": "electric",
+                    "attack_type": "shock_pulse"
+                  },
+                  {
+                    "name": "Chillip",
+                    "element": "frost",
+                    "attack_type": "bite_slow"
+                  }
+                ]
+              },
+              "visual_feedback": "elemental_trio_summon_effect"
+            }
+          ]
+        },
+        "level_3": {
+          "serial_number": "BP1-073-R-L3",
+          "ability_text": "Increases duration to 12s. Volt's pulse damage increased. Chillip slow lasts longer. Fire burn duration increased.",
+          "upgrade_cost": {
+            "required_level": 2,
+            "required_count": 4
+          },
+          "mana_cost": 28,
+          "props": {
+            "cooldown": 28,
+            "duration": 12,
+            "group_hp": 160,
+            "fire_burn_damage": 5,
+            "fire_burn_duration": 4,
+            "electric_pulse_damage": 9,
+            "electric_pulse_interval": 3.5,
+            "frost_slow_amount": 0.25,
+            "frost_slow_duration": 3
+          },
+          "effects": [
+            {
+              "type": "summon",
+              "parameters": {
+                "entity": "garygomites_trio",
+                "behavior": "multi_pet",
+                "units": [
+                  {
+                    "name": "Ignit",
+                    "element": "fire",
+                    "attack_type": "burn_puff"
+                  },
+                  {
+                    "name": "Volt",
+                    "element": "electric",
+                    "attack_type": "shock_pulse"
+                  },
+                  {
+                    "name": "Chillip",
+                    "element": "frost",
+                    "attack_type": "bite_slow"
+                  }
+                ]
+              },
+              "visual_feedback": "elemental_trio_summon_effect"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "PHR-101",
       "card_name": "Phantom Remembrance",
       "rarity": "Rare",
       "type": [
@@ -3572,7 +4433,7 @@
         "Summon"
       ],
       "anime_id": "S01-EP101",
-      "activation_method": "active_instant",
+      "activation_method": "active_tap",
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -3660,7 +4521,7 @@
       }
     },
     {
-      "card_id": "OGR-076",
+      "card_id": "OGR-105",
       "card_name": "Ogre's Greed",
       "rarity": "Epic",
       "type": [
@@ -3669,6 +4530,7 @@
         "Debuff"
       ],
       "anime_id": "S01-EP76",
+      "activation_method":"active_tap",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -3684,7 +4546,7 @@
       }
     },
     {
-      "card_id": "EVH-047",
+      "card_id": "EVH-107",
       "card_name": "Event Horizon",
       "rarity": "Epic",
       "type": [
@@ -3744,7 +4606,7 @@
       }
     },
     {
-      "card_id": "MID-028",
+      "card_id": "MID-108",
       "card_name": "Midnight Delivery",
       "rarity": "Epic",
       "type": [
@@ -3764,7 +4626,7 @@
       "image_filename": "midnight_delivery.png",
       "abilities": {
         "level_1": {
-          "serial_number": "MID-028-C-L1",
+          "serial_number": "MID-098-C-L1",
           "ability_text": "Immediately swaps this card with the top card of the Carry Deck. Grants 3s of minor Defense/Poise, and the incoming card gains 15% power for 5s.",
           "effects": [
             {
@@ -3798,7 +4660,7 @@
           ]
         },
         "level_2": {
-          "serial_number": "MID-028-C-L2",
+          "serial_number": "MID-098-C-L2",
           "ability_text": "Swap effect: Defense/Poise duration 3.5s. Incoming card gains 17% power for 5s.",
           "upgrade_cost": {
             "required_level": 1,
@@ -3827,7 +4689,7 @@
           ]
         },
         "level_3": {
-          "serial_number": "MID-028-C-L3",
+          "serial_number": "MID-098-C-L3",
           "ability_text": "Swap effect: Defense/Poise duration 4.0s. Incoming card gains 19% power for 6s.",
           "upgrade_cost": {
             "required_level": 2,
@@ -3856,7 +4718,7 @@
           ]
         },
         "level_4": {
-          "serial_number": "MID-028-C-L4",
+          "serial_number": "MID-098-C-L4",
           "ability_text": "Swap effect: Defense/Poise duration 4.5s. Incoming card gains 20% power for 6s. Cooldown reduced by 3s.",
           "upgrade_cost": {
             "required_level": 3,
@@ -3893,7 +4755,7 @@
           ]
         },
         "level_5": {
-          "serial_number": "MID-028-C-L5",
+          "serial_number": "MID-098-C-L5",
           "ability_text": "Swap effect: Defense/Poise duration 5.0s. Incoming card gains 25% power for 7s. Cooldown reduced by 5s total.",
           "upgrade_cost": {
             "required_level": 4,
@@ -3932,7 +4794,7 @@
       }
     },
     {
-      "card_id": "WHE-045",
+      "card_id": "WHE-110",
       "card_name": "White Elephant",
       "rarity": "Epic",
       "type": [
@@ -3950,7 +4812,7 @@
       "image_filename": "white_elephant.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP2-045-E-L1",
+          "serial_number": "BP2-105-E-L1",
           "ability_text": "Summons a massive elephant ribcage from the ground, creating a bone barrier with 300 HP that blocks melee and ranged attacks. Barrier visibly fractures as it takes damage. Lasts 15s.",
           "effects": [
             {
@@ -3968,7 +4830,7 @@
           ]
         },
         "level_2": {
-          "serial_number": "BP2-045-E-L2",
+          "serial_number": "BP2-105-E-L2",
           "ability_text": "Summons a reinforced elephant ribcage with 400 HP that lasts 18s. Barrier fractures and crumbles as damage is taken.",
           "upgrade_cost": {
             "required_level": 1,
@@ -3992,7 +4854,7 @@
       }
     },
     {
-      "card_id": "DRG-079",
+      "card_id": "DRG-113",
       "card_name": "Dragon Assault",
       "rarity": "Epic",
       "type": [
@@ -4001,7 +4863,7 @@
         "Fire"
       ],
       "anime_id": "S02-EP10",
-      "activation_method": "active_charge",
+      "activation_method": "active_tap",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -4010,7 +4872,7 @@
       "image_filename": "dragon_assault.png",
       "abilities": {
         "level_1": {
-          "serial_number": "BP1-079-E-L1",
+          "serial_number": "BP1-109-E-L1",
           "ability_text": "Charges a massive fire AOE cone attack with high raw damage. Slower charge but overwhelming power.",
           "mana_cost": 25,
           "props": {
@@ -4033,7 +4895,7 @@
       }
     },
     {
-      "card_id": "PAP-079",
+      "card_id": "PAP-115",
       "card_name": "Part and Parcel",
       "rarity": "Epic",
       "type": [
@@ -4042,7 +4904,7 @@
         "Buff"
       ],
       "anime_id": "S02-EP10",
-      "activation_method": "active_charge",
+      "activation_method": "active_tap",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -4074,7 +4936,7 @@
       }
     },
     {
-      "card_id": "AXE-089",
+      "card_id": "AXE-117",
       "card_name": "Executioner's Oath",
       "rarity": "Epic",
       "type": [
@@ -4100,7 +4962,7 @@
       }
     },
     {
-      "card_id": "POJ-046",
+      "card_id": "POJ-116",
       "card_name": "Pillars of Judgment",
       "rarity": "Epic",
       "type": [
@@ -4162,7 +5024,7 @@
       }
     },
     {
-      "card_id": "DST-091",
+      "card_id": "DST-120",
       "card_name": "Dregthorn Malachiah Specialist",
       "rarity": "Epic",
       "type": [
@@ -4262,7 +5124,7 @@
       }
     },
     {
-      "card_id": "DMW-077",
+      "card_id": "DMW-121",
       "card_name": "Dead Man’s Water",
       "rarity": "Epic",
       "type": [
@@ -4285,7 +5147,7 @@
       }
     },
     {
-      "card_id": "CHR-082",
+      "card_id": "CHR-123",
       "card_name": "8-bit Dave",
       "rarity": "Epic",
       "type": [
@@ -4301,7 +5163,7 @@
         "release": "manual"
       },
       "image_filename": "8bit_dave.png",
-      "levels": {
+      "abilities": {
         "level_1": {
           "serial_number": "CHR-082-E-L1",
           "ability_text": "Weapons unequipped. Light attack becomes pixel punch/kick combo. Heavy attack becomes Glitch Slam — a blocky sprite fist drop.",
@@ -4355,7 +5217,7 @@
       }
     },
     {
-      "card_id": "STM-082",
+      "card_id": "STM-124",
       "card_name": "Struggle no more",
       "rarity": "Epic",
       "type": [
@@ -4363,14 +5225,14 @@
         "Utility"
       ],
       "anime_id": "S03-EP12",
-      "activation_method": "Acivte",
+      "activation_method": "on_hp_threshold",
       "activation": {
         "method": "tap",
         "charge": "none",
         "release": "manual"
       },
       "image_filename": "struggle_no_more.png",
-      "levels": {
+      "abilities": {
         "level_1": {
           "serial_number": "CHR-082-E-L1",
           "ability_text": "When your health drops below 25%, all equipped cards gain a temporary +1 level boost for 8 seconds.Once the effect ends, this card enters a 60-second cooldown before it can trigger again",
@@ -4424,7 +5286,7 @@
       }
     },
     {
-      "card_id": "PPT-078",
+      "card_id": "PPT-125",
       "card_name": "Puppeteers Threads",
       "rarity": "Epic",
       "type": [
@@ -4448,7 +5310,7 @@
       }
     },
     {
-      "card_id": "BIM-090",
+      "card_id": "BIM-126",
       "card_name": "Bison March",
       "rarity": "Epic",
       "type": [
@@ -4494,7 +5356,7 @@
       }
     },
     {
-      "card_id": "RKR-091",
+      "card_id": "RKR-130",
       "card_name": "The Ruin Kings last ring",
       "rarity": "Ultimate",
       "type": [
@@ -4517,7 +5379,7 @@
       }
     },
     {
-      "card_id": "MDT-092",
+      "card_id": "MDT-131",
       "card_name": "Midas Touch",
       "rarity": "Ultimate",
       "type": [
@@ -4541,7 +5403,7 @@
       }
     },
     {
-      "card_id": "ULT-006",
+      "card_id": "FST-132",
       "card_name": "Final Strike",
       "rarity": "Ultimate",
       "type": [
@@ -4549,7 +5411,7 @@
         "Combat"
       ],
       "anime_id": "S01-EP12",
-      "activation_method": "active_charge",
+      "activation_method": "active_tap",
       "activation": {
         "method": "tap",
         "charge_time": 5,
@@ -4586,7 +5448,7 @@
       "flavor_text": "From the heavens descends the circle of judgment, its light burning away all resistance. Few have seen it fire twice."
     },
     {
-      "card_id": "ULT-007",
+      "card_id": "OBC-133",
       "card_name": "Orbital Choir",
       "rarity": "Ultimate",
       "type": [
@@ -4595,7 +5457,7 @@
         "Stagger"
       ],
       "anime_id": "S01-EP12",
-      "activation_method": "active_charge",
+      "activation_method": "active_tap",
       "activation": {
         "method": "tap",
         "charge_time": 5,
@@ -4632,7 +5494,7 @@
       "flavor_text": "From the heavens descends the circle of judgment, its light burning away all resistance. Few have seen it fire twice."
     },
     {
-      "card_id": "BOH-102",
+      "card_id": "BOH-134",
       "card_name": "Blight of the Heirs",
       "rarity": "Ultimate",
       "type": [
@@ -4640,7 +5502,7 @@
         "Debuff"
       ],
       "anime_id": "S01-EP102",
-      "activation_method": "active_proximity",
+      "activation_method": "active_tap",
       "activation": {
         "method": "tap",
         "charge": "none",

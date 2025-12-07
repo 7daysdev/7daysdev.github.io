@@ -121,6 +121,34 @@
             color: white;
             cursor: pointer;
         }
+
+        .back-link {
+            display: inline-block;
+            color: #ff7f50; 
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #ff7f50;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #ff7f50;
+            color: #1a1a1a;
+        }
+        
+        /* ADDED: Style for Weapon Counter */
+        #weaponCountDisplay {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ff7f50; /* Coral color for visibility */
+            padding: 5px 10px;
+            background-color: #333;
+            border-radius: 6px;
+            min-width: 150px;
+            text-align: center;
+            align-self: center;
+        }
     </style>
 </head>
 
@@ -129,7 +157,14 @@
         <h1 style="text-align: center; margin-bottom: 10px;">⚔️ Sword Arsenal ⚔️</h1>
         <p style="text-align: center; color: #ccc; margin-bottom: 40px;">Straight Swords, Rapiers, and Greatswords for every adventurer.</p>
         
+        <p style="text-align: center; margin-bottom: 40px;">
+            <a href="index.html" class="back-link">
+                &larr; Back to Weapon Hub
+            </a>
+        </p>
+
         <div class="filter-controls">
+            <span id="weaponCountDisplay">0 Swords Found</span>
             <div>
                 <label for="type-filter">Filter by Type:</label>
                 <select id="type-filter" onchange="filterWeapons()">
@@ -160,15 +195,15 @@
 
         async function fetchWeapons() {
             try {
-                // IMPORTANT: Ensure 'weapons.json' is in the correct location
-                const response = await fetch('weapon.json'); 
+                // IMPORTANT: Ensure 'swords.json' is in the correct location
+                const response = await fetch('./database/swords.json'); 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
                 
                 // Filter the data to include only the relevant sword types
-                allSwords = data.weapons.filter(weapon => 
+                allSwords = data.swords.filter(weapon => 
                     weapon.type === 'straight_sword' || 
                     weapon.type === 'rapier' || 
                     weapon.type === 'greatsword'
@@ -184,6 +219,12 @@
         function displayWeapons(weapons) {
             const grid = document.getElementById('weaponsGrid');
             grid.innerHTML = ''; 
+
+            // ADDED: Update the weapon counter
+            const countDisplay = document.getElementById('weaponCountDisplay');
+            const count = weapons.length;
+            countDisplay.textContent = `${count} Sword${count !== 1 ? 's' : ''} Found`;
+            // END ADDED
 
             weapons.forEach(weapon => {
                 const card = document.createElement('div');

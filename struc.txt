@@ -140,3 +140,16 @@ Perfect — let’s build a **new clean version** of your system with **Joy** in
 ---
 
 Do you want me to **refine this further into the full "level-up / title unlock progression" system**, or keep it at this high-level version for now?
+
+
+
+Original Role	Image Palette Color	Hex Code	Description
+Main Background	Very Dark Grey/Black	#19171b	The darkest background for the body.
+Element Background	Dark Grey	#252628	Slightly lighter dark for components like stat items, tooltips.
+Primary Accent	Deep Red	#5d0018	Replaces the cranberry for a richer, deeper red for headings, active states, buttons.
+Hover/Active Accent	Gold	#d29f22	The vibrant gold from your palette, used for primary button hovers, stat values, and active filter buttons.
+Text/Foreground	Light Gold	(Derived from Gold)	A very light version of the gold for main text, providing warmth.
+Muted Text/Borders	Muted Gold/Grey	(Derived from Gold/Grey)	Softer tones for secondary text and borders.
+
+Export to Sheets
+Here is the restyled CSS:

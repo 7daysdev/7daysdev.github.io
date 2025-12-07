@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Weapon Arsenal Analysis</title>
+    <style>
+        /* Base styles */
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .weapons-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #ffd700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Analytics Section */
+        .analytics-dashboard {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .stat-box {
+            background-color: #282828;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border-left: 5px solid #ff7f50;
+            text-align: center;
+            flex-grow: 1;
+            min-width: 180px;
+        }
+
+        .stat-box h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .stat-box p {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        /* Filter Styles */
+        .filter-controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #222;
+            border-radius: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-controls label,
+        .filter-controls select {
+            font-size: 1rem;
+        }
+
+        .filter-controls select {
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #555;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* New Button Style */
+        .copy-button {
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: none;
+            background-color: #ffd700;
+            /* Gold/Yellow color */
+            color: #1a1a1a;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .copy-button:hover {
+            background-color: #ffc400;
+        }
+
+        /* Table Styles */
+        .weapon-table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .weapon-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .weapon-table th,
+        .weapon-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .weapon-table th {
+            background-color: #383838;
+            color: #ffd700;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+
+        .weapon-table tr:hover {
+            background-color: #2a2a2a;
+        }
+
+        .weapon-table td {
+            color: #ccc;
+        }
+
+        /* Style for Faction differentiation */
+        .faction-icon {
+            margin-right: 5px;
+            font-size: 1.1em;
+            vertical-align: middle;
+        }
+
+        .faction-christmas_elf {
+            color: #f08080;
+        }
+
+        /* Light Coral */
+        .faction-foodkin {
+            color: #98fb98;
+        }
+
+        /* Pale Green */
+        .faction-ice_elf {
+            color: #add8e6;
+        }
+
+        /* Light Blue */
+        .faction-toykin {
+            color: #ffb6c1;
+        }
+
+        /* Light Pink */
+
+        /* Utility Styles */
+        .back-link {
+            display: inline-block;
+            color: #ff7f50;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #ff7f50;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #ff7f50;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weapons-container">
+        <h1>⚔️ Complete Weapon Arsenal Analysis 🔨</h1>
+        <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Use the table and stats below to audit weapon
+            distribution and balancing.</p>
+
+        <p style="text-align: center; margin-bottom: 40px;">
+            <a href="index.html" class="back-link">
+                &larr; Back to Weapon Hub
+            </a>
+        </p>
+
+        <div class="analytics-dashboard" id="analyticsDashboard">
+        </div>
+
+        <div class="filter-controls">
+            <div>
+                <label for="faction-filter">Filter by Faction:</label>
+                <select id="faction-filter" onchange="filterWeapons()">
+                    <option value="All">All Factions</option>
+                    <option value="christmas_elf">Christmas Elf</option>
+                    <option value="ice_elf">Ice Elf</option>
+                    <option value="foodkin">Foodkin</option>
+                    <option value="toykin">Toykin</option>
+                </select>
+            </div>
+            <div>
+                <label for="type-filter">Filter by Type:</label>
+                <select id="type-filter" onchange="filterWeapons()">
+                    <option value="All">All Types</option>
+                    <option value="straight_sword">Straight Sword</option>
+                    <option value="greatsword">Greatsword</option>
+                    <option value="rapier">Rapier</option>
+                    <option value="great_hammer">Great Hammer</option>
+                    <option value="polearm">Polearm</option>
+                    <option value="axe">Axe</option>
+                    <option value="magic_wand">Magic Wand</option>
+                    <option value="fist_weapon">Fist Weapon</option>
+                    <option value="dagger">Dagger</option>
+                    <option value="firearm">Firearm</option>
+                    <option value="shield">Shield</option>
+                </select>
+            </div>
+            <div>
+                <button class="copy-button" onclick="copyWeaponsToText()">
+                    📋 Copy Data to AI
+                </button>
+            </div>
+        </div>
+
+        <div class="weapon-table-container">
+            <table class="weapon-table" id="weaponsTable">
+                <thead>
+                    <tr>
+                        <th data-column="id">ID</th>
+                        <th data-column="name">Name</th>
+                        <th data-column="faction">Faction</th>
+                        <th data-column="type">Type</th>
+                        <th data-column="sub_type">Sub-Type</th>
+                        <th data-column="weight">Weight (kg)</th>
+                        <th data-column="ability">Ability</th>
+                        <th data-column="upgrade_tree">Upgrade Path</th>
+                    </tr>
+                </thead>
+                <tbody id="weaponsTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+   <script>
+    let allWeapons = [];
+    let currentSortColumn = 'id';
+    let isAscending = true;
+
+    const FACTION_MAP = {
+        'christmas_elf': { name: 'Christmas Elf', icon: '🎅' },
+        'foodkin': { name: 'Foodkin', icon: '🍔' },
+        'ice_elf': { name: 'Ice Elf', icon: '❄️' },
+        'toykin': { name: 'Toykin', icon: '🧸' },
+        'N/A': { name: 'N/A', icon: '❓' }
+    };
+
+    function getWeaponFilePaths() {
+        return [
+            './database/axes.json',
+            './database/daggers.json',
+            './database/firearm.json',
+            './database/fists.json',
+            './database/hammers.json',
+            './database/polearms.json',
+            './database/shieldbase.json',
+            './database/swords.json',
+            './database/wands.json'
+        ];
+    }
+
+    async function fetchWeapons() {
+        try {
+            const filePaths = getWeaponFilePaths();
+
+            // Load all files concurrently
+            const results = await Promise.allSettled(
+                filePaths.map(async path => {
+                    const res = await fetch(path);
+                    if (!res.ok) throw new Error(res.statusText);
+                    const data = await res.json();
+
+                    // Extract the first array from the JSON (regardless of key name)
+                    const key = Object.keys(data)[0];
+                    const weapons = Array.isArray(data[key]) ? data[key] : [];
+                    return weapons;
+                })
+            );
+
+            // Flatten and ignore failed fetches
+            allWeapons = results
+                .filter(r => r.status === 'fulfilled')
+                .flatMap(r => r.value);
+
+            if (allWeapons.length === 0) {
+                document.getElementById('weaponsTableBody').innerHTML =
+                    '<tr><td colspan="8" style="text-align:center;">No weapon data found.</td></tr>';
+                return;
+            }
+
+            sortWeapons(currentSortColumn);
+            filterWeapons();
+        } catch (error) {
+            console.error("Critical error during weapon data fetch:", error);
+            document.getElementById('weaponsTableBody').innerHTML =
+                '<tr><td colspan="8">Critical error loading weapon data. Check console.</td></tr>';
+        }
+    }
+
+    function updateAnalytics(weapons) {
+        const dashboard = document.getElementById('analyticsDashboard');
+        dashboard.innerHTML = '';
+
+        const totalCount = weapons.length;
+        const factionCounts = allWeapons.reduce((acc, w) => {
+            acc[w.faction] = (acc[w.faction] || 0) + 1;
+            return acc;
+        }, {});
+        const typeCounts = allWeapons.reduce((acc, w) => {
+            acc[w.type] = (acc[w.type] || 0) + 1;
+            return acc;
+        }, {});
+
+        dashboard.innerHTML += `
+            <div class="stat-box"><h3>Total Weapons</h3><p>${allWeapons.length}</p></div>
+            <div class="stat-box"><h3>Weapons Displayed</h3><p>${totalCount}</p></div>
+            <div class="stat-box"><h3>Unique Types</h3><p>${Object.keys(typeCounts).length}</p></div>
+        `;
+
+        const sortedFactions = Object.entries(factionCounts).sort(([, a], [, b]) => a - b);
+        if (sortedFactions.length > 0) {
+            const lowestKey = sortedFactions[0][0];
+            const highestKey = sortedFactions[sortedFactions.length - 1][0];
+            const lowestFaction = FACTION_MAP[lowestKey] || FACTION_MAP['N/A'];
+            const highestFaction = FACTION_MAP[highestKey] || FACTION_MAP['N/A'];
+
+            dashboard.innerHTML += `
+                <div class="stat-box"><h3>Lowest Faction</h3><p>${lowestFaction.icon} ${lowestFaction.name}</p></div>
+                <div class="stat-box"><h3>Highest Faction</h3><p>${highestFaction.icon} ${highestFaction.name}</p></div>
+            `;
+        }
+    }
+
+    function displayWeapons(weapons) {
+        const tbody = document.getElementById('weaponsTableBody');
+        tbody.innerHTML = '';
+
+        if (weapons.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;">No weapons match filters.</td></tr>';
+            return;
+        }
+
+        weapons.forEach(w => {
+            const format = str => str ? String(str).replace(/_/g, ' ') : 'N/A';
+            const factionKey = w.faction || 'N/A';
+            const factionData = FACTION_MAP[factionKey] || FACTION_MAP['N/A'];
+            const factionClass = `faction-${factionKey}`;
+
+            tbody.insertAdjacentHTML('beforeend', `
+                <tr>
+                    <td>${w.id}</td>
+                    <td><strong style="color:white;">${w.name}</strong></td>
+                    <td class="${factionClass}"><span class="faction-icon">${factionData.icon}</span>${factionData.name}</td>
+                    <td>${format(w.type)}</td>
+                    <td>${format(w.sub_type)}</td>
+                    <td>${w.weight || 'N/A'}</td>
+                    <td style="color:#90ee90;">${w.ability || 'None'}</td>
+                    <td>${format(w.upgrade_tree)}</td>
+                </tr>
+            `);
+        });
+    }
+
+    function filterWeapons() {
+        const factionFilter = document.getElementById('faction-filter').value;
+        const typeFilter = document.getElementById('type-filter').value;
+
+        let filtered = allWeapons.filter(w =>
+            (factionFilter === 'All' || w.faction === factionFilter) &&
+            (typeFilter === 'All' || w.type === typeFilter)
+        );
+
+        filtered = sortList(filtered, currentSortColumn, isAscending);
+        displayWeapons(filtered);
+        updateAnalytics(filtered);
+    }
+
+    function sortWeapons(column) {
+        const filtered = getFilteredWeapons();
+        const sortedList = sortList(filtered, column, isAscending);
+        displayWeapons(sortedList);
+        updateAnalytics(sortedList);
+    }
+
+    document.querySelectorAll('#weaponsTable th').forEach(header => {
+        header.addEventListener('click', () => {
+            const column = header.getAttribute('data-column');
+            if (currentSortColumn === column) {
+                isAscending = !isAscending;
+            } else {
+                currentSortColumn = column;
+                isAscending = true;
+            }
+            sortWeapons(column);
+        });
+    });
+
+    function getFilteredWeapons() {
+        const factionFilter = document.getElementById('faction-filter').value;
+        const typeFilter = document.getElementById('type-filter').value;
+
+        return allWeapons.filter(w =>
+            (factionFilter === 'All' || w.faction === factionFilter) &&
+            (typeFilter === 'All' || w.type === typeFilter)
+        );
+    }
+
+    function sortList(list, column, asc) {
+        return list.sort((a, b) => {
+            const valA = a[column] || (column === 'weight' ? -Infinity : '');
+            const valB = b[column] || (column === 'weight' ? -Infinity : '');
+            if ((column === 'weight' || column === 'id') && !isNaN(parseFloat(valA)) && !isNaN(parseFloat(valB))) {
+                return asc ? valA - valB : valB - valA;
+            }
+            return asc
+                ? String(valA).localeCompare(String(valB))
+                : String(valB).localeCompare(String(valA));
+        });
+    }
+
+    async function copyWeaponsToText() {
+        const weaponsToCopy = getFilteredWeapons();
+        const sortedWeapons = sortList(weaponsToCopy, currentSortColumn, isAscending);
+        const format = str => str ? String(str).replace(/_/g, ' ').trim() : 'N/A';
+        const headers = Array.from(document.querySelectorAll('#weaponsTable th')).map(th => th.textContent.trim());
+        let textData = headers.join(' | ') + '\n';
+        textData += headers.map(h => '-'.repeat(h.length)).join('-|-') + '\n';
+
+        sortedWeapons.forEach(w => {
+            const factionKey = w.faction || 'N/A';
+            const factionName = FACTION_MAP[factionKey] ? FACTION_MAP[factionKey].name : 'N/A';
+            const row = [
+                w.id,
+                w.name,
+                factionName,
+                format(w.type),
+                format(w.sub_type),
+                w.weight || 'N/A',
+                w.ability || 'None',
+                format(w.upgrade_tree)
+            ];
+            textData += row.join(' | ') + '\n';
+        });
+
+        try {
+            await navigator.clipboard.writeText(textData);
+            alert(`Copied ${sortedWeapons.length} weapons to clipboard!`);
+        } catch (err) {
+            prompt('Could not use clipboard API. Copy manually:', textData);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchWeapons);
+</script>
+
+</body>
+
+</html>

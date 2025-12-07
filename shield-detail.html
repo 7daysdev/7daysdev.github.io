@@ -211,9 +211,9 @@
                     return;
                 }
 
-                const response = await fetch('./weapon.json');
+                const response = await fetch('./database/shieldbase.json');
                 const data = await response.json();
-                const shield = data.weapons.find(w => w.id === shieldId);
+                const shield = data.shieldbase.find(w => w.id === shieldId);
                 
                 if (!shield) {
                     document.getElementById('shield-content').innerHTML = '<p class="error-message">Shield not found.</p>';

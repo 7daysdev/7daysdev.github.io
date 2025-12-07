@@ -136,6 +136,19 @@
             background-color: #ff7f50;
             color: #1a1a1a;
         }
+
+        /* ADDED: Style for Weapon Counter */
+        #weaponCountDisplay {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffd700; /* Gold color for visibility */
+            padding: 5px 10px;
+            background-color: #333;
+            border-radius: 6px;
+            min-width: 150px; /* Give it a minimum width */
+            text-align: center;
+            align-self: center; /* Center it vertically in the flex container */
+        }
     </style>
 </head>
 
@@ -151,6 +164,7 @@
         </p>
 
         <div class="filter-controls">
+            <span id="weaponCountDisplay">0 Firearms Found</span>
             <div>
                 <label for="faction-filter">Filter by Faction:</label>
                 <select id="faction-filter" onchange="filterWeapons()">
@@ -183,15 +197,16 @@
 
         async function fetchWeapons() {
             try {
-                // IMPORTANT: Ensure 'weapon.json' is in the correct location
-                const response = await fetch('weapon.json');
+                // IMPORTANT: Ensure 'firearm.json' is in the correct location
+                const response = await fetch('./database/firearm.json');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
 
                 // CRITICAL: Filter data to include ONLY the 'firearm' type
-                allFirearms = data.weapons.filter(weapon =>
+                // Assuming your JSON structure is { "firearm": [...] }
+                allFirearms = data.firearm.filter(weapon =>
                     weapon.type === 'firearm'
                 );
 
@@ -205,6 +220,12 @@
         function displayWeapons(weapons) {
             const grid = document.getElementById('weaponsGrid');
             grid.innerHTML = ''; 
+
+            // ADDED: Update the weapon counter
+            const countDisplay = document.getElementById('weaponCountDisplay');
+            const count = weapons.length;
+            countDisplay.textContent = `${count} Firearm${count !== 1 ? 's' : ''} Found`;
+            // END ADDED
 
             weapons.forEach(weapon => {
                 const card = document.createElement('div');

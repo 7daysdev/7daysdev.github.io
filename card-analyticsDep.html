@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Analytics & Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="analytics-styles.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Card Analytics & Search</h1>
+
+        <div class="header-actions">
+            <a href="cards-index.html" class="btn">← Back to Cards</a>
+        </div>
+
+
+        <div class="filter-controls">
+            <input type="text" id="searchInput" placeholder="Search Card Name, ID, or Ability Text...">
+            <button id="applyFiltersBtn" class="btn">Apply Filters</button>
+        </div>
+
+        <div id="typeFilterContainer" class="type-filter-container">
+        </div>
+
+        <div id="analytics-results-container">
+            <p id="cardCountDisplay" class="filter-count-display">Total Cards: Loading...</p>
+            <p class="loading">Loading card data...</p>
+        </div>
+
+        <script>
+            let allCardsData = [];
+            let currentFilteredCards = [];
+            let sortDirection = 'asc';
+            let lastSortKey = null;
+
+            const resultsContainer = document.getElementById('analytics-results-container');
+            const typeFilterContainer = document.getElementById('typeFilterContainer');
+            const searchInput = document.getElementById('searchInput');
+            const applyButton = document.getElementById('applyFiltersBtn');
+            // Ensure this element is defined in your HTML, as you mentioned:
+            // <p id="cardCountDisplay" class="filter-count-display"></p>
+            const cardCountDisplay = document.getElementById('cardCountDisplay');
+
+            // --- Data Fetching ---
+            async function fetchCards() {
+                try {
+                    const response = await fetch('./card.json');
+                    const data = await response.json();
+                    allCardsData = data.cards || data;
+
+                    populateTypeFilters(allCardsData);
+                    // Initial call to filter and render all cards
+                    filterAndRenderCards();
+
+                } catch (error) {
+                    console.error('Failed to load card data:', error);
+                    resultsContainer.innerHTML = '<p class="error">Error loading card data. Make sure card.json exists and is valid.</p>';
+                    if (cardCountDisplay) cardCountDisplay.textContent = 'Total Cards: 0';
+                }
+            }
+
+            // --- Filter Population ---
+            function populateTypeFilters(cards) {
+                const uniqueTypes = new Set();
+                cards.forEach(card => {
+                    if (Array.isArray(card.type)) {
+                        card.type.forEach(t => uniqueTypes.add(t));
+                    } else if (typeof card.type === 'string') {
+                        card.type.split(/\s*\|\s*|\s+/).forEach(t => {
+                            if (t.trim()) uniqueTypes.add(t.trim());
+                        });
+                    }
+                });
+
+                typeFilterContainer.innerHTML = '';
+
+                Array.from(uniqueTypes).sort().forEach(type => {
+                    const button = document.createElement('button');
+                    button.className = 'type-filter-btn';
+                    button.textContent = type;
+                    button.dataset.type = type;
+                    button.type = 'button';
+
+                    button.addEventListener('click', function () {
+                        this.classList.toggle('active');
+                    });
+
+                    typeFilterContainer.appendChild(button);
+                });
+            }
+
+            // 🌟 RE-ADDED FILTER LOGIC 🌟
+            function filterAndRenderCards() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+
+                // Get an array of all selected type values from active buttons
+                const selectedTypes = Array.from(typeFilterContainer.querySelectorAll('.type-filter-btn.active'))
+                    .map(button => button.dataset.type);
+
+                currentFilteredCards = allCardsData.filter(card => {
+                    // 1. Type Filter Check (AND logic)
+                    const cardTypes = Array.isArray(card.type) ? card.type : (typeof card.type === 'string' ? card.type.split(/\s*\|\s*|\s+/).map(t => t.trim()).filter(t => t) : []);
+
+                    let matchesType = selectedTypes.length === 0 || selectedTypes.every(type => cardTypes.includes(type));
+
+                    if (!matchesType) {
+                        return false;
+                    }
+
+                    // 2. Text Search Check
+                    if (!searchTerm) {
+                        return true;
+                    }
+
+                    const cardName = card.card_name.toLowerCase();
+                    const cardId = card.card_id.toLowerCase();
+                    let abilityText = '';
+
+                    if (card.abilities && card.abilities.level_1 && card.abilities.level_1.ability_text) {
+                        abilityText = card.abilities.level_1.ability_text.toLowerCase();
+                    }
+
+                    return cardName.includes(searchTerm) ||
+                        cardId.includes(searchTerm) ||
+                        abilityText.includes(searchTerm);
+                });
+
+                renderCardsTable(currentFilteredCards);
+            }
+
+            // 🌟 CORRECTED renderCardsTable with Count 🌟
+            function renderCardsTable(cards) {
+        const cardCount = cards.length;
+
+        // 1. Update the count display FIRST
+        if (cardCountDisplay) {
+            cardCountDisplay.textContent = `Total Cards: ${cardCount}`;
+        }
+
+        // Clear the main container
+        resultsContainer.innerHTML = '';
+
+        // Re-append the count display element to the top of the container
+        if (cardCountDisplay) {
+            resultsContainer.appendChild(cardCountDisplay);
+        }
+
+        if (cardCount === 0) {
+            const noResultsMessage = document.createElement('p');
+            noResultsMessage.className = 'error';
+            noResultsMessage.textContent = 'No cards match the current filters.';
+            // Append the error message below the count
+            resultsContainer.appendChild(noResultsMessage);
+            return;
+        }
+
+        let tableHTML = `
+            <table class="analytics-table">
+                <thead>
+                    <tr>
+                        <th data-sort-key="card_name" class="${lastSortKey === 'card_name' ? 'sorted-' + sortDirection : ''}">Name</th>
+                        <th data-sort-key="card_id" class="${lastSortKey === 'card_id' ? 'sorted-' + sortDirection : ''}">ID</th>
+                        <th data-sort-key="rarity" class="${lastSortKey === 'rarity' ? 'sorted-' + sortDirection : ''}">Rarity</th>
+                        <th data-sort-key="type" class="${lastSortKey === 'type' ? 'sorted-' + sortDirection : ''}">Types</th>
+                        <th data-sort-key="activation_method" class="${lastSortKey === 'activation_method' ? 'sorted-' + sortDirection : ''}">Activation</th>
+                        <th data-sort-key="ability_text" class="${lastSortKey === 'ability_text' ? 'sorted-' + sortDirection : ''}">Level 1 Ability</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        cards.forEach(card => {
+            // ✅ SIMPLIFIED FIX HERE: Safely generates the class name for single-word rarities.
+            // It will result in "rarity-Common", "rarity-Epic", etc.
+            const rarityClass = card.rarity ? `rarity-${card.rarity}` : 'rarity-unknown'; 
+            
+            const typeDisplay = Array.isArray(card.type) ? card.type.join(' | ') : (card.type || 'N/A');
+
+            let abilityText = 'N/A';
+            if (card.abilities && card.abilities.level_1 && card.abilities.level_1.ability_text) {
+                abilityText = card.abilities.level_1.ability_text;
+            }
+
+            tableHTML += `
+                <tr data-card-id="${card.card_id}">
+                    <td>${card.card_name}</td>
+                    <td>${card.card_id}</td>
+                    <td class="${rarityClass}">${card.rarity || 'N/A'}</td>
+                    <td>${typeDisplay}</td>
+                    <td>${card.activation_method || 'N/A'}</td>
+                    <td>${abilityText}</td>
+                </tr>
+            `;
+        });
+
+        tableHTML += '</tbody></table>';
+
+        // Append the table content after the count display
+        resultsContainer.insertAdjacentHTML('beforeend', tableHTML);
+    }
+
+            function sortTable(key) {
+                if (lastSortKey === key) {
+                    sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+                } else {
+                    sortDirection = 'asc';
+                    lastSortKey = key;
+                }
+
+                currentFilteredCards.sort((a, b) => {
+                    let valA, valB;
+
+                    if (key === 'ability_text') {
+                        valA = (a.abilities?.level_1?.ability_text || '').toLowerCase();
+                        valB = (b.abilities?.level_1?.ability_text || '').toLowerCase();
+                    } else if (key === 'type') {
+                        valA = (Array.isArray(a.type) ? a.type.join(' ') : (a.type || '')).toLowerCase();
+                        valB = (Array.isArray(b.type) ? b.type.join(' ') : (b.type || '')).toLowerCase();
+                    } else {
+                        valA = (a[key] || '').toString().toLowerCase();
+                        valB = (b[key] || '').toString().toLowerCase();
+                    }
+
+                    if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
+                    if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
+                    return 0;
+                });
+
+                renderCardsTable(currentFilteredCards);
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                fetchCards();
+
+                // Use the Apply button for filtering
+                applyButton.addEventListener('click', filterAndRenderCards);
+
+                searchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        filterAndRenderCards();
+                    }
+                });
+
+                resultsContainer.addEventListener('click', function (e) {
+                    const th = e.target.closest('th');
+                    if (th && th.dataset.sortKey) {
+                        const sortKey = th.dataset.sortKey;
+                        sortTable(sortKey);
+                    }
+                });
+            });
+        </script>
+</body>
+
+</html>

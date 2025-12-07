@@ -1,4 +1,3 @@
-
 /* ==============================================
     ANALYTICS STYLES - CHRISTMAS RED/GOLD THEME
     ============================================== */
@@ -85,7 +84,8 @@ h1 {
     color: #bfa04a;
     border: 1px solid #4a4a4a;
     padding: 6px 12px;
-    border-radius: 20px;
+    /* UPDATED: Softer radius */
+    border-radius: 6px; 
     cursor: pointer;
     font-size: 14px;
     transition: all 0.2s ease;
@@ -100,10 +100,11 @@ h1 {
 
 /* Active (Selected) state for the AND logic */
 .type-filter-btn.active {
-    background-color: #d29f22; 
-    color: #19171b; /* Very Dark Text on Gold for contrast */
-    border-color: #d29f22;
-    box-shadow: 0 0 8px rgba(210, 159, 34, 0.6); /* Gold glow */
+    background-color: #d29f22 !important; /* Vibrant Gold - Force override */
+    color: #19171b !important; /* Very Dark Text on Gold for contrast */
+    border-color: #d29f22 !important;
+    box-shadow: 0 0 8px rgba(210, 159, 34, 0.8) !important; /* Brighter Gold glow */
+    border-radius: 6px !important; /* UPDATED: Softer radius */
 }
 
 /* --- Analytics Table --- */
@@ -130,7 +131,7 @@ h1 {
     position: relative;
     white-space: nowrap; 
     border-bottom: 3px solid #d29f22; /* Gold underline */
-    vertical-align: middle; /* Ensure content is centered if it wraps */
+    vertical-align: middle; 
 }
 
 /* Row Striping */
@@ -153,7 +154,7 @@ h1 {
     right: 5px;
     color: #d29f22; 
     font-size: 0.8em;
-    line-height: 1; /* Keep indicator centered */
+    line-height: 1; 
 }
 
 .analytics-table th.sorted-asc::after {
@@ -167,51 +168,22 @@ h1 {
 /* Table Body (td) - Default Text Color */
 .analytics-table td {
     color: #e0c86e; /* Set default text color to light gold */
-    vertical-align: top; /* Align content to the top for truncated text */
+    vertical-align: top; 
 }
 
-/* --- NEW Styles for Image Column --- */
+/* --- Styles for Image Column --- */
 .card-icon {
-    width: 40px; /* Small size for analytics table */
+    width: 40px; 
     height: 40px;
     object-fit: contain;
     border-radius: 4px;
     border: 1px solid #d29f22; /* Gold border for visual appeal */
-    display: block; /* Ensures it behaves nicely in the table cell */
+    display: block; 
 }
-
-
-/* --- NEW Styles for Type Badges --- */
-.type-badge {
-    display: inline-block;
-    padding: 3px 6px;
-    margin-right: 4px;
-    margin-bottom: 2px;
-    border-radius: 3px;
-    font-size: 0.75em;
-    font-weight: bold;
-    white-space: nowrap;
-    line-height: 1;
-    /* Default badge color */
-    background-color: #4a4a4a;
-    color: #f5f5f5;
-}
-
-/* (Optional) Add specific colors for types if known in your data, e.g.: */
-.type-badge.type-creature {
-    background-color: #7b241c; /* Muted Red */
-    color: #fff;
-}
-.type-badge.type-spell {
-    background-color: #2471a3; /* Muted Blue */
-    color: #fff;
-}
-/* ... add more type-specific styles as needed ... */
-
 
 /* --- Rarity Color Override (Ensure these remain visible against dark background) --- */
 td.rarity-Common { 
-    color: #aaaaaa; 
+    color: #0469ec; /* Blue */
     font-weight: bold; 
 } 
 td.rarity-Uncommon { 
@@ -219,7 +191,7 @@ td.rarity-Uncommon {
     font-weight: bold; 
 } 
 td.rarity-Rare { 
-    color: #3498db; /* Blue */
+    color: #cccccc; /* Silver */
     font-weight: bold; 
 } 
 td.rarity-Epic { 
@@ -227,80 +199,107 @@ td.rarity-Epic {
     font-weight: bold; 
 } 
 td.rarity-Ultimate { 
-    color: #e74c3c; /* Bright Red */
+    color: #f39c12; /* Orange-Gold */
     font-weight: bold; 
-    text-shadow: 0 0 5px rgba(231, 76, 60, 0.5); /* Subtle glow for ultimate */
+    text-shadow: 0 0 5px rgba(243, 156, 18, 0.5); /* Subtle glow for ultimate */
 }
 
-
-/* --- NEW Styles for Type Badges & Color Coordination --- */
+/* --- General Styles for Type Badges & Color Coordination --- */
 .type-badge {
     display: inline-block;
     padding: 3px 6px;
     margin-right: 4px;
     margin-bottom: 2px;
-    border-radius: 3px;
+    /* UPDATED: Softer radius */
+    border-radius: 4px; 
     font-size: 0.75em;
     font-weight: bold;
     white-space: nowrap;
     line-height: 1;
-    color: #19171b; /* Ensure dark text for maximum readability on colored backgrounds */
+    color: #19171b !important; /* Dark text for maximum readability on colored backgrounds */
+    border: 1px solid rgba(0, 0, 0, 0.2); 
     background-color: #95a5a6; /* Default/Fallback Gray */
-    border: 1px solid transparent;
+    /* NEW: Subtle shadow for depth */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); 
+    /* NEW: Text shadow to make text pop off the color */
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3); 
 }
 
 /* Base Style for Filter Buttons to inherit colors, but keep the gold active state */
 .type-filter-btn {
-    color: #19171b; /* Dark text for clarity */
-    border: 1px solid transparent; /* Remove the old gray border */
-    background-color: #5c5c5c; /* Default filter button background */
+    color: #19171b !important; /* Dark text for clarity */
+    border: 1px solid transparent; 
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); 
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
-/* --- Type-Specific Colors (Badges and Buttons) --- */
-/* The filter buttons will use these colors until they are clicked (.active) */
+/* ==============================================
+   REFINED HIGH-CONTRAST TYPE-SPECIFIC COLORS (VIBRANT & WITH DEPTH)
+   ============================================== */
 
-/* General Card Categories */
-.type-badge.type-tap, .type-filter-btn.type-tap { background-color: #4a90e2; } /* Bright Blue */
-.type-badge.type-passive, .type-filter-btn.type-passive { background-color: #7ed321; } /* Vibrant Green */
-.type-badge.type-weaponability, .type-filter-btn.type-weaponability { background-color: #f8e71c; } /* Yellow/Gold */
-.type-badge.type-combat, .type-filter-btn.type-combat { background-color: #9013fe; } /* Deep Violet */
+/* --- Primary Action --- */
+.type-badge.type-tap, .type-filter-btn.type-tap { background-color: #00BFFF; } 
+.type-badge.type-passive, .type-filter-btn.type-passive { background-color: #00FF7F; } 
 
-/* Modifier & Status Types */
-.type-badge.type-buff, .type-filter-btn.type-buff { background-color: #00c6ff; } /* Aqua */
-.type-badge.type-debuff, .type-filter-btn.type-debuff { background-color: #ff6e40; } /* Orange-Red */
-.type-badge.type-stagger, .type-filter-btn.type-stagger { background-color: #b84d1a; } /* Rust/Impact */
+/* --- Combat & Damage --- */
+.type-badge.type-combat, .type-filter-btn.type-combat { background-color: #BA55D3; } 
+.type-badge.type-weaponability, .type-filter-btn.type-weaponability { background-color: #FFD700; } 
+.type-badge.type-stagger, .type-filter-btn.type-stagger { background-color: #FF8C00; } 
+.type-badge.type-aoe, .type-filter-btn.type-aoe { background-color: #DC143C; } 
+.type-badge.type-projectile, .type-filter-btn.type-projectile { background-color: #40E0D0; } 
+.type-badge.type-transformative, .type-filter-btn.type-transformative { background-color: #FF1493; } 
+.type-badge.type-mobility, .type-filter-btn.type-mobility { background-color: #7B68EE; } 
 
-/* Elemental/DoT Types */
-.type-badge.type-elemental, .type-filter-btn.type-elemental { background-color: #e9860c; } /* Muted Orange (for the general type) */
-.type-badge.type-poison, .type-filter-btn.type-poison { background-color: #50e3c2; } /* Mint Green */
-.type-badge.type-bleed, .type-filter-btn.type-bleed { background-color: #d0021b; } /* Blood Red */
-.type-badge.type-fire, .type-filter-btn.type-fire { background-color: #f44336; } /* Red */
-.type-badge.type-ice, .type-filter-btn.type-ice { background-color: #4db6ac; } /* Teal */
+/* --- Status Effects --- */
+.type-badge.type-buff, .type-filter-btn.type-buff { background-color: #3CB371; } 
+.type-badge.type-debuff, .type-filter-btn.type-debuff { background-color: #FF4500; } 
+.type-badge.type-bleed, .type-filter-btn.type-bleed { background-color: #B22222; } 
+.type-badge.type-poison, .type-filter-btn.type-poison { background-color: #32CD32; } 
+.type-badge.type-dot, .type-filter-btn.type-dot { background-color: #D2B48C; } 
 
+/* --- Magic & Elementals --- */
+.type-badge.type-magic, .type-filter-btn.type-magic { background-color: #8A2BE2; } 
+.type-badge.type-fire, .type-filter-btn.type-fire { background-color: #FF6347; } 
+.type-badge.type-electric, .type-filter-btn.type-electric { background-color: #FFFF00; } 
+.type-badge.type-ice, .type-filter-btn.type-ice { background-color: #1E90FF; } 
+.type-badge.type-elemental, .type-filter-btn.type-elemental { background-color: #DAA520; } 
 
-/* Filter Button Overrides */
+/* --- Utility & Misc. --- */
+.type-badge.type-utility, .type-filter-btn.type-utility { background-color: #778899; } 
+.type-badge.type-resource, .type-filter-btn.type-resource { background-color: #696969; } 
+.type-badge.type-defensive, .type-filter-btn.type-defensive { background-color: #A9A9A9; } 
+.type-badge.type-areacontrol, .type-filter-btn.type-areacontrol { background-color: #708090; } 
+.type-badge.type-trigger, .type-filter-btn.type-trigger { background-color: #FF69B4; } 
+.type-badge.type-summon, .type-filter-btn.type-summon { background-color: #4682B4; } 
+.type-badge.type-swap, .type-filter-btn.type-swap { background-color: #ADD8E6; } 
+.type-badge.type-restoration, .type-filter-btn.type-restoration { background-color: #98FB98; } 
+.type-badge.type-trait, .type-filter-btn.type-trait { background-color: #F0E68C; } 
+
+/* --- Filter Button Overrides --- */
+
 /* 1. Ensure uncolored buttons use a dark theme default */
 .type-filter-btn:not([class*="type-"]):not(.active) {
     background-color: #3a3b3c;
-    color: #bfa04a; /* Light gold for default inactive buttons */
+    color: #bfa04a; 
 }
 .type-filter-btn:not([class*="type-"]):not(.active):hover {
     background-color: #4a4a4a;
     color: #d29f22;
-    border-color: #d29f22;
 }
 
 /* 2. Overrides for Type Buttons Hover State */
 .type-filter-btn:hover:not(.active) {
     /* Slightly darken the specific color on hover */
-    opacity: 0.85;
+    filter: brightness(0.9);
+    opacity: 1; 
 }
 
 /* 3. The Active (Selected) State MUST remain the Christmas Gold for clarity */
 .type-filter-btn.active {
-    background-color: #d29f22 !important; /* Vibrant Gold - Force override */
+    background-color: #d29f22 !important; 
     color: #19171b !important;
     border-color: #d29f22 !important;
-    box-shadow: 0 0 8px rgba(210, 159, 34, 0.6) !important;
-    opacity: 1 !important; /* Ensure full opacity when active */
+    box-shadow: 0 0 8px rgba(210, 159, 34, 0.8) !important;
+    opacity: 1 !important; 
+    border-radius: 15px !important; /* Consistent radius */
 }

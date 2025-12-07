@@ -13,14 +13,17 @@
             font-family: sans-serif;
             padding: 20px;
         }
+
         .weapons-container {
             max-width: 1200px;
             margin: 0 auto;
         }
+
         h1 {
             color: #ccc;
             margin-bottom: 10px;
         }
+
         p {
             color: #aaa;
         }
@@ -32,6 +35,7 @@
             gap: 20px;
             margin-top: 30px;
         }
+
         .weapon-card {
             background: linear-gradient(135deg, #303030 0%, #404040 100%);
             border-radius: 12px;
@@ -43,9 +47,11 @@
             flex-direction: column;
             min-height: 250px;
         }
+
         .weapon-card:hover {
             transform: translateY(-3px);
-            border-color: #ff4500; /* OrangeRed for Fist Weapons */
+            border-color: #ff4500;
+            /* OrangeRed for Fist Weapons */
         }
 
         .weapon-header {
@@ -54,11 +60,14 @@
             align-items: center;
             margin-bottom: 10px;
         }
+
         .weapon-name {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #ffa07a; /* Light Salmon for name */
+            color: #ffa07a;
+            /* Light Salmon for name */
         }
+
         .weapon-type {
             padding: 4px 8px;
             border-radius: 6px;
@@ -68,18 +77,20 @@
             color: #ccc;
             text-transform: capitalize;
         }
+
         .weapon-lore {
             font-style: italic;
             font-size: 0.9rem;
             color: #bbb;
             margin-bottom: 15px;
         }
+
         .weapon-ability {
             font-size: 0.95rem;
             color: #90ee90;
             margin-bottom: 15px;
         }
-        
+
         /* Footer Details */
         .weapon-footer {
             margin-top: auto;
@@ -90,11 +101,13 @@
             align-items: flex-end;
             font-size: 0.8rem;
         }
+
         .footer-detail strong {
             display: block;
             font-size: 1rem;
             color: #fff;
         }
+
         .footer-detail span {
             color: #aaa;
         }
@@ -110,9 +123,12 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        .filter-controls label, .filter-controls select {
+
+        .filter-controls label,
+        .filter-controls select {
             font-size: 1rem;
         }
+
         .filter-controls select {
             padding: 8px;
             border-radius: 6px;
@@ -121,10 +137,11 @@
             color: white;
             cursor: pointer;
         }
-        /* Custom Back Link Style (using the Swords color for consistency) */
+
+        /* Custom Back Link Style */
         .back-link {
             display: inline-block;
-            color: #ff7f50; 
+            color: #ff7f50;
             text-decoration: none;
             font-weight: bold;
             border: 1px solid #ff7f50;
@@ -132,9 +149,24 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+
         .back-link:hover {
             background-color: #ff7f50;
             color: #1a1a1a;
+        }
+
+        /* ADDED: Style for Weapon Counter */
+        #weaponCountDisplay {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffa07a;
+            /* Light Salmon color for visibility */
+            padding: 5px 10px;
+            background-color: #333;
+            border-radius: 6px;
+            min-width: 150px;
+            text-align: center;
+            align-self: center;
         }
     </style>
 </head>
@@ -142,7 +174,8 @@
 <body>
     <div class="weapons-container">
         <h1 style="text-align: center; margin-bottom: 10px;">👊 Fist Weapon Arsenal 👊</h1>
-        <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Gauntlets, claws, and weapons focused on close-quarters brawling.</p>
+        <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Gauntlets, claws, and weapons focused on
+            close-quarters brawling.</p>
 
         <p style="text-align: center; margin-bottom: 40px;">
             <a href="index.html" class="back-link">
@@ -151,6 +184,7 @@
         </p>
 
         <div class="filter-controls">
+            <span id="weaponCountDisplay">0 Fist Weapons Found</span>
             <div>
                 <label for="faction-filter">Filter by Faction:</label>
                 <select id="faction-filter" onchange="filterWeapons()">
@@ -172,19 +206,20 @@
 
         async function fetchWeapons() {
             try {
-                // IMPORTANT: Ensure 'weapon.json' is in the correct location
-                const response = await fetch('weapon.json');
+                // IMPORTANT: Ensure 'fists.json' is in the correct location
+                const response = await fetch('./database/fists.json');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
 
                 // CRITICAL: Filter data to include ONLY the 'fist_weapon' type
-                allFists = data.weapons.filter(weapon =>
+                // Assuming your JSON structure is { "fists": [...] }
+                allFists = data.fists.filter(weapon =>
                     weapon.type === 'fist_weapon'
                 );
 
-                displayWeapons(allFists); 
+                displayWeapons(allFists);
             } catch (error) {
                 console.error("Could not fetch fist weapon data:", error);
                 document.getElementById('weaponsGrid').innerHTML = '<p>Error loading fist weapon data. Check the console for details.</p>';
@@ -193,18 +228,24 @@
 
         function displayWeapons(weapons) {
             const grid = document.getElementById('weaponsGrid');
-            grid.innerHTML = ''; 
+            grid.innerHTML = '';
+
+            // ADDED: Update the weapon counter
+            const countDisplay = document.getElementById('weaponCountDisplay');
+            const count = weapons.length;
+            countDisplay.textContent = `${count} Fist Weapon${count !== 1 ? 's' : ''} Found`;
+            // END ADDED
 
             weapons.forEach(weapon => {
                 const card = document.createElement('div');
                 card.className = 'weapon-card';
 
                 // Format type nicely (e.g., 'fist_weapon' -> 'Fist Weapon')
-                const displayType = weapon.type.replace(/_/g, ' '); 
+                const displayType = weapon.type.replace(/_/g, ' ');
 
                 // Ability/Special details
-                const abilityText = weapon.ability && weapon.ability !== 'none' 
-                    ? `<p class="weapon-ability">Ability: ${weapon.ability}</p>` 
+                const abilityText = weapon.ability && weapon.ability !== 'none'
+                    ? `<p class="weapon-ability">Ability: ${weapon.ability}</p>`
                     : `<p class="weapon-ability" style="color:#aaa;">Ability: None</p>`;
 
                 // Get upgrade information 
@@ -232,7 +273,7 @@
 
                 // Get weight info, defaulting to N/A if missing
                 const weightDisplay = weapon.weight ? `${weapon.weight} kg` : 'N/A';
-                
+
                 card.innerHTML = `
                     <div class="weapon-header">
                         <h3 class="weapon-name">${weapon.name}</h3>
@@ -276,4 +317,5 @@
         document.addEventListener('DOMContentLoaded', fetchWeapons);
     </script>
 </body>
+
 </html>

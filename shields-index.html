@@ -112,12 +112,12 @@
 
         async function loadWeapons(typeFilter = 'all') {
             try {
-                const response = await fetch('./weapon.json');
+                const response = await fetch('./database/shieldbase.json');
                 const data = await response.json();
                 const weaponsContainer = document.getElementById('weapons-container');
                 
                 // Store all weapons data for filtering
-                allWeaponsData = data.weapons || [];
+                allWeaponsData = data.shieldbase || [];
                 
                 // Filter weapons to only show shields
                 let filteredWeapons = allWeaponsData.filter(weapon => 
