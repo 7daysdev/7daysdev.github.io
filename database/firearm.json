@@ -1,0 +1,213 @@
+{
+  "firearm": [
+    {
+      "id": "firearm_001",
+      "name": "Bell Ringer Pistol",
+      "type": "firearm",
+      "sub_type": "pistol",
+      "lore": "Fires small, hardened brass bells, or unleashes a disorienting sonic blast upon impact.",
+      "faction": "christmas_elf",
+      "ability": "sonic_blast",
+      "weight": 4.5,
+      "upgrade_tree": "pistol_basic"
+    },
+    {
+      "id": "firearm_002",
+      "name": "Gumball Shooter",
+      "type": "firearm",
+      "sub_type": "pistol",
+      "lore": "A simple, candy-dispenser weapon that fires pressurized gumballs. Surprisingly sticky.",
+      "faction": "foodkin",
+      "ability": "sticky_slow",
+      "weight": 3.0,
+      "upgrade_tree": "pistol_basic"
+    },
+    {
+      "id": "firearm_003",
+      "name": "Bone Pistol",
+      "type": "firearm",
+      "sub_type": "pistol",
+      "lore": "A crude, powerful pistol assembled from various bones that fires small, sharp bone fragments.",
+      "faction": "ice_elf",
+      "ability": "piercing_shrapnel",
+      "weight": 5.5,
+      "upgrade_tree": "pistol_advanced"
+    },
+    {
+      "id": "firearm_004",
+      "name": "Cork Gun",
+      "type": "firearm",
+      "sub_type": "pistol",
+      "lore": "A classic Toykin pistol, fires blunt, pressurized corks for non-lethal stuns.",
+      "faction": "toykin",
+      "ability": "stun_effect",
+      "weight": 2.5,
+      "upgrade_tree": "pistol_basic"
+    },
+    {
+      "id": "firearm_005",
+      "name": "Coal Gun",
+      "type": "firearm",
+      "sub_type": "shotgun",
+      "lore": "A devastating close-range weapon that fires lumps of compressed, fiery coal.",
+      "faction": "christmas_elf",
+      "ability": "fire_damage_pellets",
+      "weight": 9.0,
+      "upgrade_tree": "shotgun_advanced"
+    },
+    {
+      "id": "firearm_006",
+      "name": "Double Barrel Ice Breaker",
+      "type": "firearm",
+      "sub_type": "shotgun",
+      "lore": "A specialized shotgun designed to shatter thick ice, firing hardened steel slugs.",
+      "faction": "ice_elf",
+      "ability": "armor_shred_blast",
+      "weight": 11.0,
+      "upgrade_tree": "shotgun_advanced"
+    },
+    {
+      "id": "firearm_007",
+      "name": "Bubble Barrel Bouncing Ball Gun",
+      "type": "firearm",
+      "sub_type": "shotgun",
+      "lore": "The BBBB Gun. Fires a wide spread of hyper-bouncy balls that ricochet around the battlefield.",
+      "faction": "toykin",
+      "ability": "ricochet_damage",
+      "weight": 7.5,
+      "upgrade_tree": "shotgun_unique"
+    },
+    {
+      "id": "firearm_008",
+      "name": "Bubble Barrel Battery Gun",
+      "type": "firearm",
+      "sub_type": "shotgun",
+      "lore": "A weapon that fires old batteries, dealing explosive electric shock on impact.",
+      "faction": "toykin",
+      "ability": "electric_shock_blast",
+      "weight": 10.0,
+      "upgrade_tree": "shotgun_advanced"
+    },
+    {
+      "id": "firearm_009",
+      "name": "Retro Repuncher SMG",
+      "type": "firearm",
+      "sub_type": "smg",
+      "lore": "A game console SMG. Insert a cartridge to rapidly fire pixel-like energy bolts. Requires a blow to the magazine to clear jams.",
+      "faction": "toykin",
+      "ability": "rapid_pixel_fire",
+      "weight": 6.0,
+      "upgrade_tree": "smg_unique"
+    },
+    {
+      "id": "firearm_010",
+      "name": "Smarties SMG",
+      "type": "firearm",
+      "sub_type": "smg",
+      "lore": "Built into a Smarties box casing, it rapidly fires hard candies or M&M's. Highly distracting.",
+      "faction": "foodkin",
+      "ability": "distraction_fire",
+      "weight": 5.0,
+      "upgrade_tree": "smg_basic"
+    },
+    {
+      "id": "firearm_011",
+      "name": "Cardboard Gun",
+      "type": "firearm",
+      "sub_type": "smg",
+      "lore": "A weapon built almost entirely from cardboard that fires backing peanuts. Highly susceptible to water damage.",
+      "faction": "toykin",
+      "ability": "soft_impact",
+      "weight": 4.0,
+      "upgrade_tree": "smg_basic"
+    },
+    {
+      "id": "firearm_012",
+      "name": "Present Wrap Repeater",
+      "type": "firearm",
+      "sub_type": "smg",
+      "lore": "Fires tightly rolled wads of heavy-duty gift wrap, dealing surprising blunt force trauma.",
+      "faction": "christmas_elf",
+      "ability": "rapid_blunt_fire",
+      "weight": 6.5,
+      "upgrade_tree": "smg_advanced"
+    },
+    {
+      "id": "firearm_013",
+      "name": "Teapot Sniper",
+      "type": "firearm",
+      "sub_type": "sniper",
+      "lore": "A sniper rifle built from a teapot, firing focused, high-pressure streams of scalding hot tea for severe burn damage.",
+      "faction": "foodkin",
+      "ability": "high_burn_damage",
+      "weight": 14.0,
+      "upgrade_tree": "sniper_unique"
+    },
+    {
+      "id": "firearm_014",
+      "name": "Zink Pipe Sniper",
+      "type": "firearm",
+      "sub_type": "sniper",
+      "lore": "Built from zinc piping with a high-pressure gas chamber, firing razor-sharp screws with extreme velocity.",
+      "faction": "toykin",
+      "ability": "high_piercing_damage",
+      "weight": 12.5,
+      "upgrade_tree": "sniper_advanced"
+    },
+    {
+      "id": "firearm_015",
+      "name": "Toy Rail Gun",
+      "type": "firearm",
+      "sub_type": "sniper",
+      "lore": "A retro-steampunk design that uses magnetic rails to accelerate toy trains to incredible, destructive speeds.",
+      "faction": "toykin",
+      "ability": "electromagnetic_pierce",
+      "weight": 16.0,
+      "upgrade_tree": "sniper_legendary"
+    },
+    {
+      "id": "firearm_016",
+      "name": "Bone Sniper",
+      "type": "firearm",
+      "sub_type": "sniper",
+      "lore": "A long-range rifle that uses a massive pressure chamber to fire dense rib bones for heavy armor piercing.",
+      "faction": "ice_elf",
+      "ability": "extreme_pierce",
+      "weight": 15.0,
+      "upgrade_tree": "sniper_advanced"
+    },
+    {
+      "id": "firearm_017",
+      "name": "Harpoon Launcher",
+      "type": "firearm",
+      "sub_type": "sniper",
+      "lore": "A massive rifle that fires heavy, tethered harpoons. Capable of reeling in targets after a successful shot.",
+      "faction": "ice_elf",
+      "ability": "harpoon_reel",
+      "weight": 18.0,
+      "upgrade_tree": "sniper_unique"
+    },
+    {
+      "id": "firearm_018",
+      "name": "Cone Launcher",
+      "type": "firearm",
+      "sub_type": "specialist",
+      "lore": "A shoulder-mounted launcher that fires frozen, lock-on ice cream cones that home in on the target.",
+      "faction": "foodkin",
+      "ability": "homing_frost_projectile",
+      "weight": 20.0,
+      "upgrade_tree": "launcher_unique"
+    },
+    {
+      "id": "firearm_019",
+      "name": "Hunting Bow",
+      "type": "firearm",
+      "sub_type": "specialist",
+      "lore": "A heavy-duty compound bow used by Ice Elf hunters. While technically not a firearm, it serves a similar long-range role.",
+      "faction": "ice_elf",
+      "ability": "high_crit_chance",
+      "weight": 10.5,
+      "upgrade_tree": "bow_basic"
+    }
+]
+}

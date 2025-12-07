@@ -1,0 +1,82 @@
+{
+  "wands": [
+    {
+      "id": "wand_001",
+      "name": "Frost Wand",
+      "type": "magic_wand",
+      "lore": "Carved from ancient Ice Elf roots, it hums with frost.",
+      "faction": "ice_elf",
+      "upgrade_tree": "basic_wand"
+    },
+    {
+      "id": "wand_002",
+      "name": "Tinsel Twister",
+      "type": "magic_wand",
+      "lore": "A wand wrapped in enchanted tinsel, capable of launching harmless but dazzling distractions.",
+      "faction": "christmas_elf",
+      "ability": "dazzling_light",
+      "weight": 5.0,
+      "upgrade_tree": "basic_wand"
+    },
+    {
+      "id": "wand_003",
+      "name": "Peppermint Rod",
+      "type": "magic_wand",
+      "lore": "Carved from solidified peppermint oil. Emits gusts of invigorating, frosty air.",
+      "faction": "foodkin",
+      "ability": "invigorate_stamina",
+      "weight": 4.5,
+      "upgrade_tree": "basic_wand"
+    },
+    {
+      "id": "wand_004",
+      "name": "Gingerbread Stick",
+      "type": "magic_wand",
+      "lore": "A fragile-looking wand that smells of spices. It can summon minor gingerbread minions.",
+      "faction": "foodkin",
+      "ability": "summon_minion",
+      "weight": 3.8,
+      "upgrade_tree": "advanced_wand"
+    },
+    {
+      "id": "wand_001",
+      "name": "Frost Wand",
+      "type": "magic_wand",
+      "lore": "Carved from ancient Ice Elf roots, it hums with frost.",
+      "faction": "ice_elf",
+      "ability": "frost_bolt",
+      "weight": 4.0,
+      "upgrade_tree": "basic_wand"
+    },
+    {
+      "id": "wand_005",
+      "name": "Blizzard Spire",
+      "type": "magic_wand",
+      "lore": "A masterfully crafted spire that can conjure powerful, localized blizzards.",
+      "faction": "ice_elf",
+      "ability": "blizzard_call",
+      "weight": 5.5,
+      "upgrade_tree": "legendary_wand"
+    },
+    {
+      "id": "wand_006",
+      "name": "Wind-up Key",
+      "type": "magic_wand",
+      "lore": "A giant, enchanted wind-up key that manipulates time around enemies.",
+      "faction": "toykin",
+      "ability": "slow_time_field",
+      "weight": 6.0,
+      "upgrade_tree": "advanced_wand"
+    },
+    {
+      "id": "wand_007",
+      "name": "Blink Rod",
+      "type": "magic_wand",
+      "lore": "A Toykin rod that allows the caster to teleport short distances.",
+      "faction": "toykin",
+      "ability": "short_teleport",
+      "weight": 3.5,
+      "upgrade_tree": "basic_wand"
+    }
+  ]
+}

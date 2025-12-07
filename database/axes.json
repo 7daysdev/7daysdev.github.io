@@ -1,0 +1,134 @@
+{
+  "axes": [
+    {
+      "id": "axe_001",
+      "name": "Wood Cutter's Axe",
+      "type": "axe",
+      "lore": "A sturdy, reliable axe used by logging elves to harvest festive timber.",
+      "faction": "christmas_elf",
+      "ability": "none",
+      "weight": 18.0,
+      "upgrade_tree": "axe_basic"
+    },
+    {
+      "id": "axe_002",
+      "name": "Wall Guard Axe",
+      "type": "axe",
+      "lore": "A dependable axe given to guards who survive the academy but fall short of Guardian rank.",
+      "faction": "christmas_elf",
+      "ability": "minor_defense_boost",
+      "weight": 20.0,
+      "upgrade_tree": "axe_advanced"
+    },
+    {
+      "id": "axe_003",
+      "name": "Pick Axe",
+      "type": "axe",
+      "lore": "Used primarily for excavation, its sharp point is surprisingly useful in combat.",
+      "faction": "christmas_elf",
+      "ability": "piercing_strike",
+      "weight": 16.5,
+      "upgrade_tree": "axe_basic"
+    },
+    {
+      "id": "axe_004",
+      "name": "Spade Axe",
+      "type": "axe",
+      "lore": "A simple garden spade with a sharpened edge. Useful for both digging and battle.",
+      "faction": "christmas_elf",
+      "ability": "ground_breaking",
+      "weight": 15.0,
+      "upgrade_tree": "axe_basic"
+    },
+    {
+      "id": "axe_005",
+      "name": "Meat Cleaver",
+      "type": "axe",
+      "lore": "A massive, heavy cleaver with an extended, sturdy handle, wielded by Foodkin butchers.",
+      "faction": "foodkin",
+      "ability": "bleed_damage",
+      "weight": 22.0,
+      "upgrade_tree": "axe_advanced"
+    },
+    {
+      "id": "axe_006",
+      "name": "Pizza Cutter",
+      "type": "axe",
+      "lore": "A large, wickedly sharp rotary blade on a wooden haft. Deals continuous cutting damage.",
+      "faction": "foodkin",
+      "ability": "continuous_cutting",
+      "weight": 14.0,
+      "upgrade_tree": "axe_unique"
+    },
+    {
+      "id": "axe_007",
+      "name": "Bone Axe",
+      "type": "axe",
+      "lore": "Crude but effective axe made from bone and sinew. Common Ice Elf weaponry.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 17.5,
+      "upgrade_tree": "axe_basic"
+    },
+    {
+      "id": "axe_008",
+      "name": "Jaw Bone",
+      "type": "axe",
+      "lore": "A terrifying axe fashioned from the preserved jawbone of a giant frozen creature.",
+      "faction": "ice_elf",
+      "ability": "fear_effect",
+      "weight": 19.0,
+      "upgrade_tree": "axe_advanced"
+    },
+    {
+      "id": "axe_009",
+      "name": "Megalodon Tooth",
+      "type": "axe",
+      "lore": "A prehistoric megalodon tooth shaped and mounted as a massive, jagged axe head.",
+      "faction": "ice_elf",
+      "ability": "shredding_damage",
+      "weight": 23.0,
+      "upgrade_tree": "axe_legendary"
+    },
+    {
+      "id": "axe_010",
+      "name": "Dice of Fortune",
+      "type": "axe",
+      "lore": "A weapon built around a Dungeons & Dragons style die, granting random elemental effects.",
+      "faction": "toykin",
+      "ability": "random_elemental_hit",
+      "weight": 16.0,
+      "upgrade_tree": "axe_special"
+    },
+    {
+      "id": "axe_011",
+      "name": "Gear Axe",
+      "type": "axe",
+      "lore": "A large, half-cut gear cog affixed to a stick. Its spinning teeth remain dangerously sharp.",
+      "faction": "toykin",
+      "ability": "high_rotation_speed",
+      "weight": 15.5,
+      "upgrade_tree": "axe_basic"
+    },
+    {
+      "id": "axe_012",
+      "name": "Stained Glass Axe",
+      "type": "axe",
+      "lore": "A beautiful but fragile axe, its light refractions can momentarily blind opponents.",
+      "faction": "toykin",
+      "ability": "dazzle_effect",
+      "weight": 17.0,
+      "upgrade_tree": "axe_advanced"
+    },
+    {
+      "id": "axe_013",
+      "name": "Tambourine Axe",
+      "type": "axe",
+      "lore": "The sharpened jingles and frame of a tambourine repurposed for chopping.",
+      "faction": "toykin",
+      "ability": "sonic_stagger",
+      "weight": 14.0,
+      "upgrade_tree": "axe_advanced"
+    }
+  ]
+}

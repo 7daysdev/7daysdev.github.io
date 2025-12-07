@@ -1,0 +1,134 @@
+{
+  "polearms": [
+     {
+      "id": "polearm_001",
+      "name": "Banner Spear",
+      "type": "polearm",
+      "lore": "A spear decorated with Christmas Elf battle banners. Excellent reach.",
+      "faction": "christmas_elf",
+      "ability": "increased_reach",
+      "weight": 15.0,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_002",
+      "name": "Candy Cane Lance",
+      "type": "polearm",
+      "lore": "A decorative yet deadly lance made from reinforced peppermint.",
+      "faction": "foodkin",
+      "ability": "sweet_smell_healing",
+      "weight": 10.0,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_003",
+      "name": "Ice Drill",
+      "type": "polearm",
+      "lore": "Used by Ice Elves to bore through thick ice. Extremely high piercing damage.",
+      "faction": "ice_elf",
+      "ability": "pierce_defense",
+      "weight": 18.0,
+      "upgrade_tree": "polearm_advanced"
+    },
+    {
+      "id": "polearm_004",
+      "name": "Robot Antenna",
+      "type": "polearm",
+      "lore": "A salvaged antenna from a giant Toykin robot, repurposed as a staff.",
+      "faction": "toykin",
+      "ability": "lightning_damage",
+      "weight": 13.5,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_005",
+      "name": "North Star Spear",
+      "type": "polearm",
+      "lore": "Topped with a crystalline star that guides the wielder. Used by elite guard.",
+      "faction": "christmas_elf",
+      "ability": "guidance_light",
+      "weight": 14.5,
+      "upgrade_tree": "polearm_advanced"
+    },
+    {
+      "id": "polearm_006",
+      "name": "Hard Chocolate Spear",
+      "type": "polearm",
+      "lore": "Made from tempered, dark chocolate. Surprisingly durable, but melts near fire.",
+      "faction": "foodkin",
+      "ability": "minor_hp_regen",
+      "weight": 16.0,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_007",
+      "name": "Sundae Skewer",
+      "type": "polearm",
+      "lore": "A tall, sharp ice-cream cone polearm. Hits cause opponents to suffer a momentary cold shock.",
+      "faction": "foodkin",
+      "ability": "cold_shock",
+      "weight": 12.0,
+      "upgrade_tree": "polearm_advanced"
+    },
+    {
+      "id": "polearm_008",
+      "name": "Fisherman's Harpoon",
+      "type": "polearm",
+      "lore": "A heavy, barbed spear designed for hunting large ice creatures in the frozen seas.",
+      "faction": "ice_elf",
+      "ability": "high_bleed_chance",
+      "weight": 19.5,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_009",
+      "name": "Hunting Spear",
+      "type": "polearm",
+      "lore": "Standard issue hunting equipment for Ice Elf tribesmen.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 16.5,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_010",
+      "name": "Bone Spear",
+      "type": "polearm",
+      "lore": "Simple, sharp spear crafted from the leg bone of a frozen mammoth.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 15.0,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_011",
+      "name": "Caribaser",
+      "type": "polearm",
+      "lore": "Refactored from the parts and shell of a giant crab. Its strikes are heavy and blunt.",
+      "faction": "ice_elf",
+      "ability": "shell_shatter",
+      "weight": 21.0,
+      "upgrade_tree": "polearm_unique"
+    },
+    {
+      "id": "polearm_012",
+      "name": "Luminescent Staff",
+      "type": "polearm",
+      "lore": "A simple staff with a permanently lit Toykin candle. Used to light dark corridors.",
+      "faction": "toykin",
+      "ability": "minor_fire_damage",
+      "weight": 13.0,
+      "upgrade_tree": "polearm_basic"
+    },
+    {
+      "id": "polearm_013",
+      "name": "Stained Glass Lance",
+      "type": "polearm",
+      "lore": "A delicate yet powerful lance made from enchanted stained glass. Shatters on impact but reforms quickly.",
+      "faction": "toykin",
+      "ability": "area_shatter",
+      "weight": 17.0,
+      "upgrade_tree": "polearm_advanced"
+    }
+  ]
+}

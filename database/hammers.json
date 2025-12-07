@@ -1,0 +1,206 @@
+{
+  "hammers": [
+    {
+      "id": "shield_et_train",
+      "name": "Train Cow Catcher",
+      "type": "great_hammer",
+      "lore": "",
+      "defense": 125,
+      "stability": 95,
+      "weight": 16.0,
+      "faction": "toykin",
+      "special_effect": "Locomotion: sustained charge with ethereal train",
+      "upgrade_tree": "great_shield_legendary"
+    },
+    {
+      "id": "hammer_001",
+      "name": "Jolly Mallet",
+      "type": "great_hammer",
+      "lore": "A heavy hammer used to build Santa's workshop, now for battle.",
+      "faction": "christmas_elf",
+      "ability": "stun_hit",
+      "weight": 25.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_002",
+      "name": "Coal Forger",
+      "type": "great_hammer",
+      "lore": "A dense, heavy hammer used to compress and purify raw coal for the workshop's furnaces.",
+      "faction": "christmas_elf",
+      "ability": "heat_transfer",
+      "weight": 26.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_003",
+      "name": "Guardian Hammer",
+      "type": "great_hammer",
+      "lore": "A reward for the highest-ranking Wall Guards, symbolizing the strength of the command.",
+      "faction": "christmas_elf",
+      "ability": "area_taunt",
+      "weight": 28.0,
+      "upgrade_tree": "great_hammer_advanced"
+    },
+    {
+      "id": "hammer_004",
+      "name": "Reindeer Sledgehammer",
+      "type": "great_hammer",
+      "lore": "A tool used for constructing the sleigh dock, its mass delivers immense blunt force.",
+      "faction": "christmas_elf",
+      "ability": "locomotive_strike",
+      "weight": 30.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_005",
+      "name": "Brussel Sprout Club",
+      "type": "great_hammer",
+      "lore": "A giant, dense brussel sprout fixed to a sturdy stick. Infamous for its powerful spin attack.",
+      "faction": "foodkin",
+      "ability": "cabbage_patch_swing",
+      "weight": 23.0,
+      "upgrade_tree": "great_hammer_unique"
+    },
+    {
+      "id": "hammer_006",
+      "name": "Soda Can Basher",
+      "type": "great_hammer",
+      "lore": "A hammer made from a massive, pressurized soda can. Explodes with fizzy damage on heavy hits.",
+      "faction": "foodkin",
+      "ability": "soda_fizz_burst",
+      "weight": 21.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_007",
+      "name": "Honey Dipper Mace",
+      "type": "great_hammer",
+      "lore": "A giant, sticky honey dipper. Enemies struck are slowed by the thick, sweet residue.",
+      "faction": "foodkin",
+      "ability": "sticky_slow",
+      "weight": 24.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_008",
+      "name": "Inferno Hot Pot",
+      "type": "great_hammer",
+      "lore": "A cooking pot filled with scalding liquid, serving as the hammer's head.",
+      "faction": "foodkin",
+      "ability": "fire_damage",
+      "weight": 27.0,
+      "upgrade_tree": "great_hammer_advanced"
+    },
+    {
+      "id": "hammer_009",
+      "name": "Maki Slammer",
+      "type": "great_hammer",
+      "lore": "A giant, tightly rolled maki sushi on a stick. Heavy and densely packed.",
+      "faction": "foodkin",
+      "ability": "none",
+      "weight": 25.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_010",
+      "name": "Nigiri Basher",
+      "type": "great_hammer",
+      "lore": "A huge slab of nigiri rice and fish. Smells great, hits hard.",
+      "faction": "foodkin",
+      "ability": "none",
+      "weight": 24.5,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_011",
+      "name": "Watermelon Masher",
+      "type": "great_hammer",
+      "lore": "Half a watermelon mounted on a haft. Its juicy, blunt impact is surprisingly effective.",
+      "faction": "foodkin",
+      "ability": "hydro_damage",
+      "weight": 26.5,
+      "upgrade_tree": "great_hammer_advanced"
+    },
+    {
+      "id": "hammer_012",
+      "name": "Melted Anchor",
+      "type": "great_hammer",
+      "lore": "The hook of a great naval anchor, partially melted down and reforged into a mighty hammerhead.",
+      "faction": "ice_elf",
+      "ability": "chain_pull",
+      "weight": 32.0,
+      "upgrade_tree": "great_hammer_advanced"
+    },
+    {
+      "id": "hammer_013",
+      "name": "Mammoth Tusk Masher",
+      "type": "great_hammer",
+      "lore": "The base of a massive mammoth tusk, granting devastating frost damage and area-of-effect ice waves.",
+      "faction": "ice_elf",
+      "ability": "frost_range_swing",
+      "weight": 35.0,
+      "upgrade_tree": "great_hammer_legendary"
+    },
+    {
+      "id": "hammer_014",
+      "name": "Nordic Forger",
+      "type": "great_hammer",
+      "lore": "A hammer forged in the Ice Elf's ancient mountain workshops, capable of shattering frozen armor.",
+      "faction": "ice_elf",
+      "ability": "shattering_blow",
+      "weight": 29.0,
+      "upgrade_tree": "great_hammer_advanced"
+    },
+    {
+      "id": "hammer_015",
+      "name": "Bell Ringer",
+      "type": "great_hammer",
+      "lore": "A heavy clapper from the Clock Tower bell. Capable of unleashing destructive sonic ripples.",
+      "faction": "toykin",
+      "ability": "ground_ripple_aoe",
+      "weight": 28.5,
+      "upgrade_tree": "great_hammer_unique"
+    },
+    {
+      "id": "hammer_016",
+      "name": "Kaleidoscope Club",
+      "type": "great_hammer",
+      "lore": "The scope on a stick. Its hits don't just strike, they carve brilliant, kaleidoscopic energy waves.",
+      "faction": "toykin",
+      "ability": "slash_aoe",
+      "weight": 25.5,
+      "upgrade_tree": "great_hammer_unique"
+    },
+    {
+      "id": "hammer_017",
+      "name": "Melody Mallet",
+      "type": "great_hammer",
+      "lore": "A music box mounted on a stick. Each heavy swing plays a tune that can confuse enemies.",
+      "faction": "toykin",
+      "ability": "confusion_tune",
+      "weight": 22.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_018",
+      "name": "Rainbow Rumbler",
+      "type": "great_hammer",
+      "lore": "Dozens of crayons rubber-banded together on a pencil shaft, leaving colorful trails on impact.",
+      "faction": "toykin",
+      "ability": "elemental_color_damage",
+      "weight": 20.0,
+      "upgrade_tree": "great_hammer_basic"
+    },
+    {
+      "id": "hammer_019",
+      "name": "Train Hammer",
+      "type": "great_hammer",
+      "lore": "A heavy toy train mounted on an old rail switcher. Uses steam power for powerful, fire-based heavy attacks.",
+      "faction": "toykin",
+      "ability": "steam_fire_damage",
+      "weight": 31.0,
+      "upgrade_tree": "great_hammer_legendary"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "daggers": [
+    {
+      "id": "dagger_001",
+      "name": "Toy Maker's Knife",
+      "type": "dagger",
+      "lore": "A precision blade used by master elves to carve intricate wooden toys. Deadly in the right hands.",
+      "faction": "christmas_elf",
+      "ability": "precision_strike",
+      "weight": 3.0,
+      "upgrade_tree": "dagger_basic"
+    },
+    {
+      "id": "dagger_002",
+      "name": "Ornament Shard",
+      "type": "dagger",
+      "lore": "A jagged dagger made from a broken, reinforced holiday ornament. Surprisingly sharp.",
+      "faction": "christmas_elf",
+      "ability": "bleed_damage",
+      "weight": 2.5,
+      "upgrade_tree": "dagger_basic"
+    },
+    {
+      "id": "dagger_003",
+      "name": "Fish Dreger",
+      "type": "dagger",
+      "lore": "Shaped like a curved sickle, traditionally used for pulling in large fishing nets. Can be thrown like a boomerang.",
+      "faction": "foodkin",
+      "ability": "boomerang_frost_throw",
+      "weight": 4.5,
+      "upgrade_tree": "dagger_unique"
+    },
+    {
+      "id": "dagger_004",
+      "name": "Skewered Fruit Knife",
+      "type": "dagger",
+      "lore": "A short, sharp knife used for preparing delicate fruit skewers. Applies a minor paralyzing poison.",
+      "faction": "foodkin",
+      "ability": "minor_paralysis_poison",
+      "weight": 2.8,
+      "upgrade_tree": "dagger_basic"
+    },
+    {
+      "id": "dagger_005",
+      "name": "Hunter Bone Dagger",
+      "type": "dagger",
+      "lore": "A ceremonial dagger crafted from the first kill of a young Ice Elf hunter. Deals high critical damage.",
+      "faction": "ice_elf",
+      "ability": "high_critical_hit",
+      "weight": 3.5,
+      "upgrade_tree": "dagger_advanced"
+    },
+    {
+      "id": "dagger_006",
+      "name": "Ice Sliver",
+      "type": "dagger",
+      "lore": "A pure shard of magical ice that never melts, used for quick, quiet assassinations.",
+      "faction": "ice_elf",
+      "ability": "frost_buildup",
+      "weight": 2.0,
+      "upgrade_tree": "dagger_basic"
+    },
+    {
+      "id": "dagger_007",
+      "name": "Miniature Scissors",
+      "type": "dagger",
+      "lore": "Giant sewing scissors reduced in size and sharpened into two separate daggers.",
+      "faction": "toykin",
+      "ability": "dual_wield_bonus",
+      "weight": 4.0,
+      "upgrade_tree": "dagger_advanced"
+    },
+    {
+      "id": "dagger_008",
+      "name": "Dart Tip",
+      "type": "dagger",
+      "lore": "A highly aerodynamic tip of a projectile dart, engineered for maximum throw distance.",
+      "faction": "toykin",
+      "ability": "high_throw_range",
+      "weight": 1.5,
+      "upgrade_tree": "dagger_basic"
+    }
+  ]
+}

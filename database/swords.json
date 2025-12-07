@@ -1,0 +1,424 @@
+{
+  "swords": [
+    {
+      "id": "sword_001",
+      "name": "Envoys Edge",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "christmas_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_002",
+      "name": "Officers Sword ",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "christmas_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_003",
+      "name": "The Eve Sword",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "christmas_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_004",
+      "name": "Minty Fresh",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "foodkin",
+      "ability": "restores stamina slightly higher rate",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_005",
+      "name": "Bone sword",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_006",
+      "name": "Crab Saber",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_007",
+      "name": "Grief",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_008",
+      "name": "Epoch Blade",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_009",
+      "name": "Porciline",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_010",
+      "name": "Radiant Refraction",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_011",
+      "name": "RC Blade",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_012",
+      "name": "Short Hand",
+      "type": "straight_sword",
+      "lore": "A dependable blade carried by the scouts.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 12.0,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "sword_013",
+      "name": "Gout Slasher",
+      "type": "straight_sword",
+      "lore": "-",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 10,
+      "upgrade_tree": "straight_sword_basic"
+    },
+    {
+      "id": "rapier_003",
+      "name": "Wall Captain's Rapier",
+      "type": "rapier",
+      "lore": "A light, precise sidearm for high-ranking officers, emphasizing speed and finesse.",
+      "faction": "christmas_elf",
+      "ability": "quick_parry",
+      "weight": 8.0,
+      "upgrade_tree": "rapier_advanced"
+    },
+    {
+      "id": "rapier_004",
+      "name": "Gift Ribbon Foil",
+      "type": "rapier",
+      "lore": "A rapier with a surprisingly sharp blade made from compressed festive ribbon, granting fast, light attacks.",
+      "faction": "christmas_elf",
+      "ability": "fast_jab",
+      "weight": 7.5,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_005",
+      "name": "Pretzel Rod Rapier",
+      "type": "rapier",
+      "lore": "A long, salted pretzel rod reinforced for combat. Its savory flavor is distracting to foes.",
+      "faction": "foodkin",
+      "ability": "saline_distraction",
+      "weight": 9.0,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_006",
+      "name": "Swordfish Bake",
+      "type": "rapier",
+      "lore": "The hardened, baked bill of a swordfish, used as a naturally pointy thrusting weapon.",
+      "faction": "foodkin",
+      "ability": "pierce_defense",
+      "weight": 11.0,
+      "upgrade_tree": "rapier_advanced"
+    },
+    {
+      "id": "rapier_007",
+      "name": "Tea Cup Sword",
+      "type": "rapier",
+      "lore": "A fine porcelain teacup acts as the guard for this delicate but sharp blade. Best used at formal duels.",
+      "faction": "foodkin",
+      "ability": "none",
+      "weight": 8.5,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_008",
+      "name": "Harpoon Thruster",
+      "type": "rapier",
+      "lore": "A repurposed harpoon used for quick, deep thrusts. A charged attack releases a powerful backward shove.",
+      "faction": "ice_elf",
+      "ability": "harpoon_back_thrust",
+      "weight": 12.0,
+      "upgrade_tree": "rapier_advanced"
+    },
+    {
+      "id": "rapier_009",
+      "name": "Narwhal Tusk",
+      "type": "rapier",
+      "lore": "The horn-like tooth of a Narwhal, revered by the Ice Elves as a pure, piercing weapon.",
+      "faction": "ice_elf",
+      "ability": "pure_frost_pierce",
+      "weight": 10.0,
+      "upgrade_tree": "rapier_legendary"
+    },
+    {
+      "id": "rapier_010",
+      "name": "Icicle Thorn",
+      "type": "rapier",
+      "lore": "A needle-thin rapier made from magically compressed, long-lasting ice.",
+      "faction": "ice_elf",
+      "ability": "frost_jab",
+      "weight": 7.0,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_011",
+      "name": "Giant Sewing Needle",
+      "type": "rapier",
+      "lore": "A massive sewing needle with a thread-wrapped grip and a button guard. Perfect for precision stabbing.",
+      "faction": "toykin",
+      "ability": "high_precision",
+      "weight": 9.5,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_012",
+      "name": "Pipe Puncture",
+      "type": "rapier",
+      "lore": "Various metal pipes welded and sharpened into a durable, unrefined rapier.",
+      "faction": "toykin",
+      "ability": "none",
+      "weight": 11.5,
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "rapier_013",
+      "name": "Quill Puncture",
+      "type": "rapier",
+      "lore": "A long quill with an enchanted, extremely sharp point that builds up poison damage.",
+      "faction": "toykin",
+      "ability": "poison_ink_buildup",
+      "weight": 6.5,
+      "upgrade_tree": "rapier_advanced"
+    },
+    {
+      "id": "rapier_014",
+      "name": "Slinky Saber",
+      "type": "rapier",
+      "lore": "A compressed slinky forms the body of the blade. It can dramatically extend its reach on a charged lunge.",
+      "faction": "toykin",
+      "ability": "extended_reach_charge",
+      "weight": 10.5,
+      "upgrade_tree": "rapier_unique"
+    },
+    {
+      "id": "rapier_015",
+      "name": "Tesla Coil Rapier",
+      "type": "rapier",
+      "lore": "A gear coil attached to a handle that discharges focused electricity on charged thrusts.",
+      "faction": "toykin",
+      "ability": "electric_thrust_aoe",
+      "weight": 13.0,
+      "upgrade_tree": "rapier_legendary"
+    },
+    {
+      "id": "rapier_001",
+      "name": "Swift Needle",
+      "type": "rapier",
+      "lore": "A lightning-fast thrusting sword favored by duelists.",
+      "faction": "toykin",
+      "upgrade_tree": "rapier_basic"
+    },
+    {
+      "id": "greatsword_002",
+      "name": "Wall Captain Great Sword",
+      "type": "greatsword",
+      "lore": "The ceremonial sword awarded to a Wall Captain, symbolizing unwavering dedication to duty.",
+      "faction": "christmas_elf",
+      "ability": "fortify_defense",
+      "weight": 24.0,
+      "upgrade_tree": "greatsword_advanced"
+    },
+    {
+      "id": "greatsword_003",
+      "name": "Sleigh Runner Blade",
+      "type": "greatsword",
+      "lore": "Crafted from a reinforced sleigh runner, giving it unparalleled straight-line speed.",
+      "faction": "christmas_elf",
+      "ability": "charge_damage",
+      "weight": 25.5,
+      "upgrade_tree": "greatsword_basic"
+    },
+    {
+      "id": "greatsword_004",
+      "name": "Bread Slicer",
+      "type": "greatsword",
+      "lore": "A gargantuan bread knife that delivers incredibly clean, deep cuts. Always slightly warm.",
+      "faction": "foodkin",
+      "ability": "high_critical_hit",
+      "weight": 22.0,
+      "upgrade_tree": "greatsword_basic"
+    },
+    {
+      "id": "greatsword_005",
+      "name": "Choc Wok",
+      "type": "greatsword",
+      "lore": "A massive slab of hardened chocolate, sweet in smell but brutally heavy in combat.",
+      "faction": "foodkin",
+      "ability": "slow_sticky_effect",
+      "weight": 28.0,
+      "upgrade_tree": "greatsword_advanced"
+    },
+    {
+      "id": "greatsword_006",
+      "name": "Great Grater",
+      "type": "greatsword",
+      "lore": "A large blade covered in deep grating holes, designed to shred the armor of enemies.",
+      "faction": "foodkin",
+      "ability": "armor_shred",
+      "weight": 23.5,
+      "upgrade_tree": "greatsword_advanced"
+    },
+    {
+      "id": "greatsword_007",
+      "name": "Ice Lolli Blade",
+      "type": "greatsword",
+      "lore": "A giant, frozen confection shaped like a sword. Cold enough to cause frost buildup quickly.",
+      "faction": "foodkin",
+      "ability": "frost_buildup",
+      "weight": 20.0,
+      "upgrade_tree": "greatsword_basic"
+    },
+    {
+      "id": "greatsword_008",
+      "name": "Strife",
+      "type": "greatsword",
+      "lore": "A shard of ancient, pure ice. Its power builds in a widening circle around the wielder.",
+      "faction": "ice_elf",
+      "ability": "bitterness_aoe_frost",
+      "weight": 26.0,
+      "upgrade_tree": "greatsword_legendary"
+    },
+    {
+      "id": "greatsword_009",
+      "name": "Whalebone Greatsword",
+      "type": "greatsword",
+      "lore": "Forged from the fused spine bones of a gargantuan Arctic whale. Exceptionally strong and light for its size.",
+      "faction": "ice_elf",
+      "ability": "impact_stun",
+      "weight": 23.0,
+      "upgrade_tree": "greatsword_advanced"
+    },
+    {
+      "id": "greatsword_010",
+      "name": "Expenda-Man Sword",
+      "type": "greatsword",
+      "lore": "A futuristic sci-fi blade from an old action figure set. Its heavy attacks shoot fire slashes.",
+      "faction": "toykin",
+      "ability": "fire_slash_heavy",
+      "weight": 21.0,
+      "upgrade_tree": "greatsword_special"
+    },
+    {
+      "id": "greatsword_011",
+      "name": "Stained Glass Greatsword",
+      "type": "greatsword",
+      "lore": "A magnificent, full-sized blade constructed entirely from hardened stained glass panels.",
+      "faction": "toykin",
+      "ability": "light_refraction_damage",
+      "weight": 22.5,
+      "upgrade_tree": "greatsword_advanced"
+    },
+    {
+      "id": "greatsword_012",
+      "name": "Teddy Bear Stitcher",
+      "type": "greatsword",
+      "lore": "A giant sewing needle mounted on a hilt. Used to stitch up toy breaches, but capable of devastating piercing damage.",
+      "faction": "toykin",
+      "ability": "high_piercing_damage",
+      "weight": 19.5,
+      "upgrade_tree": "greatsword_basic"
+    },
+    {
+      "id": "greatsword_unique_001",
+      "name": "Frostfang",
+      "type": "greatsword",
+      "lore": "Forged by Ice Elf chiefs, its chill never fades.",
+      "faction": "ice_elf",
+      "upgrades": [
+        {
+          "level": 1,
+          "attack": 200,
+          "frost_damage": 50,
+          "materials": [
+            "frost_core"
+          ],
+          "souls": 1000,
+          "coins": 1
+        },
+        {
+          "level": 2,
+          "attack": 240,
+          "frost_damage": 80,
+          "materials": [
+            "frost_core",
+            "ancient_steel"
+          ],
+          "souls": 2000,
+          "coins": 2
+        },
+        {
+          "level": 3,
+          "attack": 280,
+          "frost_damage": 120,
+          "materials": [
+            "frost_core",
+            "eternal_ember"
+          ],
+          "souls": 4000,
+          "coins": 3
+        }
+      ]
+    }
+    
+]
+}

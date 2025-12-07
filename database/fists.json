@@ -1,0 +1,94 @@
+{
+  "fists": [
+    {
+      "id": "fist_001",
+      "name": "High Forger Gloves",
+      "type": "fist_weapon",
+      "lore": "Blacksmith gloves treated to withstand extreme temperatures, granting the wielder fire damage on strike.",
+      "faction": "christmas_elf",
+      "ability": "fire_damage",
+      "weight": 8.0,
+      "upgrade_tree": "fist_advanced"
+    },
+    {
+      "id": "fist_002",
+      "name": "Kringle Knuckles",
+      "type": "fist_weapon",
+      "lore": "Brass knuckles wrapped in tough leather, used to deliver surprisingly solid holiday cheer.",
+      "faction": "christmas_elf",
+      "ability": "none",
+      "weight": 7.5,
+      "upgrade_tree": "fist_basic"
+    },
+    {
+      "id": "fist_003",
+      "name": "Grater Gauntlets",
+      "type": "fist_weapon",
+      "lore": "Gauntlets crafted from salvaged cheese graters. Their rough surface shreds armor and flesh.",
+      "faction": "foodkin",
+      "ability": "armor_shred",
+      "weight": 9.5,
+      "upgrade_tree": "fist_advanced"
+    },
+    {
+      "id": "fist_004",
+      "name": "Donut Glazes",
+      "type": "fist_weapon",
+      "lore": "Gloves covered in crystallized sugar glaze, making the fists heavy and sticky upon impact.",
+      "faction": "foodkin",
+      "ability": "sticky_slow",
+      "weight": 7.0,
+      "upgrade_tree": "fist_basic"
+    },
+    {
+      "id": "fist_005",
+      "name": "Bear Claws",
+      "type": "fist_weapon",
+      "lore": "Gloves reinforced with the actual claws of a massive ice bear, guaranteeing severe bleed damage.",
+      "faction": "ice_elf",
+      "ability": "bleed_damage",
+      "weight": 10.0,
+      "upgrade_tree": "fist_advanced"
+    },
+    {
+      "id": "fist_006",
+      "name": "Bone Claws",
+      "type": "fist_weapon",
+      "lore": "Simple, lightweight claws carved from ice creature bone for swift, consecutive attacks.",
+      "faction": "ice_elf",
+      "ability": "none",
+      "weight": 6.0,
+      "upgrade_tree": "fist_basic"
+    },
+    {
+      "id": "fist_007",
+      "name": "Wolf Fang Claws",
+      "type": "fist_weapon",
+      "lore": "A reward given to hunters who successfully collect 50 high-quality wolf pelts. Deep, jagged bleed wounds.",
+      "faction": "ice_elf",
+      "ability": "high_bleed_damage",
+      "weight": 8.5,
+      "upgrade_tree": "fist_unique"
+    },
+    {
+      "id": "fist_008",
+      "name": "Jester Gloves",
+      "type": "fist_weapon",
+      "lore": "Gloves worn by the Toykin tricksters. Lined with a subtle coating of irritating poison.",
+      "faction": "toykin",
+      "ability": "poison_damage",
+      "weight": 5.5,
+      "upgrade_tree": "fist_basic"
+    },
+    {
+      "id": "fist_009",
+      "name": "RC Gauntlets",
+      "type": "fist_weapon",
+      "lore": "Gauntlets built from old remote control parts. They store and release high bursts of electricity.",
+      "faction": "toykin",
+      "ability": "electric_damage",
+      "weight": 11.0,
+      "upgrade_tree": "fist_advanced"
+    }
+  ]
+}

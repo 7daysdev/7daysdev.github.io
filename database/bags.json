@@ -1,0 +1,114 @@
+{
+  "bags": [
+    {
+      "id": "bag_001",
+      "name": "Toast Bag",
+      "type": "pouch",
+      "faction": "foodkin",
+      "lore": "A surprisingly resilient bag woven from slices of magically preserved toast. Smells faintly of butter.",
+      "carry_limit_weight": 2.0,
+      "carry_limit_slots": 4,
+      "base_weight": 0.3,
+      "ability": "Provides a minor (3%) resistance to Frost damage."
+    },
+    {
+      "id": "bag_002",
+      "name": "Lettuce Satchel",
+      "type": "satchel",
+      "faction": "foodkin",
+      "lore": "Made from thick, leafy green lettuce. It has a surprisingly large capacity, but must be kept hydrated.",
+      "carry_limit_weight": 12.0,
+      "carry_limit_slots": 10,
+      "base_weight": 1.0,
+      "ability": "Grants a small boost to Stamina regeneration while outdoors."
+    },
+    {
+      "id": "bag_003",
+      "name": "Hunter's Pouch",
+      "type": "pouch",
+      "faction": "ice_elf",
+      "lore": "A durable pouch crafted from the tanned hides and pelts of tundra beasts. Excellent for keeping supplies dry.",
+      "carry_limit_weight": 8.0,
+      "carry_limit_slots": 6,
+      "base_weight": 0.8,
+      "ability": "Automatically chills any liquid items placed inside."
+    },
+    {
+      "id": "bag_004",
+      "name": "Steampunk Crate-Pack",
+      "type": "backpack",
+      "faction": "toykin",
+      "lore": "A clunky, mechanical bag featuring brass gears and small steam vents. Heavy, but highly protective.",
+      "carry_limit_weight": 60.0,
+      "carry_limit_slots": 18,
+      "base_weight": 5.0,
+      "ability": "Minor passive defense bonus due to the thick metal casing."
+    },
+    {
+      "id": "bag_005",
+      "name": "Marble Sack",
+      "type": "pouch",
+      "faction": "toykin",
+      "lore": "Originally intended for holding glass marbles, this small sack is surprisingly sturdy and bottomless.",
+      "carry_limit_weight": 7.0,
+      "carry_limit_slots": 5,
+      "base_weight": 0.2,
+      "ability": "Increases the chance of finding valuable gems or rare crafting components."
+    },
+    {
+      "id": "bag_006",
+      "name": "Stained Glass Lantern Bag",
+      "type": "satchel",
+      "faction": "toykin",
+      "lore": "A beautifully repurposed lantern whose glass panels now protect contents. Casts colorful light when opened.",
+      "carry_limit_weight": 15.0,
+      "carry_limit_slots": 12,
+      "base_weight": 1.5,
+      "ability": "Emits a weak, continuous Light spell."
+    },
+    {
+      "id": "bag_007",
+      "name": "Tesla Coil Battery Bag",
+      "type": "backpack",
+      "faction": "toykin",
+      "lore": "A backpack housing a small, crackling tesla coil battery. Be cautious when touching the metal frame!",
+      "carry_limit_weight": 40.0,
+      "carry_limit_slots": 14,
+      "base_weight": 3.5,
+      "ability": "Occasionally zaps nearby enemies for minor electrical damage."
+    },
+    {
+      "id": "bag_008",
+      "name": "Raging Raptor Backpack",
+      "type": "backpack",
+      "faction": "toykin",
+      "lore": "A plush, dinosaur-themed backpack. Hug it for courage, but try not to confuse it with a pet.",
+      "carry_limit_weight": 25.0,
+      "carry_limit_slots": 10,
+      "base_weight": 1.2,
+      "ability": "Provides minor morale boost to allies when worn."
+    },
+    {
+      "id": "bag_009",
+      "name": "Messenger Bag",
+      "type": "satchel",
+      "faction": "christmas_elf",
+      "lore": "A classic, sturdy leather bag used for rapid deliveries, enchanted for speed and efficiency.",
+      "carry_limit_weight": 10.0,
+      "carry_limit_slots": 8,
+      "base_weight": 0.7,
+      "ability": "Slightly increases the wearer's movement speed."
+    },
+    {
+      "id": "bag_010",
+      "name": "Magic Scholar's College Bag",
+      "type": "backpack",
+      "faction": "christmas_elf",
+      "lore": "Used by aspiring scholars at the North Pole Academy. Has hidden compartments for dangerous experiments.",
+      "carry_limit_weight": 30.0,
+      "carry_limit_slots": 16,
+      "base_weight": 2.0,
+      "ability": "Reduces the weight of all scrolls and books by 75%."
+    }
+  ]
+}
