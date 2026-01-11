@@ -300,7 +300,6 @@
       ],
       "anime_id": "S01-EP06",
       "activation_method": "a",
-      
       "activation": {
         "method": "tap",
         "charge": "none",
@@ -3682,7 +3681,6 @@
         "Weapon Ability"
       ],
       "anime_id": "S01-EP53",
-      
       "activation_method": "rapier-weapon",
       "activation": {
         "method": "tap",
@@ -4424,6 +4422,138 @@
       }
     },
     {
+      "card_id": "L&K-097",
+      "card_name": "Lock and Key",
+      "rarity": "Rare",
+      "type": [
+        "Tap",
+        "Defensive",
+        "Summon"
+      ],
+      "anime_id": "S01-EP101",
+      "activation_method": "active_tap",
+      "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "instant"
+      },
+      "image_filename": "lockandkey.png",
+      "abilities": {
+        "level_1": {
+          "serial_number": "BP1-101-R-L1",
+          "ability_text": "Consume mana to invoke Lock and Key for a short duration. If no sword and shield are equipped, summon a phantom shield and straight sword. If a sword and shield are already equipped, enhance their defensive stability and melee effectiveness for the duration.",
+          "props": {
+            "cooldown": 60,
+            "mana_cost": 30
+          },
+          "effects": [
+            {
+              "type": "conditional_check",
+              "parameters": {
+                "requires_equipped": {
+                  "shield": false,
+                  "straight_sword": false
+                }
+              },
+              "on_true": [
+                {
+                  "type": "summon_weapon",
+                  "parameters": {
+                    "weapon": "lock_shield",
+                    "hand": "offhand",
+                    "temporary": true,
+                    "duration": 10
+                  }
+                },
+                {
+                  "type": "summon_weapon",
+                  "parameters": {
+                    "weapon": "key_straight_sword",
+                    "hand": "mainhand",
+                    "temporary": true,
+                    "duration": 10
+                  }
+                }
+              ],
+              "on_false": [
+                {
+                  "type": "apply_buff",
+                  "parameters": {
+                    "target": "equipped_shield",
+                    "buff": "lock_stability_boost",
+                    "duration": 10
+                  }
+                },
+                {
+                  "type": "apply_buff",
+                  "parameters": {
+                    "target": "equipped_straight_sword",
+                    "buff": "key_melee_boost",
+                    "duration": 10
+                  }
+                }
+              ],
+              "visual_feedback": "lock_and_key_manifest"
+            }
+          ]
+        },
+        "level_2": {
+          "serial_number": "BP1-101-R-L2",
+          "ability_text": "Summon 4 phantom copies of yourself. These phantoms will absorb the next 4 projectiles or melee attacks. Duration increased.",
+          "upgrade_cost": {
+            "required_level": 1,
+            "required_count": 3
+          },
+          "props": {
+            "cooldown": 40,
+            "mana_cost": 20
+          },
+          "effects": [
+            {
+              "type": "summon_decoy",
+              "parameters": {
+                "entity": "phantom_copy",
+                "count": 4,
+                "duration": 25,
+                "absorb_attacks": {
+                  "type": "projectile, melee",
+                  "count": 1
+                }
+              },
+              "visual_feedback": "phantom_summon_effect"
+            }
+          ]
+        },
+        "level_3": {
+          "serial_number": "BP1-101-R-L3",
+          "ability_text": "Summon 5 phantom copies of yourself. These phantoms will absorb the next 5 projectiles or melee attacks. Duration increased and cooldown reduced.",
+          "upgrade_cost": {
+            "required_level": 2,
+            "required_count": 4
+          },
+          "props": {
+            "cooldown": 35,
+            "mana_cost": 25
+          },
+          "effects": [
+            {
+              "type": "summon_decoy",
+              "parameters": {
+                "entity": "phantom_copy",
+                "count": 5,
+                "duration": 30,
+                "absorb_attacks": {
+                  "type": "projectile, melee",
+                  "count": 1
+                }
+              },
+              "visual_feedback": "phantom_summon_effect"
+            }
+          ]
+        }
+      }
+    },
+    {
       "card_id": "PHR-101",
       "card_name": "Phantom Remembrance",
       "rarity": "Rare",
@@ -4521,6 +4651,166 @@
       }
     },
     {
+      "card_id": "NWD-098",
+      "card_name": "No wishes for the dead",
+      "rarity": "Rare",
+      "type": [
+        "Tap",
+        "Summon",
+        "Fire",
+        "Ice",
+        "Electric",
+        "Combat"
+      ],
+      "anime_id": "S01-EP12",
+      "activation_method": "a",
+      "activation": {
+        "method": "tap",
+        "charge": "none",
+        "release": "instant"
+      },
+      "image_filename": "no_wishes_for_the_dead.png",
+      "abilities": {
+        "level_1": {
+          "serial_number": "BP1-073-R-L1",
+          "ability_text": "Summons the Garygomites, a trio of tiny elemental gargoyles, for 10s. Ignit (Fire) deals minor burn. Volt (Electric) emits a shock pulse every 4s. Chillip (Frost) slows targets by 20% on hit. They share a group HP pool.",
+          "mana_cost": 28,
+          "props": {
+            "cooldown": 32,
+            "duration": 10,
+            "group_hp": 120,
+            "fire_burn_damage": 4,
+            "fire_burn_duration": 3,
+            "electric_pulse_damage": 6,
+            "electric_pulse_interval": 4,
+            "frost_slow_amount": 0.20,
+            "frost_slow_duration": 2
+          },
+          "effects": [
+            {
+              "type": "summon",
+              "parameters": {
+                "entity": "garygomites_trio",
+                "behavior": "multi_pet",
+                "units": [
+                  {
+                    "name": "Ignit",
+                    "element": "fire",
+                    "attack_type": "burn_puff"
+                  },
+                  {
+                    "name": "Volt",
+                    "element": "electric",
+                    "attack_type": "shock_pulse"
+                  },
+                  {
+                    "name": "Chillip",
+                    "element": "frost",
+                    "attack_type": "bite_slow"
+                  }
+                ]
+              },
+              "visual_feedback": "elemental_trio_summon_effect"
+            }
+          ]
+        },
+        "level_2": {
+          "serial_number": "BP1-073-R-L2",
+          "ability_text": "Increases group HP to 140. Ignit's burn damage increases. Volt pulses every 3.5s. Chillip slow increased to 25%.",
+          "upgrade_cost": {
+            "required_level": 1,
+            "required_count": 3
+          },
+          "mana_cost": 28,
+          "props": {
+            "cooldown": 30,
+            "duration": 10,
+            "group_hp": 140,
+            "fire_burn_damage": 5,
+            "fire_burn_duration": 3,
+            "electric_pulse_damage": 7,
+            "electric_pulse_interval": 3.5,
+            "frost_slow_amount": 0.25,
+            "frost_slow_duration": 2
+          },
+          "effects": [
+            {
+              "type": "summon",
+              "parameters": {
+                "entity": "garygomites_trio",
+                "behavior": "multi_pet",
+                "units": [
+                  {
+                    "name": "Ignit",
+                    "element": "fire",
+                    "attack_type": "burn_puff"
+                  },
+                  {
+                    "name": "Volt",
+                    "element": "electric",
+                    "attack_type": "shock_pulse"
+                  },
+                  {
+                    "name": "Chillip",
+                    "element": "frost",
+                    "attack_type": "bite_slow"
+                  }
+                ]
+              },
+              "visual_feedback": "elemental_trio_summon_effect"
+            }
+          ]
+        },
+        "level_3": {
+          "serial_number": "BP1-073-R-L3",
+          "ability_text": "Increases duration to 12s. Volt's pulse damage increased. Chillip slow lasts longer. Fire burn duration increased.",
+          "upgrade_cost": {
+            "required_level": 2,
+            "required_count": 4
+          },
+          "mana_cost": 28,
+          "props": {
+            "cooldown": 28,
+            "duration": 12,
+            "group_hp": 160,
+            "fire_burn_damage": 5,
+            "fire_burn_duration": 4,
+            "electric_pulse_damage": 9,
+            "electric_pulse_interval": 3.5,
+            "frost_slow_amount": 0.25,
+            "frost_slow_duration": 3
+          },
+          "effects": [
+            {
+              "type": "summon",
+              "parameters": {
+                "entity": "garygomites_trio",
+                "behavior": "multi_pet",
+                "units": [
+                  {
+                    "name": "Ignit",
+                    "element": "fire",
+                    "attack_type": "burn_puff"
+                  },
+                  {
+                    "name": "Volt",
+                    "element": "electric",
+                    "attack_type": "shock_pulse"
+                  },
+                  {
+                    "name": "Chillip",
+                    "element": "frost",
+                    "attack_type": "bite_slow"
+                  }
+                ]
+              },
+              "visual_feedback": "elemental_trio_summon_effect"
+            }
+          ]
+        }
+      }
+    },
+    {
       "card_id": "OGR-105",
       "card_name": "Ogre's Greed",
       "rarity": "Epic",
@@ -4530,7 +4820,7 @@
         "Debuff"
       ],
       "anime_id": "S01-EP76",
-      "activation_method":"active_tap",
+      "activation_method": "active_tap",
       "activation": {
         "method": "tap",
         "charge": "true",
@@ -4606,8 +4896,8 @@
       }
     },
     {
-      "card_id": "MID-108",
-      "card_name": "Midnight Delivery",
+      "card_id": "HOF-108",
+      "card_name": "Hand-off",
       "rarity": "Epic",
       "type": [
         "Tap",
@@ -4623,7 +4913,7 @@
         "cooldown": 25.0,
         "release": "instant"
       },
-      "image_filename": "midnight_delivery.png",
+      "image_filename": "hand_off.png",
       "abilities": {
         "level_1": {
           "serial_number": "MID-098-C-L1",
